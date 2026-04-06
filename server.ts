@@ -27,12 +27,7 @@ app.get("/api/daily", async (req, res) => {
   }
 
   try {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      console.error("GEMINI_API_KEY is missing in backend");
-      return res.status(500).json({ error: "API key configuration error" });
-    }
-    const ai = new GoogleGenAI({ apiKey: apiKey });
+    const ai = new GoogleGenAI({});
     
     // Generate a seed based on the date string
     let seed = 0;
@@ -50,7 +45,7 @@ app.get("/api/daily", async (req, res) => {
     Make the questions interesting and varied.`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-3.1-flash-lite-preview",
       contents: prompt,
       config: {
         seed: seed,
@@ -101,8 +96,11 @@ app.get("/api/daily", async (req, res) => {
     }
     
     res.status(500).json({ error: "Failed to generate tasks" });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Failed to generate tasks:", error);
+    if (error?.message?.includes("API key not valid") || error?.status === 400 || error?.status === 403 || error?.message?.includes("insufficient authentication scopes")) {
+      return res.status(401).json({ error: "Invalid or missing Gemini API key. Please check your API key in the AI Studio settings." });
+    }
     res.status(500).json({ error: "Internal server error" });
   }
 });
@@ -114,12 +112,7 @@ app.get("/api/practice", async (req, res) => {
   }
 
   try {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      console.error("GEMINI_API_KEY is missing in backend");
-      return res.status(500).json({ error: "API key configuration error" });
-    }
-    const ai = new GoogleGenAI({ apiKey: apiKey });
+    const ai = new GoogleGenAI({});
     let prompt = '';
     if (type === 'flags') {
       prompt = `Generate 5 geography quiz questions. The type must be 'flag'. Provide the country name in 'correctAnswer' and 3 other country names in 'options'. The 'question' should be "Which country's flag is this?". Provide the 2-letter ISO country code in 'imageUrl' so I can fetch the flag.`;
@@ -132,7 +125,7 @@ app.get("/api/practice", async (req, res) => {
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-3.1-flash-lite-preview",
       contents: prompt,
       config: {
         responseMimeType: "application/json",
@@ -179,13 +172,17 @@ app.get("/api/practice", async (req, res) => {
     }
     
     res.status(500).json({ error: "Failed to generate tasks" });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Failed to generate practice tasks:", error);
+    if (error?.message?.includes("API key not valid") || error?.status === 400 || error?.status === 403 || error?.message?.includes("insufficient authentication scopes")) {
+      return res.status(401).json({ error: "Invalid or missing Gemini API key. Please check your API key in the AI Studio settings." });
+    }
     res.status(500).json({ error: "Internal server error" });
   }
 });
 
 async function startServer() {
+  console.log("GEMINI_API_KEY exists:", !!process.env.GEMINI_API_KEY);
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },

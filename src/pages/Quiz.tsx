@@ -11,13 +11,17 @@ async function fetchPracticeTasks(type: string): Promise<DailyTask[]> {
   try {
     const response = await fetch(`/api/practice?type=${type}`);
     if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      if (errorData && errorData.error) {
+        throw new Error(errorData.error);
+      }
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
     return data;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Failed to fetch practice tasks:", error);
-    return [];
+    throw error;
   }
 }
 
@@ -36,6 +40,7 @@ export function Quiz() {
   const isToday = targetDate === todayStr;
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -76,17 +81,29 @@ export function Quiz() {
 
   const loadDailyTasks = async (date: string) => {
     setLoading(true);
-    const tasks = await generateDailyTasks(date);
-    setDailyTasks(tasks);
-    setLoading(false);
+    setError(null);
+    try {
+      const tasks = await generateDailyTasks(date);
+      setDailyTasks(tasks);
+    } catch (err: any) {
+      setError(err.message || "Failed to load tasks");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const loadPracticeTasks = async () => {
     setLoading(true);
-    const tasks = await fetchPracticeTasks(type || 'flags');
-    setPracticeTasks(tasks);
-    setCurrentPracticeIndex(0);
-    setLoading(false);
+    setError(null);
+    try {
+      const tasks = await fetchPracticeTasks(type || 'flags');
+      setPracticeTasks(tasks);
+      setCurrentPracticeIndex(0);
+    } catch (err: any) {
+      setError(err.message || "Failed to load practice tasks");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleAnswer = (answer: string | { isMap: true, isCorrect: boolean, distance: number }) => {
@@ -171,6 +188,21 @@ export function Quiz() {
         <p className="text-on-surface-variant font-medium">
           {isDaily ? "Loading challenge..." : "Preparing practice session..."}
         </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full min-h-[60vh] text-center p-6">
+        <XCircle className="w-12 h-12 text-red-500 mb-4" />
+        <p className="text-on-surface-variant font-medium mb-4">{error}</p>
+        <button 
+          onClick={() => isDaily ? loadDailyTasks(targetDate) : loadPracticeTasks()}
+          className="bg-primary text-on-primary px-6 py-2 rounded-full font-bold"
+        >
+          Retry
+        </button>
       </div>
     );
   }
