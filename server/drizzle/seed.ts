@@ -32,6 +32,10 @@ async function seed() {
       notificationsEnabled: true,
       soundEnabled: true,
       darkMode: false,
+      dailyReminderEnabled: true,
+      dailyReminderTime: '09:00',
+      hapticEnabled: true,
+      theme: 'system',
       language: 'en',
       units: 'metric',
     }).onConflictDoNothing();

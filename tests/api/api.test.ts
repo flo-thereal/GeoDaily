@@ -325,6 +325,10 @@ describe('Challenge Submission API', () => {
     const submitData = await submitResponse.json();
     expect(submitResponse.status).toBe(200);
     expect(submitData.success).toBe(true);
+    expect(submitData).toHaveProperty('stats');
+    expect(submitData.stats).toHaveProperty('totalPoints');
+    expect(submitData.stats).toHaveProperty('currentStreak');
+    expect(submitData.stats).toHaveProperty('longestStreak');
 
     const historyResponse = await api('/api/history?limit=10', {
       headers: authToken ? { Authorization: `Bearer ${authToken}` } : undefined,

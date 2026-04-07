@@ -4,6 +4,7 @@ import { AuthRequest, authMiddleware, generateToken, comparePassword, createUser
 import { db, users, userSettings, userStats, userContinentMastery, userAchievements, achievements, userChallengeHistory } from '../drizzle/index';
 
 const router = Router();
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Register new user
 router.post('/register', async (req: AuthRequest, res: Response) => {
@@ -13,8 +14,16 @@ router.post('/register', async (req: AuthRequest, res: Response) => {
     return res.status(400).json({ error: 'Email, password, and display name are required' });
   }
 
-  if (password.length < 6) {
-    return res.status(400).json({ error: 'Password must be at least 6 characters' });
+  if (!EMAIL_REGEX.test(String(email).toLowerCase())) {
+    return res.status(400).json({ error: 'Invalid email format' });
+  }
+
+  if (String(password).length < 8) {
+    return res.status(400).json({ error: 'Password must be at least 8 characters' });
+  }
+
+  if (String(displayName).trim().length < 2 || String(displayName).trim().length > 100) {
+    return res.status(400).json({ error: 'Display name must be between 2 and 100 characters' });
   }
 
   try {
@@ -43,6 +52,10 @@ router.post('/login', async (req: AuthRequest, res: Response) => {
 
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password are required' });
+  }
+
+  if (!EMAIL_REGEX.test(String(email).toLowerCase())) {
+    return res.status(400).json({ error: 'Invalid email format' });
   }
 
   try {
@@ -149,9 +162,37 @@ router.patch('/me', authMiddleware, async (req: AuthRequest, res: Response) => {
 
   try {
     const updateData: Partial<typeof users.$inferInsert> = {};
-    if (displayName !== undefined) updateData.displayName = displayName;
-    if (avatarUrl !== undefined) updateData.avatarUrl = avatarUrl;
-    if (title !== undefined) updateData.title = title;
+
+    if (displayName !== undefined) {
+      if (typeof displayName !== 'string' || displayName.trim().length < 2 || displayName.trim().length > 100) {
+        return res.status(400).json({ error: 'displayName must be between 2 and 100 characters' });
+      }
+      updateData.displayName = displayName.trim();
+    }
+
+    if (avatarUrl !== undefined) {
+      if (avatarUrl !== null && typeof avatarUrl !== 'string') {
+        return res.status(400).json({ error: 'avatarUrl must be a string or null' });
+      }
+      if (typeof avatarUrl === 'string' && avatarUrl.length > 0) {
+        try {
+          new URL(avatarUrl);
+        } catch {
+          return res.status(400).json({ error: 'avatarUrl must be a valid URL' });
+        }
+      }
+      updateData.avatarUrl = avatarUrl;
+    }
+
+    if (title !== undefined) {
+      if (title !== null && typeof title !== 'string') {
+        return res.status(400).json({ error: 'title must be a string or null' });
+      }
+      if (typeof title === 'string' && title.length > 100) {
+        return res.status(400).json({ error: 'title must be 100 characters or less' });
+      }
+      updateData.title = title;
+    }
 
     if (Object.keys(updateData).length === 0) {
       return res.status(400).json({ error: 'No fields to update' });
@@ -180,10 +221,18 @@ router.get('/settings', authMiddleware, async (req: AuthRequest, res: Response) 
     }
 
     res.json({
+      // Canonical response used by frontend
+      language: settings.language,
+      daily_reminder_enabled: settings.dailyReminderEnabled,
+      daily_reminder_time: settings.dailyReminderTime,
+      sound_enabled: settings.soundEnabled,
+      haptic_enabled: settings.hapticEnabled,
+      theme: settings.theme,
+
+      // Backward-compatible fields
       notificationsEnabled: settings.notificationsEnabled,
       soundEnabled: settings.soundEnabled,
       darkMode: settings.darkMode,
-      language: settings.language,
       units: settings.units,
     });
   } catch (error) {
@@ -195,15 +244,61 @@ router.get('/settings', authMiddleware, async (req: AuthRequest, res: Response) 
 // Update user settings
 router.patch('/settings', authMiddleware, async (req: AuthRequest, res: Response) => {
   const userId = req.user!.id;
-  const { notificationsEnabled, soundEnabled, darkMode, language, units } = req.body;
+  const {
+    notificationsEnabled,
+    soundEnabled,
+    darkMode,
+    language,
+    units,
+    dailyReminderEnabled,
+    dailyReminderTime,
+    hapticEnabled,
+    theme,
+    daily_reminder_enabled,
+    daily_reminder_time,
+    sound_enabled,
+    haptic_enabled,
+  } = req.body;
 
   try {
     const updateData: Partial<typeof userSettings.$inferInsert> = {};
-    if (notificationsEnabled !== undefined) updateData.notificationsEnabled = notificationsEnabled;
-    if (soundEnabled !== undefined) updateData.soundEnabled = soundEnabled;
-    if (darkMode !== undefined) updateData.darkMode = darkMode;
+    if (notificationsEnabled !== undefined) updateData.notificationsEnabled = !!notificationsEnabled;
+    if (soundEnabled !== undefined || sound_enabled !== undefined) {
+      updateData.soundEnabled = !!(soundEnabled ?? sound_enabled);
+    }
+    if (darkMode !== undefined) updateData.darkMode = !!darkMode;
+
+    const resolvedDailyReminderEnabled = dailyReminderEnabled ?? daily_reminder_enabled;
+    if (resolvedDailyReminderEnabled !== undefined) {
+      updateData.dailyReminderEnabled = !!resolvedDailyReminderEnabled;
+    }
+
+    const resolvedDailyReminderTime = dailyReminderTime ?? daily_reminder_time;
+    if (resolvedDailyReminderTime !== undefined) {
+      if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(String(resolvedDailyReminderTime))) {
+        return res.status(400).json({ error: 'dailyReminderTime must be in HH:MM format' });
+      }
+      updateData.dailyReminderTime = String(resolvedDailyReminderTime);
+    }
+
+    const resolvedHapticEnabled = hapticEnabled ?? haptic_enabled;
+    if (resolvedHapticEnabled !== undefined) {
+      updateData.hapticEnabled = !!resolvedHapticEnabled;
+    }
+
+    if (theme !== undefined) {
+      updateData.theme = String(theme);
+      if (darkMode === undefined) {
+        updateData.darkMode = String(theme) === 'dark';
+      }
+    }
+
     if (language !== undefined) updateData.language = language;
     if (units !== undefined) updateData.units = units;
+
+    if (darkMode !== undefined && theme === undefined) {
+      updateData.theme = darkMode ? 'dark' : 'light';
+    }
 
     if (Object.keys(updateData).length === 0) {
       return res.status(400).json({ error: 'No fields to update' });

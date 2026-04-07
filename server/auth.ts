@@ -4,9 +4,9 @@ import bcrypt from 'bcryptjs';
 import { eq } from 'drizzle-orm';
 import { db, users, userSettings, userStats, userContinentMastery } from './drizzle/index';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'dev_jwt_secret_change_in_production';
+const JWT_SECRET = process.env.JWT_SECRET || '';
 const JWT_EXPIRES_IN = '7d';
-const DEV_AUTH_BYPASS = process.env.DEV_AUTH_BYPASS === 'true';
+const DEV_AUTH_BYPASS = process.env.DEV_AUTH_BYPASS === 'true' && process.env.NODE_ENV !== 'production';
 const DEV_USER_ID = '00000000-0000-0000-0000-000000000001';
 
 export interface AuthUser {
@@ -24,6 +24,10 @@ export interface AuthRequest extends Request {
 
 // Generate JWT token
 export function generateToken(user: AuthUser): string {
+  if (!JWT_SECRET) {
+    throw new Error('JWT_SECRET is required for token generation');
+  }
+
   return jwt.sign(
     { id: user.id, email: user.email },
     JWT_SECRET,
@@ -33,6 +37,10 @@ export function generateToken(user: AuthUser): string {
 
 // Verify JWT token
 export function verifyToken(token: string): { id: string; email: string } | null {
+  if (!JWT_SECRET) {
+    return null;
+  }
+
   try {
     return jwt.verify(token, JWT_SECRET) as { id: string; email: string };
   } catch (e) {

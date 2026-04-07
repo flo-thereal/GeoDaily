@@ -64,6 +64,47 @@ function processTasks(tasks: any[]): any[] {
   });
 }
 
+type QuestionType = 'flag' | 'capital' | 'map';
+
+type StoredAnswer = {
+  guess: string | null;
+  isCorrect: boolean;
+  questionType: QuestionType | null;
+  countryCode: string | null;
+};
+
+function normalizeCountryCode(raw: unknown): string | null {
+  if (typeof raw !== 'string') return null;
+  const normalized = raw.trim().toUpperCase();
+  if (!/^[A-Z]{2,3}$/.test(normalized)) return null;
+  return normalized;
+}
+
+function countSkillCorrectAnswers(rows: Array<{ answers: unknown }>): Record<QuestionType, number> {
+  const totals: Record<QuestionType, number> = {
+    flag: 0,
+    capital: 0,
+    map: 0,
+  };
+
+  for (const row of rows) {
+    if (!Array.isArray(row.answers)) continue;
+    for (const entry of row.answers) {
+      if (!entry || typeof entry !== 'object') continue;
+      const e = entry as Record<string, unknown>;
+      const isCorrect = e.isCorrect === true;
+      const qType = typeof e.questionType === 'string' ? e.questionType.toLowerCase() : '';
+
+      if (!isCorrect) continue;
+      if (qType === 'flag' || qType === 'capital' || qType === 'map') {
+        totals[qType]++;
+      }
+    }
+  }
+
+  return totals;
+}
+
 // Get daily challenge
 router.get('/daily', async (req: AuthRequest, res: Response) => {
   const date = req.query.date as string;
@@ -179,7 +220,38 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
     return res.status(400).json({ error: "Missing required fields" });
   }
 
+  if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    return res.status(400).json({ error: 'date must use YYYY-MM-DD format' });
+  }
+
+  if (typeof score !== 'number' || typeof maxScore !== 'number' || !Number.isFinite(score) || !Number.isFinite(maxScore)) {
+    return res.status(400).json({ error: 'score and maxScore must be valid numbers' });
+  }
+
+  if (maxScore <= 0 || score < 0 || score > maxScore) {
+    return res.status(400).json({ error: 'score must be between 0 and maxScore, and maxScore must be > 0' });
+  }
+
+  if (timeTaken !== undefined && (typeof timeTaken !== 'number' || timeTaken < 0)) {
+    return res.status(400).json({ error: 'timeTaken must be a positive number when provided' });
+  }
+
   try {
+    const submittedTasks = Array.isArray(tasks) ? tasks : [];
+    const submittedAnswers = Array.isArray(answers) ? answers : [];
+
+    const storedAnswers: StoredAnswer[] = submittedAnswers.map((answer: any, index: number) => {
+      const task = submittedTasks[index] ?? {};
+      const guess = answer?.answer ?? answer?.guess ?? null;
+
+      return {
+        guess: typeof guess === 'string' ? guess : null,
+        isCorrect: answer?.isCorrect === true,
+        questionType: task?.type === 'flag' || task?.type === 'capital' || task?.type === 'map' ? task.type : null,
+        countryCode: normalizeCountryCode(task?.imageUrl),
+      };
+    });
+
     // Save challenge history
     await db.insert(userChallengeHistory)
       .values({
@@ -189,7 +261,7 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
         score,
         maxScore,
         timeTakenSeconds: timeTaken || null,
-        answers: answers || null,
+        answers: storedAnswers,
       });
 
     // Update user stats
@@ -231,8 +303,10 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
       })
       .where(eq(userStats.userId, userId));
 
+    let newCountriesMastered = currentStats.countriesMastered;
+
     // Process answers for country/continent tracking if tasks provided
-    if (tasks && answers && Array.isArray(tasks) && Array.isArray(answers)) {
+    if (submittedTasks.length > 0 && storedAnswers.length > 0) {
       // Track by question type (flags, capitals, maps)
       const typeStats: Record<string, { correct: number; total: number }> = {
         flag: { correct: 0, total: 0 },
@@ -244,10 +318,10 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
       const countryAnswers: Record<string, { correct: number; total: number }> = {};
       const continentAnswers: Record<string, { correct: number; total: number }> = {};
 
-      for (let i = 0; i < tasks.length && i < answers.length; i++) {
-        const task = tasks[i];
-        const answer = answers[i];
-        const isCorrect = answer?.isCorrect === true;
+      for (let i = 0; i < submittedTasks.length && i < storedAnswers.length; i++) {
+        const task = submittedTasks[i];
+        const answer = storedAnswers[i];
+        const isCorrect = answer.isCorrect;
         
         // Track by question type
         const qType = task.type?.toLowerCase() || 'map';
@@ -256,15 +330,8 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
           if (isCorrect) typeStats[qType].correct++;
         }
 
-        // Extract country code from imageUrl (flags use 2-letter codes)
-        // or try to look up from the question text
-        let countryCode: string | null = task.imageUrl?.toUpperCase() || null;
-        if (countryCode && countryCode.length === 2) {
-          // Convert 2-letter to 3-letter if needed (we store 3-letter in DB)
-          // For now, just track what we have
-        }
+        let countryCode: string | null = answer.countryCode;
 
-        // Look up country to get region/continent
         if (countryCode) {
           if (!countryAnswers[countryCode]) {
             countryAnswers[countryCode] = { correct: 0, total: 0 };
@@ -274,14 +341,24 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
         }
       }
 
-      // Update country progress - first validate which country codes exist
-      let newCountriesMastered = currentStats.countriesMastered;
+      // Update country progress and continent mastery.
       const validCountries = await db.select({ code: countries.code })
         .from(countries);
-      const validCountryCodes = new Set(validCountries.map(c => c.code));
+      const countryRegions = await db.select({ code: countries.code, region: countries.region })
+        .from(countries);
 
-      for (const [code, stats] of Object.entries(countryAnswers)) {
-        // Skip invalid country codes (2-letter codes that don't match our 3-letter codes)
+      const validCountryCodes = new Set(validCountries.map(c => c.code));
+      const regionByCountryCode = new Map(countryRegions.map(c => [c.code, c.region]));
+
+      for (const [rawCode, stats] of Object.entries(countryAnswers)) {
+        let code = rawCode;
+        if (!validCountryCodes.has(code) && code.length === 3) {
+          const alpha2 = code.slice(0, 2);
+          if (validCountryCodes.has(alpha2)) {
+            code = alpha2;
+          }
+        }
+
         if (!validCountryCodes.has(code)) {
           continue;
         }
@@ -332,6 +409,15 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
             newCountriesMastered++;
           }
         }
+
+        const region = regionByCountryCode.get(code);
+        if (region) {
+          if (!continentAnswers[region]) {
+            continentAnswers[region] = { correct: 0, total: 0 };
+          }
+          continentAnswers[region].correct += stats.correct;
+          continentAnswers[region].total += stats.total;
+        }
       }
 
       // Update countries mastered if changed
@@ -339,6 +425,45 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
         await db.update(userStats)
           .set({ countriesMastered: newCountriesMastered })
           .where(eq(userStats.userId, userId));
+      }
+
+      // Update continent mastery based on answered countries.
+      for (const [continent, stats] of Object.entries(continentAnswers)) {
+        const [existingContinent] = await db.select()
+          .from(userContinentMastery)
+          .where(and(
+            eq(userContinentMastery.userId, userId),
+            eq(userContinentMastery.continent, continent)
+          ));
+
+        if (existingContinent) {
+          const totalQuestions = existingContinent.questionsAnswered + stats.total;
+          const totalCorrect = existingContinent.correctAnswers + stats.correct;
+          const masteryPercentage = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+
+          await db.update(userContinentMastery)
+            .set({
+              questionsAnswered: totalQuestions,
+              correctAnswers: totalCorrect,
+              masteryPercentage,
+              updatedAt: new Date(),
+            })
+            .where(and(
+              eq(userContinentMastery.userId, userId),
+              eq(userContinentMastery.continent, continent)
+            ));
+        } else {
+          const masteryPercentage = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+          await db.insert(userContinentMastery)
+            .values({
+              userId,
+              continent,
+              questionsAnswered: stats.total,
+              correctAnswers: stats.correct,
+              masteryPercentage,
+            })
+            .onConflictDoNothing();
+        }
       }
     }
 
@@ -353,6 +478,14 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
 
     // Get all achievements to check
     const allAchievements = await db.select().from(achievements);
+    const historyAnswers = await db.select({ answers: userChallengeHistory.answers })
+      .from(userChallengeHistory)
+      .where(eq(userChallengeHistory.userId, userId));
+    const skillCorrectTotals = countSkillCorrectAnswers(historyAnswers);
+    const continentMasteryRows = await db.select()
+      .from(userContinentMastery)
+      .where(eq(userContinentMastery.userId, userId));
+    const continentMastery = new Map(continentMasteryRows.map(c => [c.continent, c.masteryPercentage]));
 
     for (const ach of allAchievements) {
       if (alreadyUnlocked.has(ach.id)) continue;
@@ -383,13 +516,31 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
           break;
         // Country mastery achievements
         case 'countries_10':
-          shouldUnlock = currentStats.countriesMastered >= 10;
+          shouldUnlock = newCountriesMastered >= 10;
           break;
         case 'countries_50':
-          shouldUnlock = currentStats.countriesMastered >= 50;
+          shouldUnlock = newCountriesMastered >= 50;
           break;
         case 'countries_100':
-          shouldUnlock = currentStats.countriesMastered >= 100;
+          shouldUnlock = newCountriesMastered >= 100;
+          break;
+        case 'flags_50':
+          shouldUnlock = skillCorrectTotals.flag >= 50;
+          break;
+        case 'capitals_50':
+          shouldUnlock = skillCorrectTotals.capital >= 50;
+          break;
+        case 'maps_50':
+          shouldUnlock = skillCorrectTotals.map >= 50;
+          break;
+        case 'continent_europe':
+          shouldUnlock = (continentMastery.get('Europe') || 0) >= 80;
+          break;
+        case 'continent_asia':
+          shouldUnlock = (continentMastery.get('Asia') || 0) >= 80;
+          break;
+        case 'continent_africa':
+          shouldUnlock = (continentMastery.get('Africa') || 0) >= 80;
           break;
       }
 
@@ -402,8 +553,13 @@ router.post('/submit', authMiddleware, async (req: AuthRequest, res: Response) =
     }
 
     res.json({ 
-      success: true, 
-      newAchievements: unlockedAchievements.length > 0 ? unlockedAchievements : undefined 
+      success: true,
+      stats: {
+        totalPoints: newTotalPoints,
+        currentStreak: newStreak,
+        longestStreak,
+      },
+      newAchievements: unlockedAchievements.length > 0 ? unlockedAchievements : undefined,
     });
   } catch (error) {
     console.error("Failed to submit challenge:", error);

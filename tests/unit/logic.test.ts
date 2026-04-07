@@ -152,16 +152,16 @@ describe('Achievement Conditions', () => {
   });
 
   it('should unlock perfect_score at 500 points max', () => {
-    const score = 500;
-    const maxScore = 500;
+    const score: number = 500;
+    const maxScore: number = 500;
     const isPerfect = score === maxScore && maxScore >= 500;
     
     expect(isPerfect).toBe(true);
   });
 
   it('should not unlock perfect_score at 400/500', () => {
-    const score = 400;
-    const maxScore = 500;
+    const score: number = 400;
+    const maxScore: number = 500;
     const isPerfect = score === maxScore && maxScore >= 500;
     
     expect(isPerfect).toBe(false);

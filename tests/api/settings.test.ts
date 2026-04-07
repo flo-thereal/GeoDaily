@@ -76,11 +76,12 @@ describe('User Settings API', () => {
 
     const data = await response.json();
     expect(response.status).toBe(200);
-    expect(data).toHaveProperty('notificationsEnabled');
-    expect(data).toHaveProperty('soundEnabled');
-    expect(data).toHaveProperty('darkMode');
     expect(data).toHaveProperty('language');
-    expect(data).toHaveProperty('units');
+    expect(data).toHaveProperty('daily_reminder_enabled');
+    expect(data).toHaveProperty('daily_reminder_time');
+    expect(data).toHaveProperty('sound_enabled');
+    expect(data).toHaveProperty('haptic_enabled');
+    expect(data).toHaveProperty('theme');
   });
 
   it('updates settings and persists changes', async () => {
@@ -101,11 +102,12 @@ describe('User Settings API', () => {
     const current = await currentResponse.json();
 
     const updatedPayload = {
-      notificationsEnabled: !current.notificationsEnabled,
-      soundEnabled: !current.soundEnabled,
-      darkMode: !current.darkMode,
+      dailyReminderEnabled: !current.daily_reminder_enabled,
+      dailyReminderTime: current.daily_reminder_time === '09:00' ? '10:00' : '09:00',
+      soundEnabled: !current.sound_enabled,
+      hapticEnabled: !current.haptic_enabled,
+      theme: current.theme === 'dark' ? 'light' : 'dark',
       language: current.language === 'en' ? 'fr' : 'en',
-      units: current.units === 'metric' ? 'imperial' : 'metric',
     };
 
     const updateResponse = await api('/api/users/settings', {
@@ -124,22 +126,24 @@ describe('User Settings API', () => {
     const after = await afterResponse.json();
 
     expect(afterResponse.status).toBe(200);
-    expect(after.notificationsEnabled).toBe(updatedPayload.notificationsEnabled);
-    expect(after.soundEnabled).toBe(updatedPayload.soundEnabled);
-    expect(after.darkMode).toBe(updatedPayload.darkMode);
+    expect(after.daily_reminder_enabled).toBe(updatedPayload.dailyReminderEnabled);
+    expect(after.daily_reminder_time).toBe(updatedPayload.dailyReminderTime);
+    expect(after.sound_enabled).toBe(updatedPayload.soundEnabled);
+    expect(after.haptic_enabled).toBe(updatedPayload.hapticEnabled);
+    expect(after.theme).toBe(updatedPayload.theme);
     expect(after.language).toBe(updatedPayload.language);
-    expect(after.units).toBe(updatedPayload.units);
 
     // Restore original state to keep tests isolated.
     await api('/api/users/settings', {
       method: 'PATCH',
       headers: authHeaders({ 'Content-Type': 'application/json' }),
       body: JSON.stringify({
-        notificationsEnabled: current.notificationsEnabled,
-        soundEnabled: current.soundEnabled,
-        darkMode: current.darkMode,
+        dailyReminderEnabled: current.daily_reminder_enabled,
+        dailyReminderTime: current.daily_reminder_time,
+        soundEnabled: current.sound_enabled,
+        hapticEnabled: current.haptic_enabled,
+        theme: current.theme,
         language: current.language,
-        units: current.units,
       }),
     });
   });

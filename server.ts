@@ -1,16 +1,78 @@
 import "dotenv/config";
-import express from "express";
+import express, { NextFunction, Request, Response } from "express";
 import { createServer as createViteServer } from "vite";
 import path from 'path';
 import { GoogleGenAI, Type } from '@google/genai';
 
 // Conditionally import database routes (only if DATABASE_URL is set)
 const USE_DATABASE = !!process.env.DATABASE_URL;
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3000', 10);
 
+type Bucket = {
+  count: number;
+  resetAt: number;
+};
+
+function createRateLimiter(windowMs: number, maxRequests: number) {
+  const buckets = new Map<string, Bucket>();
+
+  return (req: Request, res: Response, next: NextFunction) => {
+    const now = Date.now();
+    const key = `${req.ip}:${req.baseUrl}${req.path}`;
+    const current = buckets.get(key);
+
+    if (!current || current.resetAt <= now) {
+      buckets.set(key, { count: 1, resetAt: now + windowMs });
+      return next();
+    }
+
+    if (current.count >= maxRequests) {
+      const retryAfter = Math.ceil((current.resetAt - now) / 1000);
+      res.setHeader('Retry-After', String(Math.max(retryAfter, 1)));
+      return res.status(429).json({ error: 'Too many requests, please try again later.' });
+    }
+
+    current.count += 1;
+    buckets.set(key, current);
+    return next();
+  };
+}
+
+function validateRuntimeConfig(): void {
+  if (!IS_PRODUCTION) {
+    return;
+  }
+
+  if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
+    throw new Error('JWT_SECRET must be set and at least 32 characters in production');
+  }
+
+  if (process.env.DEV_AUTH_BYPASS === 'true') {
+    throw new Error('DEV_AUTH_BYPASS cannot be true in production');
+  }
+
+  if (!process.env.DATABASE_URL) {
+    throw new Error('DATABASE_URL must be set in production');
+  }
+
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error('GEMINI_API_KEY must be set in production');
+  }
+}
+
 app.use(express.json());
+app.set('trust proxy', 1);
+
+const generalApiLimiter = createRateLimiter(15 * 60 * 1000, 600);
+const authLimiter = createRateLimiter(15 * 60 * 1000, 20);
+const challengeLimiter = createRateLimiter(60 * 60 * 1000, 120);
+
+app.use('/api', generalApiLimiter);
+app.use(['/api/users/register', '/api/users/login'], authLimiter);
+app.use(['/api/daily', '/api/practice'], challengeLimiter);
 
 // Health check
 app.get("/api/health", async (req, res) => {
@@ -23,7 +85,7 @@ app.get("/api/health", async (req, res) => {
     status: "ok",
     database: USE_DATABASE ? (dbConnected ? "connected" : "disconnected") : "not configured",
     mode: process.env.NODE_ENV || "development",
-    devAuthBypass: process.env.DEV_AUTH_BYPASS === 'true',
+    devAuthBypass: process.env.DEV_AUTH_BYPASS === 'true' && !IS_PRODUCTION,
   });
 });
 
@@ -241,10 +303,12 @@ async function setupRoutes() {
 }
 
 async function startServer() {
+  validateRuntimeConfig();
+
   console.log("=== GeoDaily Server ===");
   console.log("GEMINI_API_KEY exists:", !!process.env.GEMINI_API_KEY);
   console.log("DATABASE_URL exists:", !!process.env.DATABASE_URL);
-  console.log("DEV_AUTH_BYPASS:", process.env.DEV_AUTH_BYPASS === 'true');
+  console.log("DEV_AUTH_BYPASS:", process.env.DEV_AUTH_BYPASS === 'true' && !IS_PRODUCTION);
   
   // Setup API routes
   await setupRoutes();

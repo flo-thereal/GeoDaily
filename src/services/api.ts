@@ -149,6 +149,7 @@ export interface SubmitChallengeResult {
     currentStreak: number;
     longestStreak: number;
   };
+  newAchievements?: string[];
 }
 
 // ============================================================================
