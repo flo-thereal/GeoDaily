@@ -1,4 +1,152 @@
+import { useState, useEffect, useMemo } from 'react';
+import { getCurrentUser, isAuthenticated, UserProfile, Achievement, getLearningHistory, LearningHistoryEntry } from '../services/api';
+import { Link } from 'react-router-dom';
+
+// Default placeholder avatar
+const DEFAULT_AVATAR = 'https://ui-avatars.com/api/?name=Explorer&background=6366f1&color=fff&size=160';
+
+// Achievement icon mapping
+const ACHIEVEMENT_ICONS: Record<string, { icon: string; bgClass: string; textClass: string }> = {
+  exploration: { icon: 'stars', bgClass: 'bg-tertiary-container', textClass: 'text-on-tertiary-container' },
+  mastery: { icon: 'waves', bgClass: 'bg-secondary-container', textClass: 'text-on-secondary-container' },
+  speed: { icon: 'speed', bgClass: 'bg-primary-container', textClass: 'text-on-primary-container' },
+  default: { icon: 'emoji_events', bgClass: 'bg-surface-container-high', textClass: 'text-on-surface-variant' },
+};
+
+function getAchievementStyle(category: string) {
+  return ACHIEVEMENT_ICONS[category] || ACHIEVEMENT_ICONS.default;
+}
+
+function formatTimeAgo(dateString: string): string {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffMs = now.getTime() - date.getTime();
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 0) return 'TODAY';
+  if (diffDays === 1) return '1 DAY AGO';
+  if (diffDays < 7) return `${diffDays} DAYS AGO`;
+  if (diffDays < 14) return '1 WEEK AGO';
+  if (diffDays < 30) return `${Math.floor(diffDays / 7)} WEEKS AGO`;
+  if (diffDays < 60) return '1 MONTH AGO';
+  return `${Math.floor(diffDays / 30)} MONTHS AGO`;
+}
+
+function formatShortDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
 export function Profile() {
+  const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [learningHistory, setLearningHistory] = useState<LearningHistoryEntry[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [historyDays, setHistoryDays] = useState(30);
+
+  useEffect(() => {
+    async function fetchProfile() {
+      if (!isAuthenticated()) {
+        setLoading(false);
+        setError('not_authenticated');
+        return;
+      }
+
+      try {
+        const [profileData, historyData] = await Promise.all([
+          getCurrentUser(),
+          getLearningHistory(historyDays),
+        ]);
+        setProfile(profileData);
+        setLearningHistory(historyData);
+      } catch (err) {
+        console.error('Failed to fetch profile:', err);
+        setError(err instanceof Error ? err.message : 'Failed to load profile');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProfile();
+  }, [historyDays]);
+
+  // Calculate chart data from learning history
+  const chartData = useMemo(() => {
+    if (learningHistory.length === 0) return { bars: [], maxScore: 5, labels: { start: '', mid: '', end: '' } };
+    
+    const maxScore = Math.max(...learningHistory.map(h => h.score), 5);
+    const bars = learningHistory.map(entry => ({
+      date: entry.date,
+      height: maxScore > 0 ? (entry.score / maxScore) * 100 : 0,
+      score: entry.score,
+      isToday: entry.date === new Date().toISOString().split('T')[0],
+    }));
+    
+    // Only show a subset of bars for readability (every 3rd bar for 30 days = ~10 bars)
+    const step = Math.max(1, Math.floor(bars.length / 12));
+    const displayBars = bars.filter((_, i) => i % step === 0 || i === bars.length - 1);
+    
+    return {
+      bars: displayBars,
+      maxScore,
+      labels: {
+        start: learningHistory.length > 0 ? formatShortDate(learningHistory[0].date) : '',
+        mid: learningHistory.length > 15 ? formatShortDate(learningHistory[Math.floor(learningHistory.length / 2)].date) : '',
+        end: learningHistory.length > 0 ? formatShortDate(learningHistory[learningHistory.length - 1].date) : '',
+      },
+    };
+  }, [learningHistory]);
+
+  // Not authenticated state
+  if (error === 'not_authenticated') {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center px-8 py-12">
+        <span className="material-symbols-outlined text-6xl text-primary mb-6">account_circle</span>
+        <h2 className="text-2xl font-headline font-bold text-on-surface mb-2">Sign in to view your profile</h2>
+        <p className="text-outline mb-8 text-center max-w-md">
+          Track your progress, earn achievements, and compete on the leaderboard by creating an account.
+        </p>
+        <Link
+          to="/"
+          className="bg-primary text-on-primary px-6 py-3 rounded-full font-headline font-bold hover:bg-primary/90 transition-colors"
+        >
+          Go to Home
+        </Link>
+      </div>
+    );
+  }
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-outline font-headline">Loading profile...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error || !profile) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center px-8 py-12">
+        <span className="material-symbols-outlined text-6xl text-error mb-6">error</span>
+        <h2 className="text-2xl font-headline font-bold text-on-surface mb-2">Unable to load profile</h2>
+        <p className="text-outline mb-8">{error || 'Something went wrong'}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="bg-primary text-on-primary px-6 py-3 rounded-full font-headline font-bold hover:bg-primary/90 transition-colors"
+        >
+          Try Again
+        </button>
+      </div>
+    );
+  }
+
+  const { stats, continentMastery, achievements } = profile;
+
   return (
     <>
       <header className="w-full sticky top-0 z-50 bg-blue-50/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-8 py-4">
@@ -11,7 +159,7 @@ export function Profile() {
             <span className="material-symbols-outlined">notifications</span>
           </button>
           <div className="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 overflow-hidden">
-            <img alt="User profile settings" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9YtgX9fC-zkmBNIw0Nw2Zl5_y4hcCFEqygY3Ilb_jZxFmgood8X89mBi0UZYr-67mguk3pcPXdTqhuVA_1IIEm0mqnX2ZawF5xa096It3JSp1Ja9Qepm86XEIVZdfYcpLAATHXVsu-pz77nbN85W4ZcEJqKgHmpveZwiElaNsVNkX22stpL7HMBeNiXfYcCgEwPpdFM85xnnFcmVBR9KgYR1Q4du3FUcUG96jryrx_dvIwGXxiRKqloQ9Vdw4z_IL6KwvNxHUOuia"/>
+            <img alt="User profile settings" className="w-full h-full object-cover" src={profile.avatarUrl || DEFAULT_AVATAR}/>
           </div>
         </div>
       </header>
@@ -23,27 +171,31 @@ export function Profile() {
             <div className="relative group">
               <div className="w-40 h-40 rounded-full bg-gradient-to-br from-primary to-secondary p-1">
                 <div className="w-full h-full rounded-full bg-surface-container-lowest overflow-hidden border-4 border-surface">
-                  <img alt="Explorer Portrait" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIg_CE9Bgz7GC2CXrbVwJgd6VMbGrw571DjirbTZQ31c7jNORdPilr63CBJnsdyo9ZZOq62uKuuS-DkARooXlxtbvMyvUGYt82TKpEu0ehLE83bP1FN_RRaRhnpt5XMY2UFIrmmxuxILAg3HDEjdfjU7_3RPf0fpcx1ibZ0H-ka4ciRQrA2u25BJ1RkAJKfK1v98T00ElSnRWSBISBHnnoZQWO5wbuyOGDqbChbNP8CO9TzIZkSboGWL1l4k_IIYhIxP_3PpdmiHs"/>
+                  <img alt="Explorer Portrait" className="w-full h-full object-cover" src={profile.avatarUrl || DEFAULT_AVATAR}/>
                 </div>
               </div>
               <div className="absolute -bottom-2 -right-2 bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full font-headline font-black text-lg shadow-lg">
-                LVL 42
+                LVL {profile.level}
               </div>
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-2">
-                <h2 className="text-5xl font-headline font-extrabold tracking-tight text-on-surface">The Canvas</h2>
-                <span className="material-symbols-outlined text-tertiary-fixed text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                <h2 className="text-5xl font-headline font-extrabold tracking-tight text-on-surface">{profile.displayName}</h2>
+                {profile.level >= 10 && (
+                  <span className="material-symbols-outlined text-tertiary-fixed text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                )}
               </div>
-              <p className="text-xl text-outline font-medium mb-6">Master Cartographer</p>
+              <p className="text-xl text-outline font-medium mb-6">{profile.title || 'Geography Explorer'}</p>
               <div className="flex gap-4">
-                <div className="bg-surface-container-low px-4 py-2 rounded-lg flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary">public</span>
-                  <span className="text-sm font-headline font-bold text-on-surface-variant">Global Citizen</span>
-                </div>
+                {stats.countriesMastered >= 50 && (
+                  <div className="bg-surface-container-low px-4 py-2 rounded-lg flex items-center gap-2">
+                    <span className="material-symbols-outlined text-primary">public</span>
+                    <span className="text-sm font-headline font-bold text-on-surface-variant">Global Citizen</span>
+                  </div>
+                )}
                 <div className="bg-surface-container-low px-4 py-2 rounded-lg flex items-center gap-2">
                   <span className="material-symbols-outlined text-secondary">local_fire_department</span>
-                  <span className="text-sm font-headline font-bold text-on-surface-variant">128 Day Streak</span>
+                  <span className="text-sm font-headline font-bold text-on-surface-variant">{stats.currentStreak} Day Streak</span>
                 </div>
               </div>
             </div>
@@ -59,9 +211,9 @@ export function Profile() {
           <div className="bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10 group hover:bg-primary/5 transition-colors">
             <span className="material-symbols-outlined text-primary text-3xl mb-4">calendar_today</span>
             <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Days Active</h3>
-            <p className="text-4xl font-headline font-black text-on-surface">342</p>
+            <p className="text-4xl font-headline font-black text-on-surface">{stats.totalDaysPlayed}</p>
             <div className="mt-4 h-1 bg-surface-container-high rounded-full overflow-hidden">
-              <div className="h-full bg-primary w-3/4 rounded-full"></div>
+              <div className="h-full bg-primary rounded-full" style={{ width: `${Math.min(stats.totalDaysPlayed / 365 * 100, 100)}%` }}></div>
             </div>
           </div>
 
@@ -69,9 +221,9 @@ export function Profile() {
           <div className="bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10 group hover:bg-secondary/5 transition-colors">
             <span className="material-symbols-outlined text-secondary text-3xl mb-4">flag</span>
             <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Countries Mastered</h3>
-            <p className="text-4xl font-headline font-black text-on-surface">84</p>
+            <p className="text-4xl font-headline font-black text-on-surface">{stats.countriesMastered}</p>
             <div className="mt-4 h-1 bg-surface-container-high rounded-full overflow-hidden">
-              <div className="h-full bg-secondary w-2/5 rounded-full"></div>
+              <div className="h-full bg-secondary rounded-full" style={{ width: `${Math.min(stats.countriesMastered / 195 * 100, 100)}%` }}></div>
             </div>
           </div>
 
@@ -79,20 +231,20 @@ export function Profile() {
           <div className="bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10 group hover:bg-tertiary/5 transition-colors">
             <span className="material-symbols-outlined text-tertiary text-3xl mb-4">target</span>
             <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Avg Accuracy</h3>
-            <p className="text-4xl font-headline font-black text-on-surface">92<span className="text-2xl">%</span></p>
+            <p className="text-4xl font-headline font-black text-on-surface">{stats.accuracy}<span className="text-2xl">%</span></p>
             <div className="mt-4 h-1 bg-surface-container-high rounded-full overflow-hidden">
-              <div className="h-full bg-tertiary w-[92%] rounded-full"></div>
+              <div className="h-full bg-tertiary rounded-full" style={{ width: `${stats.accuracy}%` }}></div>
             </div>
           </div>
 
-          {/* Global Rank */}
+          {/* Total Points */}
           <div className="bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10 group hover:bg-on-surface/5 transition-colors">
             <span className="material-symbols-outlined text-on-surface-variant text-3xl mb-4">trophy</span>
-            <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Global Rank</h3>
-            <p className="text-4xl font-headline font-black text-on-surface">#1,204</p>
+            <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Total Points</h3>
+            <p className="text-4xl font-headline font-black text-on-surface">{stats.totalPoints.toLocaleString()}</p>
             <p className="text-xs font-bold text-primary mt-4 flex items-center gap-1">
-              <span className="material-symbols-outlined text-xs">trending_up</span>
-              Top 2% this month
+              <span className="material-symbols-outlined text-xs">local_fire_department</span>
+              Best streak: {stats.longestStreak} days
             </p>
           </div>
         </div>
@@ -103,32 +255,46 @@ export function Profile() {
             <div className="flex justify-between items-center mb-10">
               <div>
                 <h3 className="text-2xl font-headline font-extrabold text-on-surface">Learning History</h3>
-                <p className="text-sm text-outline font-medium">XP Gains over the last 30 days</p>
+                <p className="text-sm text-outline font-medium">Points earned over the last {historyDays} days</p>
               </div>
-              <select className="bg-surface-container-lowest border-none rounded-full px-4 py-2 text-sm font-headline font-bold text-primary focus:ring-2 focus:ring-primary/20">
-                <option>Last 30 Days</option>
-                <option>Last 6 Months</option>
+              <select 
+                value={historyDays}
+                onChange={(e) => setHistoryDays(Number(e.target.value))}
+                className="bg-surface-container-lowest border-none rounded-full px-4 py-2 text-sm font-headline font-bold text-primary focus:ring-2 focus:ring-primary/20"
+              >
+                <option value={30}>Last 30 Days</option>
+                <option value={90}>Last 3 Months</option>
+                <option value={180}>Last 6 Months</option>
               </select>
             </div>
-            {/* Visual Chart Representation */}
+            {/* Visual Chart Representation - Real Data */}
             <div className="h-64 flex items-end justify-between gap-2 group">
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "40%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "55%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "35%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "70%" }}></div>
-              <div className="w-full bg-primary hover:bg-primary-dim transition-all rounded-t-lg" style={{ height: "90%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "60%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "45%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "80%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "50%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "65%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "40%" }}></div>
-              <div className="w-full bg-primary/20 hover:bg-primary transition-all rounded-t-lg" style={{ height: "55%" }}></div>
+              {chartData.bars.length > 0 ? (
+                chartData.bars.map((bar, index) => (
+                  <div
+                    key={bar.date}
+                    className={`w-full ${bar.isToday ? 'bg-primary' : 'bg-primary/20'} hover:bg-primary transition-all rounded-t-lg relative group/bar`}
+                    style={{ height: `${Math.max(bar.height, 2)}%` }}
+                    title={`${formatShortDate(bar.date)}: ${bar.score} points`}
+                  >
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-xs font-bold text-on-surface opacity-0 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap">
+                      {bar.score} pts
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-outline">
+                  <div className="text-center">
+                    <span className="material-symbols-outlined text-4xl mb-2">bar_chart</span>
+                    <p className="text-sm">No activity yet. Complete challenges to see your progress!</p>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="flex justify-between mt-4 text-[10px] font-headline font-bold text-outline uppercase tracking-widest">
-              <span>Oct 1</span>
-              <span>Oct 15</span>
-              <span>Today</span>
+              <span>{chartData.labels.start}</span>
+              <span>{chartData.labels.mid}</span>
+              <span>{chartData.labels.end || 'Today'}</span>
             </div>
           </div>
 
@@ -136,51 +302,22 @@ export function Profile() {
           <div className="bg-surface-container-high p-8 rounded-lg relative overflow-hidden">
             <h3 className="text-2xl font-headline font-extrabold text-on-surface mb-8">Continent Mastery</h3>
             <div className="space-y-6 relative z-10">
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm font-headline font-bold text-on-surface-variant">Europe</span>
-                  <span className="text-sm font-headline font-black text-primary">85%</span>
-                </div>
-                <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-                  <div className="h-full bg-primary w-[85%] rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm font-headline font-bold text-on-surface-variant">Asia</span>
-                  <span className="text-sm font-headline font-black text-primary">62%</span>
-                </div>
-                <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-                  <div className="h-full bg-primary w-[62%] rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm font-headline font-bold text-on-surface-variant">Americas</span>
-                  <span className="text-sm font-headline font-black text-primary">54%</span>
-                </div>
-                <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-                  <div className="h-full bg-primary w-[54%] rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm font-headline font-bold text-on-surface-variant">Africa</span>
-                  <span className="text-sm font-headline font-black text-tertiary">40%</span>
-                </div>
-                <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-                  <div className="h-full bg-tertiary w-[40%] rounded-full"></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="text-sm font-headline font-bold text-on-surface-variant">Oceania</span>
-                  <span className="text-sm font-headline font-black text-error">12%</span>
-                </div>
-                <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-                  <div className="h-full bg-error-container w-[12%] rounded-full"></div>
-                </div>
-              </div>
+              {(['Europe', 'Asia', 'Americas', 'Africa', 'Oceania'] as const).map((continent) => {
+                const mastery = continentMastery[continent] || 0;
+                const colorClass = mastery >= 60 ? 'text-primary' : mastery >= 30 ? 'text-tertiary' : 'text-error';
+                const bgClass = mastery >= 60 ? 'bg-primary' : mastery >= 30 ? 'bg-tertiary' : 'bg-error-container';
+                return (
+                  <div key={continent}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-sm font-headline font-bold text-on-surface-variant">{continent}</span>
+                      <span className={`text-sm font-headline font-black ${colorClass}`}>{mastery}%</span>
+                    </div>
+                    <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+                      <div className={`h-full ${bgClass} rounded-full`} style={{ width: `${mastery}%` }}></div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             {/* Decorative background icon */}
             <span className="material-symbols-outlined absolute -bottom-10 -right-10 text-[180px] text-surface-container opacity-30 select-none">public</span>
@@ -190,38 +327,30 @@ export function Profile() {
         {/* Recent Achievements Section */}
         <section className="mt-16">
           <h3 className="text-3xl font-headline font-extrabold text-on-surface mb-8">Recent Landmarks</h3>
-          <div className="flex flex-wrap gap-4">
-            <div className="bg-surface-container-lowest p-6 rounded-lg flex items-center gap-4 border border-outline-variant/10 max-w-sm">
-              <div className="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center">
-                <span className="material-symbols-outlined text-on-tertiary-container text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>stars</span>
-              </div>
-              <div>
-                <h4 className="font-headline font-bold text-on-surface">Peak Explorer</h4>
-                <p className="text-xs text-outline">Mastered all Alpine nations</p>
-                <p className="text-[10px] text-primary font-bold mt-1">EARNED 2 DAYS AGO</p>
-              </div>
+          {achievements.length === 0 ? (
+            <div className="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/10 text-center">
+              <span className="material-symbols-outlined text-4xl text-outline mb-4">emoji_events</span>
+              <p className="text-outline">Complete challenges to earn achievements!</p>
             </div>
-            <div className="bg-surface-container-lowest p-6 rounded-lg flex items-center gap-4 border border-outline-variant/10 max-w-sm">
-              <div className="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center">
-                <span className="material-symbols-outlined text-on-secondary-container text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>waves</span>
-              </div>
-              <div>
-                <h4 className="font-headline font-bold text-on-surface">Archipelago Ace</h4>
-                <p className="text-xs text-outline">Identified 50 island nations</p>
-                <p className="text-[10px] text-primary font-bold mt-1">EARNED 1 WEEK AGO</p>
-              </div>
+          ) : (
+            <div className="flex flex-wrap gap-4">
+              {achievements.slice(0, 6).map((achievement) => {
+                const style = getAchievementStyle(achievement.category);
+                return (
+                  <div key={achievement.id} className="bg-surface-container-lowest p-6 rounded-lg flex items-center gap-4 border border-outline-variant/10 max-w-sm">
+                    <div className={`w-16 h-16 rounded-full ${style.bgClass} flex items-center justify-center`}>
+                      <span className={`material-symbols-outlined ${style.textClass} text-3xl`} style={{ fontVariationSettings: "'FILL' 1" }}>{achievement.icon || style.icon}</span>
+                    </div>
+                    <div>
+                      <h4 className="font-headline font-bold text-on-surface">{achievement.name}</h4>
+                      <p className="text-xs text-outline">{achievement.description}</p>
+                      <p className="text-[10px] text-primary font-bold mt-1">EARNED {formatTimeAgo(achievement.earnedAt)}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div className="bg-surface-container-lowest p-6 rounded-lg flex items-center gap-4 border border-outline-variant/10 max-w-sm">
-              <div className="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center">
-                <span className="material-symbols-outlined text-on-primary-container text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>speed</span>
-              </div>
-              <div>
-                <h4 className="font-headline font-bold text-on-surface">Rapid Cartographer</h4>
-                <p className="text-xs text-outline">Perfect score in under 60s</p>
-                <p className="text-[10px] text-primary font-bold mt-1">EARNED 3 WEEKS AGO</p>
-              </div>
-            </div>
-          </div>
+          )}
         </section>
       </div>
     </>

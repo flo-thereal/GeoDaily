@@ -12,11 +12,13 @@ import { Explore } from './pages/Explore';
 import { Profile } from './pages/Profile';
 import { Settings } from './pages/Settings';
 import { Welcome } from './pages/Welcome';
+import { Login } from './pages/Login';
 
 export default function App() {
   return (
     <Routes>
       <Route path="/welcome" element={<Welcome />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Dashboard />} />
         <Route path="explore" element={<Explore />} />

@@ -26,13 +26,14 @@ interface GameState {
   lastPlayedDate: string | null;
   points: number;
   dailyTasks: DailyTask[];
+  dailyTasksDate: string | null;
   currentTaskIndex: number;
   isDailyCompleted: boolean;
   history: Record<string, DailyHistory>;
   
   incrementStreak: () => void;
   addPoints: (points: number) => void;
-  setDailyTasks: (tasks: DailyTask[]) => void;
+  setDailyTasks: (tasks: DailyTask[], date: string) => void;
   nextTask: () => void;
   completeDaily: () => void;
   resetDaily: () => void;
@@ -46,6 +47,7 @@ export const useStore = create<GameState>()(
       lastPlayedDate: null,
       points: 0,
       dailyTasks: [],
+      dailyTasksDate: null,
       currentTaskIndex: 0,
       isDailyCompleted: false,
       history: {},
@@ -65,7 +67,7 @@ export const useStore = create<GameState>()(
       
       addPoints: (points) => set((state) => ({ points: state.points + points })),
       
-      setDailyTasks: (tasks) => set({ dailyTasks: tasks, currentTaskIndex: 0, isDailyCompleted: false }),
+      setDailyTasks: (tasks, date) => set({ dailyTasks: tasks, dailyTasksDate: date, currentTaskIndex: 0, isDailyCompleted: false }),
       
       nextTask: () => set((state) => ({ 
         currentTaskIndex: Math.min(state.currentTaskIndex + 1, state.dailyTasks.length - 1) 

@@ -1,8 +1,25 @@
+import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
+import { isAuthenticated, getCurrentUser, type UserProfile } from '../services/api';
+
+const isDev = process.env.NODE_ENV === 'development';
 
 export function Layout() {
   const location = useLocation();
+  const [user, setUser] = useState<UserProfile | null>(null);
+  const [authChecked, setAuthChecked] = useState(false);
+
+  useEffect(() => {
+    if (isAuthenticated()) {
+      getCurrentUser()
+        .then(setUser)
+        .catch(() => setUser(null))
+        .finally(() => setAuthChecked(true));
+    } else {
+      setAuthChecked(true);
+    }
+  }, []);
 
   const navItems = [
     { icon: 'explore', label: 'Exploration', path: '/' },
@@ -21,7 +38,14 @@ export function Layout() {
       {/* SideNavBar (Desktop) */}
       <aside className="hidden md:flex flex-col h-full py-8 space-y-2 bg-blue-50 dark:bg-slate-900 w-72 rounded-r-none border-r-0 sticky top-0 font-['Plus_Jakarta_Sans'] text-sm font-semibold">
         <div className="px-8 mb-10">
-          <h1 className="text-2xl font-black text-green-800 dark:text-green-300">GeoDaily</h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-black text-green-800 dark:text-green-300">GeoDaily</h1>
+            {isDev && (
+              <span className="px-1.5 py-0.5 text-[8px] font-bold uppercase bg-amber-200 dark:bg-amber-800 text-amber-800 dark:text-amber-200 rounded">
+                Dev
+              </span>
+            )}
+          </div>
           <p className="text-slate-500 text-[10px] uppercase tracking-widest mt-1">The Cartographic Canvas</p>
         </div>
         <div className="flex-1 space-y-1">
@@ -52,13 +76,37 @@ export function Layout() {
           </nav>
         </div>
         <div className="px-6 mt-auto">
-          <Link to="/profile" className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 hover:bg-blue-200 transition-colors">
-            <img alt="GeoDaily Explorer Avatar" className="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi1Uz4nTDCA86BFai3i9dHTWkcG2CbuP7IamAnXKSPvEqTJYzgYuhlipUdJv-SZQHLhRgdHXzqjn5amSt1ZkJMZk5DFy2uPLKHqF5GG-ZmV45Og_SRLNKE_yCdj9p_-m4LItDCGymK2yB_8PNpUqDE9YY7Mq3IH6TpsNhQfEWEmejf52INdaxJGUGgk3HqkDaHXi0nlmauYgLYo2nUZyAAjXxAuVhvfdKNIY-0D_TAoHDdBGGwCpaFzfjjQ07ksF3RTl31G1jLAGg0"/>
-            <div>
-              <p className="text-on-surface font-bold text-xs">The Canvas</p>
-              <p className="text-slate-500 text-[10px]">Master Cartographer</p>
+          {authChecked && user ? (
+            <Link to="/profile" className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 hover:bg-blue-200 dark:hover:bg-slate-700 transition-colors">
+              <img 
+                alt={`${user.displayName}'s avatar`} 
+                className="w-10 h-10 rounded-full object-cover" 
+                src={user.avatarUrl || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName)}&background=random`}
+              />
+              <div>
+                <p className="text-on-surface font-bold text-xs">{user.displayName}</p>
+                <p className="text-slate-500 text-[10px]">{user.title || `Level ${user.level}`}</p>
+              </div>
+            </Link>
+          ) : authChecked ? (
+            <Link to="/login" className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 hover:bg-blue-200 dark:hover:bg-slate-700 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-slate-300 dark:bg-slate-600 flex items-center justify-center">
+                <span className="material-symbols-outlined text-slate-500 dark:text-slate-400">person</span>
+              </div>
+              <div>
+                <p className="text-on-surface font-bold text-xs">Sign In</p>
+                <p className="text-slate-500 text-[10px]">Track your progress</p>
+              </div>
+            </Link>
+          ) : (
+            <div className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 animate-pulse">
+              <div className="w-10 h-10 rounded-full bg-slate-300 dark:bg-slate-600" />
+              <div className="space-y-1">
+                <div className="h-3 w-20 bg-slate-300 dark:bg-slate-600 rounded" />
+                <div className="h-2 w-16 bg-slate-200 dark:bg-slate-700 rounded" />
+              </div>
             </div>
-          </Link>
+          )}
           <Link to="/quiz/daily" className="block text-center w-full mt-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary py-3 rounded-full font-bold text-sm shadow-sm hover:scale-[0.98] active:scale-95 transition-all">
             Daily Discovery
           </Link>

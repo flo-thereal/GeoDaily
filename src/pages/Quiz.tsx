@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useStore, DailyTask, DailyHistory } from '../store/useStore';
-import { generateDailyTasks } from '../services/api';
-import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft } from 'lucide-react';
+import { generateDailyTasks, submitChallenge, isAuthenticated } from '../services/api';
+import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft, CloudOff, Cloud } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { cn } from '../lib/utils';
 import { MapQuiz } from '../components/MapQuiz';
@@ -29,7 +29,7 @@ export function Quiz() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  const { dailyTasks, setDailyTasks, currentTaskIndex, nextTask, completeDaily, addPoints, incrementStreak, history, saveHistory } = useStore();
+  const { dailyTasks, dailyTasksDate, setDailyTasks, currentTaskIndex, nextTask, completeDaily, addPoints, incrementStreak, history, saveHistory } = useStore();
   
   const searchParams = new URLSearchParams(location.search);
   const dateParam = searchParams.get('date');
@@ -50,6 +50,10 @@ export function Quiz() {
   // Track answers for history
   const [userAnswers, setUserAnswers] = useState<any[]>([]);
   const [sessionScore, setSessionScore] = useState(0);
+  
+  // Track server submission status
+  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const challengeStartTime = useRef<number>(Date.now());
 
   const isDaily = type === 'daily';
   
@@ -60,31 +64,38 @@ export function Quiz() {
 
   useEffect(() => {
     if (isReview && historyData) {
-      // Setup review mode state
+      // Setup review mode state - handled separately below
+      return;
+    }
+
+    if (isDaily) {
+      // Only load if no tasks exist OR if the loaded date differs from the target date
+      if (dailyTasks.length === 0 || dailyTasksDate !== targetDate) {
+        loadDailyTasks(targetDate);
+      }
+    } else {
+      loadPracticeTasks();
+    }
+  }, [type, isDaily, targetDate]);
+  
+  // Separate effect for review mode answer restoration
+  useEffect(() => {
+    if (isReview && historyData) {
       const answer = historyData.answers[currentIndex];
       if (answer) {
         setSelectedAnswer(answer.guess);
         setIsCorrect(answer.isCorrect);
         setShowResult(true);
       }
-      return;
     }
-
-    if (isDaily) {
-      if (dailyTasks.length === 0 || dateParam) {
-        loadDailyTasks(targetDate);
-      }
-    } else {
-      loadPracticeTasks();
-    }
-  }, [type, isDaily, isReview, currentIndex, targetDate]);
+  }, [isReview, historyData, currentIndex]);
 
   const loadDailyTasks = async (date: string) => {
     setLoading(true);
     setError(null);
     try {
       const tasks = await generateDailyTasks(date);
-      setDailyTasks(tasks);
+      setDailyTasks(tasks, date);
     } catch (err: any) {
       setError(err.message || "Failed to load tasks");
     } finally {
@@ -142,15 +153,40 @@ export function Quiz() {
       });
     }
     
-    // If it's the last question of a daily challenge, save to history
+    // If it's the last question of a daily challenge, save to history and submit to server
     if (isDaily && currentIndex === tasks.length - 1) {
+      const finalScore = sessionScore + pointsEarned;
+      
       saveHistory(targetDate, {
         date: targetDate,
         tasks: tasks,
         answers: newAnswers,
-        score: sessionScore + pointsEarned,
+        score: finalScore,
         completed: true
       });
+      
+      // Submit to server if user is authenticated (don't block on errors)
+      if (isAuthenticated()) {
+        setSubmissionStatus('submitting');
+        const timeTaken = Math.round((Date.now() - challengeStartTime.current) / 1000);
+        
+        submitChallenge({
+          date: targetDate,
+          tasks: tasks,
+          answers: newAnswers.map((a, idx) => ({
+            answer: a.guess,
+            isCorrect: a.isCorrect,
+          })),
+          score: finalScore,
+          maxScore: tasks.length * 100,
+          timeTaken,
+        })
+          .then(() => setSubmissionStatus('success'))
+          .catch((err) => {
+            console.error('Failed to submit challenge to server:', err);
+            setSubmissionStatus('error');
+          });
+      }
     }
   };
 
@@ -313,13 +349,38 @@ export function Quiz() {
 
       {/* Next Button */}
       {showResult && (
-        <button
-          onClick={handleNext}
-          className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors shadow-md animate-in slide-in-from-bottom-4"
-        >
-          {currentIndex < tasks.length - 1 ? 'Next Question' : (isReview ? 'Back to Dashboard' : 'Finish Challenge')}
-          <ArrowRight className="w-5 h-5" />
-        </button>
+        <div className="space-y-3">
+          {/* Submission status indicator for last question of daily challenge */}
+          {isDaily && currentIndex === tasks.length - 1 && isAuthenticated() && (
+            <div className="flex items-center justify-center gap-2 text-sm">
+              {submissionStatus === 'submitting' && (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin text-on-surface-variant" />
+                  <span className="text-on-surface-variant">Saving results...</span>
+                </>
+              )}
+              {submissionStatus === 'success' && (
+                <>
+                  <Cloud className="w-4 h-4 text-primary" />
+                  <span className="text-primary">Results saved</span>
+                </>
+              )}
+              {submissionStatus === 'error' && (
+                <>
+                  <CloudOff className="w-4 h-4 text-on-surface-variant" />
+                  <span className="text-on-surface-variant">Results saved locally</span>
+                </>
+              )}
+            </div>
+          )}
+          <button
+            onClick={handleNext}
+            className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors shadow-md animate-in slide-in-from-bottom-4"
+          >
+            {currentIndex < tasks.length - 1 ? 'Next Question' : (isReview ? 'Back to Dashboard' : 'Finish Challenge')}
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
       )}
     </div>
   );

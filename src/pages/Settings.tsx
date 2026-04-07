@@ -1,4 +1,147 @@
+import { useState, useEffect, useCallback } from 'react';
+import { getUserSettings, updateSettings, UserSettings, logout, isAuthenticated, getCurrentUser, UserProfile } from '../services/api';
+import { useNavigate } from 'react-router-dom';
+
+interface SettingsState {
+  language: string;
+  dailyReminderEnabled: boolean;
+  dailyReminderTime: string;
+  soundEnabled: boolean;
+  hapticEnabled: boolean;
+  theme: string;
+}
+
+const LANGUAGE_OPTIONS = [
+  { value: 'en', label: 'English (International)' },
+  { value: 'fr', label: 'Français (Monde)' },
+  { value: 'es', label: 'Español (Global)' },
+  { value: 'de', label: 'Deutsch' },
+  { value: 'pt', label: 'Português' },
+];
+
+function convertApiSettingsToState(apiSettings: UserSettings): SettingsState {
+  return {
+    language: apiSettings.language,
+    dailyReminderEnabled: apiSettings.daily_reminder_enabled,
+    dailyReminderTime: apiSettings.daily_reminder_time?.slice(0, 5) || '09:00',
+    soundEnabled: apiSettings.sound_enabled,
+    hapticEnabled: apiSettings.haptic_enabled,
+    theme: apiSettings.theme,
+  };
+}
+
+function Toggle({ enabled, onToggle, disabled }: { enabled: boolean; onToggle: () => void; disabled?: boolean }) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      disabled={disabled}
+      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+        enabled ? 'bg-primary' : 'bg-outline-variant'
+      } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+    >
+      <span
+        className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+          enabled ? 'translate-x-6' : 'translate-x-1'
+        }`}
+      />
+    </button>
+  );
+}
+
 export function Settings() {
+  const navigate = useNavigate();
+  const [user, setUser] = useState<UserProfile | null>(null);
+  const [settings, setSettings] = useState<SettingsState | null>(null);
+  const [originalSettings, setOriginalSettings] = useState<SettingsState | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+  const fetchSettings = useCallback(async () => {
+    if (!isAuthenticated()) {
+      navigate('/login');
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+    try {
+      const [apiSettings, userProfile] = await Promise.all([
+        getUserSettings(),
+        getCurrentUser(),
+      ]);
+      const stateSettings = convertApiSettingsToState(apiSettings);
+      setSettings(stateSettings);
+      setOriginalSettings(stateSettings);
+      setUser(userProfile);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load settings');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    fetchSettings();
+  }, [fetchSettings]);
+
+  const handleSave = async () => {
+    if (!settings) return;
+
+    setIsSaving(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      await updateSettings({
+        language: settings.language,
+        dailyReminderEnabled: settings.dailyReminderEnabled,
+        dailyReminderTime: settings.dailyReminderTime,
+        soundEnabled: settings.soundEnabled,
+        hapticEnabled: settings.hapticEnabled,
+        theme: settings.theme,
+      });
+      setOriginalSettings(settings);
+      setSuccessMessage('Settings saved successfully!');
+      setTimeout(() => setSuccessMessage(null), 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to save settings');
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleReset = () => {
+    if (originalSettings) {
+      setSettings(originalSettings);
+    }
+  };
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/login');
+  };
+
+  const updateSetting = <K extends keyof SettingsState>(key: K, value: SettingsState[K]) => {
+    setSettings(prev => prev ? { ...prev, [key]: value } : null);
+  };
+
+  const hasChanges = settings && originalSettings && 
+    JSON.stringify(settings) !== JSON.stringify(originalSettings);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+          <p className="text-on-surface-variant">Loading settings...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       {/* TopAppBar Mobile / Header */}
@@ -13,11 +156,32 @@ export function Settings() {
           <button className="p-2 rounded-full hover:bg-white/50 dark:hover:bg-slate-700/50 transition-colors scale-95 active:scale-90 transition-transform duration-200">
             <span className="material-symbols-outlined text-slate-600 dark:text-slate-400">notifications</span>
           </button>
-          <img alt="User profile settings" className="w-10 h-10 rounded-full border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0l3QWh8UhmESWCrmx1YF_NcumrPnqvKpm_8H7ajBMAYhx36KWT_6b3IDiVPUparWetUi7CNKI2fefvhWjfJ5zyMsaAWcXxUZPPstRSPuZJRkmwpRq7cVRDQGS5baK0exgnsUXFe9PVXnWvOi9y3ioirACqZ_CmehGOW0ayFJOcBJ8e9FImFcJr1ZJLUEvgndCehv3GPRnkJ8pQIQlAK0qRKKuEMDdv1rfoYSgcRpro4hG5gMcHt_TnnM1IO-tf3zFHuN5cjPM-xUV"/>
+          <img 
+            alt="User profile settings" 
+            className="w-10 h-10 rounded-full border-2 border-primary-container" 
+            src={user?.avatarUrl || "https://lh3.googleusercontent.com/aida-public/AB6AXuD0l3QWh8UhmESWCrmx1YF_NcumrPnqvKpm_8H7ajBMAYhx36KWT_6b3IDiVPUparWetUi7CNKI2fefvhWjfJ5zyMsaAWcXxUZPPstRSPuZJRkmwpRq7cVRDQGS5baK0exgnsUXFe9PVXnWvOi9y3ioirACqZ_CmehGOW0ayFJOcBJ8e9FImFcJr1ZJLUEvgndCehv3GPRnkJ8pQIQlAK0qRKKuEMDdv1rfoYSgcRpro4hG5gMcHt_TnnM1IO-tf3zFHuN5cjPM-xUV"}
+          />
         </div>
       </header>
 
       <div className="p-6 md:p-12 max-w-5xl mx-auto w-full space-y-12">
+        {/* Error/Success Messages */}
+        {error && (
+          <div className="bg-error/10 border border-error/30 text-error px-6 py-4 rounded-lg flex items-center gap-3">
+            <span className="material-symbols-outlined">error</span>
+            <span>{error}</span>
+            <button onClick={() => setError(null)} className="ml-auto">
+              <span className="material-symbols-outlined">close</span>
+            </button>
+          </div>
+        )}
+        {successMessage && (
+          <div className="bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-400 px-6 py-4 rounded-lg flex items-center gap-3">
+            <span className="material-symbols-outlined">check_circle</span>
+            <span>{successMessage}</span>
+          </div>
+        )}
+
         {/* Intro Section */}
         <section className="space-y-4">
           <p className="font-headline text-label-sm font-bold uppercase tracking-[0.2em] text-primary">Explorer Preferences</p>
@@ -37,7 +201,13 @@ export function Settings() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="font-label text-xs font-bold text-on-surface-variant px-1">Email Address</label>
-                  <input className="w-full bg-surface-container-lowest border-none rounded p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="Enter your email" type="email" defaultValue="alex.explorer@geodaily.com"/>
+                  <input 
+                    className="w-full bg-surface-container-lowest border-none rounded p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none" 
+                    placeholder="Enter your email" 
+                    type="email" 
+                    value={user?.email || ''}
+                    disabled
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="font-label text-xs font-bold text-on-surface-variant px-1">Current Password</label>
@@ -60,12 +230,15 @@ export function Settings() {
               </div>
               <div className="space-y-2">
                 <label className="font-label text-xs font-bold text-on-surface-variant px-1">Primary Discovery Language</label>
-                <select className="w-full bg-surface-container-lowest border-none rounded p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none">
-                  <option defaultValue="English (International)">English (International)</option>
-                  <option>Français (Monde)</option>
-                  <option>Español (Global)</option>
-                  <option>Deutsch</option>
-                  <option>Português</option>
+                <select 
+                  className="w-full bg-surface-container-lowest border-none rounded p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none"
+                  value={settings?.language || 'en'}
+                  onChange={(e) => updateSetting('language', e.target.value)}
+                  disabled={isSaving}
+                >
+                  {LANGUAGE_OPTIONS.map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -82,14 +255,22 @@ export function Settings() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium text-on-surface">Enable Reminders</span>
-                  <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-primary transition-colors">
-                    <span className="inline-block h-4 w-4 translate-x-6 transform rounded-full bg-white transition-transform"></span>
-                  </button>
+                  <Toggle
+                    enabled={settings?.dailyReminderEnabled ?? true}
+                    onToggle={() => updateSetting('dailyReminderEnabled', !settings?.dailyReminderEnabled)}
+                    disabled={isSaving}
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="font-label text-xs font-bold text-on-surface-variant px-1">Reminder Time</label>
                   <div className="flex items-center gap-2">
-                    <input className="flex-1 bg-surface-container-lowest border-none rounded p-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none text-center font-bold" type="time" defaultValue="09:00"/>
+                    <input 
+                      className="flex-1 bg-surface-container-lowest border-none rounded p-3 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none text-center font-bold" 
+                      type="time" 
+                      value={settings?.dailyReminderTime || '09:00'}
+                      onChange={(e) => updateSetting('dailyReminderTime', e.target.value)}
+                      disabled={isSaving || !settings?.dailyReminderEnabled}
+                    />
                     <span className="bg-primary-container text-on-primary-container p-3 rounded-full material-symbols-outlined">schedule</span>
                   </div>
                 </div>
@@ -111,18 +292,22 @@ export function Settings() {
                     <span className="text-sm font-bold text-on-surface">Haptic Feedback</span>
                     <span className="text-[10px] text-on-surface-variant">Vibration on discovery</span>
                   </div>
-                  <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-primary transition-colors">
-                    <span className="inline-block h-4 w-4 translate-x-6 transform rounded-full bg-white transition-transform"></span>
-                  </button>
+                  <Toggle
+                    enabled={settings?.hapticEnabled ?? true}
+                    onToggle={() => updateSetting('hapticEnabled', !settings?.hapticEnabled)}
+                    disabled={isSaving}
+                  />
                 </div>
                 <div className="flex items-center justify-between group">
                   <div className="flex flex-col">
                     <span className="text-sm font-bold text-on-surface">Atmospheric Sound</span>
                     <span className="text-[10px] text-on-surface-variant">Environmental SFX</span>
                   </div>
-                  <button className="relative inline-flex h-6 w-11 items-center rounded-full bg-outline-variant transition-colors">
-                    <span className="inline-block h-4 w-4 translate-x-1 transform rounded-full bg-white transition-transform"></span>
-                  </button>
+                  <Toggle
+                    enabled={settings?.soundEnabled ?? true}
+                    onToggle={() => updateSetting('soundEnabled', !settings?.soundEnabled)}
+                    disabled={isSaving}
+                  />
                 </div>
               </div>
             </div>
@@ -132,13 +317,41 @@ export function Settings() {
         {/* Footer Action */}
         <footer className="pt-8 border-t-0 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <button className="text-error font-bold text-sm px-4 py-2 hover:bg-error/5 rounded-full transition-colors">Sign Out of Account</button>
+            <button 
+              onClick={handleSignOut}
+              className="text-error font-bold text-sm px-4 py-2 hover:bg-error/5 rounded-full transition-colors"
+            >
+              Sign Out of Account
+            </button>
             <div className="h-4 w-px bg-outline-variant/30 hidden md:block"></div>
             <button className="text-on-surface-variant font-medium text-sm px-4 py-2 hover:bg-surface-variant rounded-full transition-colors">Privacy Policy</button>
           </div>
           <div className="flex gap-4 w-full md:w-auto">
-            <button className="flex-1 md:flex-none px-8 py-4 text-on-surface-variant font-bold hover:bg-surface-container transition-colors rounded-full">Reset Changes</button>
-            <button className="flex-1 md:flex-none px-12 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">Save All Changes</button>
+            <button 
+              onClick={handleReset}
+              disabled={!hasChanges || isSaving}
+              className={`flex-1 md:flex-none px-8 py-4 text-on-surface-variant font-bold hover:bg-surface-container transition-colors rounded-full ${
+                (!hasChanges || isSaving) ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+            >
+              Reset Changes
+            </button>
+            <button 
+              onClick={handleSave}
+              disabled={!hasChanges || isSaving}
+              className={`flex-1 md:flex-none px-12 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold rounded-full shadow-lg shadow-primary/20 transition-all ${
+                (!hasChanges || isSaving) ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-95'
+              }`}
+            >
+              {isSaving ? (
+                <span className="flex items-center gap-2">
+                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Saving...
+                </span>
+              ) : (
+                'Save All Changes'
+              )}
+            </button>
           </div>
         </footer>
       </div>

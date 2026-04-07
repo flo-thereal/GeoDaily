@@ -1,11 +1,83 @@
+import { useState, useEffect, useMemo } from 'react';
+import { getCountries, getRegions, Country } from '../services/api';
+
+function formatPopulation(pop: number): string {
+  if (pop >= 1_000_000_000) return `${(pop / 1_000_000_000).toFixed(1)}B`;
+  if (pop >= 1_000_000) return `${(pop / 1_000_000).toFixed(1)}M`;
+  if (pop >= 1_000) return `${(pop / 1_000).toFixed(1)}K`;
+  return pop.toString();
+}
+
+function formatArea(area: number): string {
+  return area.toLocaleString() + ' km²';
+}
+
 export function Explore() {
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [regions, setRegions] = useState<{ region: string; count: number }[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        const [countriesData, regionsData] = await Promise.all([
+          getCountries(),
+          getRegions(),
+        ]);
+        setCountries(countriesData);
+        setRegions(regionsData);
+        if (countriesData.length > 0) {
+          setSelectedCountry(countriesData[0]);
+        }
+      } catch (err) {
+        console.error('Failed to fetch data:', err);
+        setError('Failed to load countries. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  const filteredCountries = useMemo(() => {
+    let result = countries;
+
+    if (selectedRegion) {
+      result = result.filter((c) => c.region === selectedRegion);
+    }
+
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(
+        (c) =>
+          c.name.toLowerCase().includes(query) ||
+          c.capital?.toLowerCase().includes(query) ||
+          c.region?.toLowerCase().includes(query)
+      );
+    }
+
+    return result.sort((a, b) => a.name.localeCompare(b.name));
+  }, [countries, selectedRegion, searchQuery]);
+
   return (
     <>
       <header className="w-full sticky top-0 z-50 bg-blue-50/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
         <div className="flex items-center gap-4 flex-1">
           <div className="relative max-w-md w-full">
             <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-            <input className="w-full bg-surface-container-low border-none rounded-DEFAULT pl-12 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Search countries, capitals, or regions..." type="text"/>
+            <input
+              className="w-full bg-surface-container-low border-none rounded-DEFAULT pl-12 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all"
+              placeholder="Search countries, capitals, or regions..."
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -33,152 +105,181 @@ export function Explore() {
 
         {/* Filters Bar */}
         <section className="flex flex-wrap items-center gap-3">
-          <button className="px-6 py-2 bg-tertiary-container text-on-tertiary-container rounded-full font-headline text-sm font-bold shadow-sm transition-all active:scale-95">All Regions</button>
-          <button className="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline text-sm font-semibold hover:bg-white transition-all active:scale-95">Europe</button>
-          <button className="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline text-sm font-semibold hover:bg-white transition-all active:scale-95">Asia</button>
-          <button className="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline text-sm font-semibold hover:bg-white transition-all active:scale-95">Africa</button>
-          <button className="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline text-sm font-semibold hover:bg-white transition-all active:scale-95">Americas</button>
-          <button className="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-headline text-sm font-semibold hover:bg-white transition-all active:scale-95">Oceania</button>
+          <button
+            onClick={() => setSelectedRegion(null)}
+            className={`px-6 py-2 rounded-full font-headline text-sm font-bold shadow-sm transition-all active:scale-95 ${
+              selectedRegion === null
+                ? 'bg-tertiary-container text-on-tertiary-container'
+                : 'bg-surface-container-high text-on-surface-variant hover:bg-white'
+            }`}
+          >
+            All Regions
+          </button>
+          {regions.map((r) => (
+            <button
+              key={r.region}
+              onClick={() => setSelectedRegion(r.region)}
+              className={`px-6 py-2 rounded-full font-headline text-sm font-semibold transition-all active:scale-95 ${
+                selectedRegion === r.region
+                  ? 'bg-tertiary-container text-on-tertiary-container font-bold shadow-sm'
+                  : 'bg-surface-container-high text-on-surface-variant hover:bg-white'
+              }`}
+            >
+              {r.region} ({r.count})
+            </button>
+          ))}
           <div className="ml-auto flex items-center gap-2 text-outline">
             <span className="material-symbols-outlined text-sm">sort</span>
             <span className="font-label text-xs font-bold uppercase tracking-widest">Sort by: A-Z</span>
           </div>
         </section>
 
-        {/* Main Grid & Detail Sidebar Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Countries Grid */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6">
-            {/* Country Card 1 (Active/Selected) */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer ring-2 ring-primary/20">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="Japan" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhSbjrHcFbmHV7ucq5L1zcSG8u8Xhj76MNiElVgFD4L6_GEatd8Kuy-2AT_MFon03xRsT-BuMQ_REqJBqgVBWrIcsEq5FNSrGDahu85YRtyf0mFwvg_gL6d3LofltdNwSrX6o_Ub3XpMKAnDfzrACrnnaoK_7fWR2_pbmRmRXaiMlhS4wRYr7AcgWZYUPe7ME8cQCzW1iAvWCO4pOKyKkthFehu5klliaZrUFpNXx1LH4LLLW9aC4w0hnTYJvgab1x3FEaO76dxoPw"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">Japan</h3>
-              <p className="text-xs text-outline font-medium mt-1">East Asia</p>
-            </div>
-            
-            {/* Country Card 2 */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="India" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1ZrhBI2-rnx2ixAM26C5Bta5U8WmlVmtNbBv58kXyZ9XHE3h1ojjIUqiP__UTjPiEt84rPdgzlaxnFiz8jwEJXSWrjUjWZYvb5lNLVL7s-XhAIBrgBwiBTQH1BdiIXAQ13TDVNePg-bzua0RyhqbEDyzuw_0xyOW2RklWDA2Q0Fe9437Hi5k02oOkAQlJrs05nzUTjICZ3Yh_L_93NXBWqEQcCKjDk7IFxNCoZ1ei47oHPLxwMRJVFvr0O-9OBv_dKhdsbP0eTdss"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">India</h3>
-              <p className="text-xs text-outline font-medium mt-1">South Asia</p>
-            </div>
-            
-            {/* Country Card 3 */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="Russia" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAQYnpvigqngA-HJS0BVcdRSmiv6jQvC8wl-a02hTbpyGnLqNuBG-8NdyB_4Y5eISFh4epR9goQa3GozbSiR1f6UNCVixUWVEGbvVQVOKP_OUHREJmh1LiHMKIAG2dlqO3LzNBUPvulQ2hbp9auQFpCaQ37F1ekwaVBYAKhueUDkPmXVUmRWKykzDFxhnFE7QqhHLYZzdjCHWg7KsDKUUFEBkOoQpCzPkYN6_0pU_ow-6Xzv-5q8FlOLEY5H4czQoFUXmT_Rn7Aqjh"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">Russia</h3>
-              <p className="text-xs text-outline font-medium mt-1">Europe/Asia</p>
-            </div>
-            
-            {/* Country Card 4 */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="Portugal" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdLqb0mvdCyjG0UT8yJ1AZA956b7g3l07bgvediNLAckVm69xkcfvy6AhwBchi5BiMxWv71EFvrmu146FTS1pr4LkfG2gg-5O_gRZFLKltg3LhtN-505PzfCHSoe8OySgZRiEv3IzAzk3y2CztpAsvgGIlkAYqrBpwaZUtoRaahYlXbLlQp43sDy9t_o-Y6mRabvHIuEjl7U4BzQzRvN850SBVlZpyyuNeTs7MEJuOTIPNP5xKRC0F6pozpoSt_Hq94fBiZatFXWb7"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">Portugal</h3>
-              <p className="text-xs text-outline font-medium mt-1">Southern Europe</p>
-            </div>
-            
-            {/* Country Card 5 */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="Kenya" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM28R1lgdZdcVdiLej2af5ojjpMaN1GO6wupodeQO4ZeoDHO9vr7zYemw0NAUaAQStOllwYDzfN15-mDLxNKwQnHusr4HtgJshnx5vwY26-xDvSxy-XcPiu8hImDsRie-qEe1lZBUvg0bDmCqgUfcdkBAEOq7igIkEUrM8bjvY0LN8r9Ef2TgB8Qw2NLYiXLapEC17NX6pcQ1ot6kSeVRGRY8xh-lrOm_eyYfB27lYHojDRRoXlcpkW_oCkf8s-nM9QBUBqw8bVnj5"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">Kenya</h3>
-              <p className="text-xs text-outline font-medium mt-1">East Africa</p>
-            </div>
-            
-            {/* Country Card 6 */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="Australia" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5zl92e4YabkRoaFBQXxsrzEORhfvRkr-IrkmjpY0C9nNmvdAvLfSWaH0dI8z_ma5H45XvNsJVOyV_z66K0k21s3QpqDnk7HLBKtJiOFE2yuJi2cH7bIEMOHNOxR61tY5DPID8Xlshj3akFnT5vldlvCie45azrW8HUeW81rI15ZkugHbm6VoGizndmdpkJRYkgc8ijjL9RHJmjRYrWRK9T6aLvW_uYJfKpNTHs2WdsUARieXbQ8veya_9luX5s_ZjhNeiyG5YRibh"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">Australia</h3>
-              <p className="text-xs text-outline font-medium mt-1">Oceania</p>
-            </div>
-            
-            {/* Country Card 7 */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="Brazil" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsHPytCS6pAc2_P_EIbKwwwJ1578u0Gc8TI7F07Dpj1Uo0-OePXuFP0deRzkeLkKgs4uRA-zyMwBzG9ESO2bAbfq7catMw0KNGCjeAHCJJsrwZYoFJL0-l3JuIVDWlK1P7YGkFpMCwzlFWvMcCsLfTq32dJxW8y-Tyla3xEkD1mJpJ16qlQqbXfUsm1gTS0XrktrG0w6O4tzUfFpPpejgj4ElflujM5E-ahfk0WCyomApWgFR9x_4C3oBB-Kwv52AQllAD15QyMpIc"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">Brazil</h3>
-              <p className="text-xs text-outline font-medium mt-1">South America</p>
-            </div>
-            
-            {/* Country Card 8 */}
-            <div className="group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer">
-              <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm">
-                <img alt="Canada" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7yisn7qArU4t-2myuWLkMuSyvTrKfgEIw4a0IjYJzf-9MM7tSp7Vn9op_GGHuLe5X8o8nEwnKrtGMmrvTf2wZEC7A0XxWjzJPs9HQjPzxgIpD7Eq3p-BFY7nbBonYQ0z9_jB1vkYbXtOnq6PiaXLqX6R_iJ_5eeuIoRmGWrgTHLno-dLSaskAMW2MpTqSaT84DrUpnL00ckuPu9Y5m8ydDZ70nxa3JJ2tCjJkDc6qMQJ8eNidzH8xvrGyMM7SS1lTJjGoMnZyUs7F"/>
-              </div>
-              <h3 className="font-headline font-bold text-on-surface">Canada</h3>
-              <p className="text-xs text-outline font-medium mt-1">North America</p>
+        {/* Loading State */}
+        {loading && (
+          <div className="flex items-center justify-center py-20">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+              <p className="text-on-surface-variant font-medium">Loading countries...</p>
             </div>
           </div>
+        )}
 
-          {/* Fact Sidebar (The Modern Library Panel) */}
-          <aside className="lg:col-span-4">
-            <div className="sticky top-28 bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl shadow-on-surface/5 border border-white/50">
-              <div className="h-48 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent z-10"></div>
-                <img alt="Japan Map" className="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAncl3TSXKCwA2s8EJ2TOP9dFJ1-HoVGM_Lg70U3b_xBYXIAElOhbG-DFZAu1DU6bQcuRzJADK4LP1lENAKOc7UFwNlhmiZ8taeZz5Sew2FQx2U96-WGV7lab-4v5SvOh1LLr9cWUO9nQVkReEh8a_gKKW6DN-2GUhi3Ny_3cZDKDXdgYVIBI4ncdtpgAvNlBEtYihHtomdxF3qJ9CDHqFh0DEHLwMq60QTBMe24wmoDJ-yFwApwOWcSTHJvtDiMlnlJD7lTpJZAl1F"/>
-                <div className="absolute bottom-4 left-6 z-20">
-                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-[10px] font-black uppercase tracking-tighter mb-2 inline-block">Active Selection</span>
-                  <h4 className="text-3xl font-headline font-black text-on-surface">Japan</h4>
-                </div>
-              </div>
-              <div className="p-8 space-y-8">
-                {/* Quick Facts */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/40 p-4 rounded-DEFAULT">
-                    <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Capital</p>
-                    <p className="font-headline font-bold text-on-surface">Tokyo</p>
-                  </div>
-                  <div className="bg-white/40 p-4 rounded-DEFAULT">
-                    <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Region</p>
-                    <p className="font-headline font-bold text-on-surface">East Asia</p>
-                  </div>
-                  <div className="bg-white/40 p-4 rounded-DEFAULT">
-                    <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Population</p>
-                    <p className="font-headline font-bold text-on-surface">125.7M</p>
-                  </div>
-                  <div className="bg-white/40 p-4 rounded-DEFAULT">
-                    <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Currency</p>
-                    <p className="font-headline font-bold text-on-surface">JPY (¥)</p>
-                  </div>
-                </div>
-
-                {/* Borders */}
-                <div>
-                  <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-3">Bordering Maritime Zones</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-semibold">Sea of Japan</span>
-                    <span className="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-semibold">East China Sea</span>
-                    <span className="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-semibold">Pacific Ocean</span>
-                  </div>
-                </div>
-
-                {/* Context Summary */}
-                <div className="bg-primary/5 p-6 rounded-DEFAULT border-l-4 border-primary">
-                  <p className="text-sm text-on-surface leading-relaxed italic">
-                    "An archipelago of 6,852 islands, Japan combines ancient traditions with ultra-modern technology. Its geography is 73% mountainous, featuring the iconic Mount Fuji."
-                  </p>
-                </div>
-
-                <button className="w-full py-4 bg-secondary text-on-secondary rounded-full font-headline font-bold text-sm shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
-                  <span className="material-symbols-outlined text-lg">book</span>
-                  Full Entry
-                </button>
-              </div>
+        {/* Error State */}
+        {error && !loading && (
+          <div className="flex items-center justify-center py-20">
+            <div className="flex flex-col items-center gap-4 text-center max-w-md">
+              <span className="material-symbols-outlined text-5xl text-error">error</span>
+              <p className="text-on-surface font-headline font-bold text-lg">{error}</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="px-6 py-2 bg-primary text-on-primary rounded-full font-headline text-sm font-bold transition-all active:scale-95"
+              >
+                Retry
+              </button>
             </div>
-          </aside>
-        </div>
+          </div>
+        )}
+
+        {/* Main Grid & Detail Sidebar Layout */}
+        {!loading && !error && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Countries Grid */}
+            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredCountries.length === 0 ? (
+                <div className="col-span-full flex flex-col items-center justify-center py-12 text-center">
+                  <span className="material-symbols-outlined text-4xl text-outline mb-4">search_off</span>
+                  <p className="text-on-surface-variant font-medium">No countries found matching your criteria.</p>
+                </div>
+              ) : (
+                filteredCountries.map((country) => (
+                  <div
+                    key={country.code}
+                    onClick={() => setSelectedCountry(country)}
+                    className={`group bg-surface-container-lowest p-4 rounded-lg flex flex-col items-center text-center transition-all hover:scale-[1.02] cursor-pointer ${
+                      selectedCountry?.code === country.code ? 'ring-2 ring-primary/20' : ''
+                    }`}
+                  >
+                    <div className="w-full aspect-[3/2] rounded-DEFAULT overflow-hidden mb-4 bg-surface-container shadow-sm flex items-center justify-center">
+                      <span className="text-6xl group-hover:scale-110 transition-transform duration-500">
+                        {country.flagEmoji}
+                      </span>
+                    </div>
+                    <h3 className="font-headline font-bold text-on-surface">{country.name}</h3>
+                    <p className="text-xs text-outline font-medium mt-1">{country.subregion || country.region}</p>
+                  </div>
+                ))
+              )}
+            </div>
+
+            {/* Fact Sidebar (The Modern Library Panel) */}
+            <aside className="lg:col-span-4">
+              {selectedCountry ? (
+                <div className="sticky top-28 bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl shadow-on-surface/5 border border-white/50">
+                  <div className="h-48 relative overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10">
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent z-10"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-[120px]">{selectedCountry.flagEmoji}</span>
+                    </div>
+                    <div className="absolute bottom-4 left-6 z-20">
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-[10px] font-black uppercase tracking-tighter mb-2 inline-block">Active Selection</span>
+                      <h4 className="text-3xl font-headline font-black text-on-surface">{selectedCountry.name}</h4>
+                    </div>
+                  </div>
+                  <div className="p-8 space-y-8">
+                    {/* Quick Facts */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white/40 p-4 rounded-DEFAULT">
+                        <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Capital</p>
+                        <p className="font-headline font-bold text-on-surface">{selectedCountry.capital || 'N/A'}</p>
+                      </div>
+                      <div className="bg-white/40 p-4 rounded-DEFAULT">
+                        <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Region</p>
+                        <p className="font-headline font-bold text-on-surface">{selectedCountry.subregion || selectedCountry.region}</p>
+                      </div>
+                      <div className="bg-white/40 p-4 rounded-DEFAULT">
+                        <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Population</p>
+                        <p className="font-headline font-bold text-on-surface">{formatPopulation(selectedCountry.population)}</p>
+                      </div>
+                      <div className="bg-white/40 p-4 rounded-DEFAULT">
+                        <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-1">Area</p>
+                        <p className="font-headline font-bold text-on-surface">{formatArea(selectedCountry.areaKm2)}</p>
+                      </div>
+                    </div>
+
+                    {/* Languages */}
+                    {selectedCountry.languages && selectedCountry.languages.length > 0 && (
+                      <div>
+                        <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-3">Languages</p>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedCountry.languages.map((lang) => (
+                            <span key={lang} className="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-semibold">
+                              {lang}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Borders */}
+                    {selectedCountry.borders && selectedCountry.borders.length > 0 && (
+                      <div>
+                        <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-3">Bordering Countries</p>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedCountry.borders.map((border) => (
+                            <span key={border} className="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-semibold">
+                              {border}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Description */}
+                    {selectedCountry.description && (
+                      <div className="bg-primary/5 p-6 rounded-DEFAULT border-l-4 border-primary">
+                        <p className="text-sm text-on-surface leading-relaxed italic">
+                          "{selectedCountry.description}"
+                        </p>
+                      </div>
+                    )}
+
+                    <button className="w-full py-4 bg-secondary text-on-secondary rounded-full font-headline font-bold text-sm shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
+                      <span className="material-symbols-outlined text-lg">book</span>
+                      Full Entry
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="sticky top-28 bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl shadow-on-surface/5 border border-white/50 p-8">
+                  <div className="flex flex-col items-center justify-center text-center py-12">
+                    <span className="material-symbols-outlined text-5xl text-outline mb-4">public</span>
+                    <p className="text-on-surface-variant font-medium">Select a country to view details</p>
+                  </div>
+                </div>
+              )}
+            </aside>
+          </div>
+        )}
       </div>
     </>
   );

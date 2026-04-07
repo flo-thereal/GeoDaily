@@ -1,10 +1,45 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Play, Flame, Star, CheckCircle2, History, ChevronRight } from 'lucide-react';
-import { useStore } from '../store/useStore';
+import { Play, Flame, Star, CheckCircle2, History, ChevronRight, LogIn, Loader2 } from 'lucide-react';
+import { useStore, DailyHistory } from '../store/useStore';
+import { isAuthenticated, getUserStats, getChallengeHistory, UserStats } from '../services/api';
 
 export function Dashboard() {
   const navigate = useNavigate();
-  const { streak, points, history } = useStore();
+  const localStore = useStore();
+  
+  const [isLoading, setIsLoading] = useState(true);
+  const [apiStats, setApiStats] = useState<UserStats | null>(null);
+  const [apiHistory, setApiHistory] = useState<Record<string, DailyHistory> | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    async function fetchData() {
+      const authenticated = isAuthenticated();
+      setIsLoggedIn(authenticated);
+      
+      if (authenticated) {
+        try {
+          const [stats, history] = await Promise.all([
+            getUserStats(),
+            getChallengeHistory(30)
+          ]);
+          setApiStats(stats);
+          setApiHistory(history);
+        } catch (error) {
+          console.error('Failed to fetch user data:', error);
+          // Fall back to local store data
+        }
+      }
+      setIsLoading(false);
+    }
+    fetchData();
+  }, []);
+
+  // Use API data if available, otherwise fall back to local store
+  const streak = apiStats?.currentStreak ?? localStore.streak;
+  const points = apiStats?.totalPoints ?? localStore.points;
+  const history = apiHistory ?? localStore.history;
 
   // Generate last 7 days
   const today = new Date();
@@ -26,14 +61,30 @@ export function Dashboard() {
           <p className="text-on-surface-variant mt-2 text-lg">Ready for your daily geography challenge?</p>
         </div>
         <div className="flex gap-4">
-          <div className="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full font-bold shadow-sm">
-            <Flame className="w-5 h-5 text-tertiary-container" />
-            <span className="text-lg">{streak}</span>
-          </div>
-          <div className="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full font-bold shadow-sm">
-            <Star className="w-5 h-5 text-yellow-500" />
-            <span className="text-lg">{points}</span>
-          </div>
+          {isLoading ? (
+            <div className="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
+              <Loader2 className="w-5 h-5 animate-spin text-outline" />
+            </div>
+          ) : isLoggedIn ? (
+            <>
+              <div className="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full font-bold shadow-sm">
+                <Flame className="w-5 h-5 text-tertiary-container" />
+                <span className="text-lg">{streak}</span>
+              </div>
+              <div className="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full font-bold shadow-sm">
+                <Star className="w-5 h-5 text-yellow-500" />
+                <span className="text-lg">{points}</span>
+              </div>
+            </>
+          ) : (
+            <button
+              onClick={() => navigate('/login')}
+              className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-full font-bold transition-colors"
+            >
+              <LogIn className="w-5 h-5" />
+              <span className="text-sm">Sign in to track stats</span>
+            </button>
+          )}
         </div>
       </header>
 
