@@ -57,6 +57,11 @@ jobs:
         run: |
           npm run dev > /tmp/geodaily-dev.log 2>&1 &
           SERVER_PID=$!
+          cleanup() {
+            kill "$SERVER_PID" 2>/dev/null || true
+            pkill -f "tsx server.ts" 2>/dev/null || true
+          }
+          trap cleanup EXIT
           for i in {1..30}; do
             if curl -sf http://localhost:3000/api/health > /dev/null; then
               break
@@ -64,7 +69,6 @@ jobs:
             sleep 2
           done
           npm run test:api
-          kill "$SERVER_PID"
 
       - name: Run persistence E2E tests
         run: npx playwright test tests/e2e/persistence.spec.ts --reporter=line
