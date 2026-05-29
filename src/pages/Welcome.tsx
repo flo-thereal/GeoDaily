@@ -113,7 +113,7 @@ export function Welcome() {
         <div className="flex items-center gap-8">
           <a className="hidden md:block text-sm font-label font-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Methodology</a>
           <a className="hidden md:block text-sm font-label font-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Leaderboard</a>
-          <Link to="/" className="bg-surface-container-highest px-5 py-2.5 rounded-full text-sm font-bold text-on-surface hover:bg-surface-container-high transition-colors">Sign In</Link>
+          <Link to="/" className="bg-surface-container-highest px-5 py-2.5 rounded-full text-sm font-bold text-on-surface hover:bg-surface-container-high transition-colors">Start</Link>
         </div>
       </nav>
     </div>

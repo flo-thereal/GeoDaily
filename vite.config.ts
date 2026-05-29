@@ -6,6 +6,9 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
+    // GitHub Pages project site: served from /<repo>/. Override with a custom
+    // domain or user/org page by setting this to '/'.
+    base: env.VITE_BASE ?? '/geodaily/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
