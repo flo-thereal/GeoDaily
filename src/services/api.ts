@@ -1,68 +1,16 @@
-import { DailyTask, DailyHistory } from '../store/useStore';
+import { DailyTask, DailyHistory, useStore } from '../store/useStore';
+import { COUNTRIES, type Country } from '../lib/countries';
+import { generateDailyTasks as genDaily, generatePracticeTasks } from '../lib/generateQuiz';
+import { ACHIEVEMENTS } from '../lib/progress';
 
 // ============================================================================
-// Auth Token Management
+// GeoDaily runs as a fully static site: there is no server or account system.
+// Quiz data is bundled / pre-generated JSON; all progress lives in localStorage
+// via the Zustand store. These functions keep the original async API surface so
+// the pages need minimal changes.
 // ============================================================================
 
-const TOKEN_KEY = 'geodaily_auth_token';
-
-export function getAuthToken(): string | null {
-  return localStorage.getItem(TOKEN_KEY);
-}
-
-export function setAuthToken(token: string): void {
-  localStorage.setItem(TOKEN_KEY, token);
-}
-
-export function clearAuthToken(): void {
-  localStorage.removeItem(TOKEN_KEY);
-}
-
-export function isAuthenticated(): boolean {
-  return !!getAuthToken();
-}
-
-// ============================================================================
-// API Request Helper
-// ============================================================================
-
-interface RequestOptions extends RequestInit {
-  requireAuth?: boolean;
-}
-
-async function apiRequest<T>(
-  endpoint: string,
-  options: RequestOptions = {}
-): Promise<T> {
-  const { requireAuth = false, headers = {}, ...rest } = options;
-
-  const requestHeaders: HeadersInit = {
-    'Content-Type': 'application/json',
-    ...headers,
-  };
-
-  const token = getAuthToken();
-  if (token) {
-    (requestHeaders as Record<string, string>)['Authorization'] = `Bearer ${token}`;
-  } else if (requireAuth) {
-    throw new Error('Authentication required');
-  }
-
-  const response = await fetch(endpoint, {
-    headers: requestHeaders,
-    ...rest,
-  });
-
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => null);
-    if (errorData?.error) {
-      throw new Error(errorData.error);
-    }
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
-  return response.json();
-}
+export type { Country };
 
 // ============================================================================
 // Types
@@ -113,35 +61,6 @@ export interface UserSettings {
   theme: string;
 }
 
-export interface AuthResponse {
-  user: User;
-  token: string;
-}
-
-export interface Country {
-  code: string;
-  name: string;
-  capital: string;
-  region: string;
-  subregion?: string;
-  population: number;
-  areaKm2: number;
-  currency: {
-    code: string;
-    name: string;
-    symbol: string;
-  };
-  languages: string[];
-  borders: string[];
-  coordinates: {
-    lat: number;
-    lng: number;
-  };
-  flagEmoji: string;
-  description?: string;
-  funFacts?: string[];
-}
-
 export interface SubmitChallengeResult {
   success: boolean;
   stats: {
@@ -153,58 +72,101 @@ export interface SubmitChallengeResult {
 }
 
 // ============================================================================
-// Auth Endpoints
+// Derived profile helpers
 // ============================================================================
 
-export async function register(
-  email: string,
-  password: string,
-  displayName: string
-): Promise<AuthResponse> {
-  const response = await apiRequest<AuthResponse>('/api/users/register', {
-    method: 'POST',
-    body: JSON.stringify({ email, password, displayName }),
-  });
-  setAuthToken(response.token);
-  return response;
+function levelForPoints(points: number): number {
+  return Math.floor(points / 1000) + 1;
 }
 
-export async function login(email: string, password: string): Promise<AuthResponse> {
-  const response = await apiRequest<AuthResponse>('/api/users/login', {
-    method: 'POST',
-    body: JSON.stringify({ email, password }),
-  });
-  setAuthToken(response.token);
-  return response;
+function titleForLevel(level: number): string {
+  if (level >= 20) return 'Master Cartographer';
+  if (level >= 10) return 'Globe Master';
+  if (level >= 5) return 'Seasoned Explorer';
+  if (level >= 2) return 'Explorer';
+  return 'Novice Explorer';
+}
+
+function computeStats(): UserStats {
+  const { stats } = useStore.getState().progress;
+  const accuracy = stats.totalQuestionsAnswered > 0
+    ? Math.round((stats.correctAnswers / stats.totalQuestionsAnswered) * 100)
+    : 0;
+  return {
+    totalPoints: stats.totalPoints,
+    currentStreak: stats.currentStreak,
+    longestStreak: stats.longestStreak,
+    totalDaysPlayed: stats.daysPlayed,
+    totalQuestionsAnswered: stats.totalQuestionsAnswered,
+    totalCorrectAnswers: stats.correctAnswers,
+    countriesMastered: stats.countriesMastered,
+    accuracy,
+  };
+}
+
+// ============================================================================
+// "Auth" — single local explorer, no accounts
+// ============================================================================
+
+// Kept so existing callers don't break; there are no real accounts anymore.
+export function isAuthenticated(): boolean {
+  return true;
 }
 
 export function logout(): void {
-  clearAuthToken();
+  /* no-op: nothing to sign out of */
 }
 
 // ============================================================================
-// User Profile Endpoints
+// User Profile (computed from local progress)
 // ============================================================================
 
 export async function getCurrentUser(): Promise<UserProfile> {
-  return apiRequest<UserProfile>('/api/users/me', { requireAuth: true });
+  const { progress } = useStore.getState();
+  const stats = computeStats();
+  const level = levelForPoints(stats.totalPoints);
+
+  const continentMastery: Record<string, number> = {};
+  for (const [continent, entry] of Object.entries(progress.continentMastery)) {
+    continentMastery[continent] = entry.percentage;
+  }
+
+  const achievements: Achievement[] = ACHIEVEMENTS
+    .filter((a) => progress.unlockedAchievements[a.id])
+    .map((a) => ({
+      id: a.id,
+      name: a.name,
+      description: a.description,
+      icon: a.icon,
+      category: a.category,
+      earnedAt: progress.unlockedAchievements[a.id],
+    }))
+    .sort((a, b) => b.earnedAt.localeCompare(a.earnedAt));
+
+  return {
+    id: 'local-explorer',
+    email: '',
+    displayName: 'Explorer',
+    level,
+    title: titleForLevel(level),
+    createdAt: new Date().toISOString(),
+    stats,
+    continentMastery,
+    achievements,
+    avatarUrl: undefined,
+  };
 }
 
-export async function updateProfile(updates: {
+export async function updateProfile(_updates: {
   displayName?: string;
   avatarUrl?: string;
   title?: string;
 }): Promise<{ success: boolean }> {
-  return apiRequest<{ success: boolean }>('/api/users/me', {
-    method: 'PATCH',
-    body: JSON.stringify(updates),
-    requireAuth: true,
-  });
+  return { success: true };
 }
 
 export async function getUserStats(): Promise<UserStats> {
-  const profile = await getCurrentUser();
-  return profile.stats;
+  return computeStats();
 }
 
 export interface LearningHistoryEntry {
@@ -214,11 +176,28 @@ export interface LearningHistoryEntry {
 }
 
 export async function getLearningHistory(days: number = 30): Promise<LearningHistoryEntry[]> {
-  return apiRequest<LearningHistoryEntry[]>(`/api/users/history?days=${days}`, { requireAuth: true });
+  const { history } = useStore.getState();
+  const entries: LearningHistoryEntry[] = [];
+  const today = new Date();
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const date = d.toISOString().split('T')[0];
+    entries.push({ date, score: history[date]?.score ?? 0, maxScore: 500 });
+  }
+  return entries;
 }
 
 export async function getUserSettings(): Promise<UserSettings> {
-  return apiRequest<UserSettings>('/api/users/settings', { requireAuth: true });
+  const { settings } = useStore.getState();
+  return {
+    language: settings.language,
+    daily_reminder_enabled: settings.dailyReminderEnabled,
+    daily_reminder_time: settings.dailyReminderTime,
+    sound_enabled: settings.soundEnabled,
+    haptic_enabled: settings.hapticEnabled,
+    theme: settings.theme,
+  };
 }
 
 export async function updateSettings(updates: {
@@ -229,15 +208,12 @@ export async function updateSettings(updates: {
   hapticEnabled?: boolean;
   theme?: string;
 }): Promise<{ success: boolean }> {
-  return apiRequest<{ success: boolean }>('/api/users/settings', {
-    method: 'PATCH',
-    body: JSON.stringify(updates),
-    requireAuth: true,
-  });
+  useStore.getState().updateSettings(updates);
+  return { success: true };
 }
 
 // ============================================================================
-// Countries Endpoints
+// Countries (bundled reference data)
 // ============================================================================
 
 export interface CountriesQueryParams {
@@ -248,31 +224,60 @@ export interface CountriesQueryParams {
 }
 
 export async function getCountries(params: CountriesQueryParams = {}): Promise<Country[]> {
-  const searchParams = new URLSearchParams();
-  if (params.region) searchParams.set('region', params.region);
-  if (params.search) searchParams.set('search', params.search);
-  if (params.limit) searchParams.set('limit', params.limit.toString());
-  if (params.offset) searchParams.set('offset', params.offset.toString());
+  let result = COUNTRIES.slice();
 
-  const query = searchParams.toString();
-  return apiRequest<Country[]>(`/api/countries${query ? `?${query}` : ''}`);
+  if (params.region) {
+    result = result.filter((c) => c.region === params.region);
+  }
+  if (params.search) {
+    const q = params.search.toLowerCase();
+    result = result.filter(
+      (c) =>
+        c.name.toLowerCase().includes(q) ||
+        c.capital?.toLowerCase().includes(q) ||
+        c.region?.toLowerCase().includes(q)
+    );
+  }
+  result.sort((a, b) => a.name.localeCompare(b.name));
+
+  const offset = params.offset ?? 0;
+  const end = params.limit ? offset + params.limit : undefined;
+  return result.slice(offset, end);
 }
 
 export async function getCountryByCode(code: string): Promise<Country> {
-  return apiRequest<Country>(`/api/countries/${code.toUpperCase()}`);
+  const country = COUNTRIES.find((c) => c.code.toUpperCase() === code.toUpperCase());
+  if (!country) throw new Error('Country not found');
+  return country;
 }
 
 export async function getRegions(): Promise<{ region: string; count: number }[]> {
-  return apiRequest<{ region: string; count: number }[]>('/api/countries/meta/regions');
+  const counts: Record<string, number> = {};
+  for (const c of COUNTRIES) counts[c.region] = (counts[c.region] ?? 0) + 1;
+  return Object.entries(counts)
+    .map(([region, count]) => ({ region, count }))
+    .sort((a, b) => a.region.localeCompare(b.region));
 }
 
 // ============================================================================
-// Challenge Endpoints
+// Challenges
 // ============================================================================
 
+/**
+ * Daily tasks: prefer a pre-generated JSON committed by the nightly Action;
+ * fall back to deterministic client generation if that day isn't published.
+ */
 export async function fetchDailyTasks(date: string): Promise<DailyTask[]> {
-  // Auth is optional for daily tasks - include token if available
-  return apiRequest<DailyTask[]>(`/api/daily?date=${date}`);
+  try {
+    const res = await fetch(`${import.meta.env.BASE_URL}data/challenges/${date}.json`);
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) return data as DailyTask[];
+    }
+  } catch {
+    /* fall through to local generation */
+  }
+  return genDaily(date);
 }
 
 // Legacy alias for backward compatibility
@@ -281,7 +286,7 @@ export const generateDailyTasks = fetchDailyTasks;
 export async function fetchPracticeTasks(
   type: 'flags' | 'capitals' | 'map'
 ): Promise<DailyTask[]> {
-  return apiRequest<DailyTask[]>(`/api/practice?type=${type}`);
+  return generatePracticeTasks(type);
 }
 
 export interface SubmitChallengeParams {
@@ -300,34 +305,40 @@ export interface SubmitChallengeParams {
 export async function submitChallenge(
   params: SubmitChallengeParams
 ): Promise<SubmitChallengeResult> {
-  return apiRequest<SubmitChallengeResult>('/api/submit', {
-    method: 'POST',
-    body: JSON.stringify(params),
-    requireAuth: true,
+  const newAchievements = useStore.getState().submitDailyResult({
+    date: params.date,
+    tasks: params.tasks,
+    answers: params.answers,
+    score: params.score,
+    maxScore: params.maxScore,
   });
+  const stats = computeStats();
+  return {
+    success: true,
+    stats: {
+      totalPoints: stats.totalPoints,
+      currentStreak: stats.currentStreak,
+      longestStreak: stats.longestStreak,
+    },
+    newAchievements: newAchievements.length > 0 ? newAchievements : undefined,
+  };
 }
 
 export async function completeChallenge(
-  date: string,
-  score: number
+  _date: string,
+  _score: number
 ): Promise<{ success: boolean }> {
-  return apiRequest<{ success: boolean }>('/api/complete', {
-    method: 'POST',
-    body: JSON.stringify({ date, score }),
-    requireAuth: true,
-  });
+  return { success: true };
 }
 
 // ============================================================================
-// History Endpoints
+// History
 // ============================================================================
 
 export async function getChallengeHistory(
-  limit: number = 30
+  _limit: number = 30
 ): Promise<Record<string, DailyHistory>> {
-  return apiRequest<Record<string, DailyHistory>>(`/api/history?limit=${limit}`, {
-    requireAuth: true,
-  });
+  return useStore.getState().history;
 }
 
 // ============================================================================
@@ -339,5 +350,5 @@ export async function checkHealth(): Promise<{
   database: boolean;
   mode: string;
 }> {
-  return apiRequest<{ status: string; database: boolean; mode: string }>('/api/health');
+  return { status: 'ok', database: false, mode: 'static' };
 }

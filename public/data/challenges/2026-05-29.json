@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-GT-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Guatemala",
+    "options": [
+      "Guatemala",
+      "Dominican Republic",
+      "Belgium",
+      "Timor-Leste"
+    ],
+    "imageUrl": "GT"
+  },
+  {
+    "id": "capital-TR-1",
+    "type": "capital",
+    "question": "What is the capital of Turkey?",
+    "correctAnswer": "Ankara",
+    "options": [
+      "Honiara",
+      "Ankara",
+      "Kigali",
+      "Windhoek"
+    ]
+  },
+  {
+    "id": "map-BO-2",
+    "type": "map",
+    "question": "Where is Bolivia located?",
+    "correctAnswer": "Bolivia",
+    "options": [],
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -16.2902,
+      "lng": -63.5887
+    }
+  },
+  {
+    "id": "flag-NG-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "options": [
+      "Gambia",
+      "Sweden",
+      "New Zealand",
+      "Nigeria"
+    ],
+    "imageUrl": "NG"
+  },
+  {
+    "id": "capital-CY-4",
+    "type": "capital",
+    "question": "What is the capital of Cyprus?",
+    "correctAnswer": "Nicosia",
+    "options": [
+      "Pyongyang",
+      "Vienna",
+      "Caracas",
+      "Nicosia"
+    ]
+  }
+]

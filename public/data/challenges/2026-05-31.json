@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-PE-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Peru",
+    "options": [
+      "Peru",
+      "Timor-Leste",
+      "Angola",
+      "Albania"
+    ],
+    "imageUrl": "PE"
+  },
+  {
+    "id": "capital-VN-1",
+    "type": "capital",
+    "question": "What is the capital of Vietnam?",
+    "correctAnswer": "Hanoi",
+    "options": [
+      "Oslo",
+      "Hanoi",
+      "Dakar",
+      "Luanda"
+    ]
+  },
+  {
+    "id": "map-CZ-2",
+    "type": "map",
+    "question": "Where is Czechia located?",
+    "correctAnswer": "Czechia",
+    "options": [],
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 49.8175,
+      "lng": 15.473
+    }
+  },
+  {
+    "id": "flag-AZ-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Azerbaijan",
+    "options": [
+      "Hungary",
+      "Cyprus",
+      "Turkmenistan",
+      "Azerbaijan"
+    ],
+    "imageUrl": "AZ"
+  },
+  {
+    "id": "capital-AF-4",
+    "type": "capital",
+    "question": "What is the capital of Afghanistan?",
+    "correctAnswer": "Kabul",
+    "options": [
+      "Kabul",
+      "Jakarta",
+      "Tirana",
+      "Abuja"
+    ]
+  }
+]

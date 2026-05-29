@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// GeoDaily is a static SPA. We serve it at the root (VITE_BASE=/) for tests so
+// hash routes resolve cleanly without the GitHub Pages subpath.
+const PORT = 4321;
+
 export default defineConfig({
   testDir: './tests/e2e',
   fullyParallel: true,
@@ -8,7 +12,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL: `http://localhost:${PORT}`,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -19,8 +23,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'DATABASE_URL="postgresql://geodaily:geodaily_secret@localhost:5432/geodaily" DEV_AUTH_BYPASS=true npm run dev',
-    url: 'http://localhost:3000',
+    command: `VITE_BASE=/ npm run dev -- --port ${PORT} --strictPort`,
+    url: `http://localhost:${PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 30000,
   },

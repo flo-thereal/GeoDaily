@@ -1,35 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { useStore, DailyTask, DailyHistory } from '../store/useStore';
-import { generateDailyTasks, submitChallenge, isAuthenticated } from '../services/api';
-import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft, CloudOff, Cloud } from 'lucide-react';
+import { useStore, type DailyTask } from '../store/useStore';
+import { generateDailyTasks, fetchPracticeTasks } from '../services/api';
+import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { cn } from '../lib/utils';
 import { MapQuiz } from '../components/MapQuiz';
-
-async function fetchPracticeTasks(type: string): Promise<DailyTask[]> {
-  try {
-    const response = await fetch(`/api/practice?type=${type}`);
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => null);
-      if (errorData && errorData.error) {
-        throw new Error(errorData.error);
-      }
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  } catch (error: any) {
-    console.error("Failed to fetch practice tasks:", error);
-    throw error;
-  }
-}
 
 export function Quiz() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  const { dailyTasks, dailyTasksDate, setDailyTasks, currentTaskIndex, nextTask, completeDaily, addPoints, incrementStreak, history, saveHistory } = useStore();
+  const { dailyTasks, dailyTasksDate, setDailyTasks, currentTaskIndex, nextTask, completeDaily, addPoints, history, saveHistory, submitDailyResult } = useStore();
   
   const searchParams = new URLSearchParams(location.search);
   const dateParam = searchParams.get('date');
@@ -50,10 +32,6 @@ export function Quiz() {
   // Track answers for history
   const [userAnswers, setUserAnswers] = useState<any[]>([]);
   const [sessionScore, setSessionScore] = useState(0);
-  
-  // Track server submission status
-  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const challengeStartTime = useRef<number>(Date.now());
 
   const isDaily = type === 'daily';
   
@@ -107,7 +85,8 @@ export function Quiz() {
     setLoading(true);
     setError(null);
     try {
-      const tasks = await fetchPracticeTasks(type || 'flags');
+      const practiceType = (type === 'capitals' || type === 'map' ? type : 'flags') as 'flags' | 'capitals' | 'map';
+      const tasks = await fetchPracticeTasks(practiceType);
       setPracticeTasks(tasks);
       setCurrentPracticeIndex(0);
     } catch (err: any) {
@@ -164,29 +143,15 @@ export function Quiz() {
         score: finalScore,
         completed: true
       });
-      
-      // Submit to server if user is authenticated (don't block on errors)
-      if (isAuthenticated()) {
-        setSubmissionStatus('submitting');
-        const timeTaken = Math.round((Date.now() - challengeStartTime.current) / 1000);
-        
-        submitChallenge({
-          date: targetDate,
-          tasks: tasks,
-          answers: newAnswers.map((a, idx) => ({
-            answer: a.guess,
-            isCorrect: a.isCorrect,
-          })),
-          score: finalScore,
-          maxScore: tasks.length * 100,
-          timeTaken,
-        })
-          .then(() => setSubmissionStatus('success'))
-          .catch((err) => {
-            console.error('Failed to submit challenge to server:', err);
-            setSubmissionStatus('error');
-          });
-      }
+
+      // Record into local progress (streak, points, mastery, achievements).
+      submitDailyResult({
+        date: targetDate,
+        tasks: tasks,
+        answers: newAnswers.map((a) => ({ guess: a.guess, isCorrect: a.isCorrect })),
+        score: finalScore,
+        maxScore: tasks.length * 100,
+      });
     }
   };
 
@@ -207,7 +172,6 @@ export function Quiz() {
       if (isDaily) {
         if (!isReview && isToday) {
           completeDaily();
-          incrementStreak();
         }
         navigate(isReview ? '/' : '/quest-completed');
       } else {
@@ -350,29 +314,6 @@ export function Quiz() {
       {/* Next Button */}
       {showResult && (
         <div className="space-y-3">
-          {/* Submission status indicator for last question of daily challenge */}
-          {isDaily && currentIndex === tasks.length - 1 && isAuthenticated() && (
-            <div className="flex items-center justify-center gap-2 text-sm">
-              {submissionStatus === 'submitting' && (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin text-on-surface-variant" />
-                  <span className="text-on-surface-variant">Saving results...</span>
-                </>
-              )}
-              {submissionStatus === 'success' && (
-                <>
-                  <Cloud className="w-4 h-4 text-primary" />
-                  <span className="text-primary">Results saved</span>
-                </>
-              )}
-              {submissionStatus === 'error' && (
-                <>
-                  <CloudOff className="w-4 h-4 text-on-surface-variant" />
-                  <span className="text-on-surface-variant">Results saved locally</span>
-                </>
-              )}
-            </div>
-          )}
           <button
             onClick={handleNext}
             className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors shadow-md animate-in slide-in-from-bottom-4"

@@ -1,0 +1,36 @@
+name: Generate daily challenges
+
+on:
+  schedule:
+    # 00:05 UTC daily — generates any missing upcoming challenge files.
+    - cron: '5 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Generate challenge JSON
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npm run generate:challenges
+      - name: Commit & push new challenges
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain public/data/challenges)" ]; then
+            git add public/data/challenges
+            git commit -m "chore: refresh daily challenges"
+            git push
+          else
+            echo "No new challenges to commit."
+          fi

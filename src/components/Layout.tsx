@@ -1,25 +1,13 @@
-import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
-import { isAuthenticated, getCurrentUser, type UserProfile } from '../services/api';
+import { useStore } from '../store/useStore';
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = import.meta.env.DEV;
 
 export function Layout() {
   const location = useLocation();
-  const [user, setUser] = useState<UserProfile | null>(null);
-  const [authChecked, setAuthChecked] = useState(false);
-
-  useEffect(() => {
-    if (isAuthenticated()) {
-      getCurrentUser()
-        .then(setUser)
-        .catch(() => setUser(null))
-        .finally(() => setAuthChecked(true));
-    } else {
-      setAuthChecked(true);
-    }
-  }, []);
+  const points = useStore((s) => s.progress.stats.totalPoints);
+  const level = Math.floor(points / 1000) + 1;
 
   const navItems = [
     { icon: 'explore', label: 'Exploration', path: '/' },
@@ -76,37 +64,15 @@ export function Layout() {
           </nav>
         </div>
         <div className="px-6 mt-auto">
-          {authChecked && user ? (
-            <Link to="/profile" className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 hover:bg-blue-200 dark:hover:bg-slate-700 transition-colors">
-              <img 
-                alt={`${user.displayName}'s avatar`} 
-                className="w-10 h-10 rounded-full object-cover" 
-                src={user.avatarUrl || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName)}&background=random`}
-              />
-              <div>
-                <p className="text-on-surface font-bold text-xs">{user.displayName}</p>
-                <p className="text-slate-500 text-[10px]">{user.title || `Level ${user.level}`}</p>
-              </div>
-            </Link>
-          ) : authChecked ? (
-            <Link to="/login" className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 hover:bg-blue-200 dark:hover:bg-slate-700 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-slate-300 dark:bg-slate-600 flex items-center justify-center">
-                <span className="material-symbols-outlined text-slate-500 dark:text-slate-400">person</span>
-              </div>
-              <div>
-                <p className="text-on-surface font-bold text-xs">Sign In</p>
-                <p className="text-slate-500 text-[10px]">Track your progress</p>
-              </div>
-            </Link>
-          ) : (
-            <div className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 animate-pulse">
-              <div className="w-10 h-10 rounded-full bg-slate-300 dark:bg-slate-600" />
-              <div className="space-y-1">
-                <div className="h-3 w-20 bg-slate-300 dark:bg-slate-600 rounded" />
-                <div className="h-2 w-16 bg-slate-200 dark:bg-slate-700 rounded" />
-              </div>
+          <Link to="/profile" className="bg-blue-100 dark:bg-slate-800 p-4 rounded-lg flex items-center space-x-3 hover:bg-blue-200 dark:hover:bg-slate-700 transition-colors">
+            <div className="w-10 h-10 rounded-full bg-slate-300 dark:bg-slate-600 flex items-center justify-center">
+              <span className="material-symbols-outlined text-slate-500 dark:text-slate-400">person</span>
             </div>
-          )}
+            <div>
+              <p className="text-on-surface font-bold text-xs">Explorer</p>
+              <p className="text-slate-500 text-[10px]">Level {level}</p>
+            </div>
+          </Link>
           <Link to="/quiz/daily" className="block text-center w-full mt-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary py-3 rounded-full font-bold text-sm shadow-sm hover:scale-[0.98] active:scale-95 transition-all">
             Daily Discovery
           </Link>

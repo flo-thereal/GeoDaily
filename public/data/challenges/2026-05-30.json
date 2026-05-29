@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-BD-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "options": [
+      "Bangladesh",
+      "Mozambique",
+      "Bosnia and Herzegovina",
+      "Burundi"
+    ],
+    "imageUrl": "BD"
+  },
+  {
+    "id": "capital-LK-1",
+    "type": "capital",
+    "question": "What is the capital of Sri Lanka?",
+    "correctAnswer": "Colombo",
+    "options": [
+      "Havana",
+      "Oslo",
+      "Colombo",
+      "Vilnius"
+    ]
+  },
+  {
+    "id": "map-MH-2",
+    "type": "map",
+    "question": "Where is Marshall Islands located?",
+    "correctAnswer": "Marshall Islands",
+    "options": [],
+    "imageUrl": "MH",
+    "mapCoordinates": {
+      "lat": 7.1315,
+      "lng": 171.1845
+    }
+  },
+  {
+    "id": "flag-RS-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Serbia",
+    "options": [
+      "Serbia",
+      "Qatar",
+      "Ghana",
+      "Kazakhstan"
+    ],
+    "imageUrl": "RS"
+  },
+  {
+    "id": "capital-RU-4",
+    "type": "capital",
+    "question": "What is the capital of Russia?",
+    "correctAnswer": "Moscow",
+    "options": [
+      "Tokyo",
+      "Monaco",
+      "Moscow",
+      "Prague"
+    ]
+  }
+]

@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { getUserSettings, updateSettings, UserSettings, logout, isAuthenticated, getCurrentUser, UserProfile } from '../services/api';
-import { useNavigate } from 'react-router-dom';
+import { getUserSettings, updateSettings, UserSettings } from '../services/api';
 
 interface SettingsState {
   language: string;
@@ -50,8 +49,6 @@ function Toggle({ enabled, onToggle, disabled }: { enabled: boolean; onToggle: (
 }
 
 export function Settings() {
-  const navigate = useNavigate();
-  const [user, setUser] = useState<UserProfile | null>(null);
   const [settings, setSettings] = useState<SettingsState | null>(null);
   const [originalSettings, setOriginalSettings] = useState<SettingsState | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -60,28 +57,19 @@ export function Settings() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const fetchSettings = useCallback(async () => {
-    if (!isAuthenticated()) {
-      navigate('/login');
-      return;
-    }
-
     setIsLoading(true);
     setError(null);
     try {
-      const [apiSettings, userProfile] = await Promise.all([
-        getUserSettings(),
-        getCurrentUser(),
-      ]);
+      const apiSettings = await getUserSettings();
       const stateSettings = convertApiSettingsToState(apiSettings);
       setSettings(stateSettings);
       setOriginalSettings(stateSettings);
-      setUser(userProfile);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load settings');
     } finally {
       setIsLoading(false);
     }
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     fetchSettings();
@@ -119,12 +107,7 @@ export function Settings() {
     }
   };
 
-  const handleSignOut = () => {
-    logout();
-    navigate('/login');
-  };
-
-  const updateSetting = <K extends keyof SettingsState>(key: K, value: SettingsState[K]) => {
+  const updateSetting =<K extends keyof SettingsState>(key: K, value: SettingsState[K]) => {
     setSettings(prev => prev ? { ...prev, [key]: value } : null);
   };
 
@@ -156,11 +139,9 @@ export function Settings() {
           <button className="p-2 rounded-full hover:bg-white/50 dark:hover:bg-slate-700/50 transition-colors scale-95 active:scale-90 transition-transform duration-200">
             <span className="material-symbols-outlined text-slate-600 dark:text-slate-400">notifications</span>
           </button>
-          <img 
-            alt="User profile settings" 
-            className="w-10 h-10 rounded-full border-2 border-primary-container" 
-            src={user?.avatarUrl || "https://lh3.googleusercontent.com/aida-public/AB6AXuD0l3QWh8UhmESWCrmx1YF_NcumrPnqvKpm_8H7ajBMAYhx36KWT_6b3IDiVPUparWetUi7CNKI2fefvhWjfJ5zyMsaAWcXxUZPPstRSPuZJRkmwpRq7cVRDQGS5baK0exgnsUXFe9PVXnWvOi9y3ioirACqZ_CmehGOW0ayFJOcBJ8e9FImFcJr1ZJLUEvgndCehv3GPRnkJ8pQIQlAK0qRKKuEMDdv1rfoYSgcRpro4hG5gMcHt_TnnM1IO-tf3zFHuN5cjPM-xUV"}
-          />
+          <div className="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-container-high flex items-center justify-center">
+            <span className="material-symbols-outlined text-on-surface-variant">person</span>
+          </div>
         </div>
       </header>
 
@@ -191,37 +172,8 @@ export function Settings() {
 
         {/* Bento Grid Form Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Account Section */}
+          {/* Preferences Section */}
           <div className="md:col-span-8 space-y-6">
-            <div className="bg-surface-container-low p-8 rounded-lg space-y-8">
-              <div className="flex items-center gap-3 border-b-0">
-                <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>account_circle</span>
-                <h4 className="font-headline text-xl font-bold">Account Security</h4>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="font-label text-xs font-bold text-on-surface-variant px-1">Email Address</label>
-                  <input 
-                    className="w-full bg-surface-container-lowest border-none rounded p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none" 
-                    placeholder="Enter your email" 
-                    type="email" 
-                    value={user?.email || ''}
-                    disabled
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="font-label text-xs font-bold text-on-surface-variant px-1">Current Password</label>
-                  <div className="relative">
-                    <input className="w-full bg-surface-container-lowest border-none rounded p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none" placeholder="Enter password" type="password" defaultValue="••••••••••••"/>
-                    <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant cursor-pointer">visibility</span>
-                  </div>
-                </div>
-              </div>
-              <button className="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-bold text-sm hover:scale-[0.98] active:scale-95 transition-all">
-                Update Security Credentials
-              </button>
-            </div>
-
             {/* Language Section */}
             <div className="bg-surface-container-low p-8 rounded-lg space-y-6">
               <div className="flex items-center gap-3">
@@ -317,14 +269,7 @@ export function Settings() {
         {/* Footer Action */}
         <footer className="pt-8 border-t-0 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <button 
-              onClick={handleSignOut}
-              className="text-error font-bold text-sm px-4 py-2 hover:bg-error/5 rounded-full transition-colors"
-            >
-              Sign Out of Account
-            </button>
-            <div className="h-4 w-px bg-outline-variant/30 hidden md:block"></div>
-            <button className="text-on-surface-variant font-medium text-sm px-4 py-2 hover:bg-surface-variant rounded-full transition-colors">Privacy Policy</button>
+            <p className="text-on-surface-variant text-sm">Preferences are saved on this device.</p>
           </div>
           <div className="flex gap-4 w-full md:w-auto">
             <button 

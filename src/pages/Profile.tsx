@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { getCurrentUser, isAuthenticated, UserProfile, Achievement, getLearningHistory, LearningHistoryEntry } from '../services/api';
-import { Link } from 'react-router-dom';
+import { getCurrentUser, UserProfile, getLearningHistory, LearningHistoryEntry } from '../services/api';
 
 // Default placeholder avatar
 const DEFAULT_AVATAR = 'https://ui-avatars.com/api/?name=Explorer&background=6366f1&color=fff&size=160';
@@ -46,12 +45,6 @@ export function Profile() {
 
   useEffect(() => {
     async function fetchProfile() {
-      if (!isAuthenticated()) {
-        setLoading(false);
-        setError('not_authenticated');
-        return;
-      }
-
       try {
         const [profileData, historyData] = await Promise.all([
           getCurrentUser(),
@@ -96,25 +89,6 @@ export function Profile() {
       },
     };
   }, [learningHistory]);
-
-  // Not authenticated state
-  if (error === 'not_authenticated') {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-8 py-12">
-        <span className="material-symbols-outlined text-6xl text-primary mb-6">account_circle</span>
-        <h2 className="text-2xl font-headline font-bold text-on-surface mb-2">Sign in to view your profile</h2>
-        <p className="text-outline mb-8 text-center max-w-md">
-          Track your progress, earn achievements, and compete on the leaderboard by creating an account.
-        </p>
-        <Link
-          to="/"
-          className="bg-primary text-on-primary px-6 py-3 rounded-full font-headline font-bold hover:bg-primary/90 transition-colors"
-        >
-          Go to Home
-        </Link>
-      </div>
-    );
-  }
 
   // Loading state
   if (loading) {
