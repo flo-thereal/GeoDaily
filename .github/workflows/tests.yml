@@ -47,7 +47,7 @@ jobs:
 
       - name: Prepare database schema and seed data
         run: |
-          npm run db:push
+          npm run db:push -- --force
           npm run db:seed
 
       - name: Run unit tests
