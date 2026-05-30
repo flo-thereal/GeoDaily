@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-KZ-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kazakhstan",
+    "options": [
+      "Niger",
+      "Kazakhstan",
+      "Norway",
+      "Guinea-Bissau"
+    ],
+    "imageUrl": "KZ"
+  },
+  {
+    "id": "capital-TJ-1",
+    "type": "capital",
+    "question": "What is the capital of Tajikistan?",
+    "correctAnswer": "Dushanbe",
+    "options": [
+      "Vilnius",
+      "Dushanbe",
+      "Kathmandu",
+      "Nairobi"
+    ]
+  },
+  {
+    "id": "map-ZA-2",
+    "type": "map",
+    "question": "Where is South Africa located?",
+    "correctAnswer": "South Africa",
+    "options": [],
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -30.5595,
+      "lng": 22.9375
+    }
+  },
+  {
+    "id": "flag-KH-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cambodia",
+    "options": [
+      "Cameroon",
+      "Cambodia",
+      "Paraguay",
+      "Comoros"
+    ],
+    "imageUrl": "KH"
+  },
+  {
+    "id": "capital-SM-4",
+    "type": "capital",
+    "question": "What is the capital of San Marino?",
+    "correctAnswer": "San Marino",
+    "options": [
+      "Tbilisi",
+      "Kuala Lumpur",
+      "San Marino",
+      "Roseau"
+    ]
+  }
+]

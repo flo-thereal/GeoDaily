@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-LV-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Latvia",
+    "options": [
+      "Latvia",
+      "Estonia",
+      "China",
+      "Costa Rica"
+    ],
+    "imageUrl": "LV"
+  },
+  {
+    "id": "capital-BS-1",
+    "type": "capital",
+    "question": "What is the capital of Bahamas?",
+    "correctAnswer": "Nassau",
+    "options": [
+      "Tirana",
+      "Paramaribo",
+      "Nassau",
+      "Majuro"
+    ]
+  },
+  {
+    "id": "map-BO-2",
+    "type": "map",
+    "question": "Where is Bolivia located?",
+    "correctAnswer": "Bolivia",
+    "options": [],
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -16.2902,
+      "lng": -63.5887
+    }
+  },
+  {
+    "id": "flag-MV-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Maldives",
+    "options": [
+      "Maldives",
+      "Kenya",
+      "Belgium",
+      "Czechia"
+    ],
+    "imageUrl": "MV"
+  },
+  {
+    "id": "capital-CO-4",
+    "type": "capital",
+    "question": "What is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "options": [
+      "Astana",
+      "Bogotá",
+      "Havana",
+      "Taipei"
+    ]
+  }
+]

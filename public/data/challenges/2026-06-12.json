@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-KW-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kuwait",
+    "options": [
+      "France",
+      "North Korea",
+      "Kuwait",
+      "Angola"
+    ],
+    "imageUrl": "KW"
+  },
+  {
+    "id": "capital-DM-1",
+    "type": "capital",
+    "question": "What is the capital of Dominica?",
+    "correctAnswer": "Roseau",
+    "options": [
+      "Tashkent",
+      "Honiara",
+      "Tallinn",
+      "Roseau"
+    ]
+  },
+  {
+    "id": "map-GR-2",
+    "type": "map",
+    "question": "Where is Greece located?",
+    "correctAnswer": "Greece",
+    "options": [],
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 39.0742,
+      "lng": 21.8243
+    }
+  },
+  {
+    "id": "flag-LV-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Latvia",
+    "options": [
+      "Guinea-Bissau",
+      "Gabon",
+      "Cuba",
+      "Latvia"
+    ],
+    "imageUrl": "LV"
+  },
+  {
+    "id": "capital-NG-4",
+    "type": "capital",
+    "question": "What is the capital of Nigeria?",
+    "correctAnswer": "Abuja",
+    "options": [
+      "Georgetown",
+      "Abuja",
+      "Antananarivo",
+      "Tirana"
+    ]
+  }
+]

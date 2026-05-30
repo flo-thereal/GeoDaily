@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-LC-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Saint Lucia",
+    "options": [
+      "Saint Lucia",
+      "Tajikistan",
+      "Tuvalu",
+      "Bangladesh"
+    ],
+    "imageUrl": "LC"
+  },
+  {
+    "id": "capital-TD-1",
+    "type": "capital",
+    "question": "What is the capital of Chad?",
+    "correctAnswer": "N'Djamena",
+    "options": [
+      "Kuwait City",
+      "Dublin",
+      "Port-au-Prince",
+      "N'Djamena"
+    ]
+  },
+  {
+    "id": "map-RS-2",
+    "type": "map",
+    "question": "Where is Serbia located?",
+    "correctAnswer": "Serbia",
+    "options": [],
+    "imageUrl": "RS",
+    "mapCoordinates": {
+      "lat": 44.0165,
+      "lng": 21.0059
+    }
+  },
+  {
+    "id": "flag-MY-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "options": [
+      "Malaysia",
+      "Guyana",
+      "Japan",
+      "Solomon Islands"
+    ],
+    "imageUrl": "MY"
+  },
+  {
+    "id": "capital-DO-4",
+    "type": "capital",
+    "question": "What is the capital of Dominican Republic?",
+    "correctAnswer": "Santo Domingo",
+    "options": [
+      "Santo Domingo",
+      "Beijing",
+      "Conakry",
+      "Wellington"
+    ]
+  }
+]

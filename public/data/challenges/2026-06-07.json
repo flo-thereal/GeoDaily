@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-CG-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Congo",
+    "options": [
+      "Congo",
+      "Liechtenstein",
+      "South Sudan",
+      "Ukraine"
+    ],
+    "imageUrl": "CG"
+  },
+  {
+    "id": "capital-CD-1",
+    "type": "capital",
+    "question": "What is the capital of Democratic Republic of the Congo?",
+    "correctAnswer": "Kinshasa",
+    "options": [
+      "Vienna",
+      "Kinshasa",
+      "Tarawa",
+      "Santo Domingo"
+    ]
+  },
+  {
+    "id": "map-RU-2",
+    "type": "map",
+    "question": "Where is Russia located?",
+    "correctAnswer": "Russia",
+    "options": [],
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 61.524,
+      "lng": 105.3188
+    }
+  },
+  {
+    "id": "flag-SM-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "San Marino",
+    "options": [
+      "Central African Republic",
+      "Micronesia",
+      "Benin",
+      "San Marino"
+    ],
+    "imageUrl": "SM"
+  },
+  {
+    "id": "capital-AU-4",
+    "type": "capital",
+    "question": "What is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "options": [
+      "Canberra",
+      "Lusaka",
+      "Thimphu",
+      "San Marino"
+    ]
+  }
+]

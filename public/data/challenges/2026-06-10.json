@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-MC-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Monaco",
+    "options": [
+      "India",
+      "Monaco",
+      "Barbados",
+      "Jordan"
+    ],
+    "imageUrl": "MC"
+  },
+  {
+    "id": "capital-AM-1",
+    "type": "capital",
+    "question": "What is the capital of Armenia?",
+    "correctAnswer": "Yerevan",
+    "options": [
+      "Montevideo",
+      "Yerevan",
+      "London",
+      "Nicosia"
+    ]
+  },
+  {
+    "id": "map-UG-2",
+    "type": "map",
+    "question": "Where is Uganda located?",
+    "correctAnswer": "Uganda",
+    "options": [],
+    "imageUrl": "UG",
+    "mapCoordinates": {
+      "lat": 1.3733,
+      "lng": 32.2903
+    }
+  },
+  {
+    "id": "flag-GB-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United Kingdom",
+    "options": [
+      "Mauritius",
+      "Rwanda",
+      "United Kingdom",
+      "Grenada"
+    ],
+    "imageUrl": "GB"
+  },
+  {
+    "id": "capital-GE-4",
+    "type": "capital",
+    "question": "What is the capital of Georgia?",
+    "correctAnswer": "Tbilisi",
+    "options": [
+      "Tbilisi",
+      "Singapore",
+      "Ottawa",
+      "Beijing"
+    ]
+  }
+]

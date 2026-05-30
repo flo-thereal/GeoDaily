@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-IN-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "options": [
+      "Laos",
+      "Madagascar",
+      "Algeria",
+      "India"
+    ],
+    "imageUrl": "IN"
+  },
+  {
+    "id": "capital-PY-1",
+    "type": "capital",
+    "question": "What is the capital of Paraguay?",
+    "correctAnswer": "Asunción",
+    "options": [
+      "Lima",
+      "Stockholm",
+      "Phnom Penh",
+      "Asunción"
+    ]
+  },
+  {
+    "id": "map-KH-2",
+    "type": "map",
+    "question": "Where is Cambodia located?",
+    "correctAnswer": "Cambodia",
+    "options": [],
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 12.5657,
+      "lng": 104.991
+    }
+  },
+  {
+    "id": "flag-XK-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kosovo",
+    "options": [
+      "Germany",
+      "Austria",
+      "Iran",
+      "Kosovo"
+    ],
+    "imageUrl": "XK"
+  },
+  {
+    "id": "capital-LC-4",
+    "type": "capital",
+    "question": "What is the capital of Saint Lucia?",
+    "correctAnswer": "Castries",
+    "options": [
+      "Castries",
+      "Gaborone",
+      "San Marino",
+      "Addis Ababa"
+    ]
+  }
+]

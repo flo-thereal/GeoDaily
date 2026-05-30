@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-VN-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "options": [
+      "Libya",
+      "Egypt",
+      "Nauru",
+      "Vietnam"
+    ],
+    "imageUrl": "VN"
+  },
+  {
+    "id": "capital-CI-1",
+    "type": "capital",
+    "question": "What is the capital of Ivory Coast?",
+    "correctAnswer": "Yamoussoukro",
+    "options": [
+      "Yamoussoukro",
+      "Singapore",
+      "Oslo",
+      "Kathmandu"
+    ]
+  },
+  {
+    "id": "map-ST-2",
+    "type": "map",
+    "question": "Where is São Tomé and Príncipe located?",
+    "correctAnswer": "São Tomé and Príncipe",
+    "options": [],
+    "imageUrl": "ST",
+    "mapCoordinates": {
+      "lat": 0.3163,
+      "lng": 6.7297
+    }
+  },
+  {
+    "id": "flag-PW-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Palau",
+    "options": [
+      "Palau",
+      "Sierra Leone",
+      "Liechtenstein",
+      "Laos"
+    ],
+    "imageUrl": "PW"
+  },
+  {
+    "id": "capital-TL-4",
+    "type": "capital",
+    "question": "What is the capital of Timor-Leste?",
+    "correctAnswer": "Dili",
+    "options": [
+      "Algiers",
+      "Port Louis",
+      "Ankara",
+      "Dili"
+    ]
+  }
+]

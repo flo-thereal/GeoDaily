@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-LY-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Libya",
+    "options": [
+      "Libya",
+      "Iran",
+      "Netherlands",
+      "Vietnam"
+    ],
+    "imageUrl": "LY"
+  },
+  {
+    "id": "capital-TZ-1",
+    "type": "capital",
+    "question": "What is the capital of Tanzania?",
+    "correctAnswer": "Dar es Salaam",
+    "options": [
+      "Lusaka",
+      "Kingstown",
+      "Asmara",
+      "Dar es Salaam"
+    ]
+  },
+  {
+    "id": "map-BW-2",
+    "type": "map",
+    "question": "Where is Botswana located?",
+    "correctAnswer": "Botswana",
+    "options": [],
+    "imageUrl": "BW",
+    "mapCoordinates": {
+      "lat": -22.3285,
+      "lng": 24.6849
+    }
+  },
+  {
+    "id": "flag-GE-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Georgia",
+    "options": [
+      "Venezuela",
+      "Georgia",
+      "Niger",
+      "Ivory Coast"
+    ],
+    "imageUrl": "GE"
+  },
+  {
+    "id": "capital-SS-4",
+    "type": "capital",
+    "question": "What is the capital of South Sudan?",
+    "correctAnswer": "Juba",
+    "options": [
+      "Juba",
+      "La Paz",
+      "Ljubljana",
+      "Manama"
+    ]
+  }
+]

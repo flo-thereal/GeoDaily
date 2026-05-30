@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-TN-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tunisia",
+    "options": [
+      "Belize",
+      "Tunisia",
+      "Mongolia",
+      "Kazakhstan"
+    ],
+    "imageUrl": "TN"
+  },
+  {
+    "id": "capital-CF-1",
+    "type": "capital",
+    "question": "What is the capital of Central African Republic?",
+    "correctAnswer": "Bangui",
+    "options": [
+      "Nairobi",
+      "Bangui",
+      "Luanda",
+      "Maseru"
+    ]
+  },
+  {
+    "id": "map-LR-2",
+    "type": "map",
+    "question": "Where is Liberia located?",
+    "correctAnswer": "Liberia",
+    "options": [],
+    "imageUrl": "LR",
+    "mapCoordinates": {
+      "lat": 6.4281,
+      "lng": -9.4295
+    }
+  },
+  {
+    "id": "flag-CD-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Democratic Republic of the Congo",
+    "options": [
+      "Democratic Republic of the Congo",
+      "Canada",
+      "Malaysia",
+      "Cape Verde"
+    ],
+    "imageUrl": "CD"
+  },
+  {
+    "id": "capital-LY-4",
+    "type": "capital",
+    "question": "What is the capital of Libya?",
+    "correctAnswer": "Tripoli",
+    "options": [
+      "Tripoli",
+      "Muscat",
+      "Zagreb",
+      "Ngerulmud"
+    ]
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-CG-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Congo",
+    "options": [
+      "Tajikistan",
+      "Congo",
+      "Greece",
+      "Netherlands"
+    ],
+    "imageUrl": "CG"
+  },
+  {
+    "id": "capital-SO-1",
+    "type": "capital",
+    "question": "What is the capital of Somalia?",
+    "correctAnswer": "Mogadishu",
+    "options": [
+      "Mogadishu",
+      "Vienna",
+      "Nairobi",
+      "Khartoum"
+    ]
+  },
+  {
+    "id": "map-PG-2",
+    "type": "map",
+    "question": "Where is Papua New Guinea located?",
+    "correctAnswer": "Papua New Guinea",
+    "options": [],
+    "imageUrl": "PG",
+    "mapCoordinates": {
+      "lat": -6.315,
+      "lng": 143.9555
+    }
+  },
+  {
+    "id": "flag-DM-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Dominica",
+    "options": [
+      "Dominica",
+      "Panama",
+      "Kyrgyzstan",
+      "Kuwait"
+    ],
+    "imageUrl": "DM"
+  },
+  {
+    "id": "capital-TN-4",
+    "type": "capital",
+    "question": "What is the capital of Tunisia?",
+    "correctAnswer": "Tunis",
+    "options": [
+      "Tunis",
+      "Helsinki",
+      "Bangui",
+      "Baghdad"
+    ]
+  }
+]
