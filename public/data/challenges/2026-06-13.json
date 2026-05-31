@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-VE-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Venezuela",
+    "options": [
+      "Guyana",
+      "Nigeria",
+      "Venezuela",
+      "Nepal"
+    ],
+    "imageUrl": "VE"
+  },
+  {
+    "id": "capital-SS-1",
+    "type": "capital",
+    "question": "What is the capital of South Sudan?",
+    "correctAnswer": "Juba",
+    "options": [
+      "San Salvador",
+      "Khartoum",
+      "Juba",
+      "Vilnius"
+    ]
+  },
+  {
+    "id": "map-ST-2",
+    "type": "map",
+    "question": "Where is São Tomé and Príncipe located?",
+    "correctAnswer": "São Tomé and Príncipe",
+    "options": [],
+    "imageUrl": "ST",
+    "mapCoordinates": {
+      "lat": 0.3163,
+      "lng": 6.7297
+    }
+  },
+  {
+    "id": "flag-LV-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Latvia",
+    "options": [
+      "Turkmenistan",
+      "Latvia",
+      "Kyrgyzstan",
+      "Kosovo"
+    ],
+    "imageUrl": "LV"
+  },
+  {
+    "id": "capital-GM-4",
+    "type": "capital",
+    "question": "What is the capital of Gambia?",
+    "correctAnswer": "Banjul",
+    "options": [
+      "Harare",
+      "Banjul",
+      "Vaduz",
+      "Maseru"
+    ]
+  }
+]
