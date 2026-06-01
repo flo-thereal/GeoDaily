@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-XK-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kosovo",
+    "options": [
+      "Kosovo",
+      "Belize",
+      "Turkey",
+      "Samoa"
+    ],
+    "imageUrl": "XK"
+  },
+  {
+    "id": "capital-LC-1",
+    "type": "capital",
+    "question": "What is the capital of Saint Lucia?",
+    "correctAnswer": "Castries",
+    "options": [
+      "Castries",
+      "Minsk",
+      "Asunción",
+      "Bangkok"
+    ]
+  },
+  {
+    "id": "map-PG-2",
+    "type": "map",
+    "question": "Where is Papua New Guinea located?",
+    "correctAnswer": "Papua New Guinea",
+    "options": [],
+    "imageUrl": "PG",
+    "mapCoordinates": {
+      "lat": -6.315,
+      "lng": 143.9555
+    }
+  },
+  {
+    "id": "flag-PA-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Panama",
+    "options": [
+      "Panama",
+      "Vanuatu",
+      "Nigeria",
+      "Maldives"
+    ],
+    "imageUrl": "PA"
+  },
+  {
+    "id": "capital-IN-4",
+    "type": "capital",
+    "question": "What is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "options": [
+      "Zagreb",
+      "New Delhi",
+      "Paramaribo",
+      "Banjul"
+    ]
+  }
+]
