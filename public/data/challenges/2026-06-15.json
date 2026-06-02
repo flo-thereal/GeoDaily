@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-LK-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sri Lanka",
+    "options": [
+      "Madagascar",
+      "Iran",
+      "Saudi Arabia",
+      "Sri Lanka"
+    ],
+    "imageUrl": "LK"
+  },
+  {
+    "id": "capital-TL-1",
+    "type": "capital",
+    "question": "What is the capital of Timor-Leste?",
+    "correctAnswer": "Dili",
+    "options": [
+      "Dili",
+      "Asunción",
+      "Saint John's",
+      "Minsk"
+    ]
+  },
+  {
+    "id": "map-LY-2",
+    "type": "map",
+    "question": "Where is Libya located?",
+    "correctAnswer": "Libya",
+    "options": [],
+    "imageUrl": "LY",
+    "mapCoordinates": {
+      "lat": 26.3351,
+      "lng": 17.2283
+    }
+  },
+  {
+    "id": "flag-DZ-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Algeria",
+    "options": [
+      "Kenya",
+      "Algeria",
+      "Paraguay",
+      "Malawi"
+    ],
+    "imageUrl": "DZ"
+  },
+  {
+    "id": "capital-LI-4",
+    "type": "capital",
+    "question": "What is the capital of Liechtenstein?",
+    "correctAnswer": "Vaduz",
+    "options": [
+      "Juba",
+      "Vaduz",
+      "Kampala",
+      "Manila"
+    ]
+  }
+]
