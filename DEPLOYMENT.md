@@ -39,9 +39,22 @@ GEMINI_API_KEY=your-key npm run generate:challenges
 
 ## GitHub Pages setup (one-time)
 
-1. Repo **Settings → Pages → Build and deployment**
-2. Source: **GitHub Actions** (the deploy workflow enables Pages automatically)
-3. Ensure Pages is enabled for the repository
+1. **Settings → Actions → General → Workflow permissions** — **Read and write permissions** (required for `configure-pages` with `enablement: true`)
+2. **Settings → Pages → Build and deployment** — Source: **GitHub Actions**
+3. Private repos need a plan that includes **GitHub Pages for private repositories** (e.g. GitHub Pro)
+4. **Settings → Secrets and variables → Actions** — add `GEMINI_API_KEY` for daily challenge generation
+
+The deploy workflow can also enable Pages via API when the above permissions are set.
+
+## Troubleshooting CI
+
+| Symptom | Fix |
+|---------|-----|
+| `Create Pages site failed: Resource not accessible by integration` | Set workflow permissions to **Read and write** (step 1 above) |
+| `Get Pages site failed: Not Found` | Enable Pages with source **GitHub Actions** (step 2) |
+| Generate workflow logs `GEMINI_API_KEY not set` | Add the `GEMINI_API_KEY` repository secret |
+| Deploy job waits on environment | Approve the **github-pages** environment deployment in the Actions run |
+| Site 404 or blank assets | Confirm `vite.config.ts` `base` matches the Pages path (`/geodaily/` for `flo-thereal.github.io/geodaily/`) |
 
 ## Base path / custom domain
 
