@@ -176,7 +176,7 @@ export function Profile() {
               </div>
             </div>
             <div className="hidden lg:block w-64 h-32 opacity-20 grayscale hover:grayscale-0 transition-all">
-              <img alt="Vintage map sketch" className="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMo07jGyYcJ19m6ox5WXWmJdnasYSr2I2tQnL2yQxyNDLx4jkapbu51-J-4Kh3BHSj4j0ssW2xK31QS-qBVfjbEJbzNSSl-VErwa-DziNOhGACcz1q8OJVnkIEVq1gSGBKup3worzzbuwp6xf6WZC5FlK0xALKULvgnEYz3PdcsmkACTj6362MvjGnZheOw0VtK_ZsEHVwF2A-es--Jp9zTYlzJgzfuKIiK7mmxU8Adu_U839iOL_QaVFqaD0Pgc-EAtBChyP8TAoI"/>
+              <img alt="Vintage map sketch" className="w-full h-full object-contain" src={`${import.meta.env.BASE_URL}images/profile-map-sketch.jpg`} />
             </div>
           </div>
         </section>

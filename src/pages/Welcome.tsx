@@ -14,7 +14,7 @@ export function Welcome() {
           <div className="relative grid grid-cols-2 gap-4">
             {/* Main Map Card */}
             <div className="col-span-2 bg-surface-container-lowest rounded-lg p-4 shadow-sm transform -rotate-1 hover:rotate-0 transition-transform duration-500">
-              <img alt="World Map" className="w-full h-80 object-cover rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_S9sEHYzwIXgIr2jJo1CuX1mfdNQqf4Ev9SDFhHv40c6V-fw6UOO6b2ZLEFEB25dWulymDhW3iLOb9kFVtDk9VP0hq5_3siVH5ZjW-dw9Ha2eOdouX1D5_tzfqdIYm8JrQXu9AVV6Y6Apz4c43YHhg8dMVpAormLL-MK8yghbyJrHbB6mAq9XtmVgm7Pe0t6rJe7Nrbr3tmI-nlYnmANlSVwNS-R7GRTa9c2qOVN7ldGrXeSfbD2rtLAe1M3ldFQcyubC_-COx3uL"/>
+              <img alt="World Map" className="w-full h-80 object-cover rounded-DEFAULT" src={`${import.meta.env.BASE_URL}images/welcome-map.jpg`} />
               <div className="mt-4 flex items-center justify-between">
                 <span className="font-headline font-bold text-primary flex items-center gap-2">
                   <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>explore</span>

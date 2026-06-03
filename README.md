@@ -1,6 +1,12 @@
 # GeoDaily
 
+**[Play now →](https://flo-thereal.github.io/GeoDaily/)**
+
 GeoDaily is a geography learning app — a static React SPA deployed to GitHub Pages. Daily challenges are pre-generated JSON; progress lives in your browser.
+
+## Third-party services
+
+The app loads flag images from [flagcdn.com](https://flagcdn.com), map tiles from [OpenStreetMap](https://www.openstreetmap.org), and fonts from Google Fonts. There is no analytics or account system.
 
 ## Prerequisites
 
