@@ -18,6 +18,7 @@ export function Layout() {
   const bottomNavItems = [
     { icon: 'explore', label: 'Explore', path: '/' },
     { icon: 'map', label: 'Atlas', path: '/atlas' },
+    { icon: 'person', label: 'Profile', path: '/profile' },
     { icon: 'settings', label: 'Settings', path: '/settings' },
   ];
 

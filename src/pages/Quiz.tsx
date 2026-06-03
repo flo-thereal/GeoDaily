@@ -6,6 +6,8 @@ import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft } from 'lucide-re
 import confetti from 'canvas-confetti';
 import { cn } from '../lib/utils';
 import { MapQuiz } from '../components/MapQuiz';
+import { playCorrectSound, triggerHaptic } from '../lib/preferences';
+import { storeNewAchievements, storeQuestRecap } from '../lib/questSession';
 
 export function Quiz() {
   const { type } = useParams<{ type: string }>();
@@ -124,6 +126,8 @@ export function Quiz() {
       pointsEarned = isDaily ? (isToday ? 100 : 50) : 10; // Less points for past dailies or practice
       addPoints(pointsEarned);
       setSessionScore(prev => prev + pointsEarned);
+      playCorrectSound();
+      triggerHaptic();
       confetti({
         particleCount: 100,
         spread: 70,
@@ -144,14 +148,30 @@ export function Quiz() {
         completed: true
       });
 
-      // Record into local progress (streak, points, mastery, achievements).
-      submitDailyResult({
+      const missedCountries = tasks
+        .map((task, idx) => ({ task, answer: newAnswers[idx] }))
+        .filter(({ answer }) => !answer?.isCorrect)
+        .map(({ task }) => ({
+          name: task.correctAnswer,
+          code: task.imageUrl?.toUpperCase() || '',
+        }));
+
+      storeQuestRecap({
+        missedCountries,
+        score: finalScore,
+        maxScore: tasks.length * 100,
+      });
+
+      const newAchievements = submitDailyResult({
         date: targetDate,
         tasks: tasks,
         answers: newAnswers.map((a) => ({ guess: a.guess, isCorrect: a.isCorrect })),
         score: finalScore,
         maxScore: tasks.length * 100,
       });
+      if (newAchievements.length > 0) {
+        storeNewAchievements(newAchievements);
+      }
     }
   };
 

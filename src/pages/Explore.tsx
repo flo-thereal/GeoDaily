@@ -1,5 +1,7 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getCountries, getRegions, Country } from '../services/api';
+import { findCountry } from '../lib/countries';
 
 function formatPopulation(pop: number): string {
   if (pop >= 1_000_000_000) return `${(pop / 1_000_000_000).toFixed(1)}B`;
@@ -13,6 +15,8 @@ function formatArea(area: number): string {
 }
 
 export function Explore() {
+  const [searchParams] = useSearchParams();
+  const detailRef = useRef<HTMLDivElement>(null);
   const [countries, setCountries] = useState<Country[]>([]);
   const [regions, setRegions] = useState<{ region: string; count: number }[]>([]);
   const [loading, setLoading] = useState(true);
@@ -32,7 +36,11 @@ export function Explore() {
         ]);
         setCountries(countriesData);
         setRegions(regionsData);
-        if (countriesData.length > 0) {
+        const codeParam = searchParams.get('country')?.toUpperCase();
+        if (codeParam) {
+          const match = countriesData.find((c) => c.code === codeParam) ?? findCountry(codeParam);
+          setSelectedCountry(match ?? countriesData[0] ?? null);
+        } else if (countriesData.length > 0) {
           setSelectedCountry(countriesData[0]);
         }
       } catch (err) {
@@ -43,7 +51,7 @@ export function Explore() {
       }
     }
     fetchData();
-  }, []);
+  }, [searchParams]);
 
   const filteredCountries = useMemo(() => {
     let result = countries;
@@ -80,14 +88,7 @@ export function Explore() {
             />
           </div>
         </div>
-        <div className="flex items-center gap-4">
-          <button className="p-2 text-slate-600 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700/50 rounded-full transition-colors active:scale-90">
-            <span className="material-symbols-outlined">notifications</span>
-          </button>
-          <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden active:scale-90 transition-transform cursor-pointer">
-            <img alt="User profile settings" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-E1sZWYqo5-GiTmbpSKYwpApNBE-WAUC8r1VLqf_nRczcWHUO7mequM5RoN_mFhpeeHkWF7dc1z714Cqf_b9c-mZiig3GqM6UdLXCj9_7S-thhnoKE9GNVL3QdfrazR_Sgrz1g9-p6xolYTyHZ1skTJ_IySmgONp00-A2GRJ099V3KeSg5P2bNgTgQmCmF_tvORmnLAs5hB9UOGYKILMqNLZlAOlQqebAszY3IZ0lTjKVBEVQUiJwtZQaLq4SwM1VoOBgMZCkngu9"/>
-          </div>
-        </div>
+        <div className="flex items-center gap-4" />
       </header>
 
       <div className="p-6 md:p-10 space-y-10">
@@ -194,7 +195,7 @@ export function Explore() {
             {/* Fact Sidebar (The Modern Library Panel) */}
             <aside className="lg:col-span-4">
               {selectedCountry ? (
-                <div className="sticky top-28 bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl shadow-on-surface/5 border border-white/50">
+                <div ref={detailRef} className="sticky top-28 bg-surface-container-low rounded-lg overflow-hidden flex flex-col shadow-xl shadow-on-surface/5 border border-white/50">
                   <div className="h-48 relative overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10">
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent z-10"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -246,9 +247,17 @@ export function Explore() {
                         <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-3">Bordering Countries</p>
                         <div className="flex flex-wrap gap-2">
                           {selectedCountry.borders.map((border) => (
-                            <span key={border} className="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-semibold">
-                              {border}
-                            </span>
+                            <button
+                              key={border}
+                              type="button"
+                              onClick={() => {
+                                const neighbor = countries.find((c) => c.code === border) ?? findCountry(border);
+                                if (neighbor) setSelectedCountry(neighbor);
+                              }}
+                              className="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-xs font-semibold hover:bg-primary/10 hover:text-primary transition-colors"
+                            >
+                              {findCountry(border)?.name || border}
+                            </button>
                           ))}
                         </div>
                       </div>
@@ -263,7 +272,25 @@ export function Explore() {
                       </div>
                     )}
 
-                    <button className="w-full py-4 bg-secondary text-on-secondary rounded-full font-headline font-bold text-sm shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
+                    {selectedCountry.funFacts && selectedCountry.funFacts.length > 0 && (
+                      <div>
+                        <p className="text-[10px] font-label font-bold text-outline uppercase tracking-widest mb-3">Fun Facts</p>
+                        <ul className="space-y-2 text-sm text-on-surface-variant">
+                          {selectedCountry.funFacts.map((fact) => (
+                            <li key={fact} className="flex gap-2">
+                              <span className="text-primary">•</span>
+                              {fact}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() => detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                      className="w-full py-4 bg-secondary text-on-secondary rounded-full font-headline font-bold text-sm shadow-md transition-all active:scale-95 flex items-center justify-center gap-2"
+                    >
                       <span className="material-symbols-outlined text-lg">book</span>
                       Full Entry
                     </button>

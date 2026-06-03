@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { markAppVisited } from '../components/FirstVisitRedirect';
 
 export function Welcome() {
   return (
@@ -64,7 +65,11 @@ export function Welcome() {
 
           {/* Bento Action Section */}
           <div className="w-full flex flex-col space-y-4">
-            <Link to="/" className="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-10 py-5 rounded-full font-headline font-bold text-lg flex items-center justify-center gap-3 w-full shadow-lg shadow-primary/20 scale-100 hover:scale-[1.02] active:scale-95 transition-all group">
+            <Link
+              to="/"
+              onClick={() => markAppVisited()}
+              className="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-10 py-5 rounded-full font-headline font-bold text-lg flex items-center justify-center gap-3 w-full shadow-lg shadow-primary/20 scale-100 hover:scale-[1.02] active:scale-95 transition-all group"
+            >
               Start My Journey
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
@@ -110,11 +115,13 @@ export function Welcome() {
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-headline font-black text-xl">G</div>
           <span className="font-headline font-extrabold text-xl tracking-tight text-on-surface">GeoDaily</span>
         </div>
-        <div className="flex items-center gap-8">
-          <a className="hidden md:block text-sm font-label font-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Methodology</a>
-          <a className="hidden md:block text-sm font-label font-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Leaderboard</a>
-          <Link to="/" className="bg-surface-container-highest px-5 py-2.5 rounded-full text-sm font-bold text-on-surface hover:bg-surface-container-high transition-colors">Start</Link>
-        </div>
+        <Link
+          to="/"
+          onClick={() => markAppVisited()}
+          className="bg-surface-container-highest px-5 py-2.5 rounded-full text-sm font-bold text-on-surface hover:bg-surface-container-high transition-colors"
+        >
+          Start
+        </Link>
       </nav>
     </div>
   );

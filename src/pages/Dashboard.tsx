@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Play, Flame, Star, CheckCircle2, History, ChevronRight } from 'lucide-react';
+import { Play, Flame, Star, CheckCircle2, History, ChevronRight, Flag, Building2, Map } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 export function Dashboard() {
@@ -82,6 +82,43 @@ export function Dashboard() {
               )}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Practice Hub */}
+      <section>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="bg-primary-container text-on-primary-container p-2 rounded-lg">
+            <Flag className="w-5 h-5" />
+          </div>
+          <h3 className="text-2xl font-headline font-bold text-on-surface">Quick Practice</h3>
+        </div>
+        <p className="text-on-surface-variant mb-4">Sharpen your skills in about 10 minutes — no streak pressure.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <button
+            onClick={() => navigate('/quiz/flags')}
+            className="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/30 hover:border-primary/30 hover:shadow-md transition-all text-left"
+          >
+            <Flag className="w-6 h-6 text-primary mb-2" />
+            <h4 className="font-bold text-on-surface">Flags</h4>
+            <p className="text-sm text-outline mt-1">Identify countries by flag</p>
+          </button>
+          <button
+            onClick={() => navigate('/quiz/capitals')}
+            className="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/30 hover:border-primary/30 hover:shadow-md transition-all text-left"
+          >
+            <Building2 className="w-6 h-6 text-secondary mb-2" />
+            <h4 className="font-bold text-on-surface">Capitals</h4>
+            <p className="text-sm text-outline mt-1">Match capitals to countries</p>
+          </button>
+          <button
+            onClick={() => navigate('/quiz/map')}
+            className="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/30 hover:border-primary/30 hover:shadow-md transition-all text-left"
+          >
+            <Map className="w-6 h-6 text-tertiary mb-2" />
+            <h4 className="font-bold text-on-surface">Map</h4>
+            <p className="text-sm text-outline mt-1">Pin locations on the world map</p>
+          </button>
         </div>
       </section>
 

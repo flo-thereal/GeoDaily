@@ -1,21 +1,32 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useStore } from '../store/useStore';
-import { Trophy, Home, Flame } from 'lucide-react';
+import { Trophy, Home, Flame, MapPin } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import {
+  consumeNewAchievements,
+  consumeQuestRecap,
+  type UnlockedAchievementDisplay,
+  type QuestRecap,
+} from '../lib/questSession';
 
 export function QuestCompleted() {
   const navigate = useNavigate();
-  const { streak, points } = useStore();
+  const stats = useStore((s) => s.progress.stats);
+  const [newAchievements, setNewAchievements] = useState<UnlockedAchievementDisplay[]>([]);
+  const [recap, setRecap] = useState<QuestRecap | null>(null);
 
   useEffect(() => {
+    setNewAchievements(consumeNewAchievements());
+    setRecap(consumeQuestRecap());
+
     const duration = 3 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
     const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
 
-    const interval: any = setInterval(function() {
+    const interval: ReturnType<typeof setInterval> = setInterval(function() {
       const timeLeft = animationEnd - Date.now();
 
       if (timeLeft <= 0) {
@@ -47,15 +58,63 @@ export function QuestCompleted() {
         Great job! You've completed today's geography challenge and expanded your knowledge.
       </p>
 
+      {recap && (
+        <div className="w-full max-w-md mb-8 bg-surface-container-low p-6 rounded-2xl text-left">
+          <p className="text-sm font-bold text-on-surface-variant uppercase tracking-wider mb-2">
+            Today's score: {recap.score}/{recap.maxScore}
+          </p>
+          {recap.missedCountries.length > 0 ? (
+            <>
+              <p className="font-headline font-bold text-on-surface mb-3">Review these in the Atlas:</p>
+              <ul className="space-y-2">
+                {recap.missedCountries.map((c) => (
+                  <li key={`${c.code}-${c.name}`}>
+                    <Link
+                      to={c.code ? `/atlas?country=${c.code}` : '/atlas'}
+                      className="flex items-center gap-2 text-primary font-medium hover:underline"
+                    >
+                      <MapPin className="w-4 h-4 shrink-0" />
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p className="text-on-surface-variant">Perfect score — no countries to review!</p>
+          )}
+        </div>
+      )}
+
+      {newAchievements.length > 0 && (
+        <div className="w-full max-w-md mb-8 space-y-3">
+          <p className="font-headline font-bold text-on-surface">New achievements unlocked!</p>
+          {newAchievements.map((a) => (
+            <div
+              key={a.id}
+              className="bg-primary-container/30 border border-primary/20 p-4 rounded-2xl flex items-center gap-4 text-left"
+            >
+              <span className="material-symbols-outlined text-3xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>
+                {a.icon || 'emoji_events'}
+              </span>
+              <div>
+                <h4 className="font-headline font-bold text-on-surface">{a.name}</h4>
+                <p className="text-sm text-on-surface-variant">{a.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="grid grid-cols-2 gap-4 w-full max-w-sm mb-12">
         <div className="bg-surface-container-high p-6 rounded-3xl flex flex-col items-center">
           <Flame className="w-8 h-8 text-tertiary mb-2" />
-          <span className="text-3xl font-bold">{streak}</span>
+          <span className="text-3xl font-bold">{stats.currentStreak}</span>
           <span className="text-sm text-on-surface-variant font-medium">Day Streak</span>
         </div>
         <div className="bg-surface-container-high p-6 rounded-3xl flex flex-col items-center">
           <Trophy className="w-8 h-8 text-yellow-500 mb-2" />
-          <span className="text-3xl font-bold">{points}</span>
+          <span className="text-3xl font-bold">{stats.totalPoints}</span>
           <span className="text-sm text-on-surface-variant font-medium">Total Points</span>
         </div>
       </div>

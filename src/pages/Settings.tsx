@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { getUserSettings, updateSettings, UserSettings } from '../services/api';
+import { setGamePreferences } from '../lib/preferences';
+import { syncDailyReminder } from '../lib/reminders';
 
 interface SettingsState {
   language: string;
@@ -91,6 +93,15 @@ export function Settings() {
         hapticEnabled: settings.hapticEnabled,
         theme: settings.theme,
       });
+      const theme = (settings.theme === 'dark' || settings.theme === 'light'
+        ? settings.theme
+        : 'system') as 'light' | 'dark' | 'system';
+      setGamePreferences({
+        soundEnabled: settings.soundEnabled,
+        hapticEnabled: settings.hapticEnabled,
+        theme,
+      });
+      await syncDailyReminder(settings.dailyReminderEnabled, settings.dailyReminderTime);
       setOriginalSettings(settings);
       setSuccessMessage('Settings saved successfully!');
       setTimeout(() => setSuccessMessage(null), 3000);
@@ -136,9 +147,6 @@ export function Settings() {
           <h2 className="font-['Plus_Jakarta_Sans'] font-extrabold text-xl tracking-tight text-green-800 dark:text-green-300">Settings</h2>
         </div>
         <div className="flex items-center gap-3">
-          <button className="p-2 rounded-full hover:bg-white/50 dark:hover:bg-slate-700/50 transition-colors scale-95 active:scale-90 transition-transform duration-200">
-            <span className="material-symbols-outlined text-slate-600 dark:text-slate-400">notifications</span>
-          </button>
           <div className="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-container-high flex items-center justify-center">
             <span className="material-symbols-outlined text-on-surface-variant">person</span>
           </div>
@@ -229,6 +237,27 @@ export function Settings() {
                 <div className="p-4 rounded bg-surface/50 border border-white/20">
                   <p className="text-[11px] text-on-surface-variant leading-relaxed italic">"A consistent cartographer masters the world one day at a time."</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Appearance */}
+            <div className="bg-surface-container p-8 rounded-lg space-y-6">
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-on-surface-variant" style={{ fontVariationSettings: "'FILL' 1" }}>palette</span>
+                <h4 className="font-headline text-lg font-bold">Appearance</h4>
+              </div>
+              <div className="space-y-2">
+                <label className="font-label text-xs font-bold text-on-surface-variant px-1">Theme</label>
+                <select
+                  className="w-full bg-surface-container-lowest border-none rounded p-3 text-on-surface outline-none"
+                  value={settings?.theme || 'system'}
+                  onChange={(e) => updateSetting('theme', e.target.value)}
+                  disabled={isSaving}
+                >
+                  <option value="system">System</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
               </div>
             </div>
 

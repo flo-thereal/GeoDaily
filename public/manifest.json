@@ -1,0 +1,18 @@
+{
+  "name": "GeoDaily",
+  "short_name": "GeoDaily",
+  "description": "Daily geography challenges — flags, capitals, and maps in 5 minutes.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#edf8ff",
+  "theme_color": "#176a21",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

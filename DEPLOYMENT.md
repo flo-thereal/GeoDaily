@@ -1,71 +1,68 @@
 # GeoDaily Deployment Guide
 
-## 1. Build and Push Image to GHCR
+GeoDaily is a **static** React app deployed to **GitHub Pages**. Daily challenges are pre-generated JSON files committed by GitHub Actions. All progress is stored in the browser (localStorage).
 
-This repository includes GitHub Actions workflow:
+## Automatic deployment
 
-- `.github/workflows/build-image.yml`
+Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the Vite app and publishes to GitHub Pages.
 
-On push to `main`, it builds and publishes:
+**Live URL (project site):** `https://<github-username>.github.io/geodaily/`
 
-- `ghcr.io/<owner>/geodaily:latest`
-- `ghcr.io/<owner>/geodaily:<sha>`
+## Required repository secret
 
-## 2. Prepare Production Environment Variables
+| Secret | Purpose |
+|--------|---------|
+| `GEMINI_API_KEY` | Used by [`.github/workflows/generate-challenges.yml`](.github/workflows/generate-challenges.yml) to generate daily challenge JSON |
 
-Required:
+## Daily challenge generation
 
-- `DATABASE_URL`
-- `GEMINI_API_KEY`
-- `JWT_SECRET` (32+ chars)
-- `DB_USER`
-- `DB_PASSWORD`
+The workflow runs daily at 00:05 UTC (and on manual dispatch). It:
 
-Optional:
+1. Calls `npm run generate:challenges`
+2. Writes files to `public/data/challenges/YYYY-MM-DD.json`
+3. Commits and pushes if there are new files
 
-- `DB_NAME` (default: `geodaily`)
-- `GITHUB_OWNER` (default image owner namespace)
-- `IMAGE_TAG` (default: `latest`)
+## Local development
 
-## 3. Start Production Stack
+```bash
+npm install
+npm run dev
+```
 
-Run:
+Open the URL shown by Vite (usually `http://localhost:5173/geodaily/`).
 
-- `docker compose -f docker-compose.prod.yml up -d`
+### Generate challenges locally
 
-Check health:
+```bash
+GEMINI_API_KEY=your-key npm run generate:challenges
+```
 
-- `curl http://localhost:3000/api/health`
+## GitHub Pages setup (one-time)
 
-## 4. Apply Migrations
+1. Repo **Settings → Pages → Build and deployment**
+2. Source: **GitHub Actions** (the deploy workflow enables Pages automatically)
+3. Ensure Pages is enabled for the repository
 
-Before first production run against a fresh database:
+## Base path / custom domain
 
-- `npm run db:generate` (already done in repo)
-- `npm run db:push`
-- `npm run db:seed` (optional for initial data)
+[`vite.config.ts`](vite.config.ts) defaults to `base: '/geodaily/'` for project Pages URLs.
 
-## 5. Local Development with Compose
+For a **custom domain** or user/org Pages site, set at build time:
 
-Run:
+```bash
+VITE_BASE=/ npm run build
+```
 
-- `docker compose up --build`
+Or add `VITE_BASE=/` to the deploy workflow environment.
 
-Notes:
+## Tests
 
-- `docker-compose.yml` is for development.
-- `docker-compose.prod.yml` is for production-like runtime.
+```bash
+npm run test
+npm run test:e2e
+```
 
-## 6. Rollback
+## What is NOT used
 
-Use an older image tag:
-
-1. Set `IMAGE_TAG=<known-good-sha>`
-2. `docker compose -f docker-compose.prod.yml up -d`
-
-## 7. Security Checklist
-
-- `DEV_AUTH_BYPASS=false` in production
-- strong `JWT_SECRET`
-- no secrets committed to git
-- monitoring and backups enabled
+- No Docker, PostgreSQL, or Express server in production
+- No GHCR images or `docker compose` deploy bundle
