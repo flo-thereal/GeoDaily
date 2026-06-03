@@ -4,7 +4,7 @@ GeoDaily runs entirely in your browser. Progress is saved on this device only.
 
 ## Open the app
 
-Visit your GitHub Pages URL (e.g. `https://flo-thereal.github.io/geodaily/`).
+Visit your GitHub Pages URL (e.g. `https://flo-thereal.github.io/GeoDaily/`).
 
 Optional: **Add to Home Screen** for quick access (PWA manifest included).
 

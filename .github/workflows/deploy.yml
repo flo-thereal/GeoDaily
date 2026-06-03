@@ -30,6 +30,9 @@ jobs:
           enablement: true
       - run: npm ci
       - run: npm run build
+        env:
+          # Must match GitHub Pages project path (repo name, case-sensitive).
+          VITE_BASE: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

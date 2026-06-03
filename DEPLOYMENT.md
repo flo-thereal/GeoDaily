@@ -6,7 +6,7 @@ GeoDaily is a **static** React app deployed to **GitHub Pages**. Daily challenge
 
 Every push to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the Vite app and publishes to GitHub Pages.
 
-**Live URL (project site):** `https://<github-username>.github.io/geodaily/`
+**Live URL (project site):** `https://<github-username>.github.io/<repo-name>/` (e.g. `https://flo-thereal.github.io/GeoDaily/`)
 
 ## Required repository secret
 
@@ -54,7 +54,7 @@ The deploy workflow can also enable Pages via API when the above permissions are
 | `Get Pages site failed: Not Found` | Enable Pages with source **GitHub Actions** (step 2) |
 | Generate workflow logs `GEMINI_API_KEY not set` | Add the `GEMINI_API_KEY` repository secret |
 | Deploy job waits on environment | Approve the **github-pages** environment deployment in the Actions run |
-| Site 404 or blank assets | Confirm `vite.config.ts` `base` matches the Pages path (`/geodaily/` for `flo-thereal.github.io/geodaily/`) |
+| Site 404 or blank assets | `VITE_BASE` in the deploy workflow must match the repo name path (e.g. `/GeoDaily/` for repo `GeoDaily`) |
 
 ## Base path / custom domain
 
