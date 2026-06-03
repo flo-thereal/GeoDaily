@@ -1,44 +1,21 @@
-# GeoDaily Secrets and Environment Management
+# GeoDaily Secrets
 
-## Required Secrets (Production)
+## GitHub repository secrets
 
-- `DATABASE_URL`: PostgreSQL connection string
-- `GEMINI_API_KEY`: Gemini API key
-- `JWT_SECRET`: JWT signing secret, minimum 32 characters
-- `DB_USER`: Postgres username for compose-managed DB
-- `DB_PASSWORD`: Postgres password for compose-managed DB
+| Secret | Used by | Purpose |
+|--------|---------|---------|
+| `GEMINI_API_KEY` | [generate-challenges.yml](.github/workflows/generate-challenges.yml) | Generate daily challenge JSON via Gemini |
 
-## Recommended
+Add under **Settings → Secrets and variables → Actions → New repository secret**.
 
-- rotate `JWT_SECRET` periodically
-- store secrets in platform secret manager
-- avoid plain-text `.env` files on shared hosts
+## GitHub Actions (deploy)
 
-## GitHub Actions
+The [deploy.yml](.github/workflows/deploy.yml) workflow uses the default `GITHUB_TOKEN` with `pages: write` and `id-token: write`. No extra token is required.
 
-The GHCR publish workflow uses:
+**First-time setup:** enable GitHub Pages for the repo (**Settings → Pages → Build and deployment → Source: GitHub Actions**). The workflow cannot create the Pages site if Pages was never enabled.
 
-- `${{ secrets.GITHUB_TOKEN }}`
+## Local development
 
-No custom GHCR token is required unless your org policy requires one.
+Optional: copy `.env.example` to `.env` if you run `npm run generate:challenges` locally and need `GEMINI_API_KEY` on your machine.
 
-## Local Development
-
-Use `.env` from `.env.example`.
-
-For local-only convenience:
-
-- you may set `DEV_AUTH_BYPASS=true`
-- never use `DEV_AUTH_BYPASS=true` in production
-
-## Production Compose
-
-`docker-compose.prod.yml` enforces required variables with compose expansion checks.
-
-Example export before deployment:
-
-- `export DATABASE_URL=postgresql://...`
-- `export GEMINI_API_KEY=...`
-- `export JWT_SECRET=...`
-- `export DB_USER=...`
-- `export DB_PASSWORD=...`
+Never commit `.env` or API keys to the repository.
