@@ -1,0 +1,64 @@
+[
+  {
+    "id": "flag-EE-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Estonia",
+    "options": [
+      "Bahrain",
+      "Bulgaria",
+      "Vietnam",
+      "Estonia"
+    ],
+    "imageUrl": "EE"
+  },
+  {
+    "id": "capital-GD-1",
+    "type": "capital",
+    "question": "What is the capital of Grenada?",
+    "correctAnswer": "Saint George's",
+    "options": [
+      "Saint George's",
+      "Sarajevo",
+      "Monaco",
+      "Niamey"
+    ]
+  },
+  {
+    "id": "map-TL-2",
+    "type": "map",
+    "question": "Where is Timor-Leste located?",
+    "correctAnswer": "Timor-Leste",
+    "options": [],
+    "imageUrl": "TL",
+    "mapCoordinates": {
+      "lat": -8.8383,
+      "lng": 125.8272
+    }
+  },
+  {
+    "id": "flag-PW-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Palau",
+    "options": [
+      "Cameroon",
+      "Myanmar",
+      "Palau",
+      "Kazakhstan"
+    ],
+    "imageUrl": "PW"
+  },
+  {
+    "id": "capital-BE-4",
+    "type": "capital",
+    "question": "What is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "options": [
+      "Victoria",
+      "Brazzaville",
+      "Maputo",
+      "Brussels"
+    ]
+  }
+]
