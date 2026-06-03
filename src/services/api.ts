@@ -1,4 +1,5 @@
-import { DailyTask, DailyHistory, useStore } from '../store/useStore';
+import { DailyTask, DailyHistory, useStore, type AnswerRecord } from '../store/useStore';
+import { localDateString } from '../lib/utils';
 import { COUNTRIES, type Country } from '../lib/countries';
 import { generateDailyTasks as genDaily, generatePracticeTasks } from '../lib/generateQuiz';
 import { ACHIEVEMENTS } from '../lib/progress';
@@ -182,7 +183,7 @@ export async function getLearningHistory(days: number = 30): Promise<LearningHis
   for (let i = days - 1; i >= 0; i--) {
     const d = new Date(today);
     d.setDate(d.getDate() - i);
-    const date = d.toISOString().split('T')[0];
+    const date = localDateString(d);
     entries.push({ date, score: history[date]?.score ?? 0, maxScore: 500 });
   }
   return entries;
@@ -292,11 +293,7 @@ export async function fetchPracticeTasks(
 export interface SubmitChallengeParams {
   date: string;
   tasks: DailyTask[];
-  answers: Array<{
-    answer: string;
-    isCorrect: boolean;
-    timeTaken?: number;
-  }>;
+  answers: AnswerRecord[];
   score: number;
   maxScore: number;
   timeTaken?: number;

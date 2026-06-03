@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useStore } from './store/useStore';
 import { setGamePreferences } from './lib/preferences';
+import { syncDailyReminder } from './lib/reminders';
 import { Layout } from './components/Layout';
 import { Dashboard } from './pages/Dashboard';
 import { Quiz } from './pages/Quiz';
@@ -28,11 +29,7 @@ export default function App() {
       soundEnabled: settings.soundEnabled,
       hapticEnabled: settings.hapticEnabled,
     });
-    if (settings.dailyReminderEnabled) {
-      import('./lib/reminders').then(({ syncDailyReminder }) =>
-        syncDailyReminder(true, settings.dailyReminderTime)
-      );
-    }
+    void syncDailyReminder(settings.dailyReminderEnabled, settings.dailyReminderTime);
   }, [settings]);
 
   return (

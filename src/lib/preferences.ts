@@ -1,4 +1,7 @@
-const PREFS_KEY = 'geodaily_game_preferences';
+import type { Settings } from '../store/useStore';
+import { defaultSettings } from '../store/useStore';
+
+const STORAGE_KEY = 'geodaily-storage';
 
 export interface GamePreferences {
   soundEnabled: boolean;
@@ -6,25 +9,30 @@ export interface GamePreferences {
   theme: 'light' | 'dark' | 'system';
 }
 
-const DEFAULT_PREFS: GamePreferences = {
-  soundEnabled: true,
-  hapticEnabled: true,
-  theme: 'system',
-};
+function readPersistedSettings(): Settings {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return { ...defaultSettings };
+    const parsed = JSON.parse(raw) as { state?: { settings?: Partial<Settings> } };
+    return { ...defaultSettings, ...parsed?.state?.settings };
+  } catch {
+    return { ...defaultSettings };
+  }
+}
 
 export function getGamePreferences(): GamePreferences {
-  try {
-    const raw = localStorage.getItem(PREFS_KEY);
-    if (!raw) return { ...DEFAULT_PREFS };
-    return { ...DEFAULT_PREFS, ...JSON.parse(raw) };
-  } catch {
-    return { ...DEFAULT_PREFS };
-  }
+  const settings = readPersistedSettings();
+  const theme =
+    settings.theme === 'dark' || settings.theme === 'light' ? settings.theme : 'system';
+  return {
+    soundEnabled: settings.soundEnabled,
+    hapticEnabled: settings.hapticEnabled,
+    theme,
+  };
 }
 
 export function setGamePreferences(prefs: Partial<GamePreferences>): GamePreferences {
   const next = { ...getGamePreferences(), ...prefs };
-  localStorage.setItem(PREFS_KEY, JSON.stringify(next));
   applyTheme(next.theme);
   return next;
 }

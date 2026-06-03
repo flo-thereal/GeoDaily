@@ -51,7 +51,7 @@ export function Welcome() {
         <div className="lg:col-span-5 flex flex-col items-start space-y-8 order-1 lg:order-2">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary-container rounded-full">
             <span className="material-symbols-outlined text-[18px]">public</span>
-            <span className="text-xs font-label font-bold uppercase tracking-widest">Global Discovery Platform</span>
+            <span className="text-xs font-label font-bold uppercase tracking-widest">Daily geography drills</span>
           </div>
           
           <div className="space-y-4">
@@ -76,30 +76,24 @@ export function Welcome() {
             
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-2xl font-bold text-primary">5m</span>
-                <span className="text-[10px] font-label uppercase text-outline">Micro-Learning</span>
+                <span className="text-2xl font-bold text-primary">5</span>
+                <span className="text-[10px] font-label uppercase text-outline">Questions / day</span>
               </div>
               <div className="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-2xl font-bold text-secondary">150+</span>
+                <span className="text-2xl font-bold text-secondary">195</span>
                 <span className="text-[10px] font-label uppercase text-outline">Countries</span>
               </div>
               <div className="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-2xl font-bold text-tertiary">10k+</span>
-                <span className="text-[10px] font-label uppercase text-outline">Explorers</span>
+                <span className="text-2xl font-bold text-tertiary">0</span>
+                <span className="text-[10px] font-label uppercase text-outline">Account needed</span>
               </div>
             </div>
           </div>
 
-          {/* Footer Tonal Hint */}
           <div className="pt-8 border-t border-outline-variant/20 w-full">
-            <div className="flex items-center gap-4">
-              <div className="flex -space-x-2">
-                <img alt="Explorer" className="w-8 h-8 rounded-full border-2 border-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiAGqFeJH6qUxsLXpJJSVGtopuBKeGE6krZL_f2p2wxGgrFhWWXglAAsMyyOOIlIvHJmFrDVB9eMX474jiFK-cslY15tUOyEgawnLmgKXCnuOWr_WDGmkCow4vc71Ji_VGbaTJgDd1QiYH0KXVnTiAOQ4YQyxIU1vryZLFYKFhI79bjCmtpU74hnsx-f7ZQ2_XYwHFnOUp5VLQ3zZP8jXuJzm8os1qrRG7EIdx8fuy2Kt5s5ZXcRzqr_XjBDhoN6qu8oxpE5hq35FB"/>
-                <img alt="Explorer" className="w-8 h-8 rounded-full border-2 border-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrkIWDrabg70BteZsebEoei-lQU0LBqVnjqT09dJKKAk65ia0J2JM77IimKJxFhS9OtHGkzN_XhGWNQveAeStShZhRxXh4eStQ6RHkzVnmyPiN-jvlawmDvPs2e-_QQjmHxSZDQ5GFJNL84tzt_zhp_TfgHR-1NytD_aBZUIVkiw6vBlkb4rvEPpxjjWuhPjzwdYq-65wKtc-9ttNaJrCcZUDnAI24Z1j-GzFMfu1b6OgX7B6UvQCBII2kbWiR1FpgQc7oERh3BpEW"/>
-                <img alt="Explorer" className="w-8 h-8 rounded-full border-2 border-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUJwJqg0XybsXODz_ppZSoRo7xV4x6IF4f_ngWwYEKjKbsu9yui-PiHuvGsT8L-A-vIbowufF46NZflSIx-nN4Ql5G2hSz6sKPwIaNCJR10KWIrcPc5QZPax-oDqj44g_2hVpMRLmW03eadQ1CRJq01L1n3JDfzGEjHmMjXVKiKmmEXiWqAWMOFHE10zRWNU7azhDSJIfe_yKk-l-jl0LR9jzqFQvDljsMyHGN_mDIILAUlE4WuKPV4S8YzAdeB7XubT5hnyw1zgGp"/>
-              </div>
-              <p className="text-sm text-outline font-medium">Join over 12,000 active cartographers this week</p>
-            </div>
+            <p className="text-sm text-outline font-medium">
+              Progress stays on this device in your browser — no sign-up, works offline after the first load.
+            </p>
           </div>
         </div>
       </div>

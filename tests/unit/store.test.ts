@@ -46,18 +46,16 @@ describe('useStore', () => {
     setupLocalStorage();
     vi.resetModules();
 
+    const { initialProgress } = await import('../../src/lib/progress');
     const module = await import('../../src/store/useStore');
     useStore = module.useStore;
 
     useStore.setState({
-      streak: 0,
-      lastPlayedDate: null,
-      points: 0,
       dailyTasks: [],
       dailyTasksDate: null,
       currentTaskIndex: 0,
-      isDailyCompleted: false,
       history: {},
+      progress: initialProgress(),
     });
   });
 
@@ -68,22 +66,11 @@ describe('useStore', () => {
   it('starts with expected defaults', () => {
     const state = useStore.getState();
 
-    expect(state.streak).toBe(0);
-    expect(state.lastPlayedDate).toBeNull();
-    expect(state.points).toBe(0);
     expect(state.dailyTasks).toEqual([]);
     expect(state.currentTaskIndex).toBe(0);
-    expect(state.isDailyCompleted).toBe(false);
     expect(state.history).toEqual({});
-  });
-
-  it('adds points cumulatively', () => {
-    const { addPoints } = useStore.getState();
-
-    addPoints(100);
-    addPoints(250);
-
-    expect(useStore.getState().points).toBe(350);
+    expect(state.progress.stats.totalPoints).toBe(0);
+    expect(state.progress.stats.currentStreak).toBe(0);
   });
 
   it('sets daily tasks and resets progress', () => {
@@ -97,6 +84,7 @@ describe('useStore', () => {
           question: 'Capital of France?',
           options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
           correctAnswer: 'Paris',
+          countryCode: 'FR',
         },
       ],
       '2026-04-07'
@@ -106,7 +94,6 @@ describe('useStore', () => {
     expect(state.dailyTasks).toHaveLength(1);
     expect(state.dailyTasksDate).toBe('2026-04-07');
     expect(state.currentTaskIndex).toBe(0);
-    expect(state.isDailyCompleted).toBe(false);
   });
 
   it('does not move beyond final task index', () => {
@@ -115,18 +102,20 @@ describe('useStore', () => {
     setDailyTasks(
       [
         {
-          id: 'q1',
+          id: 'capital-FR-0',
           type: 'capital',
           question: 'Capital of France?',
           options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
           correctAnswer: 'Paris',
+          countryCode: 'FR',
         },
         {
-          id: 'q2',
+          id: 'flag-FR-1',
           type: 'flag',
           question: "Which country's flag is this?",
           options: ['France', 'Germany', 'Italy', 'Spain'],
           correctAnswer: 'France',
+          countryCode: 'FR',
           imageUrl: 'FR',
         },
       ],
@@ -140,14 +129,24 @@ describe('useStore', () => {
     expect(useStore.getState().currentTaskIndex).toBe(1);
   });
 
-  it('marks completion and can reset the daily flow', () => {
-    const { completeDaily, resetDaily } = useStore.getState();
+  it('can reset the daily flow index', () => {
+    const { setDailyTasks, nextTask, resetDaily } = useStore.getState();
 
-    completeDaily();
-    expect(useStore.getState().isDailyCompleted).toBe(true);
-
+    setDailyTasks(
+      [
+        {
+          id: 'q1',
+          type: 'capital',
+          question: 'Capital of France?',
+          options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
+          correctAnswer: 'Paris',
+          countryCode: 'FR',
+        },
+      ],
+      '2026-04-07'
+    );
+    nextTask();
     resetDaily();
-    expect(useStore.getState().isDailyCompleted).toBe(false);
     expect(useStore.getState().currentTaskIndex).toBe(0);
   });
 
@@ -168,25 +167,23 @@ describe('useStore', () => {
     expect(state.history['2026-04-07'].completed).toBe(true);
   });
 
-  it('increments streak for consecutive days and resets after gaps', () => {
-    const { incrementStreak } = useStore.getState();
+  it('resets all progress while keeping settings', () => {
+    const { saveHistory, updateSettings, resetAllProgress } = useStore.getState();
 
-    vi.useFakeTimers();
+    updateSettings({ theme: 'dark' });
+    saveHistory('2026-04-07', {
+      date: '2026-04-07',
+      tasks: [],
+      answers: [],
+      score: 400,
+      completed: true,
+    });
 
-    vi.setSystemTime(new Date('2026-04-07T12:00:00Z'));
-    incrementStreak();
-    expect(useStore.getState().streak).toBe(1);
+    resetAllProgress();
 
-    // Same day should not increment.
-    incrementStreak();
-    expect(useStore.getState().streak).toBe(1);
-
-    vi.setSystemTime(new Date('2026-04-08T12:00:00Z'));
-    incrementStreak();
-    expect(useStore.getState().streak).toBe(2);
-
-    vi.setSystemTime(new Date('2026-04-10T12:00:00Z'));
-    incrementStreak();
-    expect(useStore.getState().streak).toBe(1);
+    const state = useStore.getState();
+    expect(state.history).toEqual({});
+    expect(state.progress.stats.totalPoints).toBe(0);
+    expect(state.settings.theme).toBe('dark');
   });
 });

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { getUserSettings, updateSettings, UserSettings } from '../services/api';
 import { setGamePreferences } from '../lib/preferences';
 import { syncDailyReminder } from '../lib/reminders';
+import { useStore } from '../store/useStore';
 
 interface SettingsState {
   language: string;
@@ -11,14 +12,6 @@ interface SettingsState {
   hapticEnabled: boolean;
   theme: string;
 }
-
-const LANGUAGE_OPTIONS = [
-  { value: 'en', label: 'English (International)' },
-  { value: 'fr', label: 'Français (Monde)' },
-  { value: 'es', label: 'Español (Global)' },
-  { value: 'de', label: 'Deutsch' },
-  { value: 'pt', label: 'Português' },
-];
 
 function convertApiSettingsToState(apiSettings: UserSettings): SettingsState {
   return {
@@ -118,6 +111,30 @@ export function Settings() {
     }
   };
 
+  const handleExportProgress = () => {
+    const { history, progress } = useStore.getState();
+    const payload = JSON.stringify({ history, progress }, null, 2);
+    const blob = new Blob([payload], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `geodaily-progress-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleResetProgress = () => {
+    if (
+      window.confirm(
+        'Reset all progress on this device? Streaks, points, achievements, and challenge history will be deleted. This cannot be undone.'
+      )
+    ) {
+      useStore.getState().resetAllProgress();
+      setSuccessMessage('Progress reset. Your preferences were kept.');
+      setTimeout(() => setSuccessMessage(null), 4000);
+    }
+  };
+
   const updateSetting =<K extends keyof SettingsState>(key: K, value: SettingsState[K]) => {
     setSettings(prev => prev ? { ...prev, [key]: value } : null);
   };
@@ -182,24 +199,40 @@ export function Settings() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Preferences Section */}
           <div className="md:col-span-8 space-y-6">
-            {/* Language Section */}
-            <div className="bg-surface-container-low p-8 rounded-lg space-y-6">
+            <div className="bg-surface-container-low p-8 rounded-lg space-y-4">
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>language</span>
-                <h4 className="font-headline text-xl font-bold">Linguistic Map</h4>
+                <h4 className="font-headline text-xl font-bold">Language</h4>
               </div>
-              <div className="space-y-2">
-                <label className="font-label text-xs font-bold text-on-surface-variant px-1">Primary Discovery Language</label>
-                <select 
-                  className="w-full bg-surface-container-lowest border-none rounded p-4 text-on-surface focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none"
-                  value={settings?.language || 'en'}
-                  onChange={(e) => updateSetting('language', e.target.value)}
-                  disabled={isSaving}
+              <p className="text-sm text-on-surface-variant leading-relaxed">
+                GeoDaily is English-only today. Questions, navigation, and country names use English. More
+                languages may come later.
+              </p>
+            </div>
+
+            <div className="bg-surface-container-low p-8 rounded-lg space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-error" style={{ fontVariationSettings: "'FILL' 1" }}>storage</span>
+                <h4 className="font-headline text-xl font-bold">Your Data</h4>
+              </div>
+              <p className="text-sm text-on-surface-variant">
+                Export a backup of challenge history and stats, or reset progress while keeping these settings.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={handleExportProgress}
+                  className="px-6 py-3 bg-surface-container-highest text-on-surface font-bold rounded-full text-sm hover:bg-surface-container-high transition-colors"
                 >
-                  {LANGUAGE_OPTIONS.map(opt => (
-                    <option key={opt.value} value={opt.value}>{opt.label}</option>
-                  ))}
-                </select>
+                  Export progress
+                </button>
+                <button
+                  type="button"
+                  onClick={handleResetProgress}
+                  className="px-6 py-3 bg-error/10 text-error font-bold rounded-full text-sm hover:bg-error/20 transition-colors"
+                >
+                  Reset progress
+                </button>
               </div>
             </div>
           </div>
@@ -234,9 +267,10 @@ export function Settings() {
                     <span className="bg-primary-container text-on-primary-container p-3 rounded-full material-symbols-outlined">schedule</span>
                   </div>
                 </div>
-                <div className="p-4 rounded bg-surface/50 border border-white/20">
-                  <p className="text-[11px] text-on-surface-variant leading-relaxed italic">"A consistent cartographer masters the world one day at a time."</p>
-                </div>
+                <p className="text-[11px] text-on-surface-variant leading-relaxed">
+                  Reminders use browser notifications while this tab is open. For reliable alerts, keep GeoDaily
+                  installed or bookmarked and allow notifications.
+                </p>
               </div>
             </div>
 

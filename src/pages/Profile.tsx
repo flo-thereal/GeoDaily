@@ -1,14 +1,19 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getCurrentUser, UserProfile, getLearningHistory, LearningHistoryEntry } from '../services/api';
+import { localDateString } from '../lib/utils';
 
 // Default placeholder avatar
 const DEFAULT_AVATAR = 'https://ui-avatars.com/api/?name=Explorer&background=6366f1&color=fff&size=160';
 
 // Achievement icon mapping
 const ACHIEVEMENT_ICONS: Record<string, { icon: string; bgClass: string; textClass: string }> = {
-  exploration: { icon: 'stars', bgClass: 'bg-tertiary-container', textClass: 'text-on-tertiary-container' },
-  mastery: { icon: 'waves', bgClass: 'bg-secondary-container', textClass: 'text-on-secondary-container' },
-  speed: { icon: 'speed', bgClass: 'bg-primary-container', textClass: 'text-on-primary-container' },
+  progress: { icon: 'flag', bgClass: 'bg-primary-container', textClass: 'text-on-primary-container' },
+  streak: { icon: 'local_fire_department', bgClass: 'bg-tertiary-container', textClass: 'text-on-tertiary-container' },
+  accuracy: { icon: 'star', bgClass: 'bg-secondary-container', textClass: 'text-on-secondary-container' },
+  mastery: { icon: 'public', bgClass: 'bg-secondary-container', textClass: 'text-on-secondary-container' },
+  continent: { icon: 'map', bgClass: 'bg-primary-container', textClass: 'text-on-primary-container' },
+  points: { icon: 'auto_awesome', bgClass: 'bg-tertiary-container', textClass: 'text-on-tertiary-container' },
+  skill: { icon: 'school', bgClass: 'bg-primary-container', textClass: 'text-on-primary-container' },
   default: { icon: 'emoji_events', bgClass: 'bg-surface-container-high', textClass: 'text-on-surface-variant' },
 };
 
@@ -72,7 +77,7 @@ export function Profile() {
       date: entry.date,
       height: maxScore > 0 ? (entry.score / maxScore) * 100 : 0,
       score: entry.score,
-      isToday: entry.date === new Date().toISOString().split('T')[0],
+      isToday: entry.date === localDateString(),
     }));
     
     // Only show a subset of bars for readability (every 3rd bar for 30 days = ~10 bars)
@@ -129,9 +134,6 @@ export function Profile() {
           <span className="font-headline font-bold text-base text-slate-600 dark:text-slate-400">Explorer Profile</span>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="p-2 rounded-full hover:bg-white/50 dark:hover:bg-slate-700/50 transition-colors text-slate-600">
-            <span className="material-symbols-outlined">notifications</span>
-          </button>
           <div className="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 overflow-hidden">
             <img alt="User profile settings" className="w-full h-full object-cover" src={profile.avatarUrl || DEFAULT_AVATAR}/>
           </div>

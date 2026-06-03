@@ -5,6 +5,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/** Calendar date in the user's local timezone (YYYY-MM-DD). */
+export function localDateString(d = new Date()): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+export function localYesterdayString(from = new Date()): string {
+  const d = new Date(from);
+  d.setDate(d.getDate() - 1);
+  return localDateString(d);
+}
+
 export function getDistanceFromLatLonInKm(lat1: number, lon1: number, lat2: number, lon2: number) {
   const R = 6371; // Radius of the earth in km
   const dLat = deg2rad(lat2 - lat1);

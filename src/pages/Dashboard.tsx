@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Play, Flame, Star, CheckCircle2, History, ChevronRight, Flag, Building2, Map } from 'lucide-react';
 import { useStore } from '../store/useStore';
+import { localDateString } from '../lib/utils';
 
 export function Dashboard() {
   const navigate = useNavigate();
@@ -13,13 +14,13 @@ export function Dashboard() {
 
   // Generate last 7 days
   const today = new Date();
-  const todayStr = today.toISOString().split('T')[0];
+  const todayStr = localDateString(today);
   const isDailyCompleted = history[todayStr]?.completed || false;
   
   const pastDays = Array.from({ length: 7 }).map((_, i) => {
     const d = new Date(today);
     d.setDate(d.getDate() - (i + 1));
-    return d.toISOString().split('T')[0];
+    return localDateString(d);
   });
 
   return (
@@ -93,7 +94,7 @@ export function Dashboard() {
           </div>
           <h3 className="text-2xl font-headline font-bold text-on-surface">Quick Practice</h3>
         </div>
-        <p className="text-on-surface-variant mb-4">Sharpen your skills in about 10 minutes — no streak pressure.</p>
+        <p className="text-on-surface-variant mb-4">Sharpen your skills — practice counts toward skill achievements, not streaks or daily points.</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <button
             onClick={() => navigate('/quiz/flags')}

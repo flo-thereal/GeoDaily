@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { localDateString } from '../../src/lib/utils';
 import type { DailyTask } from '../../src/store/useStore';
 
 class MemoryStorage implements Storage {
@@ -20,7 +21,15 @@ function setupLocalStorage() {
 }
 
 function flagTask(code: string, name: string): DailyTask {
-  return { id: `flag-${code}`, type: 'flag', question: 'flag?', correctAnswer: name, options: [name], imageUrl: code };
+  return {
+    id: `flag-${code}-0`,
+    type: 'flag',
+    question: 'flag?',
+    correctAnswer: name,
+    options: [name],
+    countryCode: code,
+    imageUrl: code,
+  };
 }
 
 describe('static api service', () => {
@@ -58,6 +67,9 @@ describe('static api service', () => {
   });
 
   it('records a daily result into local progress', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-06-03T12:00:00'));
+
     const tasks = [
       flagTask('FR', 'France'),
       flagTask('DE', 'Germany'),
@@ -66,9 +78,9 @@ describe('static api service', () => {
       flagTask('US', 'United States'),
     ];
     const result = await api.submitChallenge({
-      date: '2026-05-29',
+      date: '2026-06-03',
       tasks,
-      answers: tasks.map((t) => ({ answer: t.correctAnswer, isCorrect: true })),
+      answers: tasks.map((t) => ({ guess: t.correctAnswer, isCorrect: true })),
       score: 500,
       maxScore: 500,
     });
@@ -87,12 +99,14 @@ describe('static api service', () => {
     const profile = await api.getCurrentUser();
     expect(profile.displayName).toBe('Explorer');
     expect(profile.achievements.some((a) => a.id === 'perfect_score')).toBe(true);
+
+    vi.useRealTimers();
   });
 
   it('builds learning history spanning the requested days, ending today', async () => {
     const history = await api.getLearningHistory(7);
     expect(history).toHaveLength(7);
-    const today = new Date().toISOString().split('T')[0];
+    const today = localDateString();
     expect(history[history.length - 1].date).toBe(today);
     expect(history.every((h) => h.maxScore === 500)).toBe(true);
   });

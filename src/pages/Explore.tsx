@@ -96,10 +96,10 @@ export function Explore() {
         <section className="relative">
           <div className="max-w-3xl">
             <h2 className="text-5xl md:text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-4">
-              The World <span className="text-primary italic">Encyclopedia</span>
+              Country <span className="text-primary italic">Atlas</span>
             </h2>
             <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Traverse the globe through our curated cartographic library. Discover cultures, borders, and the stories that define our planet.
+              Look up flags, capitals, and facts after your daily challenge — especially for countries you missed.
             </p>
           </div>
         </section>
@@ -286,14 +286,6 @@ export function Explore() {
                       </div>
                     )}
 
-                    <button
-                      type="button"
-                      onClick={() => detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                      className="w-full py-4 bg-secondary text-on-secondary rounded-full font-headline font-bold text-sm shadow-md transition-all active:scale-95 flex items-center justify-center gap-2"
-                    >
-                      <span className="material-symbols-outlined text-lg">book</span>
-                      Full Entry
-                    </button>
                   </div>
                 </div>
               ) : (

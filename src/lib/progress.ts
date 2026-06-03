@@ -1,17 +1,16 @@
-import type { DailyTask, GameType } from '../store/useStore';
+import type { AnswerRecord, DailyTask, GameType } from '../store/useStore';
 import { findCountry, regionToContinent, type Continent } from './countries';
+import { localDateString, localYesterdayString } from './utils';
 
 export interface AchievementDef {
   id: string;
   name: string;
   description: string;
-  icon: string; // material-symbols name
+  icon: string;
   category: string;
   points: number;
 }
 
-// Ported from the old server seed (server/drizzle/seed.ts), with icons mapped to
-// Material Symbols names used by the Profile page.
 export const ACHIEVEMENTS: AchievementDef[] = [
   { id: 'first_quest', name: 'First Steps', description: 'Complete your first daily challenge', icon: 'flag', category: 'progress', points: 50 },
   { id: 'streak_3', name: 'Consistent Explorer', description: 'Maintain a 3-day streak', icon: 'local_fire_department', category: 'streak', points: 100 },
@@ -24,6 +23,8 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: 'continent_europe', name: 'European Explorer', description: 'Master European countries', icon: 'map', category: 'continent', points: 500 },
   { id: 'continent_asia', name: 'Asian Adventurer', description: 'Master Asian countries', icon: 'map', category: 'continent', points: 500 },
   { id: 'continent_africa', name: 'African Adventurer', description: 'Master African countries', icon: 'map', category: 'continent', points: 500 },
+  { id: 'continent_americas', name: 'Americas Explorer', description: 'Master countries in the Americas', icon: 'map', category: 'continent', points: 500 },
+  { id: 'continent_oceania', name: 'Oceania Explorer', description: 'Master Oceanian countries', icon: 'map', category: 'continent', points: 500 },
   { id: 'points_1000', name: 'Rising Star', description: 'Earn 1000 total points', icon: 'auto_awesome', category: 'points', points: 100 },
   { id: 'points_5000', name: 'Shining Beacon', description: 'Earn 5000 total points', icon: 'wb_sunny', category: 'points', points: 300 },
   { id: 'flags_50', name: 'Flag Expert', description: 'Answer 50 flag questions correctly', icon: 'flag', category: 'skill', points: 200 },
@@ -53,7 +54,7 @@ export interface ProgressState {
   countryProgress: Record<string, { timesCorrect: number; timesIncorrect: number; mastered: boolean }>;
   continentMastery: Record<string, ContinentEntry>;
   skillCorrect: Record<GameType, number>;
-  unlockedAchievements: Record<string, string>; // id -> ISO unlock date
+  unlockedAchievements: Record<string, string>;
 }
 
 export function initialProgress(): ProgressState {
@@ -78,13 +79,14 @@ export function initialProgress(): ProgressState {
 export interface DailyResult {
   date: string;
   tasks: DailyTask[];
-  answers: Array<{ guess?: string | null; answer?: string | null; isCorrect: boolean }>;
+  answers: AnswerRecord[];
   score: number;
   maxScore: number;
 }
 
-function isoDate(d = new Date()): string {
-  return d.toISOString().split('T')[0];
+export interface PracticeResult {
+  tasks: DailyTask[];
+  answers: AnswerRecord[];
 }
 
 function normalizeCountryCode(raw: unknown): string | null {
@@ -93,60 +95,26 @@ function normalizeCountryCode(raw: unknown): string | null {
   return /^[A-Z]{2,3}$/.test(normalized) ? normalized : null;
 }
 
-/**
- * Apply a completed daily challenge to the progress state. Pure: returns a new
- * state plus the list of newly unlocked achievement ids. Ported from the old
- * server submit handler (server/routes/challenges.ts).
- */
-export function applyDailyResult(
-  prev: ProgressState,
-  result: DailyResult
-): { state: ProgressState; newAchievements: string[] } {
-  const { date, tasks, answers, score, maxScore } = result;
+/** Resolve ISO country code from task fields (supports legacy challenge JSON). */
+export function taskCountryCode(task: DailyTask): string | null {
+  const fromField =
+    normalizeCountryCode(task.countryCode) ?? normalizeCountryCode(task.imageUrl);
+  if (fromField) return fromField;
+  const parts = task.id.split('-');
+  if (parts.length >= 2) return normalizeCountryCode(parts[1]);
+  return null;
+}
 
-  const today = isoDate();
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yesterdayStr = isoDate(yesterday);
-
-  const lastPlayed = prev.stats.lastPlayedDate;
-  let currentStreak = 1;
-  if (lastPlayed === yesterdayStr) currentStreak = prev.stats.currentStreak + 1;
-  else if (lastPlayed === today) currentStreak = prev.stats.currentStreak;
-
-  const longestStreak = Math.max(currentStreak, prev.stats.longestStreak);
-  const totalPoints = prev.stats.totalPoints + score;
-  const daysPlayed = prev.stats.daysPlayed + (lastPlayed !== today ? 1 : 0);
-  const isPerfectScore = score === maxScore && maxScore >= 500;
-
-  const stats: Stats = {
-    ...prev.stats,
-    currentStreak,
-    longestStreak,
-    totalPoints,
-    daysPlayed,
-    lastPlayedDate: today,
-    totalQuestionsAnswered: prev.stats.totalQuestionsAnswered + maxScore / 100,
-    correctAnswers: prev.stats.correctAnswers + score / 100,
-  };
-
-  const countryProgress = { ...prev.countryProgress };
-  const continentMastery: Record<string, ContinentEntry> = { ...prev.continentMastery };
-  const skillCorrect: Record<GameType, number> = { ...prev.skillCorrect };
-  let countriesMastered = prev.stats.countriesMastered;
-
-  // Aggregate this session's answers by country.
+function aggregateCountryAnswers(
+  tasks: DailyTask[],
+  answers: AnswerRecord[]
+): Record<string, { correct: number; total: number; region: string }> {
   const countryAnswers: Record<string, { correct: number; total: number; region: string }> = {};
 
   tasks.forEach((task, i) => {
     const answer = answers[i];
     const isCorrect = answer?.isCorrect === true;
-    const qType = task.type as GameType;
-    if (isCorrect && (qType === 'flag' || qType === 'capital' || qType === 'map')) {
-      skillCorrect[qType] += 1;
-    }
-
-    const code = normalizeCountryCode(task.imageUrl);
+    const code = taskCountryCode(task);
     if (!code) return;
     const country = findCountry(code);
     if (!country) return;
@@ -156,7 +124,40 @@ export function applyDailyResult(
     if (isCorrect) countryAnswers[key].correct += 1;
   });
 
-  // Update per-country progress + continent mastery.
+  return countryAnswers;
+}
+
+function applyCountryAndSkillUpdates(
+  prev: ProgressState,
+  tasks: DailyTask[],
+  answers: AnswerRecord[],
+  options: { updateSkills: boolean; updateStats: boolean; score?: number; maxScore?: number }
+): {
+  countryProgress: ProgressState['countryProgress'];
+  continentMastery: ProgressState['continentMastery'];
+  skillCorrect: Record<GameType, number>;
+  countriesMastered: number;
+  totalQuestionsAnswered: number;
+  correctAnswers: number;
+} {
+  const countryProgress = { ...prev.countryProgress };
+  const continentMastery: Record<string, ContinentEntry> = { ...prev.continentMastery };
+  const skillCorrect: Record<GameType, number> = { ...prev.skillCorrect };
+  let countriesMastered = prev.stats.countriesMastered;
+
+  if (options.updateSkills) {
+    tasks.forEach((task, i) => {
+      const answer = answers[i];
+      const isCorrect = answer?.isCorrect === true;
+      const qType = task.type;
+      if (isCorrect && (qType === 'flag' || qType === 'capital' || qType === 'map')) {
+        skillCorrect[qType] += 1;
+      }
+    });
+  }
+
+  const countryAnswers = aggregateCountryAnswers(tasks, answers);
+
   for (const [code, agg] of Object.entries(countryAnswers)) {
     const existing = countryProgress[code] ?? { timesCorrect: 0, timesIncorrect: 0, mastered: false };
     const timesCorrect = existing.timesCorrect + agg.correct;
@@ -176,30 +177,53 @@ export function applyDailyResult(
     };
   }
 
-  stats.countriesMastered = countriesMastered;
+  let totalQuestionsAnswered = prev.stats.totalQuestionsAnswered;
+  let correctAnswers = prev.stats.correctAnswers;
+  if (options.updateStats && options.maxScore !== undefined && options.score !== undefined) {
+    totalQuestionsAnswered += options.maxScore / 100;
+    correctAnswers += options.score / 100;
+  }
 
-  // Achievement checks.
+  return {
+    countryProgress,
+    continentMastery,
+    skillCorrect,
+    countriesMastered,
+    totalQuestionsAnswered,
+    correctAnswers,
+  };
+}
+
+function checkAchievements(
+  prev: ProgressState,
+  stats: Stats,
+  continentMastery: Record<string, ContinentEntry>,
+  skillCorrect: Record<GameType, number>,
+  isPerfectScore: boolean
+): { unlockedAchievements: ProgressState['unlockedAchievements']; newAchievements: string[] } {
   const unlockedAchievements = { ...prev.unlockedAchievements };
   const newAchievements: string[] = [];
   const continentPct = (c: Continent) => continentMastery[c]?.percentage ?? 0;
 
   const predicates: Record<string, boolean> = {
-    first_quest: daysPlayed >= 1,
-    streak_3: currentStreak >= 3,
-    streak_7: currentStreak >= 7,
-    streak_30: currentStreak >= 30,
+    first_quest: stats.daysPlayed >= 1,
+    streak_3: stats.currentStreak >= 3,
+    streak_7: stats.currentStreak >= 7,
+    streak_30: stats.currentStreak >= 30,
     perfect_score: isPerfectScore,
-    points_1000: totalPoints >= 1000,
-    points_5000: totalPoints >= 5000,
-    countries_10: countriesMastered >= 10,
-    countries_50: countriesMastered >= 50,
-    countries_100: countriesMastered >= 100,
+    points_1000: stats.totalPoints >= 1000,
+    points_5000: stats.totalPoints >= 5000,
+    countries_10: stats.countriesMastered >= 10,
+    countries_50: stats.countriesMastered >= 50,
+    countries_100: stats.countriesMastered >= 100,
     flags_50: skillCorrect.flag >= 50,
     capitals_50: skillCorrect.capital >= 50,
     maps_50: skillCorrect.map >= 50,
     continent_europe: continentPct('Europe') >= 80,
     continent_asia: continentPct('Asia') >= 80,
     continent_africa: continentPct('Africa') >= 80,
+    continent_americas: continentPct('Americas') >= 80,
+    continent_oceania: continentPct('Oceania') >= 80,
   };
 
   const now = new Date().toISOString();
@@ -211,8 +235,99 @@ export function applyDailyResult(
     }
   }
 
+  return { unlockedAchievements, newAchievements };
+}
+
+/**
+ * Apply a completed **today** daily challenge to progress. Only call when the
+ * challenge date is the local calendar today.
+ */
+export function applyDailyResult(
+  prev: ProgressState,
+  result: DailyResult
+): { state: ProgressState; newAchievements: string[] } {
+  const { date, tasks, answers, score, maxScore } = result;
+  const today = localDateString();
+  const yesterdayStr = localYesterdayString();
+
+  if (date !== today) {
+    return { state: prev, newAchievements: [] };
+  }
+
+  const lastPlayed = prev.stats.lastPlayedDate;
+  let currentStreak = 1;
+  if (lastPlayed === yesterdayStr) currentStreak = prev.stats.currentStreak + 1;
+  else if (lastPlayed === today) currentStreak = prev.stats.currentStreak;
+
+  const longestStreak = Math.max(currentStreak, prev.stats.longestStreak);
+  const totalPoints = prev.stats.totalPoints + score;
+  const daysPlayed = prev.stats.daysPlayed + (lastPlayed !== today ? 1 : 0);
+  const isPerfectScore = score === maxScore && maxScore >= 500;
+
+  const aggregated = applyCountryAndSkillUpdates(prev, tasks, answers, {
+    updateSkills: true,
+    updateStats: true,
+    score,
+    maxScore,
+  });
+
+  const stats: Stats = {
+    ...prev.stats,
+    currentStreak,
+    longestStreak,
+    totalPoints,
+    daysPlayed,
+    lastPlayedDate: today,
+    countriesMastered: aggregated.countriesMastered,
+    totalQuestionsAnswered: aggregated.totalQuestionsAnswered,
+    correctAnswers: aggregated.correctAnswers,
+  };
+
+  const { unlockedAchievements, newAchievements } = checkAchievements(
+    prev,
+    stats,
+    aggregated.continentMastery,
+    aggregated.skillCorrect,
+    isPerfectScore
+  );
+
   return {
-    state: { stats, countryProgress, continentMastery, skillCorrect, unlockedAchievements },
+    state: {
+      stats,
+      countryProgress: aggregated.countryProgress,
+      continentMastery: aggregated.continentMastery,
+      skillCorrect: aggregated.skillCorrect,
+      unlockedAchievements,
+    },
     newAchievements,
+  };
+}
+
+/** Practice sessions update skill counters and country mastery only (no points/streak). */
+export function applyPracticeResult(prev: ProgressState, result: PracticeResult): ProgressState {
+  const aggregated = applyCountryAndSkillUpdates(prev, result.tasks, result.answers, {
+    updateSkills: true,
+    updateStats: false,
+  });
+
+  const stats: Stats = {
+    ...prev.stats,
+    countriesMastered: aggregated.countriesMastered,
+  };
+
+  const { unlockedAchievements } = checkAchievements(
+    prev,
+    stats,
+    aggregated.continentMastery,
+    aggregated.skillCorrect,
+    false
+  );
+
+  return {
+    stats,
+    countryProgress: aggregated.countryProgress,
+    continentMastery: aggregated.continentMastery,
+    skillCorrect: aggregated.skillCorrect,
+    unlockedAchievements,
   };
 }

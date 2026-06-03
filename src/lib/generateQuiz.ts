@@ -56,6 +56,7 @@ function buildTask(type: GameType, country: Country, index: number, rng: () => n
       question: "Which country's flag is this?",
       correctAnswer: country.name,
       options: shuffle([country.name, ...distractors], rng),
+      countryCode: country.code,
       imageUrl: country.code,
     };
   }
@@ -72,6 +73,7 @@ function buildTask(type: GameType, country: Country, index: number, rng: () => n
       question: `What is the capital of ${country.name}?`,
       correctAnswer: country.capital,
       options: shuffle([country.capital, ...distractors], rng),
+      countryCode: country.code,
     };
   }
 
@@ -82,6 +84,7 @@ function buildTask(type: GameType, country: Country, index: number, rng: () => n
     question: `Where is ${country.name} located?`,
     correctAnswer: country.name,
     options: [],
+    countryCode: country.code,
     imageUrl: country.code,
     mapCoordinates: country.coordinates,
   };

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useStore } from '../store/useStore';
+import { localDateString } from '../lib/utils';
 import { Trophy, Home, Flame, MapPin } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import {
@@ -129,7 +130,7 @@ export function QuestCompleted() {
         </button>
         <button
           onClick={() => {
-            const todayStr = new Date().toISOString().split('T')[0];
+            const todayStr = localDateString();
             navigate(`/quiz/daily?date=${todayStr}&review=true`);
           }}
           className="flex-1 bg-surface-container-high text-on-surface px-6 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors shadow-sm"

@@ -1,69 +1,105 @@
 import { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents, Polyline } from 'react-leaflet';
 import L from 'leaflet';
-import { DailyTask } from '../store/useStore';
+import { DailyTask, type MapGuess } from '../store/useStore';
 import { getDistanceFromLatLonInKm, cn } from '../lib/utils';
 
-// Fix leaflet icons
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: unknown })._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
   iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-// Custom icons
 const userIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+  iconUrl:
+    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+  shadowSize: [41, 41],
 });
 
 const targetIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  iconUrl:
+    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+  shadowSize: [41, 41],
 });
 
-function LocationMarker({ position, setPosition, disabled }: any) {
+type MapAnswerPayload = {
+  isMap: true;
+  isCorrect: boolean;
+  distance: number;
+  lat: number;
+  lng: number;
+};
+
+function LocationMarker({
+  position,
+  setPosition,
+  disabled,
+}: {
+  position: L.LatLng | null;
+  setPosition: (pos: L.LatLng) => void;
+  disabled: boolean;
+}) {
   useMapEvents({
     click(e) {
-      if (!disabled) {
-        setPosition(e.latlng);
-      }
+      if (!disabled) setPosition(e.latlng);
     },
   });
 
-  return position === null ? null : (
-    <Marker position={position} icon={userIcon}></Marker>
-  );
+  return position === null ? null : <Marker position={position} icon={userIcon} />;
 }
 
-export function MapQuiz({ task, onAnswer, showResult }: { task: DailyTask, onAnswer: any, showResult: boolean }) {
+export function MapQuiz({
+  task,
+  onAnswer,
+  showResult,
+  initialGuess = null,
+}: {
+  task: DailyTask;
+  onAnswer: (answer: MapAnswerPayload) => void;
+  showResult: boolean;
+  initialGuess?: MapGuess | null;
+}) {
   const [guess, setGuess] = useState<L.LatLng | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
 
-  // Reset when task changes
   useEffect(() => {
-    setGuess(null);
-    setDistance(null);
-  }, [task]);
+    if (initialGuess) {
+      setGuess(new L.LatLng(initialGuess.lat, initialGuess.lng));
+      setDistance(initialGuess.distance);
+    } else {
+      setGuess(null);
+      setDistance(null);
+    }
+  }, [task, initialGuess]);
 
-  const targetPos = task.mapCoordinates ? new L.LatLng(task.mapCoordinates.lat, task.mapCoordinates.lng) : null;
+  const targetPos = task.mapCoordinates
+    ? new L.LatLng(task.mapCoordinates.lat, task.mapCoordinates.lng)
+    : null;
 
   const handleSubmit = () => {
     if (!guess || !targetPos) return;
     const dist = getDistanceFromLatLonInKm(guess.lat, guess.lng, targetPos.lat, targetPos.lng);
     setDistance(dist);
-    const isCorrect = dist <= 500; // 500km threshold
-    onAnswer({ isMap: true, isCorrect, distance: dist });
+    const isCorrect = dist <= 500;
+    onAnswer({
+      isMap: true,
+      isCorrect,
+      distance: dist,
+      lat: guess.lat,
+      lng: guess.lng,
+    });
   };
+
+  const withinRange = distance !== null && distance <= 500;
 
   return (
     <div className="flex flex-col gap-4 h-full w-full">
@@ -79,7 +115,13 @@ export function MapQuiz({ task, onAnswer, showResult }: { task: DailyTask, onAns
               <Marker position={targetPos} icon={targetIcon}>
                 <Popup>{task.correctAnswer}</Popup>
               </Marker>
-              {guess && <Polyline positions={[guess, targetPos]} color={distance && distance <= 500 ? 'green' : 'red'} dashArray="5, 10" />}
+              {guess && (
+                <Polyline
+                  positions={[guess, targetPos]}
+                  color={withinRange ? 'green' : 'red'}
+                  dashArray="5, 10"
+                />
+              )}
             </>
           )}
         </MapContainer>
@@ -94,8 +136,14 @@ export function MapQuiz({ task, onAnswer, showResult }: { task: DailyTask, onAns
           Submit Guess
         </button>
       ) : (
-        <div className={cn("p-4 rounded-2xl text-center font-bold text-lg", distance && distance <= 500 ? "bg-primary-container text-on-primary-container" : "bg-red-100 text-red-900")}>
-          {distance && distance <= 500 ? 'Great guess!' : 'Too far!'} You were {Math.round(distance || 0)} km away from {task.correctAnswer}.
+        <div
+          className={cn(
+            'p-4 rounded-2xl text-center font-bold text-lg',
+            withinRange ? 'bg-primary-container text-on-primary-container' : 'bg-red-100 text-red-900'
+          )}
+        >
+          {withinRange ? 'Great guess!' : 'Too far!'} You were {Math.round(distance || 0)} km away from{' '}
+          {task.correctAnswer}.
         </div>
       )}
     </div>

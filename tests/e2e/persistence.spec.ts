@@ -1,29 +1,32 @@
 import { expect, test } from '@playwright/test';
 
 const STORAGE_KEY = 'geodaily-storage';
+const VISITED_KEY = 'geodaily_has_visited';
 
 test.describe('Static persistence', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/#/');
+    await page.evaluate(
+      ({ visitedKey }) => localStorage.setItem(visitedKey, '1'),
+      { visitedKey: VISITED_KEY }
+    );
+  });
+
   test('dashboard boots without a server', async ({ page }) => {
     await page.goto('/#/');
     await expect(page.getByText("Today's Challenge")).toBeVisible();
   });
 
   test('reflects locally persisted progress after reload', async ({ page }) => {
-    // Seed the persisted Zustand store, then load the app fresh.
-    await page.goto('/#/');
     await page.evaluate(
       ({ key, value }) => localStorage.setItem(key, value),
       {
         key: STORAGE_KEY,
         value: JSON.stringify({
           state: {
-            streak: 0,
-            lastPlayedDate: null,
-            points: 0,
             dailyTasks: [],
             dailyTasksDate: null,
             currentTaskIndex: 0,
-            isDailyCompleted: false,
             history: {},
             progress: {
               stats: {
@@ -58,7 +61,6 @@ test.describe('Static persistence', () => {
     await page.reload();
     await page.goto('/#/');
 
-    // Streak (4) and points (1234) headline badges should reflect stored state.
     await expect(page.getByText('4', { exact: true })).toBeVisible();
     await expect(page.getByText('1234', { exact: true })).toBeVisible();
   });

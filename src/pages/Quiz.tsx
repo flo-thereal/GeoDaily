@@ -1,71 +1,114 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { useStore, type DailyTask } from '../store/useStore';
+import { useParams, useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { useStore, type AnswerRecord, type DailyTask, type MapGuess } from '../store/useStore';
 import { generateDailyTasks, fetchPracticeTasks } from '../services/api';
 import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { cn } from '../lib/utils';
+import { cn, localDateString } from '../lib/utils';
 import { MapQuiz } from '../components/MapQuiz';
 import { playCorrectSound, triggerHaptic } from '../lib/preferences';
 import { storeNewAchievements, storeQuestRecap } from '../lib/questSession';
+import { taskCountryCode } from '../lib/progress';
+
+function isDateCompletedInStorage(date: string): boolean {
+  try {
+    const raw = localStorage.getItem('geodaily-storage');
+    if (!raw) return false;
+    const parsed = JSON.parse(raw) as { state?: { history?: Record<string, { completed?: boolean }> } };
+    return Boolean(parsed.state?.history?.[date]?.completed);
+  } catch {
+    return false;
+  }
+}
+
+function isMapGuess(guess: AnswerRecord['guess']): guess is MapGuess {
+  return typeof guess === 'object' && guess !== null && 'lat' in guess;
+}
 
 export function Quiz() {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  const { dailyTasks, dailyTasksDate, setDailyTasks, currentTaskIndex, nextTask, completeDaily, addPoints, history, saveHistory, submitDailyResult } = useStore();
-  
+  const {
+    dailyTasks,
+    dailyTasksDate,
+    setDailyTasks,
+    currentTaskIndex,
+    nextTask,
+    history,
+    saveHistory,
+    submitDailyResult,
+    submitPracticeResult,
+  } = useStore();
+
   const searchParams = new URLSearchParams(location.search);
   const dateParam = searchParams.get('date');
   const isReview = searchParams.get('review') === 'true';
-  
-  const todayStr = new Date().toISOString().split('T')[0];
+
+  const todayStr = localDateString();
   const targetDate = dateParam || todayStr;
   const isToday = targetDate === todayStr;
 
+  const [storeReady, setStoreReady] = useState(() => useStore.persist.hasHydrated());
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [mapReviewGuess, setMapReviewGuess] = useState<MapGuess | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [practiceTasks, setPracticeTasks] = useState<DailyTask[]>([]);
   const [currentPracticeIndex, setCurrentPracticeIndex] = useState(0);
-  
-  // Track answers for history
-  const [userAnswers, setUserAnswers] = useState<any[]>([]);
+
+  const [userAnswers, setUserAnswers] = useState<AnswerRecord[]>([]);
   const [sessionScore, setSessionScore] = useState(0);
 
   const isDaily = type === 'daily';
-  
-  // If in review mode, use the tasks from history
+  const isPractice = !isDaily;
+
   const historyData = history[targetDate];
-  const tasks = isReview && historyData ? historyData.tasks : (isDaily ? dailyTasks : practiceTasks);
+  const alreadyCompleted =
+    Boolean(history[targetDate]?.completed) || isDateCompletedInStorage(targetDate);
+  const tasks = isReview && historyData ? historyData.tasks : isDaily ? dailyTasks : practiceTasks;
   const currentIndex = isDaily ? currentTaskIndex : currentPracticeIndex;
 
   useEffect(() => {
-    if (isReview && historyData) {
-      // Setup review mode state - handled separately below
-      return;
-    }
+    const unsub = useStore.persist.onFinishHydration(() => setStoreReady(true));
+    setStoreReady(useStore.persist.hasHydrated());
+    return unsub;
+  }, []);
+
+  useEffect(() => {
+    if (isReview && historyData) return;
+    if (!storeReady) return;
+    if (isDaily && alreadyCompleted) return;
 
     if (isDaily) {
-      // Only load if no tasks exist OR if the loaded date differs from the target date
       if (dailyTasks.length === 0 || dailyTasksDate !== targetDate) {
         loadDailyTasks(targetDate);
       }
     } else {
       loadPracticeTasks();
     }
-  }, [type, isDaily, targetDate]);
-  
-  // Separate effect for review mode answer restoration
+  }, [type, isDaily, targetDate, storeReady, alreadyCompleted, isReview, historyData]);
+
   useEffect(() => {
     if (isReview && historyData) {
       const answer = historyData.answers[currentIndex];
       if (answer) {
-        setSelectedAnswer(answer.guess);
+        if (isMapGuess(answer.guess)) {
+          setMapReviewGuess(answer.guess);
+          setSelectedAnswer(null);
+        } else {
+          setSelectedAnswer(String(answer.guess));
+          setMapReviewGuess(null);
+        }
         setIsCorrect(answer.isCorrect);
         setShowResult(true);
+      } else {
+        setSelectedAnswer(null);
+        setMapReviewGuess(null);
+        setIsCorrect(null);
+        setShowResult(false);
       }
     }
   }, [isReview, historyData, currentIndex]);
@@ -74,10 +117,10 @@ export function Quiz() {
     setLoading(true);
     setError(null);
     try {
-      const tasks = await generateDailyTasks(date);
-      setDailyTasks(tasks, date);
-    } catch (err: any) {
-      setError(err.message || "Failed to load tasks");
+      const loaded = await generateDailyTasks(date);
+      setDailyTasks(loaded, date);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load tasks');
     } finally {
       setLoading(false);
     }
@@ -87,90 +130,99 @@ export function Quiz() {
     setLoading(true);
     setError(null);
     try {
-      const practiceType = (type === 'capitals' || type === 'map' ? type : 'flags') as 'flags' | 'capitals' | 'map';
-      const tasks = await fetchPracticeTasks(practiceType);
-      setPracticeTasks(tasks);
+      const practiceType = (type === 'capitals' || type === 'map' ? type : 'flags') as
+        | 'flags'
+        | 'capitals'
+        | 'map';
+      const loaded = await fetchPracticeTasks(practiceType);
+      setPracticeTasks(loaded);
       setCurrentPracticeIndex(0);
-    } catch (err: any) {
-      setError(err.message || "Failed to load practice tasks");
+      setUserAnswers([]);
+      setSessionScore(0);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load practice tasks');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleAnswer = (answer: string | { isMap: true, isCorrect: boolean, distance: number }) => {
-    if (selectedAnswer || isReview) return; // Prevent multiple clicks or clicks in review mode
-    
+  const handleAnswer = (
+    answer: string | { isMap: true; isCorrect: boolean; distance: number; lat: number; lng: number }
+  ) => {
+    if (selectedAnswer || mapReviewGuess || isReview) return;
+
     let correct = false;
-    let guessValue: any = answer;
-    
+    let guessValue: AnswerRecord['guess'];
+
     if (typeof answer === 'string') {
       setSelectedAnswer(answer);
       const currentTask = tasks[currentIndex];
       correct = answer === currentTask.correctAnswer;
+      guessValue = answer;
     } else {
-      setSelectedAnswer('MAP_GUESS');
+      setMapReviewGuess({ lat: answer.lat, lng: answer.lng, distance: answer.distance });
       correct = answer.isCorrect;
-      guessValue = 'MAP_GUESS';
+      guessValue = { lat: answer.lat, lng: answer.lng, distance: answer.distance };
     }
 
     setIsCorrect(correct);
     setShowResult(true);
-    
-    // Save answer for history
-    const newAnswers = [...userAnswers, { guess: guessValue, isCorrect: correct }];
+
+    const newAnswers: AnswerRecord[] = [...userAnswers, { guess: guessValue, isCorrect: correct }];
     setUserAnswers(newAnswers);
-    
+
     let pointsEarned = 0;
     if (correct) {
-      pointsEarned = isDaily ? (isToday ? 100 : 50) : 10; // Less points for past dailies or practice
-      addPoints(pointsEarned);
-      setSessionScore(prev => prev + pointsEarned);
+      pointsEarned = isDaily ? (isToday ? 100 : 50) : 0;
+      if (isDaily) setSessionScore((prev) => prev + pointsEarned);
       playCorrectSound();
       triggerHaptic();
       confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#176a21', '#9df197', '#ff9727']
+        colors: ['#176a21', '#9df197', '#ff9727'],
       });
     }
-    
-    // If it's the last question of a daily challenge, save to history and submit to server
+
     if (isDaily && currentIndex === tasks.length - 1) {
       const finalScore = sessionScore + pointsEarned;
-      
+
       saveHistory(targetDate, {
         date: targetDate,
-        tasks: tasks,
+        tasks,
         answers: newAnswers,
         score: finalScore,
-        completed: true
+        completed: true,
       });
 
-      const missedCountries = tasks
-        .map((task, idx) => ({ task, answer: newAnswers[idx] }))
-        .filter(({ answer }) => !answer?.isCorrect)
-        .map(({ task }) => ({
-          name: task.correctAnswer,
-          code: task.imageUrl?.toUpperCase() || '',
-        }));
+      const countsForProgress = isToday && !alreadyCompleted;
 
-      storeQuestRecap({
-        missedCountries,
-        score: finalScore,
-        maxScore: tasks.length * 100,
-      });
+      if (countsForProgress) {
+        const missedCountries = tasks
+          .map((task, idx) => ({ task, answer: newAnswers[idx] }))
+          .filter(({ answer }) => !answer?.isCorrect)
+          .map(({ task }) => ({
+            name: task.correctAnswer,
+            code: taskCountryCode(task) ?? '',
+          }));
 
-      const newAchievements = submitDailyResult({
-        date: targetDate,
-        tasks: tasks,
-        answers: newAnswers.map((a) => ({ guess: a.guess, isCorrect: a.isCorrect })),
-        score: finalScore,
-        maxScore: tasks.length * 100,
-      });
-      if (newAchievements.length > 0) {
-        storeNewAchievements(newAchievements);
+        storeQuestRecap({
+          missedCountries,
+          score: finalScore,
+          maxScore: tasks.length * 100,
+        });
+
+        const newAchievements = submitDailyResult({
+          date: targetDate,
+          tasks,
+          answers: newAnswers,
+          score: finalScore,
+          maxScore: tasks.length * 100,
+        });
+        if (newAchievements.length > 0) {
+          storeNewAchievements(newAchievements);
+        }
       }
     }
   };
@@ -178,35 +230,35 @@ export function Quiz() {
   const handleNext = () => {
     if (!isReview) {
       setSelectedAnswer(null);
+      setMapReviewGuess(null);
       setIsCorrect(null);
       setShowResult(false);
     }
-    
+
     if (currentIndex < tasks.length - 1) {
       if (isDaily) {
         nextTask();
       } else {
-        setCurrentPracticeIndex(prev => prev + 1);
+        setCurrentPracticeIndex((prev) => prev + 1);
       }
+    } else if (isDaily) {
+      navigate(isReview ? '/' : isToday ? '/quest-completed' : '/');
     } else {
-      if (isDaily) {
-        if (!isReview && isToday) {
-          completeDaily();
-        }
-        navigate(isReview ? '/' : '/quest-completed');
-      } else {
-        // Practice completed
-        navigate('/');
-      }
+      submitPracticeResult({ tasks, answers: userAnswers });
+      navigate('/');
     }
   };
+
+  if (isDaily && !isReview && alreadyCompleted) {
+    return <Navigate to={`/quiz/daily?date=${targetDate}&review=true`} replace />;
+  }
 
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-full min-h-[60vh]">
         <Loader2 className="w-12 h-12 animate-spin text-primary mb-4" />
         <p className="text-on-surface-variant font-medium">
-          {isDaily ? "Loading challenge..." : "Preparing practice session..."}
+          {isDaily ? 'Loading challenge...' : 'Preparing practice session...'}
         </p>
       </div>
     );
@@ -217,8 +269,8 @@ export function Quiz() {
       <div className="flex flex-col items-center justify-center h-full min-h-[60vh] text-center p-6">
         <XCircle className="w-12 h-12 text-red-500 mb-4" />
         <p className="text-on-surface-variant font-medium mb-4">{error}</p>
-        <button 
-          onClick={() => isDaily ? loadDailyTasks(targetDate) : loadPracticeTasks()}
+        <button
+          onClick={() => (isDaily ? loadDailyTasks(targetDate) : loadPracticeTasks())}
           className="bg-primary text-on-primary px-6 py-2 rounded-full font-bold"
         >
           Retry
@@ -231,8 +283,8 @@ export function Quiz() {
     return (
       <div className="flex flex-col items-center justify-center h-full min-h-[60vh] text-center p-6">
         <p className="text-on-surface-variant font-medium mb-4">Failed to load tasks. Please try again.</p>
-        <button 
-          onClick={() => isDaily ? loadDailyTasks(targetDate) : loadPracticeTasks()}
+        <button
+          onClick={() => (isDaily ? loadDailyTasks(targetDate) : loadPracticeTasks())}
           className="bg-primary text-on-primary px-6 py-2 rounded-full font-bold"
         >
           Retry
@@ -242,12 +294,17 @@ export function Quiz() {
   }
 
   const currentTask = tasks[currentIndex];
+  const progressPct = Math.round(
+    ((showResult ? currentIndex + 1 : currentIndex) / tasks.length) * 100
+  );
 
   return (
     <div className="p-6 max-w-2xl mx-auto flex flex-col min-h-[80vh]">
-      {/* Header */}
       <div className="flex items-center mb-6">
-        <button onClick={() => navigate(-1)} className="p-2 mr-4 bg-surface-container-low rounded-full hover:bg-surface-container transition-colors">
+        <button
+          onClick={() => navigate(-1)}
+          className="p-2 mr-4 bg-surface-container-low rounded-full hover:bg-surface-container transition-colors"
+        >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <h1 className="text-2xl font-headline font-bold capitalize">
@@ -258,31 +315,34 @@ export function Quiz() {
             Review Mode
           </span>
         )}
+        {isPractice && (
+          <span className="ml-auto bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            No streak
+          </span>
+        )}
       </div>
 
-      {/* Progress Bar */}
       <div className="mb-8">
         <div className="flex justify-between text-sm font-bold text-on-surface-variant mb-2">
-          <span>Question {currentIndex + 1} of {tasks.length}</span>
-          <span>{Math.round(((currentIndex) / tasks.length) * 100)}%</span>
+          <span>
+            Question {currentIndex + 1} of {tasks.length}
+          </span>
+          <span>{progressPct}%</span>
         </div>
         <div className="h-3 bg-surface-container-highest rounded-full overflow-hidden">
-          <div 
+          <div
             className="h-full bg-primary transition-all duration-500 ease-out"
-            style={{ width: `${((currentIndex) / tasks.length) * 100}%` }}
+            style={{ width: `${progressPct}%` }}
           />
         </div>
       </div>
 
-      {/* Question Card */}
       <div className="bg-surface-container-lowest rounded-3xl p-6 shadow-sm border border-outline-variant/20 mb-8 flex-1 flex flex-col">
-        <h2 className="text-2xl font-headline font-bold mb-6 text-center">
-          {currentTask.question}
-        </h2>
-        
+        <h2 className="text-2xl font-headline font-bold mb-6 text-center">{currentTask.question}</h2>
+
         {currentTask.type === 'flag' && currentTask.imageUrl && (
           <div className="flex justify-center mb-8">
-            <img 
+            <img
               src={`https://flagcdn.com/w320/${currentTask.imageUrl.toLowerCase()}.png`}
               alt="Flag"
               className="rounded-xl shadow-md border border-outline-variant/20 max-h-48 object-contain"
@@ -292,22 +352,29 @@ export function Quiz() {
         )}
 
         {currentTask.type === 'map' ? (
-          <MapQuiz task={currentTask} onAnswer={handleAnswer} showResult={showResult} />
+          <MapQuiz
+            task={currentTask}
+            onAnswer={handleAnswer}
+            showResult={showResult}
+            initialGuess={mapReviewGuess}
+          />
         ) : (
           <div className="grid grid-cols-1 gap-3 mt-auto">
             {currentTask.options?.map((option, index) => {
-              let buttonClass = "bg-surface-container-low border-outline-variant/30 text-on-surface hover:bg-surface-container";
-              
+              let buttonClass =
+                'bg-surface-container-low border-outline-variant/30 text-on-surface hover:bg-surface-container';
+
               if (showResult) {
                 if (option === currentTask.correctAnswer) {
-                  buttonClass = "bg-primary-container border-primary text-on-primary-container";
+                  buttonClass = 'bg-primary-container border-primary text-on-primary-container';
                 } else if (option === selectedAnswer) {
-                  buttonClass = "bg-red-100 border-red-500 text-red-900";
+                  buttonClass = 'bg-red-100 border-red-500 text-red-900';
                 } else {
-                  buttonClass = "bg-surface-container-low border-outline-variant/30 text-on-surface opacity-50";
+                  buttonClass =
+                    'bg-surface-container-low border-outline-variant/30 text-on-surface opacity-50';
                 }
               } else if (selectedAnswer === option) {
-                 buttonClass = "bg-secondary-container border-secondary text-on-secondary-container";
+                buttonClass = 'bg-secondary-container border-secondary text-on-secondary-container';
               }
 
               return (
@@ -316,14 +383,18 @@ export function Quiz() {
                   onClick={() => handleAnswer(option)}
                   disabled={showResult || isReview}
                   className={cn(
-                    "p-4 rounded-2xl border-2 text-left font-bold text-lg transition-all flex justify-between items-center",
+                    'p-4 rounded-2xl border-2 text-left font-bold text-lg transition-all flex justify-between items-center',
                     buttonClass,
-                    isReview && "cursor-default"
+                    isReview && 'cursor-default'
                   )}
                 >
                   <span>{option}</span>
-                  {showResult && option === currentTask.correctAnswer && <CheckCircle2 className="w-6 h-6 text-primary" />}
-                  {showResult && option === selectedAnswer && option !== currentTask.correctAnswer && <XCircle className="w-6 h-6 text-red-500" />}
+                  {showResult && option === currentTask.correctAnswer && (
+                    <CheckCircle2 className="w-6 h-6 text-primary" />
+                  )}
+                  {showResult && option === selectedAnswer && option !== currentTask.correctAnswer && (
+                    <XCircle className="w-6 h-6 text-red-500" />
+                  )}
                 </button>
               );
             })}
@@ -331,14 +402,17 @@ export function Quiz() {
         )}
       </div>
 
-      {/* Next Button */}
       {showResult && (
         <div className="space-y-3">
           <button
             onClick={handleNext}
             className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors shadow-md animate-in slide-in-from-bottom-4"
           >
-            {currentIndex < tasks.length - 1 ? 'Next Question' : (isReview ? 'Back to Dashboard' : 'Finish Challenge')}
+            {currentIndex < tasks.length - 1
+              ? 'Next Question'
+              : isReview
+                ? 'Back to Dashboard'
+                : 'Finish Challenge'}
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
