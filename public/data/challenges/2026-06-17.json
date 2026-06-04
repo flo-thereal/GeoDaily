@@ -1,0 +1,63 @@
+[
+  {
+    "id": "2026-06-17-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Japan",
+      "Bangladesh",
+      "Palau",
+      "South Korea"
+    ]
+  },
+  {
+    "id": "2026-06-17-capital-1",
+    "type": "capital",
+    "question": "What is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "options": [
+      "Vancouver",
+      "Montreal",
+      "Toronto",
+      "Ottawa"
+    ]
+  },
+  {
+    "id": "2026-06-17-map-1",
+    "type": "map",
+    "question": "This ancient Inca citadel, perched high in the Andes Mountains, is one of the New Seven Wonders of the World. Where is it located?",
+    "correctAnswer": "Machu Picchu, Peru",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-17-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Brazil",
+      "Portugal",
+      "Australia",
+      "Guyana"
+    ]
+  },
+  {
+    "id": "2026-06-17-capital-2",
+    "type": "capital",
+    "question": "What is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "options": [
+      "Brisbane",
+      "Melbourne",
+      "Sydney",
+      "Canberra"
+    ]
+  }
+]
