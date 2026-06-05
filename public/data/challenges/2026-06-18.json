@@ -1,0 +1,63 @@
+[
+  {
+    "id": "2026-06-18-q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Argentina",
+      "Mexico",
+      "Colombia",
+      "Brazil"
+    ]
+  },
+  {
+    "id": "2026-06-18-q2",
+    "type": "capital",
+    "question": "What is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "options": [
+      "Ottawa",
+      "Montreal",
+      "Vancouver",
+      "Toronto"
+    ]
+  },
+  {
+    "id": "2026-06-18-q3",
+    "type": "map",
+    "question": "This vast coral reef system, visible from space, is located off the coast of which country?",
+    "correctAnswer": "Great Barrier Reef, Australia",
+    "mapCoordinates": {
+      "lat": -18.2871,
+      "lng": 147.6995
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-18-q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "imageUrl": "CH",
+    "options": [
+      "Switzerland",
+      "Austria",
+      "Sweden",
+      "Denmark"
+    ]
+  },
+  {
+    "id": "2026-06-18-q5",
+    "type": "capital",
+    "question": "What is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "options": [
+      "Luxor",
+      "Cairo",
+      "Giza",
+      "Alexandria"
+    ]
+  }
+]
