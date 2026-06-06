@@ -1,0 +1,63 @@
+[
+  {
+    "id": "2026-06-19-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "New Zealand",
+      "Canada",
+      "Australia",
+      "United States"
+    ]
+  },
+  {
+    "id": "2026-06-19-capital-1",
+    "type": "capital",
+    "question": "What is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "options": [
+      "Alexandria",
+      "Giza",
+      "Luxor",
+      "Cairo"
+    ]
+  },
+  {
+    "id": "2026-06-19-map-1",
+    "type": "map",
+    "question": "This vast natural wonder, visible from space, is the world's largest coral reef system, stretching over 2,300 kilometers off the coast of Queensland. Where is it located?",
+    "correctAnswer": "Great Barrier Reef",
+    "mapCoordinates": {
+      "lat": -20,
+      "lng": 148
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-19-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "imageUrl": "DE",
+    "options": [
+      "Germany",
+      "Austria",
+      "Poland",
+      "Belgium"
+    ]
+  },
+  {
+    "id": "2026-06-19-capital-2",
+    "type": "capital",
+    "question": "What is the capital of Brazil?",
+    "correctAnswer": "Brasília",
+    "options": [
+      "Rio de Janeiro",
+      "Brasília",
+      "Salvador",
+      "São Paulo"
+    ]
+  }
+]
