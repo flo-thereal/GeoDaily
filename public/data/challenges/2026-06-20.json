@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-20-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "France",
+      "Netherlands",
+      "Italy",
+      "Germany"
+    ]
+  },
+  {
+    "id": "2026-06-20-capital-1",
+    "type": "capital",
+    "question": "What is the capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "options": [
+      "Kyoto",
+      "Osaka",
+      "Tokyo",
+      "Seoul"
+    ]
+  },
+  {
+    "id": "2026-06-20-map-1",
+    "type": "map",
+    "question": "This immense coral reef system, visible from space, is located off the coast of Queensland, Australia. It's the world's largest living structure. What is it called?",
+    "correctAnswer": "Great Barrier Reef",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -18.2871,
+      "lng": 147.6992
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-20-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Brazil",
+      "Portugal",
+      "Colombia",
+      "Argentina"
+    ]
+  },
+  {
+    "id": "2026-06-20-capital-2",
+    "type": "capital",
+    "question": "What is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "options": [
+      "Toronto",
+      "Vancouver",
+      "Montreal",
+      "Ottawa"
+    ]
+  }
+]
