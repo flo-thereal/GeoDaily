@@ -1,0 +1,63 @@
+[
+  {
+    "id": "20260621-q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "imageUrl": "DE",
+    "options": [
+      "Germany",
+      "Belgium",
+      "Austria",
+      "Poland"
+    ]
+  },
+  {
+    "id": "20260621-q2",
+    "type": "capital",
+    "question": "What is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "options": [
+      "Vancouver",
+      "Montreal",
+      "Toronto",
+      "Ottawa"
+    ]
+  },
+  {
+    "id": "20260621-q3",
+    "type": "map",
+    "question": "This iconic ancient wonder, a complex of massive pyramids and the Great Sphinx, is located near a bustling capital city in North Africa. Where would you find these structures?",
+    "correctAnswer": "Pyramids of Giza",
+    "mapCoordinates": {
+      "lat": 29.9792,
+      "lng": 31.1342
+    },
+    "options": []
+  },
+  {
+    "id": "20260621-q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Brazil",
+      "Mexico",
+      "Argentina",
+      "Portugal"
+    ]
+  },
+  {
+    "id": "20260621-q5",
+    "type": "capital",
+    "question": "What is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "options": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Canberra"
+    ]
+  }
+]
