@@ -1,5 +1,14 @@
-import { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents, Polyline, GeoJSON } from 'react-leaflet';
+import { useState, useEffect, useRef, type RefObject } from 'react';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMap,
+  useMapEvents,
+  Polyline,
+  GeoJSON,
+} from 'react-leaflet';
 import L from 'leaflet';
 import { DailyTask, type MapGuess } from '../store/useStore';
 import { getDistanceFromLatLonInKm, cn } from '../lib/utils';
@@ -61,17 +70,33 @@ function LocationMarker({
   return position === null ? null : <Marker position={position} icon={userIcon} />;
 }
 
+function MapResizeHandler({ containerRef }: { containerRef: RefObject<HTMLDivElement | null> }) {
+  const map = useMap();
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => map.invalidateSize());
+    ro.observe(el);
+    map.invalidateSize();
+    return () => ro.disconnect();
+  }, [map, containerRef]);
+  return null;
+}
+
 export function MapQuiz({
   task,
   onAnswer,
   showResult,
   initialGuess = null,
+  className,
 }: {
   task: DailyTask;
   onAnswer: (answer: MapAnswerPayload) => void;
   showResult: boolean;
   initialGuess?: MapGuess | null;
+  className?: string;
 }) {
+  const mapContainerRef = useRef<HTMLDivElement>(null);
   const [guess, setGuess] = useState<L.LatLng | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
   const [points, setPoints] = useState<number | null>(null);
@@ -175,13 +200,17 @@ export function MapQuiz({
   })();
 
   return (
-    <div className="flex flex-col gap-4 h-full w-full">
-      <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden border-2 border-outline-variant/30 z-0">
+    <div className={cn('flex flex-col gap-4 h-full w-full', className)}>
+      <div
+        ref={mapContainerRef}
+        className="relative w-full min-h-[min(52vh,560px)] sm:min-h-[min(58vh,600px)] aspect-[4/3] sm:aspect-auto flex-1 rounded-2xl overflow-hidden border-2 border-outline-variant/30 z-0"
+      >
         <MapContainer center={[20, 0]} zoom={2} className="h-full w-full" scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+          <MapResizeHandler containerRef={mapContainerRef} />
           <LocationMarker position={guess} setPosition={setGuess} disabled={showResult} />
           {showResult && countryFeature && (
             <GeoJSON

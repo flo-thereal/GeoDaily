@@ -311,12 +311,20 @@ export function Quiz() {
   }
 
   const currentTask = tasks[currentIndex];
+  const isMapTask =
+    (currentTask.type === 'map' || currentTask.type === 'capital') &&
+    Boolean(currentTask.mapCoordinates);
   const progressPct = Math.round(
     ((showResult ? currentIndex + 1 : currentIndex) / tasks.length) * 100
   );
 
   return (
-    <div className="p-6 max-w-2xl mx-auto flex flex-col min-h-[80vh]">
+    <div
+      className={cn(
+        'p-4 sm:p-6 mx-auto flex flex-col min-h-[80vh]',
+        isMapTask ? 'max-w-4xl' : 'max-w-2xl'
+      )}
+    >
       <div className="flex items-center mb-6">
         <button
           onClick={() => navigate(-1)}
@@ -354,8 +362,20 @@ export function Quiz() {
         </div>
       </div>
 
-      <div className="bg-surface-container-lowest rounded-3xl p-6 shadow-sm border border-outline-variant/20 mb-8 flex-1 flex flex-col">
-        <h2 className="text-2xl font-headline font-bold mb-6 text-center">{currentTask.question}</h2>
+      <div
+        className={cn(
+          'bg-surface-container-lowest rounded-3xl p-4 sm:p-6 shadow-sm border border-outline-variant/20 flex flex-col',
+          isMapTask ? 'flex-1 min-h-0 mb-4' : 'mb-8'
+        )}
+      >
+        <h2
+          className={cn(
+            'text-2xl font-headline font-bold text-center',
+            isMapTask ? 'mb-4' : 'mb-6'
+          )}
+        >
+          {currentTask.question}
+        </h2>
 
         {currentTask.type === 'flag' && currentTask.imageUrl && (
           <div className="flex justify-center mb-8">
@@ -368,12 +388,13 @@ export function Quiz() {
           </div>
         )}
 
-        {(currentTask.type === 'map' || currentTask.type === 'capital') && currentTask.mapCoordinates ? (
+        {isMapTask ? (
           <MapQuiz
             task={currentTask}
             onAnswer={handleAnswer}
             showResult={showResult}
             initialGuess={mapReviewGuess}
+            className="flex-1 min-h-0"
           />
         ) : (
           <div className="grid grid-cols-1 gap-3 mt-auto">
