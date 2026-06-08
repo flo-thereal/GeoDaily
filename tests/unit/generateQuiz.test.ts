@@ -9,8 +9,9 @@ describe('generateDailyTasks', () => {
       expect(t.id).toBeTruthy();
       expect(['flag', 'capital', 'map']).toContain(t.type);
       expect(t.correctAnswer).toBeTruthy();
-      if (t.type === 'map') {
+      if (t.type === 'map' || t.type === 'capital') {
         expect(t.mapCoordinates).toBeDefined();
+        expect(t.options).toEqual([]);
       } else {
         expect(t.options!.length).toBe(4);
         expect(t.options).toContain(t.correctAnswer);

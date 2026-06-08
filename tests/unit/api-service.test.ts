@@ -111,6 +111,33 @@ describe('static api service', () => {
     expect(history.every((h) => h.maxScore === 500)).toBe(true);
   });
 
+  it('normalizes legacy capital MCQ tasks into map tasks when fetching daily challenges', async () => {
+    const legacyCapital: DailyTask = {
+      id: 'capital-FR-1',
+      type: 'capital',
+      question: 'What is the capital of France?',
+      correctAnswer: 'Paris',
+      options: ['Paris', 'Berlin', 'Madrid', 'Rome'],
+      countryCode: 'FR',
+    };
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => [legacyCapital],
+      })
+    );
+
+    const tasks = await api.fetchDailyTasks('2026-06-08');
+    expect(tasks).toHaveLength(1);
+    expect(tasks[0].options).toEqual([]);
+    expect(tasks[0].mapCoordinates).toEqual({ lat: 48.87, lng: 2.33 });
+    expect(tasks[0].question).toBe('Where is the capital of France?');
+
+    vi.unstubAllGlobals();
+  });
+
   it('round-trips settings through the local store', async () => {
     await api.updateSettings({ language: 'fr', soundEnabled: false });
     const settings = await api.getUserSettings();

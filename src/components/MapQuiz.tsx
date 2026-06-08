@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents, Polyline, GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
 import { DailyTask, type MapGuess } from '../store/useStore';
 import { getDistanceFromLatLonInKm, cn } from '../lib/utils';
+import { getCountryFeature, loadCountryBoundaries } from '../lib/countryBoundaries';
+import { scoreCapitalMapGuess, scoreCountryMapGuess } from '../lib/mapScoring';
+import { taskCountryCode } from '../lib/progress';
 
 delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: unknown })._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -31,10 +34,11 @@ const targetIcon = new L.Icon({
   shadowSize: [41, 41],
 });
 
-type MapAnswerPayload = {
+export type MapAnswerPayload = {
   isMap: true;
   isCorrect: boolean;
-  distance: number;
+  points: number;
+  distance: number | null;
   lat: number;
   lng: number;
 };
@@ -70,36 +74,105 @@ export function MapQuiz({
 }) {
   const [guess, setGuess] = useState<L.LatLng | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
+  const [points, setPoints] = useState<number | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [countryFeatureReady, setCountryFeatureReady] = useState(false);
+
+  const isCapitalMode = task.type === 'capital';
+  const countryCode = taskCountryCode(task);
 
   useEffect(() => {
     if (initialGuess) {
       setGuess(new L.LatLng(initialGuess.lat, initialGuess.lng));
       setDistance(initialGuess.distance);
+      setPoints(initialGuess.points ?? null);
     } else {
       setGuess(null);
       setDistance(null);
+      setPoints(null);
     }
   }, [task, initialGuess]);
+
+  useEffect(() => {
+    if (!showResult || isCapitalMode || !countryCode) {
+      setCountryFeatureReady(false);
+      return;
+    }
+
+    let cancelled = false;
+    void loadCountryBoundaries().then(() => {
+      if (!cancelled) setCountryFeatureReady(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [showResult, isCapitalMode, countryCode, task.id]);
 
   const targetPos = task.mapCoordinates
     ? new L.LatLng(task.mapCoordinates.lat, task.mapCoordinates.lng)
     : null;
 
-  const handleSubmit = () => {
-    if (!guess || !targetPos) return;
-    const dist = getDistanceFromLatLonInKm(guess.lat, guess.lng, targetPos.lat, targetPos.lng);
-    setDistance(dist);
-    const isCorrect = dist <= 500;
-    onAnswer({
-      isMap: true,
-      isCorrect,
-      distance: dist,
-      lat: guess.lat,
-      lng: guess.lng,
-    });
+  const countryFeature =
+    countryFeatureReady && countryCode ? getCountryFeature(countryCode) : undefined;
+
+  const handleSubmit = async () => {
+    if (!guess || !targetPos || submitting) return;
+
+    setSubmitting(true);
+    try {
+      if (isCapitalMode) {
+        const dist = getDistanceFromLatLonInKm(guess.lat, guess.lng, targetPos.lat, targetPos.lng);
+        const result = scoreCapitalMapGuess(dist);
+        setDistance(dist);
+        setPoints(result.points);
+        onAnswer({
+          isMap: true,
+          isCorrect: result.isCorrect,
+          points: result.points,
+          distance: dist,
+          lat: guess.lat,
+          lng: guess.lng,
+        });
+        return;
+      }
+
+      if (!countryCode) return;
+
+      const result = await scoreCountryMapGuess(countryCode, guess.lat, guess.lng);
+      setDistance(null);
+      setPoints(result.points);
+      onAnswer({
+        isMap: true,
+        isCorrect: result.isCorrect,
+        points: result.points,
+        distance: null,
+        lat: guess.lat,
+        lng: guess.lng,
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
-  const withinRange = distance !== null && distance <= 500;
+  const earnedPoints = points ?? 0;
+  const isSuccess = isCapitalMode ? earnedPoints > 0 : earnedPoints === 100;
+
+  const resultMessage = (() => {
+    if (isCapitalMode) {
+      if (earnedPoints >= 100) {
+        return `Perfect! ${earnedPoints}/100 points — right on ${task.correctAnswer}.`;
+      }
+      if (earnedPoints > 0) {
+        return `${earnedPoints}/100 points — ${Math.round(distance || 0)} km from ${task.correctAnswer}.`;
+      }
+      return `Too far! ${Math.round(distance || 0)} km from ${task.correctAnswer}.`;
+    }
+
+    if (earnedPoints === 100) {
+      return `You're in ${task.correctAnswer}!`;
+    }
+    return `That's outside ${task.correctAnswer}.`;
+  })();
 
   return (
     <div className="flex flex-col gap-4 h-full w-full">
@@ -110,7 +183,17 @@ export function MapQuiz({
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <LocationMarker position={guess} setPosition={setGuess} disabled={showResult} />
-          {showResult && targetPos && (
+          {showResult && countryFeature && (
+            <GeoJSON
+              data={countryFeature}
+              style={{
+                color: isSuccess ? '#176a21' : '#b3261e',
+                weight: 2,
+                fillOpacity: 0.15,
+              }}
+            />
+          )}
+          {showResult && isCapitalMode && targetPos && (
             <>
               <Marker position={targetPos} icon={targetIcon}>
                 <Popup>{task.correctAnswer}</Popup>
@@ -118,7 +201,7 @@ export function MapQuiz({
               {guess && (
                 <Polyline
                   positions={[guess, targetPos]}
-                  color={withinRange ? 'green' : 'red'}
+                  color={isSuccess ? 'green' : 'red'}
                   dashArray="5, 10"
                 />
               )}
@@ -129,21 +212,20 @@ export function MapQuiz({
 
       {!showResult ? (
         <button
-          onClick={handleSubmit}
-          disabled={!guess}
+          onClick={() => void handleSubmit()}
+          disabled={!guess || submitting}
           className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
-          Submit Guess
+          {submitting ? 'Checking...' : 'Submit Guess'}
         </button>
       ) : (
         <div
           className={cn(
             'p-4 rounded-2xl text-center font-bold text-lg',
-            withinRange ? 'bg-primary-container text-on-primary-container' : 'bg-red-100 text-red-900'
+            isSuccess ? 'bg-primary-container text-on-primary-container' : 'bg-red-100 text-red-900'
           )}
         >
-          {withinRange ? 'Great guess!' : 'Too far!'} You were {Math.round(distance || 0)} km away from{' '}
-          {task.correctAnswer}.
+          {resultMessage}
         </div>
       )}
     </div>

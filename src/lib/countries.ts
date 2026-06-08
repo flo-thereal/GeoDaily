@@ -19,6 +19,10 @@ export interface Country {
     lat: number;
     lng: number;
   };
+  capitalCoordinates?: {
+    lat: number;
+    lng: number;
+  };
   flagEmoji: string;
   description?: string;
   funFacts?: string[];

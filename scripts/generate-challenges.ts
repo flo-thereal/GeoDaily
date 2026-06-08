@@ -38,8 +38,8 @@ const taskSchema = {
 const PROMPT = (date: string) => `Generate 5 geography quiz questions for a daily challenge for the date ${date}.
 Mix the types: 'flag' (guess country from flag), 'capital' (guess capital of country), 'map' (guess country from description/location).
 For 'flag' type, provide the country name in 'correctAnswer' and 3 other country names in 'options'. The 'question' should be "Which country's flag is this?". Provide the 2-letter ISO country code in 'imageUrl' so I can fetch the flag.
-For 'capital' type, provide the country name in 'question' (e.g., "What is the capital of France?"), the capital in 'correctAnswer', and 3 other cities in 'options'.
-For 'map' type, provide a description of a specific city, landmark, or country in 'question' (e.g., "Where is the Eiffel Tower located?"). Provide the exact lat/lng in 'mapCoordinates'. 'correctAnswer' is the name of the place. 'options' can be empty.
+For 'capital' type, provide the question "Where is the capital of {country}?", the capital city name in 'correctAnswer', empty 'options', and exact capital lat/lng in 'mapCoordinates'. Include the 2-letter ISO country code in 'imageUrl'.
+For 'map' type, provide the question "Where is {country} located?", the country name in 'correctAnswer', empty 'options', the 2-letter ISO country code in 'imageUrl', and country centroid lat/lng in 'mapCoordinates'.
 Make the questions interesting and varied.`;
 
 function processTasks(tasks: any[]): any[] {

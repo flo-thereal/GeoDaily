@@ -2,7 +2,8 @@ import { DailyTask, DailyHistory, useStore, type AnswerRecord } from '../store/u
 import { localDateString } from '../lib/utils';
 import { COUNTRIES, type Country } from '../lib/countries';
 import { generateDailyTasks as genDaily, generatePracticeTasks } from '../lib/generateQuiz';
-import { ACHIEVEMENTS } from '../lib/progress';
+import { findCountry } from '../lib/countries';
+import { ACHIEVEMENTS, taskCountryCode } from '../lib/progress';
 
 // ============================================================================
 // GeoDaily runs as a fully static site: there is no server or account system.
@@ -264,6 +265,23 @@ export async function getRegions(): Promise<{ region: string; count: number }[]>
 // Challenges
 // ============================================================================
 
+function normalizeDailyTask(task: DailyTask): DailyTask {
+  if (task.type !== 'capital') return task;
+
+  const code = taskCountryCode(task);
+  const country = code ? findCountry(code) : undefined;
+  if (!country?.capitalCoordinates) return task;
+
+  return {
+    ...task,
+    options: [],
+    mapCoordinates: country.capitalCoordinates,
+    question: `Where is the capital of ${country.name}?`,
+    countryCode: country.code,
+    correctAnswer: country.capital,
+  };
+}
+
 /**
  * Daily tasks: prefer a pre-generated JSON committed by the nightly Action;
  * fall back to deterministic client generation if that day isn't published.
@@ -273,7 +291,9 @@ export async function fetchDailyTasks(date: string): Promise<DailyTask[]> {
     const res = await fetch(`${import.meta.env.BASE_URL}data/challenges/${date}.json`);
     if (res.ok) {
       const data = await res.json();
-      if (Array.isArray(data) && data.length > 0) return data as DailyTask[];
+      if (Array.isArray(data) && data.length > 0) {
+        return (data as DailyTask[]).map(normalizeDailyTask);
+      }
     }
   } catch {
     /* fall through to local generation */

@@ -110,7 +110,7 @@ export function Dashboard() {
           >
             <Building2 className="w-6 h-6 text-secondary mb-2" />
             <h4 className="font-bold text-on-surface">Capitals</h4>
-            <p className="text-sm text-outline mt-1">Match capitals to countries</p>
+            <p className="text-sm text-outline mt-1">Pin capitals on the map</p>
           </button>
           <button
             onClick={() => navigate('/quiz/map')}

@@ -14,7 +14,8 @@ export type GameType = 'flag' | 'map' | 'capital';
 export interface MapGuess {
   lat: number;
   lng: number;
-  distance: number;
+  distance: number | null;
+  points?: number;
 }
 
 export type AnswerGuess = string | MapGuess;

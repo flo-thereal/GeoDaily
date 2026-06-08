@@ -147,22 +147,41 @@ export function Quiz() {
   };
 
   const handleAnswer = (
-    answer: string | { isMap: true; isCorrect: boolean; distance: number; lat: number; lng: number }
+    answer:
+      | string
+      | { isMap: true; isCorrect: boolean; points: number; distance: number | null; lat: number; lng: number }
   ) => {
     if (selectedAnswer || mapReviewGuess || isReview) return;
 
     let correct = false;
     let guessValue: AnswerRecord['guess'];
+    let pointsEarned = 0;
 
     if (typeof answer === 'string') {
       setSelectedAnswer(answer);
       const currentTask = tasks[currentIndex];
       correct = answer === currentTask.correctAnswer;
       guessValue = answer;
+      if (correct && isDaily) {
+        pointsEarned = isToday ? 100 : 50;
+      }
     } else {
-      setMapReviewGuess({ lat: answer.lat, lng: answer.lng, distance: answer.distance });
+      setMapReviewGuess({
+        lat: answer.lat,
+        lng: answer.lng,
+        distance: answer.distance,
+        points: answer.points,
+      });
       correct = answer.isCorrect;
-      guessValue = { lat: answer.lat, lng: answer.lng, distance: answer.distance };
+      guessValue = {
+        lat: answer.lat,
+        lng: answer.lng,
+        distance: answer.distance,
+        points: answer.points,
+      };
+      if (isDaily && answer.points > 0) {
+        pointsEarned = isToday ? answer.points : Math.round(answer.points / 2);
+      }
     }
 
     setIsCorrect(correct);
@@ -171,14 +190,12 @@ export function Quiz() {
     const newAnswers: AnswerRecord[] = [...userAnswers, { guess: guessValue, isCorrect: correct }];
     setUserAnswers(newAnswers);
 
-    let pointsEarned = 0;
-    if (correct) {
-      pointsEarned = isDaily ? (isToday ? 100 : 50) : 0;
+    if (pointsEarned > 0) {
       if (isDaily) setSessionScore((prev) => prev + pointsEarned);
       playCorrectSound();
       triggerHaptic();
       confetti({
-        particleCount: 100,
+        particleCount: pointsEarned >= 100 ? 100 : 60,
         spread: 70,
         origin: { y: 0.6 },
         colors: ['#176a21', '#9df197', '#ff9727'],
@@ -351,7 +368,7 @@ export function Quiz() {
           </div>
         )}
 
-        {currentTask.type === 'map' ? (
+        {(currentTask.type === 'map' || currentTask.type === 'capital') && currentTask.mapCoordinates ? (
           <MapQuiz
             task={currentTask}
             onAnswer={handleAnswer}

@@ -126,10 +126,13 @@ Each challenge is an array of 5 `DailyTask` objects (`src/store/useStore.ts`):
 | Type | Question | `correctAnswer` | `options` | `imageUrl` | `mapCoordinates` |
 |---|---|---|---|---|---|
 | `flag` | "Which country's flag is this?" | Country name | 4 names | 2-letter ISO code | — |
-| `capital` | "What is the capital of X?" | City name | 4 city names | — | — |
-| `map` | "Where is X located?" | Place name | empty | 2-letter ISO code | `{ lat, lng }` |
+| `capital` | "Where is the capital of X?" | Capital city | empty | 2-letter ISO code | capital `{ lat, lng }` |
+| `map` | "Where is X located?" | Country name | empty | 2-letter ISO code | country centroid `{ lat, lng }` |
 
-**Scoring**: 100 points per correct answer; 5×100 = 500 max. Perfect score requires
+**Scoring**: flags are binary 100/0. Country map questions award **100** if the pin
+is inside the country polygon (from `public/data/country-boundaries.geojson`), else
+**0**. Capital map questions award **0–100** from distance (`round(100 * max(0, 1 - d/500))`);
+`isCorrect` when points ≥ 50. Daily max is still 5×100 = 500. Perfect score requires
 `score === maxScore && maxScore >= 500`.
 
 **Flag images**: `https://flagcdn.com/w320/{code}.png` (lowercased `imageUrl`).

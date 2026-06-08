@@ -62,18 +62,14 @@ function buildTask(type: GameType, country: Country, index: number, rng: () => n
   }
 
   if (type === 'capital') {
-    const distractors = pickDistinct(
-      USABLE.filter((c) => c.code !== country.code && c.capital !== country.capital).map((c) => c.capital),
-      3,
-      rng
-    );
     return {
       id,
       type: 'capital',
-      question: `What is the capital of ${country.name}?`,
+      question: `Where is the capital of ${country.name}?`,
       correctAnswer: country.capital,
-      options: shuffle([country.capital, ...distractors], rng),
+      options: [],
       countryCode: country.code,
+      mapCoordinates: country.capitalCoordinates ?? country.coordinates,
     };
   }
 
