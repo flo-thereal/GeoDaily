@@ -207,8 +207,8 @@ export function MapQuiz({
       >
         <MapContainer center={[20, 0]} zoom={2} className="h-full w-full" scrollWheelZoom={true}>
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
           />
           <MapResizeHandler containerRef={mapContainerRef} />
           <LocationMarker position={guess} setPosition={setGuess} disabled={showResult} />
