@@ -203,7 +203,7 @@ export function MapQuiz({
     <div className={cn('flex flex-col gap-4 h-full w-full', className)}>
       <div
         ref={mapContainerRef}
-        className="relative w-full min-h-[min(52vh,560px)] sm:min-h-[min(58vh,600px)] aspect-[4/3] sm:aspect-auto flex-1 rounded-2xl overflow-hidden border-2 border-outline-variant/30 z-0"
+        className="relative w-full h-[52vh] max-h-[560px] sm:h-[58vh] sm:max-h-[600px] rounded-2xl overflow-hidden border-2 border-outline-variant/30 z-0"
       >
         <MapContainer center={[20, 0]} zoom={2} className="h-full w-full" scrollWheelZoom={true}>
           <TileLayer
