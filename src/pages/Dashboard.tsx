@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Play, Flame, Star, CheckCircle2, History, ChevronRight, Flag, Building2, Map } from 'lucide-react';
 import { useStore } from '../store/useStore';
@@ -5,6 +6,7 @@ import { localDateString } from '../lib/utils';
 
 export function Dashboard() {
   const navigate = useNavigate();
+  const [visibleDays, setVisibleDays] = useState(7);
   const stats = useStore((s) => s.progress.stats);
   const history = useStore((s) => s.history);
 
@@ -12,16 +14,22 @@ export function Dashboard() {
   const streak = stats.currentStreak;
   const points = stats.totalPoints;
 
-  // Generate last 7 days
+  // Generate past days based on visibleDays
   const today = new Date();
   const todayStr = localDateString(today);
   const isDailyCompleted = history[todayStr]?.completed || false;
   
-  const pastDays = Array.from({ length: 7 }).map((_, i) => {
+  const pastDays = Array.from({ length: visibleDays }).map((_, i) => {
     const d = new Date(today);
     d.setDate(d.getDate() - (i + 1));
     return localDateString(d);
   });
+
+  // Check if there are more history entries to show
+  const historyDates = Object.keys(history).sort();
+  const oldestHistoryDate = historyDates[0];
+  const lastVisibleDate = pastDays[pastDays.length - 1];
+  const hasMoreToShow = oldestHistoryDate && lastVisibleDate && oldestHistoryDate < lastVisibleDate;
 
   return (
     <div className="p-6 md:p-10 space-y-10 max-w-5xl mx-auto">
@@ -180,6 +188,18 @@ export function Dashboard() {
             );
           })}
         </div>
+        
+        {hasMoreToShow && (
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={() => setVisibleDays((d) => d + 7)}
+              className="bg-surface-container hover:bg-surface-container-high text-on-surface font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2"
+            >
+              Show More
+              <ChevronRight className="w-4 h-4 rotate-90" />
+            </button>
+          </div>
+        )}
       </section>
     </div>
   );
