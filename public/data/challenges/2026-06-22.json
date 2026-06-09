@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-22-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Sweden",
+      "Finland",
+      "Denmark",
+      "Norway"
+    ]
+  },
+  {
+    "id": "2026-06-22-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-22-map-1",
+    "type": "map",
+    "question": "Where is Egypt located?",
+    "correctAnswer": "Egypt",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 26.8206,
+      "lng": 30.8025
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-22-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Argentina",
+      "Portugal",
+      "Brazil",
+      "Colombia"
+    ]
+  },
+  {
+    "id": "2026-06-22-map-2",
+    "type": "map",
+    "question": "Where is Australia located?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.2744,
+      "lng": 133.7751
+    },
+    "options": []
+  }
+]
