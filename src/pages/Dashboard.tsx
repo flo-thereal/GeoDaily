@@ -25,11 +25,11 @@ export function Dashboard() {
     return localDateString(d);
   });
 
-  // Check if there are more history entries to show
-  const historyDates = Object.keys(history).sort();
-  const oldestHistoryDate = historyDates[0];
+  // Check if there are more history entries to show beyond the current window
   const lastVisibleDate = pastDays[pastDays.length - 1];
-  const hasMoreToShow = oldestHistoryDate && lastVisibleDate && oldestHistoryDate < lastVisibleDate;
+  const hasMoreHistory = Object.keys(history).some(
+    (date) => date < lastVisibleDate
+  );
 
   return (
     <div className="p-6 md:p-10 space-y-10 max-w-5xl mx-auto">
@@ -189,7 +189,7 @@ export function Dashboard() {
           })}
         </div>
         
-        {hasMoreToShow && (
+        {hasMoreHistory && (
           <div className="mt-6 flex justify-center">
             <button
               onClick={() => setVisibleDays((d) => d + 7)}
