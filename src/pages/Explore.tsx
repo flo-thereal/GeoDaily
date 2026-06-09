@@ -74,35 +74,30 @@ export function Explore() {
   }, [countries, selectedRegion, searchQuery]);
 
   return (
-    <>
-      <header className="w-full sticky top-0 z-50 bg-blue-50/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
-        <div className="flex items-center gap-4 flex-1">
-          <div className="relative max-w-md w-full">
-            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-            <input
-              className="w-full bg-surface-container-low border-none rounded-DEFAULT pl-12 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all"
-              placeholder="Search countries, capitals, or regions..."
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+    <div className="p-6 md:p-10 space-y-10">
+      {/* Hero / Title Section */}
+      <section className="relative">
+        <div className="max-w-3xl">
+          <h2 className="text-5xl md:text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-4">
+            Country <span className="text-primary italic">Atlas</span>
+          </h2>
+          <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+            Look up flags, capitals, and facts after your daily challenge — especially for countries you missed.
+          </p>
         </div>
-        <div className="flex items-center gap-4" />
-      </header>
+      </section>
 
-      <div className="p-6 md:p-10 space-y-10">
-        {/* Hero / Title Section */}
-        <section className="relative">
-          <div className="max-w-3xl">
-            <h2 className="text-5xl md:text-6xl font-headline font-extrabold tracking-tight text-on-surface mb-4">
-              Country <span className="text-primary italic">Atlas</span>
-            </h2>
-            <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Look up flags, capitals, and facts after your daily challenge — especially for countries you missed.
-            </p>
-          </div>
-        </section>
+      {/* Search Bar */}
+      <div className="relative max-w-md">
+        <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+        <input
+          className="w-full bg-surface-container-low border-none rounded-DEFAULT pl-12 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all"
+          placeholder="Search countries, capitals, or regions..."
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
 
         {/* Filters Bar */}
         <section className="flex flex-wrap items-center gap-3">
@@ -300,6 +295,5 @@ export function Explore() {
           </div>
         )}
       </div>
-    </>
   );
 }

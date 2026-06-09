@@ -127,20 +127,7 @@ export function Profile() {
   const { stats, continentMastery, achievements } = profile;
 
   return (
-    <>
-      <header className="w-full sticky top-0 z-50 bg-blue-50/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-8 py-4">
-        <div className="flex items-center space-x-2">
-          <span className="material-symbols-outlined text-green-700 dark:text-green-400">history_edu</span>
-          <span className="font-headline font-bold text-base text-slate-600 dark:text-slate-400">Explorer Profile</span>
-        </div>
-        <div className="flex items-center space-x-4">
-          <div className="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/20 overflow-hidden">
-            <img alt="User profile settings" className="w-full h-full object-cover" src={profile.avatarUrl || DEFAULT_AVATAR}/>
-          </div>
-        </div>
-      </header>
-
-      <div className="max-w-7xl mx-auto px-8 py-12">
+    <div className="max-w-7xl mx-auto px-8 py-12">
         {/* Hero Profile Section */}
         <section className="relative mb-16">
           <div className="flex flex-col md:flex-row items-end md:items-center gap-8">
@@ -329,6 +316,5 @@ export function Profile() {
           )}
         </section>
       </div>
-    </>
   );
 }

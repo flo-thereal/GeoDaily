@@ -154,23 +154,7 @@ export function Settings() {
   }
 
   return (
-    <>
-      {/* TopAppBar Mobile / Header */}
-      <header className="w-full sticky top-0 z-50 bg-blue-50/80 dark:bg-slate-900/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 no-border bg-blue-100/50 dark:bg-slate-800/50">
-        <div className="flex items-center gap-4">
-          <button className="md:hidden p-2 rounded-full hover:bg-white/50 transition-colors">
-            <span className="material-symbols-outlined text-on-surface">menu</span>
-          </button>
-          <h2 className="font-['Plus_Jakarta_Sans'] font-extrabold text-xl tracking-tight text-green-800 dark:text-green-300">Settings</h2>
-        </div>
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-container-high flex items-center justify-center">
-            <span className="material-symbols-outlined text-on-surface-variant">person</span>
-          </div>
-        </div>
-      </header>
-
-      <div className="p-6 md:p-12 max-w-5xl mx-auto w-full space-y-12">
+    <div className="p-6 md:p-12 max-w-5xl mx-auto w-full space-y-12">
         {/* Error/Success Messages */}
         {error && (
           <div className="bg-error/10 border border-error/30 text-error px-6 py-4 rounded-lg flex items-center gap-3">
@@ -363,6 +347,5 @@ export function Settings() {
           </div>
         </footer>
       </div>
-    </>
   );
 }
