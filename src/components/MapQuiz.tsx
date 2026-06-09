@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type RefObject } from 'react';
+import { useState, useEffect, useRef, useMemo, type RefObject } from 'react';
 import {
   MapContainer,
   TileLayer,
@@ -15,6 +15,7 @@ import { getDistanceFromLatLonInKm, cn } from '../lib/utils';
 import { getCountryFeature, loadCountryBoundaries } from '../lib/countryBoundaries';
 import { scoreCapitalMapGuess, scoreCountryMapGuess } from '../lib/mapScoring';
 import { taskCountryCode } from '../lib/progress';
+import { findCountry } from '../lib/countries';
 
 delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: unknown })._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -83,6 +84,56 @@ function MapResizeHandler({ containerRef }: { containerRef: RefObject<HTMLDivEle
   return null;
 }
 
+function getMaxZoomForArea(areaKm2: number): number {
+  if (areaKm2 < 1_000) return 9;
+  if (areaKm2 < 10_000) return 8;
+  if (areaKm2 < 100_000) return 7;
+  if (areaKm2 < 1_000_000) return 6;
+  return 5;
+}
+
+function getFallbackZoomForArea(areaKm2: number): number {
+  if (areaKm2 < 1_000) return 9;
+  if (areaKm2 < 10_000) return 8;
+  if (areaKm2 < 100_000) return 7;
+  if (areaKm2 < 1_000_000) return 5;
+  return 4;
+}
+
+function CapitalMapViewport({ countryCode }: { countryCode: string }) {
+  const map = useMap();
+
+  useEffect(() => {
+    let cancelled = false;
+
+    loadCountryBoundaries().then(() => {
+      if (cancelled) return;
+      const feature = getCountryFeature(countryCode);
+      if (feature) {
+        const layer = L.geoJSON(feature);
+        const bounds = layer.getBounds();
+        if (bounds.isValid()) {
+          const country = findCountry(countryCode);
+          const maxZoom = country ? getMaxZoomForArea(country.areaKm2) : 6;
+          map.fitBounds(bounds, { padding: [60, 60], maxZoom });
+          return;
+        }
+      }
+      const country = findCountry(countryCode);
+      if (country) {
+        const zoom = getFallbackZoomForArea(country.areaKm2);
+        map.setView([country.coordinates.lat, country.coordinates.lng], zoom);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [map, countryCode]);
+
+  return null;
+}
+
 export function MapQuiz({
   task,
   onAnswer,
@@ -105,6 +156,19 @@ export function MapQuiz({
 
   const isCapitalMode = task.type === 'capital';
   const countryCode = taskCountryCode(task);
+
+  const initialView = useMemo(() => {
+    if (isCapitalMode && countryCode) {
+      const country = findCountry(countryCode);
+      if (country) {
+        return {
+          center: [country.coordinates.lat, country.coordinates.lng] as [number, number],
+          zoom: getFallbackZoomForArea(country.areaKm2),
+        };
+      }
+    }
+    return { center: [20, 0] as [number, number], zoom: 2 };
+  }, [isCapitalMode, countryCode]);
 
   useEffect(() => {
     if (initialGuess) {
@@ -205,12 +269,13 @@ export function MapQuiz({
         ref={mapContainerRef}
         className="relative w-full h-[52vh] max-h-[560px] sm:h-[58vh] sm:max-h-[600px] rounded-2xl overflow-hidden border-2 border-outline-variant/30 z-0"
       >
-        <MapContainer center={[20, 0]} zoom={2} className="h-full w-full" scrollWheelZoom={true}>
+        <MapContainer center={initialView.center} zoom={initialView.zoom} className="h-full w-full" scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
           />
           <MapResizeHandler containerRef={mapContainerRef} />
+          {isCapitalMode && countryCode && <CapitalMapViewport countryCode={countryCode} />}
           <LocationMarker position={guess} setPosition={setGuess} disabled={showResult} />
           {showResult && countryFeature && (
             <GeoJSON
