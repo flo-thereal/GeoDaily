@@ -1,0 +1,67 @@
+[
+  {
+    "id": "flag-US-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United States",
+    "options": [
+      "Dominica",
+      "Maldives",
+      "Moldova",
+      "United States"
+    ],
+    "countryCode": "US",
+    "imageUrl": "US"
+  },
+  {
+    "id": "capital-RS-1",
+    "type": "capital",
+    "question": "Where is the capital of Serbia?",
+    "correctAnswer": "Belgrade",
+    "options": [],
+    "countryCode": "RS",
+    "mapCoordinates": {
+      "lat": 44.83,
+      "lng": 20.5
+    }
+  },
+  {
+    "id": "map-AM-2",
+    "type": "map",
+    "question": "Where is Armenia located?",
+    "correctAnswer": "Armenia",
+    "options": [],
+    "countryCode": "AM",
+    "imageUrl": "AM",
+    "mapCoordinates": {
+      "lat": 40.0691,
+      "lng": 45.0382
+    }
+  },
+  {
+    "id": "flag-KM-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Comoros",
+    "options": [
+      "Comoros",
+      "South Korea",
+      "Burkina Faso",
+      "Slovenia"
+    ],
+    "countryCode": "KM",
+    "imageUrl": "KM"
+  },
+  {
+    "id": "capital-BE-4",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "options": [],
+    "countryCode": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    }
+  }
+]
