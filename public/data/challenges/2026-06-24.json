@@ -1,0 +1,67 @@
+[
+  {
+    "id": "flag-MV-0",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Maldives",
+    "options": [
+      "Qatar",
+      "Malawi",
+      "Maldives",
+      "Central African Republic"
+    ],
+    "countryCode": "MV",
+    "imageUrl": "MV"
+  },
+  {
+    "id": "capital-SN-1",
+    "type": "capital",
+    "question": "Where is the capital of Senegal?",
+    "correctAnswer": "Dakar",
+    "options": [],
+    "countryCode": "SN",
+    "mapCoordinates": {
+      "lat": 14.73,
+      "lng": -17.63
+    }
+  },
+  {
+    "id": "map-AM-2",
+    "type": "map",
+    "question": "Where is Armenia located?",
+    "correctAnswer": "Armenia",
+    "options": [],
+    "countryCode": "AM",
+    "imageUrl": "AM",
+    "mapCoordinates": {
+      "lat": 40.0691,
+      "lng": 45.0382
+    }
+  },
+  {
+    "id": "flag-SZ-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Eswatini",
+    "options": [
+      "Democratic Republic of the Congo",
+      "Liechtenstein",
+      "Eswatini",
+      "Algeria"
+    ],
+    "countryCode": "SZ",
+    "imageUrl": "SZ"
+  },
+  {
+    "id": "capital-GH-4",
+    "type": "capital",
+    "question": "Where is the capital of Ghana?",
+    "correctAnswer": "Accra",
+    "options": [],
+    "countryCode": "GH",
+    "mapCoordinates": {
+      "lat": 5.55,
+      "lng": -0.22
+    }
+  }
+]
