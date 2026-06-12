@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-25-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Japan",
+      "Palau",
+      "Bangladesh",
+      "Laos"
+    ]
+  },
+  {
+    "id": "2026-06-25-2",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-25-3",
+    "type": "map",
+    "question": "Where is Australia located?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.2744,
+      "lng": 133.7751
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-25-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "Canada",
+      "Peru",
+      "Lebanon",
+      "Austria"
+    ]
+  },
+  {
+    "id": "2026-06-25-5",
+    "type": "capital",
+    "question": "Where is the capital of Brazil?",
+    "correctAnswer": "Brasília",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -15.7801,
+      "lng": -47.9292
+    },
+    "options": []
+  }
+]
