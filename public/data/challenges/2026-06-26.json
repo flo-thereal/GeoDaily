@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-26-001",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Argentina",
+      "Peru",
+      "Brazil",
+      "Colombia"
+    ]
+  },
+  {
+    "id": "2026-06-26-002",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-26-003",
+    "type": "map",
+    "question": "Where is Australia located?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.2744,
+      "lng": 133.7751
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-26-004",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "China",
+      "South Korea",
+      "Japan",
+      "Vietnam"
+    ]
+  },
+  {
+    "id": "2026-06-26-005",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.4215,
+      "lng": -75.6972
+    },
+    "options": []
+  }
+]
