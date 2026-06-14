@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-27-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "India",
+      "Ireland",
+      "Ivory Coast",
+      "Niger"
+    ]
+  },
+  {
+    "id": "2026-06-27-02",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.4215,
+      "lng": -75.6972
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-27-03",
+    "type": "map",
+    "question": "Where is Brazil located?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -14.235,
+      "lng": -51.9253
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-27-04",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Norway",
+      "Ukraine",
+      "Finland",
+      "Sweden"
+    ]
+  },
+  {
+    "id": "2026-06-27-05",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.0444,
+      "lng": 31.2357
+    },
+    "options": []
+  }
+]
