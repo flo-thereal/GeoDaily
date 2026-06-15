@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-28-q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Brazil",
+      "Portugal",
+      "Mexico",
+      "Argentina"
+    ]
+  },
+  {
+    "id": "2026-06-28-q2",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.4215,
+      "lng": -75.6972
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-28-q3",
+    "type": "map",
+    "question": "Where is Australia located?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.2744,
+      "lng": 133.7751
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-28-q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "Kenya",
+      "Nigeria",
+      "South Africa",
+      "Ethiopia"
+    ]
+  },
+  {
+    "id": "2026-06-28-q5",
+    "type": "capital",
+    "question": "Where is the capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "imageUrl": "JP",
+    "mapCoordinates": {
+      "lat": 35.6895,
+      "lng": 139.6917
+    },
+    "options": []
+  }
+]
