@@ -183,7 +183,11 @@ export function MapQuiz({
   }, [task, initialGuess]);
 
   useEffect(() => {
-    if (!showResult || isCapitalMode || !countryCode) {
+    if (!countryCode) {
+      setCountryFeatureReady(false);
+      return;
+    }
+    if (!isCapitalMode && !showResult) {
       setCountryFeatureReady(false);
       return;
     }
@@ -269,7 +273,13 @@ export function MapQuiz({
         ref={mapContainerRef}
         className="relative w-full h-[52vh] max-h-[560px] sm:h-[58vh] sm:max-h-[600px] rounded-2xl overflow-hidden border-2 border-outline-variant/30 z-0"
       >
-        <MapContainer center={initialView.center} zoom={initialView.zoom} className="h-full w-full" scrollWheelZoom={true}>
+        <MapContainer
+          key={task.id}
+          center={initialView.center}
+          zoom={initialView.zoom}
+          className="h-full w-full"
+          scrollWheelZoom={true}
+        >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
@@ -277,14 +287,23 @@ export function MapQuiz({
           <MapResizeHandler containerRef={mapContainerRef} />
           {isCapitalMode && countryCode && <CapitalMapViewport countryCode={countryCode} />}
           <LocationMarker position={guess} setPosition={setGuess} disabled={showResult} />
-          {showResult && countryFeature && (
+          {countryFeature && (isCapitalMode || showResult) && (
             <GeoJSON
               data={countryFeature}
-              style={{
-                color: isSuccess ? '#176a21' : '#b3261e',
-                weight: 2,
-                fillOpacity: 0.15,
-              }}
+              style={
+                isCapitalMode
+                  ? {
+                      color: '#176a21',
+                      weight: 2,
+                      fillColor: '#176a21',
+                      fillOpacity: 0.12,
+                    }
+                  : {
+                      color: isSuccess ? '#176a21' : '#b3261e',
+                      weight: 2,
+                      fillOpacity: 0.15,
+                    }
+              }
             />
           )}
           {showResult && isCapitalMode && targetPos && (

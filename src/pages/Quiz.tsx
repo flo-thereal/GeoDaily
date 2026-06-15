@@ -9,6 +9,7 @@ import { MapQuiz } from '../components/MapQuiz';
 import { playCorrectSound, triggerHaptic } from '../lib/preferences';
 import { storeNewAchievements, storeQuestRecap } from '../lib/questSession';
 import { taskCountryCode } from '../lib/progress';
+import { findCountryByName } from '../lib/countries';
 
 function isDateCompletedInStorage(date: string): boolean {
   try {
@@ -415,6 +416,11 @@ export function Quiz() {
                 buttonClass = 'bg-secondary-container border-secondary text-on-secondary-container';
               }
 
+              const optionCode =
+                showResult && currentTask.type === 'flag'
+                  ? findCountryByName(option)?.code
+                  : undefined;
+
               return (
                 <button
                   key={index}
@@ -426,12 +432,22 @@ export function Quiz() {
                     isReview && 'cursor-default'
                   )}
                 >
-                  <span>{option}</span>
+                  <span className="flex items-center gap-3 min-w-0">
+                    {optionCode && (
+                      <img
+                        src={`https://flagcdn.com/w80/${optionCode.toLowerCase()}.png`}
+                        alt=""
+                        className="w-10 h-7 object-contain rounded border border-outline-variant/20 shrink-0"
+                        referrerPolicy="no-referrer"
+                      />
+                    )}
+                    <span>{option}</span>
+                  </span>
                   {showResult && option === currentTask.correctAnswer && (
-                    <CheckCircle2 className="w-6 h-6 text-primary" />
+                    <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
                   )}
                   {showResult && option === selectedAnswer && option !== currentTask.correctAnswer && (
-                    <XCircle className="w-6 h-6 text-red-500" />
+                    <XCircle className="w-6 h-6 text-red-500 shrink-0" />
                   )}
                 </button>
               );

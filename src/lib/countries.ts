@@ -40,7 +40,12 @@ export function regionToContinent(region: string): Continent {
 }
 
 const byCode = new Map(COUNTRIES.map((c) => [c.code.toUpperCase(), c]));
+const byName = new Map(COUNTRIES.map((c) => [c.name, c]));
 
 export function findCountry(code: string): Country | undefined {
   return byCode.get(code.trim().toUpperCase());
+}
+
+export function findCountryByName(name: string): Country | undefined {
+  return byName.get(name.trim());
 }
