@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-29-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Norway",
+      "Sweden",
+      "Denmark",
+      "Finland"
+    ]
+  },
+  {
+    "id": "2026-06-29-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.4215,
+      "lng": -75.6972
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-29-map-1",
+    "type": "map",
+    "question": "Where is New Zealand located?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -40.9006,
+      "lng": 174.886
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-29-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "South Africa",
+      "Kenya",
+      "Nigeria",
+      "Ethiopia"
+    ]
+  },
+  {
+    "id": "2026-06-29-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Brazil?",
+    "correctAnswer": "Brasília",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -15.7801,
+      "lng": -47.9292
+    },
+    "options": []
+  }
+]
