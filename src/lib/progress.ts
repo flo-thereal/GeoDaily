@@ -1,5 +1,5 @@
 import type { AnswerRecord, DailyTask, GameType } from '../store/useStore';
-import { findCountry, regionToContinent, type Continent } from './countries';
+import { COUNTRIES, findCountry, findCountryByName, regionToContinent, type Continent, type Country } from './countries';
 import { localDateString, localYesterdayString } from './utils';
 
 export interface AchievementDef {
@@ -95,14 +95,60 @@ function normalizeCountryCode(raw: unknown): string | null {
   return /^[A-Z]{2,3}$/.test(normalized) ? normalized : null;
 }
 
+const LEGACY_TASK_ID_CODE = /(?:^|-)(?:flag|capital|map)-([A-Z]{2})(?:-|$)/i;
+
+function countryCodeFromTaskId(id: string): string | null {
+  const legacyMatch = id.match(LEGACY_TASK_ID_CODE);
+  if (legacyMatch) return normalizeCountryCode(legacyMatch[1]);
+  return null;
+}
+
+function countryFromAnswer(answer: string): Country | undefined {
+  const trimmed = answer.trim();
+  const exact = findCountryByName(trimmed);
+  if (exact) return exact;
+
+  const commaParts = trimmed.split(',').map((part) => part.trim());
+  for (let i = commaParts.length - 1; i >= 0; i--) {
+    const fromSuffix = findCountryByName(commaParts[i]);
+    if (fromSuffix) return fromSuffix;
+  }
+
+  let best: Country | undefined;
+  for (const country of COUNTRIES) {
+    if (!trimmed.includes(country.name)) continue;
+    if (!best || country.name.length > best.name.length) best = country;
+  }
+  return best;
+}
+
+/** Infer country from task metadata when countryCode/imageUrl are missing. */
+export function inferCountryFromTask(task: DailyTask): Country | undefined {
+  const fromId = countryCodeFromTaskId(task.id);
+  if (fromId) {
+    const country = findCountry(fromId);
+    if (country) return country;
+  }
+
+  if (task.correctAnswer) {
+    const fromAnswer = countryFromAnswer(task.correctAnswer);
+    if (fromAnswer) return fromAnswer;
+  }
+
+  return undefined;
+}
+
 /** Resolve ISO country code from task fields (supports legacy challenge JSON). */
 export function taskCountryCode(task: DailyTask): string | null {
   const fromField =
     normalizeCountryCode(task.countryCode) ?? normalizeCountryCode(task.imageUrl);
   if (fromField) return fromField;
-  const parts = task.id.split('-');
-  if (parts.length >= 2) return normalizeCountryCode(parts[1]);
-  return null;
+
+  const fromId = countryCodeFromTaskId(task.id);
+  if (fromId) return fromId;
+
+  const inferred = inferCountryFromTask(task);
+  return inferred?.code ?? null;
 }
 
 function aggregateCountryAnswers(

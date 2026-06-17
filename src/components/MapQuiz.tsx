@@ -13,7 +13,7 @@ import L from 'leaflet';
 import { DailyTask, type MapGuess } from '../store/useStore';
 import { getDistanceFromLatLonInKm, cn } from '../lib/utils';
 import { getCountryFeature, loadCountryBoundaries } from '../lib/countryBoundaries';
-import { scoreCapitalMapGuess, scoreCountryMapGuess } from '../lib/mapScoring';
+import { scoreCapitalMapGuess, scoreCountryMapGuess, isLandmarkMapTask, scoreLandmarkMapGuess } from '../lib/mapScoring';
 import { taskCountryCode } from '../lib/progress';
 import { findCountry } from '../lib/countries';
 
@@ -155,6 +155,7 @@ export function MapQuiz({
   const [countryFeatureReady, setCountryFeatureReady] = useState(false);
 
   const isCapitalMode = task.type === 'capital';
+  const isLandmarkMode = isLandmarkMapTask(task);
   const countryCode = taskCountryCode(task);
 
   const initialView = useMemo(() => {
@@ -208,14 +209,18 @@ export function MapQuiz({
   const countryFeature =
     countryFeatureReady && countryCode ? getCountryFeature(countryCode) : undefined;
 
+  const canSubmit =
+    Boolean(guess && targetPos) &&
+    (isCapitalMode || isLandmarkMode || Boolean(countryCode));
+
   const handleSubmit = async () => {
-    if (!guess || !targetPos || submitting) return;
+    if (!guess || !targetPos || submitting || !canSubmit) return;
 
     setSubmitting(true);
     try {
-      if (isCapitalMode) {
+      if (isCapitalMode || isLandmarkMode) {
         const dist = getDistanceFromLatLonInKm(guess.lat, guess.lng, targetPos.lat, targetPos.lng);
-        const result = scoreCapitalMapGuess(dist);
+        const result = isCapitalMode ? scoreCapitalMapGuess(dist) : scoreLandmarkMapGuess(dist);
         setDistance(dist);
         setPoints(result.points);
         onAnswer({
@@ -248,10 +253,11 @@ export function MapQuiz({
   };
 
   const earnedPoints = points ?? 0;
-  const isSuccess = isCapitalMode ? earnedPoints > 0 : earnedPoints === 100;
+  const usesDistanceScoring = isCapitalMode || isLandmarkMode;
+  const isSuccess = usesDistanceScoring ? earnedPoints > 0 : earnedPoints === 100;
 
   const resultMessage = (() => {
-    if (isCapitalMode) {
+    if (usesDistanceScoring) {
       if (earnedPoints >= 100) {
         return `Perfect! ${earnedPoints}/100 points — right on ${task.correctAnswer}.`;
       }
@@ -306,7 +312,7 @@ export function MapQuiz({
               }
             />
           )}
-          {showResult && isCapitalMode && targetPos && (
+          {showResult && usesDistanceScoring && targetPos && (
             <>
               <Marker position={targetPos} icon={targetIcon}>
                 <Popup>{task.correctAnswer}</Popup>
@@ -324,13 +330,20 @@ export function MapQuiz({
       </div>
 
       {!showResult ? (
-        <button
-          onClick={() => void handleSubmit()}
-          disabled={!guess || submitting}
-          className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        >
-          {submitting ? 'Checking...' : 'Submit Guess'}
-        </button>
+        <>
+          <button
+            onClick={() => void handleSubmit()}
+            disabled={!canSubmit || submitting}
+            className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {submitting ? 'Checking...' : 'Submit Guess'}
+          </button>
+          {guess && !canSubmit && (
+            <p className="text-center text-sm text-on-surface-variant">
+              This question cannot be scored. Please reload the challenge.
+            </p>
+          )}
+        </>
       ) : (
         <div
           className={cn(

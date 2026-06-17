@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import {
   applyDailyResult,
   applyPracticeResult,
+  inferCountryFromTask,
   initialProgress,
   taskCountryCode,
 } from '../../src/lib/progress';
@@ -127,5 +128,55 @@ describe('taskCountryCode', () => {
       countryCode: '',
     };
     expect(taskCountryCode({ ...task, countryCode: '' })).toBe('CF');
+  });
+
+  it('does not treat date-based ids as country codes', () => {
+    const task: DailyTask = {
+      id: '2026-06-17-map-1',
+      type: 'map',
+      question: 'Where?',
+      correctAnswer: 'Machu Picchu, Peru',
+      countryCode: '',
+      mapCoordinates: { lat: -13.1631, lng: -72.545 },
+    };
+    expect(taskCountryCode(task)).toBe('PE');
+  });
+
+  it('resolves legacy map task ids', () => {
+    const task: DailyTask = {
+      id: 'map-TL-2',
+      type: 'map',
+      question: 'Where is Timor-Leste located?',
+      correctAnswer: 'Timor-Leste',
+      countryCode: '',
+      mapCoordinates: { lat: -8.8383, lng: 125.8272 },
+    };
+    expect(taskCountryCode(task)).toBe('TL');
+  });
+});
+
+describe('inferCountryFromTask', () => {
+  it('infers country from comma-separated landmark answers', () => {
+    const task: DailyTask = {
+      id: '2026-06-17-map-1',
+      type: 'map',
+      question: 'Where?',
+      correctAnswer: 'Machu Picchu, Peru',
+      countryCode: '',
+      mapCoordinates: { lat: -13.1631, lng: -72.545 },
+    };
+    expect(inferCountryFromTask(task)?.code).toBe('PE');
+  });
+
+  it('infers country from answers that include a country name', () => {
+    const task: DailyTask = {
+      id: '2026-06-18-q3',
+      type: 'map',
+      question: 'Where?',
+      correctAnswer: 'Great Barrier Reef, Australia',
+      countryCode: '',
+      mapCoordinates: { lat: -18.2871, lng: 147.6995 },
+    };
+    expect(inferCountryFromTask(task)?.code).toBe('AU');
   });
 });

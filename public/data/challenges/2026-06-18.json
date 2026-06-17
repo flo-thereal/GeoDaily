@@ -29,6 +29,8 @@
     "type": "map",
     "question": "This vast coral reef system, visible from space, is located off the coast of which country?",
     "correctAnswer": "Great Barrier Reef, Australia",
+    "imageUrl": "AU",
+    "countryCode": "AU",
     "mapCoordinates": {
       "lat": -18.2871,
       "lng": 147.6995

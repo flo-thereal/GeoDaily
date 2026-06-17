@@ -2,9 +2,12 @@ import { describe, expect, it, vi } from 'vitest';
 import {
   CAPITAL_CORRECT_THRESHOLD,
   MAX_CAPITAL_DISTANCE_KM,
+  isLandmarkMapTask,
   scoreCapitalMapGuess,
   scoreCountryMapGuess,
+  scoreLandmarkMapGuess,
 } from '../../src/lib/mapScoring';
+import type { DailyTask } from '../../src/store/useStore';
 
 vi.mock('../../src/lib/countryBoundaries', () => ({
   isPointInCountry: vi.fn(),
@@ -54,5 +57,41 @@ describe('scoreCountryMapGuess', () => {
       isCorrect: false,
       distance: null,
     });
+  });
+});
+
+describe('isLandmarkMapTask', () => {
+  const landmarkTask: DailyTask = {
+    id: '2026-06-17-map-1',
+    type: 'map',
+    question: 'Where?',
+    correctAnswer: 'Machu Picchu, Peru',
+    countryCode: '',
+    mapCoordinates: { lat: -13.1631, lng: -72.545 },
+  };
+
+  const countryTask: DailyTask = {
+    id: '2026-06-22-map-1',
+    type: 'map',
+    question: 'Where is Egypt located?',
+    correctAnswer: 'Egypt',
+    countryCode: 'EG',
+    imageUrl: 'EG',
+    mapCoordinates: { lat: 26.8206, lng: 30.8025 },
+  };
+
+  it('detects descriptive landmark map tasks', () => {
+    expect(isLandmarkMapTask(landmarkTask)).toBe(true);
+  });
+
+  it('treats standard country map tasks as non-landmarks', () => {
+    expect(isLandmarkMapTask(countryTask)).toBe(false);
+  });
+});
+
+describe('scoreLandmarkMapGuess', () => {
+  it('uses the same distance scoring as capital map guesses', () => {
+    expect(scoreLandmarkMapGuess(0)).toEqual(scoreCapitalMapGuess(0));
+    expect(scoreLandmarkMapGuess(100)).toEqual(scoreCapitalMapGuess(100));
   });
 });

@@ -11,6 +11,8 @@ import { mkdirSync, existsSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { GoogleGenAI, Type } from '@google/genai';
 import { generateDailyTasks, generateSeed } from '../src/lib/generateQuiz';
+import { normalizeChallengeTask } from '../src/lib/taskNormalization';
+import type { DailyTask } from '../src/store/useStore';
 
 const OUT_DIR = join(process.cwd(), 'public', 'data', 'challenges');
 const DAYS = Number(process.env.CHALLENGE_DAYS ?? 14);
@@ -25,7 +27,8 @@ const taskSchema = {
       question: { type: Type.STRING },
       options: { type: Type.ARRAY, items: { type: Type.STRING } },
       correctAnswer: { type: Type.STRING },
-      imageUrl: { type: Type.STRING, description: '2-letter ISO country code for flags' },
+      imageUrl: { type: Type.STRING, description: '2-letter ISO country code (required for flag, capital, and map tasks)' },
+      countryCode: { type: Type.STRING, description: '2-letter ISO country code (required for capital and map tasks)' },
       mapCoordinates: {
         type: Type.OBJECT,
         properties: { lat: { type: Type.NUMBER }, lng: { type: Type.NUMBER } },
@@ -38,21 +41,22 @@ const taskSchema = {
 const PROMPT = (date: string) => `Generate 5 geography quiz questions for a daily challenge for the date ${date}.
 Mix the types: 'flag' (guess country from flag), 'capital' (guess capital of country), 'map' (guess country from description/location).
 For 'flag' type, provide the country name in 'correctAnswer' and 3 other country names in 'options'. The 'question' should be "Which country's flag is this?". Provide the 2-letter ISO country code in 'imageUrl' so I can fetch the flag.
-For 'capital' type, provide the question "Where is the capital of {country}?", the capital city name in 'correctAnswer', empty 'options', and exact capital lat/lng in 'mapCoordinates'. Include the 2-letter ISO country code in 'imageUrl'.
-For 'map' type, provide the question "Where is {country} located?", the country name in 'correctAnswer', empty 'options', the 2-letter ISO country code in 'imageUrl', and country centroid lat/lng in 'mapCoordinates'.
-Make the questions interesting and varied.`;
+For 'capital' type, provide the question "Where is the capital of {country}?", the capital city name in 'correctAnswer', empty 'options', exact capital lat/lng in 'mapCoordinates', and the 2-letter ISO country code in both 'imageUrl' and 'countryCode'.
+For 'map' type, provide a location question, the place or country name in 'correctAnswer', empty 'options', exact lat/lng in 'mapCoordinates', and the host country's 2-letter ISO code in both 'imageUrl' and 'countryCode' (required even for landmark questions like Machu Picchu — use the country code, e.g. PE for Peru).
+Make the questions interesting and varied. Always include imageUrl and countryCode on capital and map tasks.`;
 
-function processTasks(tasks: any[]): any[] {
+function processTasks(tasks: DailyTask[]): DailyTask[] {
   return tasks.map((task) => {
-    if (task.options && task.options.length > 0) {
-      const unique = Array.from(new Set([...task.options, task.correctAnswer]));
-      task.options = unique.sort(() => Math.random() - 0.5);
+    let next = { ...task };
+    if (next.options && next.options.length > 0) {
+      const unique = Array.from(new Set([...next.options, next.correctAnswer]));
+      next.options = unique.sort(() => Math.random() - 0.5);
     }
-    return task;
+    return normalizeChallengeTask(next);
   });
 }
 
-async function generateWithGemini(ai: GoogleGenAI, date: string): Promise<any[]> {
+async function generateWithGemini(ai: GoogleGenAI, date: string): Promise<DailyTask[]> {
   const response = await ai.models.generateContent({
     model: 'gemini-2.5-flash',
     contents: PROMPT(date),
@@ -85,7 +89,7 @@ async function main() {
     const file = join(OUT_DIR, `${date}.json`);
     if (existsSync(file)) continue;
 
-    let tasks: any[];
+    let tasks: DailyTask[];
     try {
       tasks = ai ? await generateWithGemini(ai, date) : generateDailyTasks(date);
     } catch (err) {

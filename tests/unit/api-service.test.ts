@@ -138,6 +138,33 @@ describe('static api service', () => {
     vi.unstubAllGlobals();
   });
 
+  it('backfills country metadata for landmark map tasks when fetching daily challenges', async () => {
+    const landmarkMap: DailyTask = {
+      id: '2026-06-17-map-1',
+      type: 'map',
+      question: 'This ancient Inca citadel... Where is it located?',
+      correctAnswer: 'Machu Picchu, Peru',
+      countryCode: '',
+      mapCoordinates: { lat: -13.1631, lng: -72.545 },
+      options: [],
+    };
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => [landmarkMap],
+      })
+    );
+
+    const tasks = await api.fetchDailyTasks('2026-06-17');
+    expect(tasks).toHaveLength(1);
+    expect(tasks[0].countryCode).toBe('PE');
+    expect(tasks[0].imageUrl).toBe('PE');
+
+    vi.unstubAllGlobals();
+  });
+
   it('round-trips settings through the local store', async () => {
     await api.updateSettings({ language: 'fr', soundEnabled: false });
     const settings = await api.getUserSettings();

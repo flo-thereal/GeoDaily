@@ -29,6 +29,8 @@
     "type": "map",
     "question": "This iconic ancient wonder, a complex of massive pyramids and the Great Sphinx, is located near a bustling capital city in North Africa. Where would you find these structures?",
     "correctAnswer": "Pyramids of Giza",
+    "imageUrl": "EG",
+    "countryCode": "EG",
     "mapCoordinates": {
       "lat": 29.9792,
       "lng": 31.1342

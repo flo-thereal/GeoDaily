@@ -1,3 +1,5 @@
+import type { DailyTask } from '../store/useStore';
+import { findCountryByName } from './countries';
 import { isPointInCountry } from './countryBoundaries';
 
 export const MAX_CAPITAL_DISTANCE_KM = 500;
@@ -29,4 +31,13 @@ export function scoreCapitalMapGuess(distanceKm: number): MapScoreResult {
     isCorrect: points >= CAPITAL_CORRECT_THRESHOLD,
     distance: distanceKm,
   };
+}
+
+/** Landmark map tasks describe a specific place, not a whole country. */
+export function isLandmarkMapTask(task: DailyTask): boolean {
+  return task.type === 'map' && !findCountryByName(task.correctAnswer.trim());
+}
+
+export function scoreLandmarkMapGuess(distanceKm: number): MapScoreResult {
+  return scoreCapitalMapGuess(distanceKm);
 }

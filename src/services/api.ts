@@ -2,8 +2,8 @@ import { DailyTask, DailyHistory, useStore, type AnswerRecord } from '../store/u
 import { localDateString } from '../lib/utils';
 import { COUNTRIES, type Country } from '../lib/countries';
 import { generateDailyTasks as genDaily, generatePracticeTasks } from '../lib/generateQuiz';
-import { findCountry } from '../lib/countries';
-import { ACHIEVEMENTS, taskCountryCode } from '../lib/progress';
+import { ACHIEVEMENTS } from '../lib/progress';
+import { normalizeChallengeTask } from '../lib/taskNormalization';
 
 // ============================================================================
 // GeoDaily runs as a fully static site: there is no server or account system.
@@ -266,20 +266,7 @@ export async function getRegions(): Promise<{ region: string; count: number }[]>
 // ============================================================================
 
 function normalizeDailyTask(task: DailyTask): DailyTask {
-  if (task.type !== 'capital') return task;
-
-  const code = taskCountryCode(task);
-  const country = code ? findCountry(code) : undefined;
-  if (!country?.capitalCoordinates) return task;
-
-  return {
-    ...task,
-    options: [],
-    mapCoordinates: country.capitalCoordinates,
-    question: `Where is the capital of ${country.name}?`,
-    countryCode: country.code,
-    correctAnswer: country.capital,
-  };
+  return normalizeChallengeTask(task);
 }
 
 /**

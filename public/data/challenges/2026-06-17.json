@@ -29,6 +29,8 @@
     "type": "map",
     "question": "This ancient Inca citadel, perched high in the Andes Mountains, is one of the New Seven Wonders of the World. Where is it located?",
     "correctAnswer": "Machu Picchu, Peru",
+    "imageUrl": "PE",
+    "countryCode": "PE",
     "mapCoordinates": {
       "lat": -13.1631,
       "lng": -72.545

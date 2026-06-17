@@ -29,6 +29,8 @@
     "type": "map",
     "question": "This vast natural wonder, visible from space, is the world's largest coral reef system, stretching over 2,300 kilometers off the coast of Queensland. Where is it located?",
     "correctAnswer": "Great Barrier Reef",
+    "imageUrl": "AU",
+    "countryCode": "AU",
     "mapCoordinates": {
       "lat": -20,
       "lng": 148
