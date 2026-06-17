@@ -1,0 +1,64 @@
+[
+  {
+    "id": "2026-06-30-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United States",
+    "imageUrl": "US",
+    "options": [
+      "United States",
+      "Liberia",
+      "Malaysia",
+      "Puerto Rico"
+    ]
+  },
+  {
+    "id": "2026-06-30-02",
+    "type": "capital",
+    "question": "Where is the capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "imageUrl": "JP",
+    "mapCoordinates": {
+      "lat": 35.6895,
+      "lng": 139.6917
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-30-03",
+    "type": "map",
+    "question": "Where is Egypt located?",
+    "correctAnswer": "Egypt",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 26.8206,
+      "lng": 30.8025
+    },
+    "options": []
+  },
+  {
+    "id": "2026-06-30-04",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Brazil",
+      "Australia",
+      "Portugal",
+      "Greenland"
+    ]
+  },
+  {
+    "id": "2026-06-30-05",
+    "type": "map",
+    "question": "Where is New Zealand located?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -40.9006,
+      "lng": 174.886
+    },
+    "options": []
+  }
+]
