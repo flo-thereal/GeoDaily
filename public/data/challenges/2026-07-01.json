@@ -1,0 +1,69 @@
+[
+  {
+    "id": "2026-07-01-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "Germany",
+      "Netherlands",
+      "France",
+      "Italy"
+    ],
+    "countryCode": "FR"
+  },
+  {
+    "id": "2026-07-01-2",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-01-3",
+    "type": "map",
+    "question": "This iconic peak, the world's highest, is located in the Himalayas on the border of Nepal and China. Which mountain is it?",
+    "correctAnswer": "Mount Everest",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-01-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "South Africa",
+      "Nigeria",
+      "Kenia",
+      "Ethiopia"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "2026-07-01-5",
+    "type": "capital",
+    "question": "Where is the capital of Italy?",
+    "correctAnswer": "Rome",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.9,
+      "lng": 12.48
+    },
+    "options": []
+  }
+]
