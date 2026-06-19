@@ -1,0 +1,69 @@
+[
+  {
+    "id": "2026-07-02-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "Canada",
+      "Lebanon",
+      "Denmark",
+      "Australia"
+    ],
+    "countryCode": "CA"
+  },
+  {
+    "id": "2026-07-02-2",
+    "type": "capital",
+    "question": "Where is the capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "countryCode": "JP",
+    "imageUrl": "JP",
+    "mapCoordinates": {
+      "lat": 35.68,
+      "lng": 139.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-02-3",
+    "type": "map",
+    "question": "This vast coral reef system, visible from space, is located off the coast of which country?",
+    "correctAnswer": "Australia",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -18.2871,
+      "lng": 147.6992
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-02-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Portugal",
+      "Argentina",
+      "Mexico",
+      "Brazil"
+    ],
+    "countryCode": "BR"
+  },
+  {
+    "id": "2026-07-02-5",
+    "type": "map",
+    "question": "Standing as the world's highest peak, Mount Everest is located in the Himalayan range, bordering Nepal and which other country?",
+    "correctAnswer": "China",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9861,
+      "lng": 86.9226
+    },
+    "options": []
+  }
+]
