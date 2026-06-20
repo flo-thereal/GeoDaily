@@ -1,4 +1,9 @@
 import type { DailyTask, GameType } from '../store/useStore';
+import {
+  CHALLENGE_LOOKBACK_DAYS,
+  countryCodesFromTasks,
+  priorDates,
+} from './challengeHistory';
 import { COUNTRIES, type Country } from './countries';
 
 // Deterministic seed from a date string (ported from the old server so a given
@@ -88,11 +93,59 @@ function buildTask(type: GameType, country: Country, index: number, rng: () => n
 
 const DAILY_PATTERN: GameType[] = ['flag', 'capital', 'map', 'flag', 'capital'];
 
-/** Generate a stable 5-question daily challenge for the given date. */
-export function generateDailyTasks(date: string): DailyTask[] {
-  const rng = makeRng(generateSeed(date));
-  const countries = pickDistinct(USABLE, DAILY_PATTERN.length, rng);
+/** First date used as the lookback base case (no challenges exist before this). */
+const CHALLENGE_EPOCH = '2026-01-01';
+
+const challengeCache = new Map<string, DailyTask[]>();
+
+function buildDailyTasks(
+  date: string,
+  excludeCodes: Set<string>,
+  rng: () => number
+): DailyTask[] {
+  const pool =
+    excludeCodes.size > 0 ? USABLE.filter((c) => !excludeCodes.has(c.code)) : USABLE;
+  const countries = pickDistinct(
+    pool.length >= DAILY_PATTERN.length ? pool : USABLE,
+    DAILY_PATTERN.length,
+    rng
+  );
   return DAILY_PATTERN.map((type, i) => buildTask(type, countries[i], i, rng));
+}
+
+function generateDailyTasksWithLookback(date: string): DailyTask[] {
+  const cached = challengeCache.get(date);
+  if (cached) return cached;
+
+  const excluded = new Set<string>();
+  for (const priorDate of priorDates(date, CHALLENGE_LOOKBACK_DAYS)) {
+    if (priorDate < CHALLENGE_EPOCH) continue;
+    for (const code of countryCodesFromTasks(generateDailyTasksWithLookback(priorDate))) {
+      excluded.add(code);
+    }
+  }
+
+  const tasks = buildDailyTasks(date, excluded, makeRng(generateSeed(date)));
+  challengeCache.set(date, tasks);
+  return tasks;
+}
+
+/** Generate a stable 5-question daily challenge for the given date. */
+export function generateDailyTasks(date: string, excludeCodes?: Set<string>): DailyTask[] {
+  if (excludeCodes) {
+    return buildDailyTasks(date, excludeCodes, makeRng(generateSeed(date)));
+  }
+  return generateDailyTasksWithLookback(date);
+}
+
+/** Return true when any task uses an excluded country or repeats a country within the day. */
+export function challengeHasCountryConflicts(
+  tasks: DailyTask[],
+  excludeCodes: Set<string>
+): boolean {
+  const codes = countryCodesFromTasks(tasks);
+  if (codes.length !== new Set(codes).size) return true;
+  return codes.some((code) => excludeCodes.has(code));
 }
 
 /** Generate a 5-question single-type practice session (unseeded / random). */

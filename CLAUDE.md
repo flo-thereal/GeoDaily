@@ -137,6 +137,11 @@ is inside the country polygon (from `public/data/country-boundaries.geojson`), e
 
 **Flag images**: `https://flagcdn.com/w320/{code}.png` (lowercased `imageUrl`).
 
+**Challenge variety**: new daily challenges avoid reusing any country from the prior
+7 days. `scripts/generate-challenges.ts` reads committed JSON for exclusions before
+calling Gemini; the deterministic fallback in `src/lib/generateQuiz.ts` applies the
+same window when a day's file is missing.
+
 **Progress / achievements**: `src/lib/progress.ts#applyDailyResult` updates streak,
 points, days played, per-country mastery (`timesCorrect >= 3 ⇒ mastered`),
 continent mastery %, and unlocks achievements. The store action `submitDailyResult`

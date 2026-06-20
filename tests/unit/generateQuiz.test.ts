@@ -1,4 +1,9 @@
 import { describe, expect, it } from 'vitest';
+import {
+  CHALLENGE_LOOKBACK_DAYS,
+  countryCodesFromTasks,
+  priorDates,
+} from '../../src/lib/challengeHistory';
 import { generateDailyTasks, generatePracticeTasks } from '../../src/lib/generateQuiz';
 
 describe('generateDailyTasks', () => {
@@ -22,6 +27,29 @@ describe('generateDailyTasks', () => {
   it('is deterministic for a given date', () => {
     expect(generateDailyTasks('2026-05-29')).toEqual(generateDailyTasks('2026-05-29'));
     expect(generateDailyTasks('2026-05-29')).not.toEqual(generateDailyTasks('2026-05-30'));
+  });
+
+  it('avoids countries used in the prior lookback window', () => {
+    const start = '2026-08-01';
+    const days = Array.from({ length: 10 }, (_, i) => {
+      const d = new Date(`${start}T12:00:00Z`);
+      d.setUTCDate(d.getUTCDate() + i);
+      return d.toISOString().split('T')[0];
+    });
+
+    for (let i = CHALLENGE_LOOKBACK_DAYS; i < days.length; i++) {
+      const date = days[i];
+      const currentCodes = new Set(countryCodesFromTasks(generateDailyTasks(date)));
+      const recentCodes = new Set(
+        priorDates(date, CHALLENGE_LOOKBACK_DAYS).flatMap((priorDate) =>
+          countryCodesFromTasks(generateDailyTasks(priorDate))
+        )
+      );
+
+      for (const code of currentCodes) {
+        expect(recentCodes.has(code)).toBe(false);
+      }
+    }
   });
 });
 
