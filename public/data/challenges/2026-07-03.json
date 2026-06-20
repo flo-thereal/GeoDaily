@@ -1,0 +1,69 @@
+[
+  {
+    "id": "2026-07-03-quiz-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "Ethiopia",
+      "Kenya",
+      "South Africa",
+      "Ghana"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "2026-07-03-quiz-2",
+    "type": "capital",
+    "question": "Where is the capital of Vietnam?",
+    "correctAnswer": "Hanoi",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 21.03,
+      "lng": 105.85
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-03-quiz-3",
+    "type": "map",
+    "question": "Which country is home to the world's highest peak, Mount Everest?",
+    "correctAnswer": "Nepal",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-03-quiz-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Portugal",
+      "Spain",
+      "Argentina",
+      "Brazil"
+    ],
+    "countryCode": "BR"
+  },
+  {
+    "id": "2026-07-03-quiz-5",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  }
+]
