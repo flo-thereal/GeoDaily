@@ -1,0 +1,69 @@
+[
+  {
+    "id": "2026-07-04-q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "imageUrl": "DE",
+    "options": [
+      "Germany",
+      "Austria",
+      "Belgium",
+      "Poland"
+    ],
+    "countryCode": "DE"
+  },
+  {
+    "id": "2026-07-04-q2",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-04-q3",
+    "type": "map",
+    "question": "This ancient citadel, famous for the Parthenon, overlooks which major European capital city?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.9715,
+      "lng": 23.7257
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-04-q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "South Korea",
+      "Japan",
+      "China",
+      "North Korea"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "2026-07-04-q5",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  }
+]
