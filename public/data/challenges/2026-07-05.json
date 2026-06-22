@@ -1,0 +1,69 @@
+[
+  {
+    "id": "2026-07-05-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Belgium",
+    "imageUrl": "BE",
+    "options": [
+      "Netherlands",
+      "Germany",
+      "Poland",
+      "Belgium"
+    ],
+    "countryCode": "BE"
+  },
+  {
+    "id": "2026-07-05-02",
+    "type": "capital",
+    "question": "Where is the capital of Spain?",
+    "correctAnswer": "Madrid",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 40.4,
+      "lng": -3.68
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-05-03",
+    "type": "map",
+    "question": "Which iconic African peak, the highest on the continent, is located at these coordinates?",
+    "correctAnswer": "Mount Kilimanjaro",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-05-04",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "Pakistan",
+      "Bangladesh",
+      "Sri Lanka",
+      "India"
+    ],
+    "countryCode": "IN"
+  },
+  {
+    "id": "2026-07-05-05",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  }
+]
