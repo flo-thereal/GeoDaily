@@ -1,0 +1,69 @@
+[
+  {
+    "id": "2026-07-06-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Myanmar",
+      "Indonesia",
+      "Malaysia",
+      "Thailand"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "2026-07-06-2",
+    "type": "capital",
+    "question": "Where is the capital of Switzerland?",
+    "correctAnswer": "Bern",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 46.92,
+      "lng": 7.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-06-3",
+    "type": "map",
+    "question": "This desert in Chile is known as the driest non-polar desert in the world. What is its name?",
+    "correctAnswer": "Atacama Desert",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -24.5,
+      "lng": -69.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-06-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Kenya",
+      "Sudan",
+      "Rwanda",
+      "Uganda"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "2026-07-06-5",
+    "type": "capital",
+    "question": "Where is the capital of Ireland?",
+    "correctAnswer": "Dublin",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 53.32,
+      "lng": -6.23
+    },
+    "options": []
+  }
+]
