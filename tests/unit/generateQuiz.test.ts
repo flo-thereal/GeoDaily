@@ -4,12 +4,17 @@ import {
   countryCodesFromTasks,
   priorDates,
 } from '../../src/lib/challengeHistory';
-import { generateDailyTasks, generatePracticeTasks } from '../../src/lib/generateQuiz';
+import { generateDailyTasks, generatePracticeTasks, DAILY_PATTERN } from '../../src/lib/generateQuiz';
 
 describe('generateDailyTasks', () => {
-  it('produces 5 well-formed tasks', () => {
+  it('produces 10 well-formed tasks with map-heavy mix', () => {
     const tasks = generateDailyTasks('2026-05-29');
-    expect(tasks).toHaveLength(5);
+    expect(tasks).toHaveLength(DAILY_PATTERN.length);
+    expect(tasks.map((t) => t.type).filter((t) => t === 'map')).toHaveLength(4);
+    expect(tasks.map((t) => t.type).filter((t) => t === 'flag')).toHaveLength(3);
+    expect(tasks.map((t) => t.type).filter((t) => t === 'capital')).toHaveLength(3);
+    const codes = tasks.map((t) => t.countryCode);
+    expect(new Set(codes).size).toBe(codes.length);
     for (const t of tasks) {
       expect(t.id).toBeTruthy();
       expect(['flag', 'capital', 'map']).toContain(t.type);

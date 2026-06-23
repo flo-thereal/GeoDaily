@@ -6,6 +6,7 @@ import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft } from 'lucide-re
 import confetti from 'canvas-confetti';
 import { cn, localDateString } from '../lib/utils';
 import { MapQuiz } from '../components/MapQuiz';
+import { CountryLearnCard } from '../components/CountryLearnCard';
 import { playCorrectSound, triggerHaptic } from '../lib/preferences';
 import { storeNewAchievements, storeQuestRecap } from '../lib/questSession';
 import { taskCountryCode } from '../lib/progress';
@@ -458,6 +459,7 @@ export function Quiz() {
 
       {showResult && (
         <div className="space-y-3">
+          <CountryLearnCard task={currentTask} />
           <button
             onClick={handleNext}
             className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors shadow-md animate-in slide-in-from-bottom-4"

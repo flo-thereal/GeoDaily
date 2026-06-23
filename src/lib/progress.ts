@@ -16,7 +16,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: 'streak_3', name: 'Consistent Explorer', description: 'Maintain a 3-day streak', icon: 'local_fire_department', category: 'streak', points: 100 },
   { id: 'streak_7', name: 'Weekly Warrior', description: 'Maintain a 7-day streak', icon: 'local_fire_department', category: 'streak', points: 250 },
   { id: 'streak_30', name: 'Monthly Master', description: 'Maintain a 30-day streak', icon: 'emoji_events', category: 'streak', points: 1000 },
-  { id: 'perfect_score', name: 'Perfect Score', description: 'Get 5/5 on a daily challenge', icon: 'star', category: 'accuracy', points: 150 },
+  { id: 'perfect_score', name: 'Perfect Score', description: 'Get a perfect score on a daily challenge', icon: 'star', category: 'accuracy', points: 150 },
   { id: 'countries_10', name: 'Globe Trotter', description: 'Answer questions about 10 different countries', icon: 'public', category: 'mastery', points: 200 },
   { id: 'countries_50', name: 'World Traveler', description: 'Answer questions about 50 different countries', icon: 'travel_explore', category: 'mastery', points: 500 },
   { id: 'countries_100', name: 'Geography Expert', description: 'Answer questions about 100 different countries', icon: 'workspace_premium', category: 'mastery', points: 1000 },

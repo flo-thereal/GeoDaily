@@ -121,7 +121,9 @@ The deployed client needs **no secrets**.
 
 ## Quiz / Challenge Data Model
 
-Each challenge is an array of 5 `DailyTask` objects (`src/store/useStore.ts`):
+Each challenge is an array of `DailyTask` objects (`src/store/useStore.ts`). New
+daily challenges have **10** questions (4 map, 3 flag, 3 capital); older committed
+JSON files may still have 5.
 
 | Type | Question | `correctAnswer` | `options` | `imageUrl` | `mapCoordinates` |
 |---|---|---|---|---|---|
@@ -132,8 +134,11 @@ Each challenge is an array of 5 `DailyTask` objects (`src/store/useStore.ts`):
 **Scoring**: flags are binary 100/0. Country map questions award **100** if the pin
 is inside the country polygon (from `public/data/country-boundaries.geojson`), else
 **0**. Capital map questions award **0–100** from distance (`round(100 * max(0, 1 - d/500))`);
-`isCorrect` when points ≥ 50. Daily max is still 5×100 = 500. Perfect score requires
+`isCorrect` when points ≥ 50. Daily max is `tasks.length × 100` (1000 for new
+10-question days, 500 for legacy 5-question files). Perfect score requires
 `score === maxScore && maxScore >= 500`.
+
+After each answer, `CountryLearnCard` shows the country's flag, name, and capital.
 
 **Flag images**: `https://flagcdn.com/w320/{code}.png` (lowercased `imageUrl`).
 

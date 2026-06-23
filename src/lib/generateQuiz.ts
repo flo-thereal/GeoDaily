@@ -91,7 +91,19 @@ function buildTask(type: GameType, country: Country, index: number, rng: () => n
   };
 }
 
-const DAILY_PATTERN: GameType[] = ['flag', 'capital', 'map', 'flag', 'capital'];
+/** 4 map · 3 flag · 3 capital · 10 distinct countries per day. */
+export const DAILY_PATTERN: GameType[] = [
+  'map',
+  'flag',
+  'capital',
+  'map',
+  'flag',
+  'map',
+  'capital',
+  'map',
+  'flag',
+  'capital',
+];
 
 /** First date used as the lookback base case (no challenges exist before this). */
 const CHALLENGE_EPOCH = '2026-01-01';
@@ -130,7 +142,7 @@ function generateDailyTasksWithLookback(date: string): DailyTask[] {
   return tasks;
 }
 
-/** Generate a stable 5-question daily challenge for the given date. */
+/** Generate a stable daily challenge for the given date ({@link DAILY_PATTERN.length} questions). */
 export function generateDailyTasks(date: string, excludeCodes?: Set<string>): DailyTask[] {
   if (excludeCodes) {
     return buildDailyTasks(date, excludeCodes, makeRng(generateSeed(date)));

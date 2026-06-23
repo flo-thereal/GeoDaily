@@ -108,7 +108,7 @@ describe('static api service', () => {
     expect(history).toHaveLength(7);
     const today = localDateString();
     expect(history[history.length - 1].date).toBe(today);
-    expect(history.every((h) => h.maxScore === 500)).toBe(true);
+    expect(history.every((h) => h.maxScore === 1000)).toBe(true);
   });
 
   it('normalizes legacy capital MCQ tasks into map tasks when fetching daily challenges', async () => {

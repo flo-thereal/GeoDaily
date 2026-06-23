@@ -67,7 +67,7 @@ export function Dashboard() {
               <p className="text-on-primary/90 mb-0 max-w-md text-lg leading-relaxed">
                 {isDailyCompleted 
                   ? "You've successfully completed today's challenge. Come back tomorrow for more!" 
-                  : "Test your knowledge with 5 quick questions about flags, capitals, and map locations."}
+                  : "Test your knowledge with 10 questions about flags, capitals, and map locations."}
               </p>
             </div>
             
@@ -156,7 +156,7 @@ export function Dashboard() {
                   {dayHistory ? (
                     <div className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2.5 py-1 rounded-md text-xs font-bold flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" />
-                      {dayHistory.score}/500
+                      {dayHistory.score}/{dayHistory.tasks.length * 100}
                     </div>
                   ) : (
                     <div className="bg-surface-container-high text-on-surface-variant px-2.5 py-1 rounded-md text-xs font-bold">

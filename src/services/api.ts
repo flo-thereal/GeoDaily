@@ -1,7 +1,7 @@
 import { DailyTask, DailyHistory, useStore, type AnswerRecord } from '../store/useStore';
 import { localDateString } from '../lib/utils';
 import { COUNTRIES, type Country } from '../lib/countries';
-import { generateDailyTasks as genDaily, generatePracticeTasks } from '../lib/generateQuiz';
+import { generateDailyTasks as genDaily, generatePracticeTasks, DAILY_PATTERN } from '../lib/generateQuiz';
 import { ACHIEVEMENTS } from '../lib/progress';
 import { normalizeChallengeTask } from '../lib/taskNormalization';
 
@@ -185,7 +185,13 @@ export async function getLearningHistory(days: number = 30): Promise<LearningHis
     const d = new Date(today);
     d.setDate(d.getDate() - i);
     const date = localDateString(d);
-    entries.push({ date, score: history[date]?.score ?? 0, maxScore: 500 });
+    entries.push({
+      date,
+      score: history[date]?.score ?? 0,
+      maxScore: history[date]?.tasks?.length
+        ? history[date].tasks.length * 100
+        : DAILY_PATTERN.length * 100,
+    });
   }
   return entries;
 }

@@ -51,12 +51,12 @@ const PROMPT = (date: string, excludedCodes: string[]) => {
     excludedCodes.length > 0
       ? `Do NOT use these countries (already used in the last ${CHALLENGE_LOOKBACK_DAYS} days): ${excludedCodes.join(', ')}.`
       : '';
-  return `Generate 5 geography quiz questions for a daily challenge for the date ${date}.
-Mix the types: 'flag' (guess country from flag), 'capital' (guess capital of country), 'map' (guess country from description/location).
+  return `Generate 10 geography quiz questions for a daily challenge for the date ${date}.
+Use a map-heavy mix: 4 'map', 3 'flag', and 3 'capital' questions.
 For 'flag' type, provide the country name in 'correctAnswer' and 3 other country names in 'options'. The 'question' should be "Which country's flag is this?". Provide the 2-letter ISO country code in 'imageUrl' so I can fetch the flag.
 For 'capital' type, provide the question "Where is the capital of {country}?", the capital city name in 'correctAnswer', empty 'options', exact capital lat/lng in 'mapCoordinates', and the 2-letter ISO country code in both 'imageUrl' and 'countryCode'.
 For 'map' type, provide a location question, the place or country name in 'correctAnswer', empty 'options', exact lat/lng in 'mapCoordinates', and the host country's 2-letter ISO code in both 'imageUrl' and 'countryCode' (required even for landmark questions like Machu Picchu — use the country code, e.g. PE for Peru).
-Make the questions interesting and varied. Use 5 different countries with no repeats within the challenge. ${exclusion}
+Make the questions interesting and varied. Use 10 different countries with no repeats within the challenge. ${exclusion}
 Always include imageUrl and countryCode on capital and map tasks.`;
 };
 
