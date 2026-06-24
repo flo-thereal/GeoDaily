@@ -1,69 +1,132 @@
 [
   {
-    "id": "2026-07-03-quiz-1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "South Africa",
-    "imageUrl": "ZA",
-    "options": [
-      "Ethiopia",
-      "Kenya",
-      "South Africa",
-      "Ghana"
-    ],
-    "countryCode": "ZA"
-  },
-  {
-    "id": "2026-07-03-quiz-2",
-    "type": "capital",
-    "question": "Where is the capital of Vietnam?",
-    "correctAnswer": "Hanoi",
-    "countryCode": "VN",
-    "imageUrl": "VN",
-    "mapCoordinates": {
-      "lat": 21.03,
-      "lng": 105.85
-    },
-    "options": []
-  },
-  {
-    "id": "2026-07-03-quiz-3",
+    "id": "map-NO-0",
     "type": "map",
-    "question": "Which country is home to the world's highest peak, Mount Everest?",
-    "correctAnswer": "Nepal",
-    "countryCode": "NP",
-    "imageUrl": "NP",
+    "question": "Where is Norway located?",
+    "correctAnswer": "Norway",
+    "options": [],
+    "countryCode": "NO",
+    "imageUrl": "NO",
     "mapCoordinates": {
-      "lat": 27.9881,
-      "lng": 86.925
-    },
-    "options": []
+      "lat": 60.472,
+      "lng": 8.4689
+    }
   },
   {
-    "id": "2026-07-03-quiz-4",
+    "id": "flag-AU-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "Brazil",
-    "imageUrl": "BR",
+    "correctAnswer": "Australia",
     "options": [
+      "Germany",
+      "Austria",
       "Portugal",
-      "Spain",
-      "Argentina",
-      "Brazil"
+      "Australia"
     ],
-    "countryCode": "BR"
+    "countryCode": "AU",
+    "imageUrl": "AU"
   },
   {
-    "id": "2026-07-03-quiz-5",
+    "id": "capital-TL-2",
     "type": "capital",
-    "question": "Where is the capital of Canada?",
-    "correctAnswer": "Ottawa",
-    "countryCode": "CA",
-    "imageUrl": "CA",
+    "question": "Where is the capital of Timor-Leste?",
+    "correctAnswer": "Dili",
+    "options": [],
+    "countryCode": "TL",
     "mapCoordinates": {
-      "lat": 45.42,
-      "lng": -75.7
-    },
-    "options": []
+      "lat": -8.58,
+      "lng": 125.6
+    }
+  },
+  {
+    "id": "map-HR-3",
+    "type": "map",
+    "question": "Where is Croatia located?",
+    "correctAnswer": "Croatia",
+    "options": [],
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 45.1,
+      "lng": 15.2
+    }
+  },
+  {
+    "id": "flag-MR-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mauritania",
+    "options": [
+      "Palau",
+      "Mauritania",
+      "Uruguay",
+      "Slovenia"
+    ],
+    "countryCode": "MR",
+    "imageUrl": "MR"
+  },
+  {
+    "id": "map-TZ-5",
+    "type": "map",
+    "question": "Where is Tanzania located?",
+    "correctAnswer": "Tanzania",
+    "options": [],
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -6.369,
+      "lng": 34.8888
+    }
+  },
+  {
+    "id": "capital-BB-6",
+    "type": "capital",
+    "question": "Where is the capital of Barbados?",
+    "correctAnswer": "Bridgetown",
+    "options": [],
+    "countryCode": "BB",
+    "mapCoordinates": {
+      "lat": 13.1,
+      "lng": -59.62
+    }
+  },
+  {
+    "id": "map-RW-7",
+    "type": "map",
+    "question": "Where is Rwanda located?",
+    "correctAnswer": "Rwanda",
+    "options": [],
+    "countryCode": "RW",
+    "imageUrl": "RW",
+    "mapCoordinates": {
+      "lat": -1.9403,
+      "lng": 29.8739
+    }
+  },
+  {
+    "id": "flag-SZ-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Eswatini",
+    "options": [
+      "Dominican Republic",
+      "United States",
+      "Eswatini",
+      "Burundi"
+    ],
+    "countryCode": "SZ",
+    "imageUrl": "SZ"
+  },
+  {
+    "id": "capital-KN-9",
+    "type": "capital",
+    "question": "Where is the capital of Saint Kitts and Nevis?",
+    "correctAnswer": "Basseterre",
+    "options": [],
+    "countryCode": "KN",
+    "mapCoordinates": {
+      "lat": 17.3,
+      "lng": -62.72
+    }
   }
 ]

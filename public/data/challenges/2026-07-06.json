@@ -1,69 +1,132 @@
 [
   {
-    "id": "2026-07-06-1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Thailand",
-    "imageUrl": "TH",
-    "options": [
-      "Myanmar",
-      "Indonesia",
-      "Malaysia",
-      "Thailand"
-    ],
-    "countryCode": "TH"
-  },
-  {
-    "id": "2026-07-06-2",
-    "type": "capital",
-    "question": "Where is the capital of Switzerland?",
-    "correctAnswer": "Bern",
-    "countryCode": "CH",
-    "imageUrl": "CH",
-    "mapCoordinates": {
-      "lat": 46.92,
-      "lng": 7.47
-    },
-    "options": []
-  },
-  {
-    "id": "2026-07-06-3",
+    "id": "map-TR-0",
     "type": "map",
-    "question": "This desert in Chile is known as the driest non-polar desert in the world. What is its name?",
-    "correctAnswer": "Atacama Desert",
-    "countryCode": "CL",
-    "imageUrl": "CL",
+    "question": "Where is Turkey located?",
+    "correctAnswer": "Turkey",
+    "options": [],
+    "countryCode": "TR",
+    "imageUrl": "TR",
     "mapCoordinates": {
-      "lat": -24.5,
-      "lng": -69.25
-    },
-    "options": []
+      "lat": 38.9637,
+      "lng": 35.2433
+    }
   },
   {
-    "id": "2026-07-06-4",
+    "id": "flag-AF-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "Kenya",
-    "imageUrl": "KE",
+    "correctAnswer": "Afghanistan",
     "options": [
-      "Kenya",
-      "Sudan",
-      "Rwanda",
-      "Uganda"
+      "Georgia",
+      "Antigua and Barbuda",
+      "Afghanistan",
+      "Chad"
     ],
-    "countryCode": "KE"
+    "countryCode": "AF",
+    "imageUrl": "AF"
   },
   {
-    "id": "2026-07-06-5",
+    "id": "capital-SY-2",
     "type": "capital",
-    "question": "Where is the capital of Ireland?",
-    "correctAnswer": "Dublin",
-    "countryCode": "IE",
-    "imageUrl": "IE",
+    "question": "Where is the capital of Syria?",
+    "correctAnswer": "Damascus",
+    "options": [],
+    "countryCode": "SY",
     "mapCoordinates": {
-      "lat": 53.32,
-      "lng": -6.23
-    },
-    "options": []
+      "lat": 33.5,
+      "lng": 36.3
+    }
+  },
+  {
+    "id": "map-VU-3",
+    "type": "map",
+    "question": "Where is Vanuatu located?",
+    "correctAnswer": "Vanuatu",
+    "options": [],
+    "countryCode": "VU",
+    "imageUrl": "VU",
+    "mapCoordinates": {
+      "lat": -17.7404,
+      "lng": 168.3045
+    }
+  },
+  {
+    "id": "flag-NZ-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "options": [
+      "Lesotho",
+      "New Zealand",
+      "Egypt",
+      "Comoros"
+    ],
+    "countryCode": "NZ",
+    "imageUrl": "NZ"
+  },
+  {
+    "id": "map-EE-5",
+    "type": "map",
+    "question": "Where is Estonia located?",
+    "correctAnswer": "Estonia",
+    "options": [],
+    "countryCode": "EE",
+    "imageUrl": "EE",
+    "mapCoordinates": {
+      "lat": 58.5953,
+      "lng": 25.0136
+    }
+  },
+  {
+    "id": "capital-VN-6",
+    "type": "capital",
+    "question": "Where is the capital of Vietnam?",
+    "correctAnswer": "Hanoi",
+    "options": [],
+    "countryCode": "VN",
+    "mapCoordinates": {
+      "lat": 21.03,
+      "lng": 105.85
+    }
+  },
+  {
+    "id": "map-AM-7",
+    "type": "map",
+    "question": "Where is Armenia located?",
+    "correctAnswer": "Armenia",
+    "options": [],
+    "countryCode": "AM",
+    "imageUrl": "AM",
+    "mapCoordinates": {
+      "lat": 40.0691,
+      "lng": 45.0382
+    }
+  },
+  {
+    "id": "flag-GT-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Guatemala",
+    "options": [
+      "Costa Rica",
+      "Cape Verde",
+      "Guatemala",
+      "Micronesia"
+    ],
+    "countryCode": "GT",
+    "imageUrl": "GT"
+  },
+  {
+    "id": "capital-JP-9",
+    "type": "capital",
+    "question": "Where is the capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "options": [],
+    "countryCode": "JP",
+    "mapCoordinates": {
+      "lat": 35.68,
+      "lng": 139.75
+    }
   }
 ]

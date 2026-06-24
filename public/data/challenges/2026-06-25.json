@@ -1,64 +1,132 @@
 [
   {
-    "id": "2026-06-25-1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Japan",
-    "imageUrl": "JP",
-    "options": [
-      "Japan",
-      "Palau",
-      "Bangladesh",
-      "Laos"
-    ]
-  },
-  {
-    "id": "2026-06-25-2",
-    "type": "capital",
-    "question": "Where is the capital of France?",
-    "correctAnswer": "Paris",
-    "imageUrl": "FR",
-    "mapCoordinates": {
-      "lat": 48.8566,
-      "lng": 2.3522
-    },
-    "options": []
-  },
-  {
-    "id": "2026-06-25-3",
+    "id": "map-SI-0",
     "type": "map",
-    "question": "Where is Australia located?",
-    "correctAnswer": "Australia",
-    "imageUrl": "AU",
+    "question": "Where is Slovenia located?",
+    "correctAnswer": "Slovenia",
+    "options": [],
+    "countryCode": "SI",
+    "imageUrl": "SI",
     "mapCoordinates": {
-      "lat": -25.2744,
-      "lng": 133.7751
-    },
-    "options": []
+      "lat": 46.1512,
+      "lng": 14.9955
+    }
   },
   {
-    "id": "2026-06-25-4",
+    "id": "flag-QA-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "Canada",
-    "imageUrl": "CA",
+    "correctAnswer": "Qatar",
     "options": [
-      "Canada",
-      "Peru",
-      "Lebanon",
-      "Austria"
-    ]
+      "Guinea-Bissau",
+      "Switzerland",
+      "Kuwait",
+      "Qatar"
+    ],
+    "countryCode": "QA",
+    "imageUrl": "QA"
   },
   {
-    "id": "2026-06-25-5",
+    "id": "capital-RO-2",
     "type": "capital",
-    "question": "Where is the capital of Brazil?",
-    "correctAnswer": "Brasília",
-    "imageUrl": "BR",
+    "question": "Where is the capital of Romania?",
+    "correctAnswer": "Bucharest",
+    "options": [],
+    "countryCode": "RO",
     "mapCoordinates": {
-      "lat": -15.7801,
-      "lng": -47.9292
-    },
-    "options": []
+      "lat": 44.43,
+      "lng": 26.1
+    }
+  },
+  {
+    "id": "map-TV-3",
+    "type": "map",
+    "question": "Where is Tuvalu located?",
+    "correctAnswer": "Tuvalu",
+    "options": [],
+    "countryCode": "TV",
+    "imageUrl": "TV",
+    "mapCoordinates": {
+      "lat": -8.5211,
+      "lng": 179.1982
+    }
+  },
+  {
+    "id": "flag-NA-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Namibia",
+    "options": [
+      "Poland",
+      "Namibia",
+      "Ivory Coast",
+      "Guinea-Bissau"
+    ],
+    "countryCode": "NA",
+    "imageUrl": "NA"
+  },
+  {
+    "id": "map-UZ-5",
+    "type": "map",
+    "question": "Where is Uzbekistan located?",
+    "correctAnswer": "Uzbekistan",
+    "options": [],
+    "countryCode": "UZ",
+    "imageUrl": "UZ",
+    "mapCoordinates": {
+      "lat": 41.3775,
+      "lng": 64.5853
+    }
+  },
+  {
+    "id": "capital-BT-6",
+    "type": "capital",
+    "question": "Where is the capital of Bhutan?",
+    "correctAnswer": "Thimphu",
+    "options": [],
+    "countryCode": "BT",
+    "mapCoordinates": {
+      "lat": 27.47,
+      "lng": 89.63
+    }
+  },
+  {
+    "id": "map-MU-7",
+    "type": "map",
+    "question": "Where is Mauritius located?",
+    "correctAnswer": "Mauritius",
+    "options": [],
+    "countryCode": "MU",
+    "imageUrl": "MU",
+    "mapCoordinates": {
+      "lat": -20.3484,
+      "lng": 57.5522
+    }
+  },
+  {
+    "id": "flag-GR-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "options": [
+      "Ireland",
+      "Benin",
+      "Latvia",
+      "Greece"
+    ],
+    "countryCode": "GR",
+    "imageUrl": "GR"
+  },
+  {
+    "id": "capital-YE-9",
+    "type": "capital",
+    "question": "Where is the capital of Yemen?",
+    "correctAnswer": "Sana'a",
+    "options": [],
+    "countryCode": "YE",
+    "mapCoordinates": {
+      "lat": 15.37,
+      "lng": 44.19
+    }
   }
 ]

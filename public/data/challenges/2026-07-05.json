@@ -1,69 +1,132 @@
 [
   {
-    "id": "2026-07-05-01",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Belgium",
-    "imageUrl": "BE",
-    "options": [
-      "Netherlands",
-      "Germany",
-      "Poland",
-      "Belgium"
-    ],
-    "countryCode": "BE"
-  },
-  {
-    "id": "2026-07-05-02",
-    "type": "capital",
-    "question": "Where is the capital of Spain?",
-    "correctAnswer": "Madrid",
-    "countryCode": "ES",
-    "imageUrl": "ES",
-    "mapCoordinates": {
-      "lat": 40.4,
-      "lng": -3.68
-    },
-    "options": []
-  },
-  {
-    "id": "2026-07-05-03",
+    "id": "map-KW-0",
     "type": "map",
-    "question": "Which iconic African peak, the highest on the continent, is located at these coordinates?",
-    "correctAnswer": "Mount Kilimanjaro",
-    "countryCode": "TZ",
-    "imageUrl": "TZ",
+    "question": "Where is Kuwait located?",
+    "correctAnswer": "Kuwait",
+    "options": [],
+    "countryCode": "KW",
+    "imageUrl": "KW",
     "mapCoordinates": {
-      "lat": -3.0674,
-      "lng": 37.3556
-    },
-    "options": []
+      "lat": 29.3117,
+      "lng": 47.4818
+    }
   },
   {
-    "id": "2026-07-05-04",
+    "id": "flag-SB-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "India",
-    "imageUrl": "IN",
+    "correctAnswer": "Solomon Islands",
     "options": [
-      "Pakistan",
-      "Bangladesh",
-      "Sri Lanka",
-      "India"
+      "Vanuatu",
+      "Serbia",
+      "Solomon Islands",
+      "Benin"
     ],
-    "countryCode": "IN"
+    "countryCode": "SB",
+    "imageUrl": "SB"
   },
   {
-    "id": "2026-07-05-05",
+    "id": "capital-PE-2",
     "type": "capital",
-    "question": "Where is the capital of Colombia?",
-    "correctAnswer": "Bogotá",
-    "countryCode": "CO",
-    "imageUrl": "CO",
+    "question": "Where is the capital of Peru?",
+    "correctAnswer": "Lima",
+    "options": [],
+    "countryCode": "PE",
     "mapCoordinates": {
-      "lat": 4.71,
-      "lng": -74.07
-    },
-    "options": []
+      "lat": -12.05,
+      "lng": -77.05
+    }
+  },
+  {
+    "id": "map-BJ-3",
+    "type": "map",
+    "question": "Where is Benin located?",
+    "correctAnswer": "Benin",
+    "options": [],
+    "countryCode": "BJ",
+    "imageUrl": "BJ",
+    "mapCoordinates": {
+      "lat": 9.3077,
+      "lng": 2.3158
+    }
+  },
+  {
+    "id": "flag-NI-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nicaragua",
+    "options": [
+      "New Zealand",
+      "Nicaragua",
+      "Saudi Arabia",
+      "Somalia"
+    ],
+    "countryCode": "NI",
+    "imageUrl": "NI"
+  },
+  {
+    "id": "map-VC-5",
+    "type": "map",
+    "question": "Where is Saint Vincent and the Grenadines located?",
+    "correctAnswer": "Saint Vincent and the Grenadines",
+    "options": [],
+    "countryCode": "VC",
+    "imageUrl": "VC",
+    "mapCoordinates": {
+      "lat": 12.9843,
+      "lng": -61.2872
+    }
+  },
+  {
+    "id": "capital-JM-6",
+    "type": "capital",
+    "question": "Where is the capital of Jamaica?",
+    "correctAnswer": "Kingston",
+    "options": [],
+    "countryCode": "JM",
+    "mapCoordinates": {
+      "lat": 17.99702,
+      "lng": -76.79358
+    }
+  },
+  {
+    "id": "map-PW-7",
+    "type": "map",
+    "question": "Where is Palau located?",
+    "correctAnswer": "Palau",
+    "options": [],
+    "countryCode": "PW",
+    "imageUrl": "PW",
+    "mapCoordinates": {
+      "lat": 7.315,
+      "lng": 134.4816
+    }
+  },
+  {
+    "id": "flag-GH-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "options": [
+      "El Salvador",
+      "Ghana",
+      "Japan",
+      "Papua New Guinea"
+    ],
+    "countryCode": "GH",
+    "imageUrl": "GH"
+  },
+  {
+    "id": "capital-DJ-9",
+    "type": "capital",
+    "question": "Where is the capital of Djibouti?",
+    "correctAnswer": "Djibouti City",
+    "options": [],
+    "countryCode": "DJ",
+    "mapCoordinates": {
+      "lat": 11.58,
+      "lng": 43.15
+    }
   }
 ]

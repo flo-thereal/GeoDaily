@@ -1,64 +1,132 @@
 [
   {
-    "id": "2026-06-29-flag-1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Sweden",
-    "imageUrl": "SE",
-    "options": [
-      "Norway",
-      "Sweden",
-      "Denmark",
-      "Finland"
-    ]
-  },
-  {
-    "id": "2026-06-29-capital-1",
-    "type": "capital",
-    "question": "Where is the capital of Canada?",
-    "correctAnswer": "Ottawa",
-    "imageUrl": "CA",
-    "mapCoordinates": {
-      "lat": 45.4215,
-      "lng": -75.6972
-    },
-    "options": []
-  },
-  {
-    "id": "2026-06-29-map-1",
+    "id": "map-AR-0",
     "type": "map",
-    "question": "Where is New Zealand located?",
-    "correctAnswer": "New Zealand",
-    "imageUrl": "NZ",
+    "question": "Where is Argentina located?",
+    "correctAnswer": "Argentina",
+    "options": [],
+    "countryCode": "AR",
+    "imageUrl": "AR",
     "mapCoordinates": {
-      "lat": -40.9006,
-      "lng": 174.886
-    },
-    "options": []
+      "lat": -38.4161,
+      "lng": -63.6167
+    }
   },
   {
-    "id": "2026-06-29-flag-2",
+    "id": "flag-FJ-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "South Africa",
-    "imageUrl": "ZA",
+    "correctAnswer": "Fiji",
     "options": [
-      "South Africa",
-      "Kenya",
-      "Nigeria",
-      "Ethiopia"
-    ]
+      "Grenada",
+      "Saint Vincent and the Grenadines",
+      "Fiji",
+      "Mauritania"
+    ],
+    "countryCode": "FJ",
+    "imageUrl": "FJ"
   },
   {
-    "id": "2026-06-29-capital-2",
+    "id": "capital-LA-2",
     "type": "capital",
-    "question": "Where is the capital of Brazil?",
-    "correctAnswer": "Brasília",
-    "imageUrl": "BR",
+    "question": "Where is the capital of Laos?",
+    "correctAnswer": "Vientiane",
+    "options": [],
+    "countryCode": "LA",
     "mapCoordinates": {
-      "lat": -15.7801,
-      "lng": -47.9292
-    },
-    "options": []
+      "lat": 17.97,
+      "lng": 102.6
+    }
+  },
+  {
+    "id": "map-MC-3",
+    "type": "map",
+    "question": "Where is Monaco located?",
+    "correctAnswer": "Monaco",
+    "options": [],
+    "countryCode": "MC",
+    "imageUrl": "MC",
+    "mapCoordinates": {
+      "lat": 43.7384,
+      "lng": 7.4246
+    }
+  },
+  {
+    "id": "flag-ZM-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zambia",
+    "options": [
+      "Egypt",
+      "Zambia",
+      "Mauritius",
+      "Bolivia"
+    ],
+    "countryCode": "ZM",
+    "imageUrl": "ZM"
+  },
+  {
+    "id": "map-GW-5",
+    "type": "map",
+    "question": "Where is Guinea-Bissau located?",
+    "correctAnswer": "Guinea-Bissau",
+    "options": [],
+    "countryCode": "GW",
+    "imageUrl": "GW",
+    "mapCoordinates": {
+      "lat": 11.8037,
+      "lng": -15.1804
+    }
+  },
+  {
+    "id": "capital-MW-6",
+    "type": "capital",
+    "question": "Where is the capital of Malawi?",
+    "correctAnswer": "Lilongwe",
+    "options": [],
+    "countryCode": "MW",
+    "mapCoordinates": {
+      "lat": -13.97,
+      "lng": 33.78
+    }
+  },
+  {
+    "id": "map-RU-7",
+    "type": "map",
+    "question": "Where is Russia located?",
+    "correctAnswer": "Russia",
+    "options": [],
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 61.524,
+      "lng": 105.3188
+    }
+  },
+  {
+    "id": "flag-CI-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ivory Coast",
+    "options": [
+      "Ivory Coast",
+      "Bolivia",
+      "Timor-Leste",
+      "Jordan"
+    ],
+    "countryCode": "CI",
+    "imageUrl": "CI"
+  },
+  {
+    "id": "capital-TG-9",
+    "type": "capital",
+    "question": "Where is the capital of Togo?",
+    "correctAnswer": "Lomé",
+    "options": [],
+    "countryCode": "TG",
+    "mapCoordinates": {
+      "lat": 6.14,
+      "lng": 1.21
+    }
   }
 ]

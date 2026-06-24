@@ -1,64 +1,132 @@
 [
   {
-    "id": "2026-06-28-q1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Brazil",
-    "imageUrl": "BR",
-    "options": [
-      "Brazil",
-      "Portugal",
-      "Mexico",
-      "Argentina"
-    ]
-  },
-  {
-    "id": "2026-06-28-q2",
-    "type": "capital",
-    "question": "Where is the capital of Canada?",
-    "correctAnswer": "Ottawa",
-    "imageUrl": "CA",
-    "mapCoordinates": {
-      "lat": 45.4215,
-      "lng": -75.6972
-    },
-    "options": []
-  },
-  {
-    "id": "2026-06-28-q3",
+    "id": "map-NP-0",
     "type": "map",
-    "question": "Where is Australia located?",
-    "correctAnswer": "Australia",
-    "imageUrl": "AU",
+    "question": "Where is Nepal located?",
+    "correctAnswer": "Nepal",
+    "options": [],
+    "countryCode": "NP",
+    "imageUrl": "NP",
     "mapCoordinates": {
-      "lat": -25.2744,
-      "lng": 133.7751
-    },
-    "options": []
+      "lat": 28.3949,
+      "lng": 84.124
+    }
   },
   {
-    "id": "2026-06-28-q4",
+    "id": "flag-LK-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "South Africa",
-    "imageUrl": "ZA",
+    "correctAnswer": "Sri Lanka",
     "options": [
-      "Kenya",
-      "Nigeria",
-      "South Africa",
-      "Ethiopia"
-    ]
+      "Sri Lanka",
+      "Saint Kitts and Nevis",
+      "Burundi",
+      "Netherlands"
+    ],
+    "countryCode": "LK",
+    "imageUrl": "LK"
   },
   {
-    "id": "2026-06-28-q5",
+    "id": "capital-CF-2",
     "type": "capital",
-    "question": "Where is the capital of Japan?",
-    "correctAnswer": "Tokyo",
-    "imageUrl": "JP",
+    "question": "Where is the capital of Central African Republic?",
+    "correctAnswer": "Bangui",
+    "options": [],
+    "countryCode": "CF",
     "mapCoordinates": {
-      "lat": 35.6895,
-      "lng": 139.6917
-    },
-    "options": []
+      "lat": 4.37,
+      "lng": 18.58
+    }
+  },
+  {
+    "id": "map-ZA-3",
+    "type": "map",
+    "question": "Where is South Africa located?",
+    "correctAnswer": "South Africa",
+    "options": [],
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -30.5595,
+      "lng": 22.9375
+    }
+  },
+  {
+    "id": "flag-PH-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "options": [
+      "Philippines",
+      "Armenia",
+      "Denmark",
+      "Bahamas"
+    ],
+    "countryCode": "PH",
+    "imageUrl": "PH"
+  },
+  {
+    "id": "map-LI-5",
+    "type": "map",
+    "question": "Where is Liechtenstein located?",
+    "correctAnswer": "Liechtenstein",
+    "options": [],
+    "countryCode": "LI",
+    "imageUrl": "LI",
+    "mapCoordinates": {
+      "lat": 47.2662,
+      "lng": 9.5375
+    }
+  },
+  {
+    "id": "capital-IN-6",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "options": [],
+    "countryCode": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    }
+  },
+  {
+    "id": "map-VU-7",
+    "type": "map",
+    "question": "Where is Vanuatu located?",
+    "correctAnswer": "Vanuatu",
+    "options": [],
+    "countryCode": "VU",
+    "imageUrl": "VU",
+    "mapCoordinates": {
+      "lat": -17.7404,
+      "lng": 168.3045
+    }
+  },
+  {
+    "id": "flag-CH-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "options": [
+      "Switzerland",
+      "Guinea-Bissau",
+      "Togo",
+      "Timor-Leste"
+    ],
+    "countryCode": "CH",
+    "imageUrl": "CH"
+  },
+  {
+    "id": "capital-TW-9",
+    "type": "capital",
+    "question": "Where is the capital of Taiwan?",
+    "correctAnswer": "Taipei",
+    "options": [],
+    "countryCode": "TW",
+    "mapCoordinates": {
+      "lat": 25.03,
+      "lng": 121.52
+    }
   }
 ]

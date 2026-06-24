@@ -1,69 +1,132 @@
 [
   {
-    "id": "2026-07-01-1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "France",
-    "imageUrl": "FR",
-    "options": [
-      "Germany",
-      "Netherlands",
-      "France",
-      "Italy"
-    ],
-    "countryCode": "FR"
-  },
-  {
-    "id": "2026-07-01-2",
-    "type": "capital",
-    "question": "Where is the capital of Canada?",
-    "correctAnswer": "Ottawa",
-    "countryCode": "CA",
-    "imageUrl": "CA",
-    "mapCoordinates": {
-      "lat": 45.42,
-      "lng": -75.7
-    },
-    "options": []
-  },
-  {
-    "id": "2026-07-01-3",
+    "id": "map-LS-0",
     "type": "map",
-    "question": "This iconic peak, the world's highest, is located in the Himalayas on the border of Nepal and China. Which mountain is it?",
-    "correctAnswer": "Mount Everest",
-    "countryCode": "NP",
-    "imageUrl": "NP",
+    "question": "Where is Lesotho located?",
+    "correctAnswer": "Lesotho",
+    "options": [],
+    "countryCode": "LS",
+    "imageUrl": "LS",
     "mapCoordinates": {
-      "lat": 27.9881,
-      "lng": 86.925
-    },
-    "options": []
+      "lat": -29.6099,
+      "lng": 28.2336
+    }
   },
   {
-    "id": "2026-07-01-4",
+    "id": "flag-DE-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "South Africa",
-    "imageUrl": "ZA",
+    "correctAnswer": "Germany",
     "options": [
-      "South Africa",
-      "Nigeria",
-      "Kenia",
-      "Ethiopia"
+      "Belarus",
+      "North Korea",
+      "Libya",
+      "Germany"
     ],
-    "countryCode": "ZA"
+    "countryCode": "DE",
+    "imageUrl": "DE"
   },
   {
-    "id": "2026-07-01-5",
+    "id": "capital-BD-2",
     "type": "capital",
-    "question": "Where is the capital of Italy?",
-    "correctAnswer": "Rome",
-    "countryCode": "IT",
-    "imageUrl": "IT",
+    "question": "Where is the capital of Bangladesh?",
+    "correctAnswer": "Dhaka",
+    "options": [],
+    "countryCode": "BD",
     "mapCoordinates": {
-      "lat": 41.9,
-      "lng": 12.48
-    },
-    "options": []
+      "lat": 23.72,
+      "lng": 90.4
+    }
+  },
+  {
+    "id": "map-LB-3",
+    "type": "map",
+    "question": "Where is Lebanon located?",
+    "correctAnswer": "Lebanon",
+    "options": [],
+    "countryCode": "LB",
+    "imageUrl": "LB",
+    "mapCoordinates": {
+      "lat": 33.8547,
+      "lng": 35.8623
+    }
+  },
+  {
+    "id": "flag-PT-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "options": [
+      "Liberia",
+      "Serbia",
+      "Portugal",
+      "Botswana"
+    ],
+    "countryCode": "PT",
+    "imageUrl": "PT"
+  },
+  {
+    "id": "map-ET-5",
+    "type": "map",
+    "question": "Where is Ethiopia located?",
+    "correctAnswer": "Ethiopia",
+    "options": [],
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.145,
+      "lng": 40.4897
+    }
+  },
+  {
+    "id": "capital-BW-6",
+    "type": "capital",
+    "question": "Where is the capital of Botswana?",
+    "correctAnswer": "Gaborone",
+    "options": [],
+    "countryCode": "BW",
+    "mapCoordinates": {
+      "lat": -24.63,
+      "lng": 25.9
+    }
+  },
+  {
+    "id": "map-NG-7",
+    "type": "map",
+    "question": "Where is Nigeria located?",
+    "correctAnswer": "Nigeria",
+    "options": [],
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 9.082,
+      "lng": 8.6753
+    }
+  },
+  {
+    "id": "flag-SA-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Saudi Arabia",
+    "options": [
+      "Czechia",
+      "Ghana",
+      "Saudi Arabia",
+      "Zimbabwe"
+    ],
+    "countryCode": "SA",
+    "imageUrl": "SA"
+  },
+  {
+    "id": "capital-AO-9",
+    "type": "capital",
+    "question": "Where is the capital of Angola?",
+    "correctAnswer": "Luanda",
+    "options": [],
+    "countryCode": "AO",
+    "mapCoordinates": {
+      "lat": -8.83,
+      "lng": 13.22
+    }
   }
 ]

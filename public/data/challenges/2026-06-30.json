@@ -1,64 +1,132 @@
 [
   {
-    "id": "2026-06-30-01",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "United States",
-    "imageUrl": "US",
-    "options": [
-      "United States",
-      "Liberia",
-      "Malaysia",
-      "Puerto Rico"
-    ]
+    "id": "map-MM-0",
+    "type": "map",
+    "question": "Where is Myanmar located?",
+    "correctAnswer": "Myanmar",
+    "options": [],
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 21.9162,
+      "lng": 95.956
+    }
   },
   {
-    "id": "2026-06-30-02",
+    "id": "flag-PA-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Panama",
+    "options": [
+      "Ivory Coast",
+      "Bhutan",
+      "Panama",
+      "Tajikistan"
+    ],
+    "countryCode": "PA",
+    "imageUrl": "PA"
+  },
+  {
+    "id": "capital-AG-2",
     "type": "capital",
-    "question": "Where is the capital of Japan?",
-    "correctAnswer": "Tokyo",
-    "imageUrl": "JP",
+    "question": "Where is the capital of Antigua and Barbuda?",
+    "correctAnswer": "Saint John's",
+    "options": [],
+    "countryCode": "AG",
     "mapCoordinates": {
-      "lat": 35.6895,
-      "lng": 139.6917
-    },
-    "options": []
+      "lat": 17.12,
+      "lng": -61.85
+    }
   },
   {
-    "id": "2026-06-30-03",
+    "id": "map-FI-3",
     "type": "map",
-    "question": "Where is Egypt located?",
-    "correctAnswer": "Egypt",
-    "imageUrl": "EG",
+    "question": "Where is Finland located?",
+    "correctAnswer": "Finland",
+    "options": [],
+    "countryCode": "FI",
+    "imageUrl": "FI",
     "mapCoordinates": {
-      "lat": 26.8206,
-      "lng": 30.8025
-    },
-    "options": []
+      "lat": 61.9241,
+      "lng": 25.7482
+    }
   },
   {
-    "id": "2026-06-30-04",
+    "id": "flag-ER-4",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "Brazil",
-    "imageUrl": "BR",
+    "correctAnswer": "Eritrea",
     "options": [
-      "Brazil",
-      "Australia",
-      "Portugal",
-      "Greenland"
-    ]
+      "Austria",
+      "Finland",
+      "Eritrea",
+      "Sierra Leone"
+    ],
+    "countryCode": "ER",
+    "imageUrl": "ER"
   },
   {
-    "id": "2026-06-30-05",
+    "id": "map-CN-5",
     "type": "map",
-    "question": "Where is New Zealand located?",
-    "correctAnswer": "New Zealand",
-    "imageUrl": "NZ",
+    "question": "Where is China located?",
+    "correctAnswer": "China",
+    "options": [],
+    "countryCode": "CN",
+    "imageUrl": "CN",
     "mapCoordinates": {
-      "lat": -40.9006,
-      "lng": 174.886
-    },
-    "options": []
+      "lat": 35.8617,
+      "lng": 104.1954
+    }
+  },
+  {
+    "id": "capital-VE-6",
+    "type": "capital",
+    "question": "Where is the capital of Venezuela?",
+    "correctAnswer": "Caracas",
+    "options": [],
+    "countryCode": "VE",
+    "mapCoordinates": {
+      "lat": 10.48,
+      "lng": -66.87
+    }
+  },
+  {
+    "id": "map-CO-7",
+    "type": "map",
+    "question": "Where is Colombia located?",
+    "correctAnswer": "Colombia",
+    "options": [],
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.5709,
+      "lng": -74.2973
+    }
+  },
+  {
+    "id": "flag-CA-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "options": [
+      "Bahamas",
+      "São Tomé and Príncipe",
+      "Canada",
+      "Nauru"
+    ],
+    "countryCode": "CA",
+    "imageUrl": "CA"
+  },
+  {
+    "id": "capital-LC-9",
+    "type": "capital",
+    "question": "Where is the capital of Saint Lucia?",
+    "correctAnswer": "Castries",
+    "options": [],
+    "countryCode": "LC",
+    "mapCoordinates": {
+      "lat": 14,
+      "lng": -61
+    }
   }
 ]

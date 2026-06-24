@@ -1,69 +1,132 @@
 [
   {
-    "id": "2026-07-02-1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Canada",
-    "imageUrl": "CA",
-    "options": [
-      "Canada",
-      "Lebanon",
-      "Denmark",
-      "Australia"
-    ],
-    "countryCode": "CA"
+    "id": "map-TN-0",
+    "type": "map",
+    "question": "Where is Tunisia located?",
+    "correctAnswer": "Tunisia",
+    "options": [],
+    "countryCode": "TN",
+    "imageUrl": "TN",
+    "mapCoordinates": {
+      "lat": 33.8869,
+      "lng": 9.5375
+    }
   },
   {
-    "id": "2026-07-02-2",
+    "id": "flag-BZ-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Belize",
+    "options": [
+      "Bahrain",
+      "Nigeria",
+      "Belize",
+      "Czechia"
+    ],
+    "countryCode": "BZ",
+    "imageUrl": "BZ"
+  },
+  {
+    "id": "capital-MV-2",
     "type": "capital",
-    "question": "Where is the capital of Japan?",
-    "correctAnswer": "Tokyo",
-    "countryCode": "JP",
-    "imageUrl": "JP",
+    "question": "Where is the capital of Maldives?",
+    "correctAnswer": "Malé",
+    "options": [],
+    "countryCode": "MV",
     "mapCoordinates": {
-      "lat": 35.68,
-      "lng": 139.75
-    },
-    "options": []
+      "lat": 4.17,
+      "lng": 73.51
+    }
   },
   {
-    "id": "2026-07-02-3",
+    "id": "map-ES-3",
     "type": "map",
-    "question": "This vast coral reef system, visible from space, is located off the coast of which country?",
-    "correctAnswer": "Australia",
-    "countryCode": "AU",
-    "imageUrl": "AU",
+    "question": "Where is Spain located?",
+    "correctAnswer": "Spain",
+    "options": [],
+    "countryCode": "ES",
+    "imageUrl": "ES",
     "mapCoordinates": {
-      "lat": -18.2871,
-      "lng": 147.6992
-    },
-    "options": []
+      "lat": 40.4637,
+      "lng": -3.7492
+    }
   },
   {
-    "id": "2026-07-02-4",
+    "id": "flag-LU-4",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "Brazil",
-    "imageUrl": "BR",
+    "correctAnswer": "Luxembourg",
     "options": [
-      "Portugal",
-      "Argentina",
-      "Mexico",
-      "Brazil"
+      "Tunisia",
+      "Luxembourg",
+      "Ireland",
+      "South Africa"
     ],
-    "countryCode": "BR"
+    "countryCode": "LU",
+    "imageUrl": "LU"
   },
   {
-    "id": "2026-07-02-5",
+    "id": "map-HU-5",
     "type": "map",
-    "question": "Standing as the world's highest peak, Mount Everest is located in the Himalayan range, bordering Nepal and which other country?",
-    "correctAnswer": "China",
-    "countryCode": "NP",
-    "imageUrl": "NP",
+    "question": "Where is Hungary located?",
+    "correctAnswer": "Hungary",
+    "options": [],
+    "countryCode": "HU",
+    "imageUrl": "HU",
     "mapCoordinates": {
-      "lat": 27.9861,
-      "lng": 86.9226
-    },
-    "options": []
+      "lat": 47.1625,
+      "lng": 19.5033
+    }
+  },
+  {
+    "id": "capital-JO-6",
+    "type": "capital",
+    "question": "Where is the capital of Jordan?",
+    "correctAnswer": "Amman",
+    "options": [],
+    "countryCode": "JO",
+    "mapCoordinates": {
+      "lat": 31.95,
+      "lng": 35.93
+    }
+  },
+  {
+    "id": "map-NE-7",
+    "type": "map",
+    "question": "Where is Niger located?",
+    "correctAnswer": "Niger",
+    "options": [],
+    "countryCode": "NE",
+    "imageUrl": "NE",
+    "mapCoordinates": {
+      "lat": 17.6078,
+      "lng": 8.6753
+    }
+  },
+  {
+    "id": "flag-NR-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nauru",
+    "options": [
+      "Belize",
+      "Nauru",
+      "Palau",
+      "Laos"
+    ],
+    "countryCode": "NR",
+    "imageUrl": "NR"
+  },
+  {
+    "id": "capital-MX-9",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "options": [],
+    "countryCode": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    }
   }
 ]

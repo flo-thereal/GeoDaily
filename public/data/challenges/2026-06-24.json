@@ -1,67 +1,132 @@
 [
   {
-    "id": "flag-MV-0",
+    "id": "map-DK-0",
+    "type": "map",
+    "question": "Where is Denmark located?",
+    "correctAnswer": "Denmark",
+    "options": [],
+    "countryCode": "DK",
+    "imageUrl": "DK",
+    "mapCoordinates": {
+      "lat": 56.2639,
+      "lng": 9.5018
+    }
+  },
+  {
+    "id": "flag-SB-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Solomon Islands",
+    "options": [
+      "Gabon",
+      "Nepal",
+      "Djibouti",
+      "Solomon Islands"
+    ],
+    "countryCode": "SB",
+    "imageUrl": "SB"
+  },
+  {
+    "id": "capital-TM-2",
+    "type": "capital",
+    "question": "Where is the capital of Turkmenistan?",
+    "correctAnswer": "Ashgabat",
+    "options": [],
+    "countryCode": "TM",
+    "mapCoordinates": {
+      "lat": 37.95,
+      "lng": 58.38
+    }
+  },
+  {
+    "id": "map-VC-3",
+    "type": "map",
+    "question": "Where is Saint Vincent and the Grenadines located?",
+    "correctAnswer": "Saint Vincent and the Grenadines",
+    "options": [],
+    "countryCode": "VC",
+    "imageUrl": "VC",
+    "mapCoordinates": {
+      "lat": 12.9843,
+      "lng": -61.2872
+    }
+  },
+  {
+    "id": "flag-GN-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Guinea",
+    "options": [
+      "Bhutan",
+      "Guinea",
+      "Syria",
+      "Samoa"
+    ],
+    "countryCode": "GN",
+    "imageUrl": "GN"
+  },
+  {
+    "id": "map-BG-5",
+    "type": "map",
+    "question": "Where is Bulgaria located?",
+    "correctAnswer": "Bulgaria",
+    "options": [],
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "mapCoordinates": {
+      "lat": 42.7339,
+      "lng": 25.4858
+    }
+  },
+  {
+    "id": "capital-EE-6",
+    "type": "capital",
+    "question": "Where is the capital of Estonia?",
+    "correctAnswer": "Tallinn",
+    "options": [],
+    "countryCode": "EE",
+    "mapCoordinates": {
+      "lat": 59.43,
+      "lng": 24.72
+    }
+  },
+  {
+    "id": "map-CR-7",
+    "type": "map",
+    "question": "Where is Costa Rica located?",
+    "correctAnswer": "Costa Rica",
+    "options": [],
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 9.7489,
+      "lng": -83.7534
+    }
+  },
+  {
+    "id": "flag-MV-8",
     "type": "flag",
     "question": "Which country's flag is this?",
     "correctAnswer": "Maldives",
     "options": [
-      "Qatar",
-      "Malawi",
+      "Bolivia",
       "Maldives",
-      "Central African Republic"
+      "Zambia",
+      "Hungary"
     ],
     "countryCode": "MV",
     "imageUrl": "MV"
   },
   {
-    "id": "capital-SN-1",
+    "id": "capital-MN-9",
     "type": "capital",
-    "question": "Where is the capital of Senegal?",
-    "correctAnswer": "Dakar",
+    "question": "Where is the capital of Mongolia?",
+    "correctAnswer": "Ulaanbaatar",
     "options": [],
-    "countryCode": "SN",
+    "countryCode": "MN",
     "mapCoordinates": {
-      "lat": 14.73,
-      "lng": -17.63
-    }
-  },
-  {
-    "id": "map-AM-2",
-    "type": "map",
-    "question": "Where is Armenia located?",
-    "correctAnswer": "Armenia",
-    "options": [],
-    "countryCode": "AM",
-    "imageUrl": "AM",
-    "mapCoordinates": {
-      "lat": 40.0691,
-      "lng": 45.0382
-    }
-  },
-  {
-    "id": "flag-SZ-3",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Eswatini",
-    "options": [
-      "Democratic Republic of the Congo",
-      "Liechtenstein",
-      "Eswatini",
-      "Algeria"
-    ],
-    "countryCode": "SZ",
-    "imageUrl": "SZ"
-  },
-  {
-    "id": "capital-GH-4",
-    "type": "capital",
-    "question": "Where is the capital of Ghana?",
-    "correctAnswer": "Accra",
-    "options": [],
-    "countryCode": "GH",
-    "mapCoordinates": {
-      "lat": 5.55,
-      "lng": -0.22
+      "lat": 47.92,
+      "lng": 106.91
     }
   }
 ]

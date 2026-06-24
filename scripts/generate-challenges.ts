@@ -12,12 +12,14 @@ import { join } from 'path';
 import { GoogleGenAI, Type } from '@google/genai';
 import {
   challengeHasCountryConflicts,
+  DAILY_PATTERN,
   generateDailyTasks,
   generateSeed,
 } from '../src/lib/generateQuiz';
 import {
   CHALLENGE_LOOKBACK_DAYS,
   collectExcludedCountryCodes,
+  shouldSkipChallengeFile,
 } from '../src/lib/challengeHistory';
 import { normalizeChallengeTask } from '../src/lib/taskNormalization';
 import type { DailyTask } from '../src/store/useStore';
@@ -129,6 +131,7 @@ async function main() {
   }
 
   const today = new Date();
+  const todayStr = today.toISOString().split('T')[0];
   let written = 0;
 
   for (let i = 0; i < DAYS; i++) {
@@ -136,7 +139,14 @@ async function main() {
     d.setUTCDate(d.getUTCDate() + i);
     const date = d.toISOString().split('T')[0];
     const file = join(OUT_DIR, `${date}.json`);
-    if (existsSync(file)) continue;
+    let existingCount: number | undefined;
+    if (existsSync(file)) {
+      const existing = JSON.parse(readFileSync(file, 'utf8')) as DailyTask[];
+      existingCount = Array.isArray(existing) ? existing.length : undefined;
+    }
+    if (shouldSkipChallengeFile(date, todayStr, existingCount, DAILY_PATTERN.length)) {
+      continue;
+    }
 
     const excludedCodes = loadExcludedFromFiles(date);
 

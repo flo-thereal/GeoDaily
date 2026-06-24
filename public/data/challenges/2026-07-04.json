@@ -1,69 +1,132 @@
 [
   {
-    "id": "2026-07-04-q1",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Germany",
-    "imageUrl": "DE",
-    "options": [
-      "Germany",
-      "Austria",
-      "Belgium",
-      "Poland"
-    ],
-    "countryCode": "DE"
-  },
-  {
-    "id": "2026-07-04-q2",
-    "type": "capital",
-    "question": "Where is the capital of Mexico?",
-    "correctAnswer": "Mexico City",
-    "countryCode": "MX",
-    "imageUrl": "MX",
-    "mapCoordinates": {
-      "lat": 19.43,
-      "lng": -99.13
-    },
-    "options": []
-  },
-  {
-    "id": "2026-07-04-q3",
+    "id": "map-IT-0",
     "type": "map",
-    "question": "This ancient citadel, famous for the Parthenon, overlooks which major European capital city?",
-    "correctAnswer": "Athens",
-    "countryCode": "GR",
-    "imageUrl": "GR",
+    "question": "Where is Italy located?",
+    "correctAnswer": "Italy",
+    "options": [],
+    "countryCode": "IT",
+    "imageUrl": "IT",
     "mapCoordinates": {
-      "lat": 37.9715,
-      "lng": 23.7257
-    },
-    "options": []
+      "lat": 41.8719,
+      "lng": 12.5674
+    }
   },
   {
-    "id": "2026-07-04-q4",
+    "id": "flag-SD-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "South Korea",
-    "imageUrl": "KR",
+    "correctAnswer": "Sudan",
     "options": [
-      "South Korea",
-      "Japan",
-      "China",
-      "North Korea"
+      "Dominican Republic",
+      "Iraq",
+      "Sudan",
+      "Saint Lucia"
     ],
-    "countryCode": "KR"
+    "countryCode": "SD",
+    "imageUrl": "SD"
   },
   {
-    "id": "2026-07-04-q5",
+    "id": "capital-QA-2",
     "type": "capital",
-    "question": "Where is the capital of Argentina?",
-    "correctAnswer": "Buenos Aires",
-    "countryCode": "AR",
-    "imageUrl": "AR",
+    "question": "Where is the capital of Qatar?",
+    "correctAnswer": "Doha",
+    "options": [],
+    "countryCode": "QA",
     "mapCoordinates": {
-      "lat": -34.58,
-      "lng": -58.67
-    },
-    "options": []
+      "lat": 25.28,
+      "lng": 51.53
+    }
+  },
+  {
+    "id": "map-AL-3",
+    "type": "map",
+    "question": "Where is Albania located?",
+    "correctAnswer": "Albania",
+    "options": [],
+    "countryCode": "AL",
+    "imageUrl": "AL",
+    "mapCoordinates": {
+      "lat": 41.1533,
+      "lng": 20.1683
+    }
+  },
+  {
+    "id": "flag-UA-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ukraine",
+    "options": [
+      "Sweden",
+      "Ukraine",
+      "Uzbekistan",
+      "Botswana"
+    ],
+    "countryCode": "UA",
+    "imageUrl": "UA"
+  },
+  {
+    "id": "map-TV-5",
+    "type": "map",
+    "question": "Where is Tuvalu located?",
+    "correctAnswer": "Tuvalu",
+    "options": [],
+    "countryCode": "TV",
+    "imageUrl": "TV",
+    "mapCoordinates": {
+      "lat": -8.5211,
+      "lng": 179.1982
+    }
+  },
+  {
+    "id": "capital-KG-6",
+    "type": "capital",
+    "question": "Where is the capital of Kyrgyzstan?",
+    "correctAnswer": "Bishkek",
+    "options": [],
+    "countryCode": "KG",
+    "mapCoordinates": {
+      "lat": 42.87,
+      "lng": 74.6
+    }
+  },
+  {
+    "id": "map-TO-7",
+    "type": "map",
+    "question": "Where is Tonga located?",
+    "correctAnswer": "Tonga",
+    "options": [],
+    "countryCode": "TO",
+    "imageUrl": "TO",
+    "mapCoordinates": {
+      "lat": -21.1789,
+      "lng": -175.1982
+    }
+  },
+  {
+    "id": "flag-FM-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Micronesia",
+    "options": [
+      "Sudan",
+      "Georgia",
+      "Dominica",
+      "Micronesia"
+    ],
+    "countryCode": "FM",
+    "imageUrl": "FM"
+  },
+  {
+    "id": "capital-LY-9",
+    "type": "capital",
+    "question": "Where is the capital of Libya?",
+    "correctAnswer": "Tripoli",
+    "options": [],
+    "countryCode": "LY",
+    "mapCoordinates": {
+      "lat": 32.88,
+      "lng": 13.17
+    }
   }
 ]

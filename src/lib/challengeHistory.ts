@@ -44,3 +44,19 @@ export function collectExcludedCountryCodes(
   }
   return excluded;
 }
+
+/**
+ * Whether an on-disk challenge file should be left unchanged during generation.
+ * Past dates are preserved; today and future dates are upgraded when too short.
+ */
+export function shouldSkipChallengeFile(
+  date: string,
+  today: string,
+  existingTaskCount: number | undefined,
+  minTasks: number
+): boolean {
+  if (existingTaskCount === undefined) return false;
+  if (date < today) return true;
+  if (existingTaskCount >= minTasks) return true;
+  return false;
+}

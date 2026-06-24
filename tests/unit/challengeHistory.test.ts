@@ -4,7 +4,9 @@ import {
   collectExcludedCountryCodes,
   countryCodesFromTasks,
   priorDates,
+  shouldSkipChallengeFile,
 } from '../../src/lib/challengeHistory';
+import { DAILY_PATTERN } from '../../src/lib/generateQuiz';
 import type { DailyTask } from '../../src/store/useStore';
 
 describe('priorDates', () => {
@@ -73,5 +75,28 @@ describe('collectExcludedCountryCodes', () => {
 describe('CHALLENGE_LOOKBACK_DAYS', () => {
   it('defaults to 7 days', () => {
     expect(CHALLENGE_LOOKBACK_DAYS).toBe(7);
+  });
+});
+
+describe('shouldSkipChallengeFile', () => {
+  const minTasks = DAILY_PATTERN.length;
+  const today = '2026-06-24';
+
+  it('does not skip when no file exists', () => {
+    expect(shouldSkipChallengeFile('2026-06-24', today, undefined, minTasks)).toBe(false);
+  });
+
+  it('skips past dates even when the file is short', () => {
+    expect(shouldSkipChallengeFile('2026-06-23', today, 5, minTasks)).toBe(true);
+  });
+
+  it('skips today and future dates that already meet the minimum', () => {
+    expect(shouldSkipChallengeFile('2026-06-24', today, minTasks, minTasks)).toBe(true);
+    expect(shouldSkipChallengeFile('2026-07-07', today, minTasks, minTasks)).toBe(true);
+  });
+
+  it('regenerates today and future dates with legacy short files', () => {
+    expect(shouldSkipChallengeFile('2026-06-24', today, 5, minTasks)).toBe(false);
+    expect(shouldSkipChallengeFile('2026-07-06', today, 5, minTasks)).toBe(false);
   });
 });

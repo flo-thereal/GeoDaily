@@ -1,64 +1,132 @@
 [
   {
-    "id": "2026-06-27-01",
+    "id": "map-SG-0",
+    "type": "map",
+    "question": "Where is Singapore located?",
+    "correctAnswer": "Singapore",
+    "options": [],
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.3521,
+      "lng": 103.8198
+    }
+  },
+  {
+    "id": "flag-PS-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "India",
-    "imageUrl": "IN",
+    "correctAnswer": "Palestine",
+    "options": [
+      "Palestine",
+      "Papua New Guinea",
+      "Slovenia",
+      "Grenada"
+    ],
+    "countryCode": "PS",
+    "imageUrl": "PS"
+  },
+  {
+    "id": "capital-SS-2",
+    "type": "capital",
+    "question": "Where is the capital of South Sudan?",
+    "correctAnswer": "Juba",
+    "options": [],
+    "countryCode": "SS",
+    "mapCoordinates": {
+      "lat": 4.85,
+      "lng": 31.62
+    }
+  },
+  {
+    "id": "map-TD-3",
+    "type": "map",
+    "question": "Where is Chad located?",
+    "correctAnswer": "Chad",
+    "options": [],
+    "countryCode": "TD",
+    "imageUrl": "TD",
+    "mapCoordinates": {
+      "lat": 15.473,
+      "lng": 18.7322
+    }
+  },
+  {
+    "id": "flag-PY-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Paraguay",
+    "options": [
+      "Romania",
+      "Lesotho",
+      "Togo",
+      "Paraguay"
+    ],
+    "countryCode": "PY",
+    "imageUrl": "PY"
+  },
+  {
+    "id": "map-SE-5",
+    "type": "map",
+    "question": "Where is Sweden located?",
+    "correctAnswer": "Sweden",
+    "options": [],
+    "countryCode": "SE",
+    "imageUrl": "SE",
+    "mapCoordinates": {
+      "lat": 60.1282,
+      "lng": 18.6435
+    }
+  },
+  {
+    "id": "capital-LT-6",
+    "type": "capital",
+    "question": "Where is the capital of Lithuania?",
+    "correctAnswer": "Vilnius",
+    "options": [],
+    "countryCode": "LT",
+    "mapCoordinates": {
+      "lat": 54.68,
+      "lng": 25.32
+    }
+  },
+  {
+    "id": "map-XK-7",
+    "type": "map",
+    "question": "Where is Kosovo located?",
+    "correctAnswer": "Kosovo",
+    "options": [],
+    "countryCode": "XK",
+    "imageUrl": "XK",
+    "mapCoordinates": {
+      "lat": 42.6026,
+      "lng": 21.1649
+    }
+  },
+  {
+    "id": "flag-ZW-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zimbabwe",
     "options": [
       "India",
-      "Ireland",
-      "Ivory Coast",
-      "Niger"
-    ]
+      "Portugal",
+      "Zimbabwe",
+      "Japan"
+    ],
+    "countryCode": "ZW",
+    "imageUrl": "ZW"
   },
   {
-    "id": "2026-06-27-02",
+    "id": "capital-TJ-9",
     "type": "capital",
-    "question": "Where is the capital of Canada?",
-    "correctAnswer": "Ottawa",
-    "imageUrl": "CA",
+    "question": "Where is the capital of Tajikistan?",
+    "correctAnswer": "Dushanbe",
+    "options": [],
+    "countryCode": "TJ",
     "mapCoordinates": {
-      "lat": 45.4215,
-      "lng": -75.6972
-    },
-    "options": []
-  },
-  {
-    "id": "2026-06-27-03",
-    "type": "map",
-    "question": "Where is Brazil located?",
-    "correctAnswer": "Brazil",
-    "imageUrl": "BR",
-    "mapCoordinates": {
-      "lat": -14.235,
-      "lng": -51.9253
-    },
-    "options": []
-  },
-  {
-    "id": "2026-06-27-04",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Sweden",
-    "imageUrl": "SE",
-    "options": [
-      "Norway",
-      "Ukraine",
-      "Finland",
-      "Sweden"
-    ]
-  },
-  {
-    "id": "2026-06-27-05",
-    "type": "capital",
-    "question": "Where is the capital of Egypt?",
-    "correctAnswer": "Cairo",
-    "imageUrl": "EG",
-    "mapCoordinates": {
-      "lat": 30.0444,
-      "lng": 31.2357
-    },
-    "options": []
+      "lat": 38.55,
+      "lng": 68.77
+    }
   }
 ]

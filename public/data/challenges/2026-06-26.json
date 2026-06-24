@@ -1,64 +1,132 @@
 [
   {
-    "id": "2026-06-26-001",
-    "type": "flag",
-    "question": "Which country's flag is this?",
-    "correctAnswer": "Brazil",
-    "imageUrl": "BR",
-    "options": [
-      "Argentina",
-      "Peru",
-      "Brazil",
-      "Colombia"
-    ]
-  },
-  {
-    "id": "2026-06-26-002",
-    "type": "capital",
-    "question": "Where is the capital of France?",
-    "correctAnswer": "Paris",
-    "imageUrl": "FR",
-    "mapCoordinates": {
-      "lat": 48.8566,
-      "lng": 2.3522
-    },
-    "options": []
-  },
-  {
-    "id": "2026-06-26-003",
+    "id": "map-SN-0",
     "type": "map",
-    "question": "Where is Australia located?",
-    "correctAnswer": "Australia",
-    "imageUrl": "AU",
+    "question": "Where is Senegal located?",
+    "correctAnswer": "Senegal",
+    "options": [],
+    "countryCode": "SN",
+    "imageUrl": "SN",
     "mapCoordinates": {
-      "lat": -25.2744,
-      "lng": 133.7751
-    },
-    "options": []
+      "lat": 14.4974,
+      "lng": -14.4524
+    }
   },
   {
-    "id": "2026-06-26-004",
+    "id": "flag-HT-1",
     "type": "flag",
     "question": "Which country's flag is this?",
-    "correctAnswer": "Japan",
-    "imageUrl": "JP",
+    "correctAnswer": "Haiti",
     "options": [
-      "China",
-      "South Korea",
-      "Japan",
-      "Vietnam"
-    ]
+      "Guinea",
+      "Czechia",
+      "Lesotho",
+      "Haiti"
+    ],
+    "countryCode": "HT",
+    "imageUrl": "HT"
   },
   {
-    "id": "2026-06-26-005",
+    "id": "capital-NZ-2",
     "type": "capital",
-    "question": "Where is the capital of Canada?",
-    "correctAnswer": "Ottawa",
-    "imageUrl": "CA",
+    "question": "Where is the capital of New Zealand?",
+    "correctAnswer": "Wellington",
+    "options": [],
+    "countryCode": "NZ",
     "mapCoordinates": {
-      "lat": 45.4215,
-      "lng": -75.6972
-    },
-    "options": []
+      "lat": -41.3,
+      "lng": 174.78
+    }
+  },
+  {
+    "id": "map-DJ-3",
+    "type": "map",
+    "question": "Where is Djibouti located?",
+    "correctAnswer": "Djibouti",
+    "options": [],
+    "countryCode": "DJ",
+    "imageUrl": "DJ",
+    "mapCoordinates": {
+      "lat": 11.8254,
+      "lng": 42.5905
+    }
+  },
+  {
+    "id": "flag-ST-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "São Tomé and Príncipe",
+    "options": [
+      "El Salvador",
+      "Netherlands",
+      "São Tomé and Príncipe",
+      "Palestine"
+    ],
+    "countryCode": "ST",
+    "imageUrl": "ST"
+  },
+  {
+    "id": "map-MG-5",
+    "type": "map",
+    "question": "Where is Madagascar located?",
+    "correctAnswer": "Madagascar",
+    "options": [],
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -19.8863,
+      "lng": 46.8691
+    }
+  },
+  {
+    "id": "capital-CY-6",
+    "type": "capital",
+    "question": "Where is the capital of Cyprus?",
+    "correctAnswer": "Nicosia",
+    "options": [],
+    "countryCode": "CY",
+    "mapCoordinates": {
+      "lat": 35.17,
+      "lng": 33.37
+    }
+  },
+  {
+    "id": "map-PG-7",
+    "type": "map",
+    "question": "Where is Papua New Guinea located?",
+    "correctAnswer": "Papua New Guinea",
+    "options": [],
+    "countryCode": "PG",
+    "imageUrl": "PG",
+    "mapCoordinates": {
+      "lat": -6.315,
+      "lng": 143.9555
+    }
+  },
+  {
+    "id": "flag-AZ-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Azerbaijan",
+    "options": [
+      "Azerbaijan",
+      "Belize",
+      "Panama",
+      "Yemen"
+    ],
+    "countryCode": "AZ",
+    "imageUrl": "AZ"
+  },
+  {
+    "id": "capital-PE-9",
+    "type": "capital",
+    "question": "Where is the capital of Peru?",
+    "correctAnswer": "Lima",
+    "options": [],
+    "countryCode": "PE",
+    "mapCoordinates": {
+      "lat": -12.05,
+      "lng": -77.05
+    }
   }
 ]
