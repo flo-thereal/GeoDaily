@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-07-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Denmark",
+      "Finland",
+      "Norway",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-07-07-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Portugal",
+      "Angola",
+      "Brazil",
+      "Spain"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "2026-07-07-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "imageUrl": "TR",
+    "options": [
+      "Tunisia",
+      "Turkey",
+      "Azerbaijan",
+      "Lebanon"
+    ],
+    "countryCode": "TR"
+  },
+  {
+    "id": "2026-07-07-04",
+    "type": "capital",
+    "question": "Where is the capital of Finland?",
+    "correctAnswer": "Helsinki",
+    "countryCode": "FI",
+    "imageUrl": "FI",
+    "mapCoordinates": {
+      "lat": 60.17,
+      "lng": 24.93
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-07-05",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-07-06",
+    "type": "capital",
+    "question": "Where is the capital of Norway?",
+    "correctAnswer": "Oslo",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 59.92,
+      "lng": 10.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-07-07",
+    "type": "map",
+    "question": "This ancient Inca citadel is a UNESCO World Heritage site and one of the New Seven Wonders of the World. What is its name?",
+    "correctAnswer": "Machu Picchu",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-07-08",
+    "type": "map",
+    "question": "This famous square in the medina quarter of Marrakech is a bustling hub of storytellers, musicians, and food stalls. What is its name?",
+    "correctAnswer": "Jemaa el-Fnaa",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6277,
+      "lng": -7.9893
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-07-09",
+    "type": "map",
+    "question": "This historic central district of Havana is known for its well-preserved Baroque and neoclassical architecture. What is the name of this UNESCO World Heritage site?",
+    "correctAnswer": "Old Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.133,
+      "lng": -82.3582
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-07-10",
+    "type": "map",
+    "question": "This massive 9th-century Mahayana Buddhist temple in Central Java is the world's largest Buddhist temple. What is its name?",
+    "correctAnswer": "Borobudur Temple",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -7.6074,
+      "lng": 110.2038
+    },
+    "options": []
+  }
+]
