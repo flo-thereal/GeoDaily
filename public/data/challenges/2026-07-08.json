@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-08-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Belgium",
+    "imageUrl": "BE",
+    "options": [
+      "France",
+      "Belgium",
+      "Uganda",
+      "Germany"
+    ],
+    "countryCode": "BE"
+  },
+  {
+    "id": "2026-07-08-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Portugal",
+      "Australia",
+      "Brazil",
+      "Bolivia"
+    ],
+    "countryCode": "BR"
+  },
+  {
+    "id": "2026-07-08-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "Lebanon",
+      "Denmark",
+      "Peru",
+      "Canada"
+    ],
+    "countryCode": "CA"
+  },
+  {
+    "id": "2026-07-08-04",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-08-05",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-08-06",
+    "type": "capital",
+    "question": "Where is the capital of Thailand?",
+    "correctAnswer": "Bangkok",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 13.75,
+      "lng": 100.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-08-07",
+    "type": "map",
+    "question": "This iconic ancient wonder is located near Cairo. What is it?",
+    "correctAnswer": "Pyramids of Giza",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 29.9792,
+      "lng": 31.1342
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-08-08",
+    "type": "map",
+    "question": "This magnificent marble mausoleum is a UNESCO World Heritage site. Where is it located?",
+    "correctAnswer": "Taj Mahal",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 27.1751,
+      "lng": 78.0421
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-08-09",
+    "type": "map",
+    "question": "This flat-topped mountain overlooks a major city in South Africa. What is it called?",
+    "correctAnswer": "Table Mountain",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -33.9575,
+      "lng": 18.4061
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-08-10",
+    "type": "map",
+    "question": "This prehistoric monument is famous for its ring of standing stones. Where is it located?",
+    "correctAnswer": "Stonehenge",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  }
+]
