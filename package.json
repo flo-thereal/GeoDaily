@@ -17,7 +17,8 @@
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
     "test:all": "npm run test && npm run test:e2e",
-    "generate:challenges": "tsx scripts/generate-challenges.ts"
+    "generate:challenges": "tsx scripts/generate-challenges.ts",
+    "prepare:boundaries": "tsx scripts/prepare-boundaries.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",

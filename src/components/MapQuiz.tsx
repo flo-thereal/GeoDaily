@@ -8,11 +8,12 @@ import {
   useMapEvents,
   Polyline,
   GeoJSON,
+  Circle,
 } from 'react-leaflet';
 import L from 'leaflet';
 import { DailyTask, type MapGuess } from '../store/useStore';
 import { getDistanceFromLatLonInKm, cn } from '../lib/utils';
-import { getCountryFeature, loadCountryBoundaries } from '../lib/countryBoundaries';
+import { getCountryFeature, loadCountryBoundaries, fallbackRadiusKm } from '../lib/countryBoundaries';
 import { scoreCapitalMapGuess, scoreCountryMapGuess, isLandmarkMapTask, scoreLandmarkMapGuess } from '../lib/mapScoring';
 import { taskCountryCode } from '../lib/progress';
 import { findCountry } from '../lib/countries';
@@ -43,6 +44,9 @@ const targetIcon = new L.Icon({
   popupAnchor: [1, -34],
   shadowSize: [41, 41],
 });
+
+const COUNTRY_OUTLINE_GREEN = '#176a21';
+const COUNTRY_OUTLINE_RED = '#b3261e';
 
 export type MapAnswerPayload = {
   isMap: true;
@@ -85,6 +89,7 @@ function MapResizeHandler({ containerRef }: { containerRef: RefObject<HTMLDivEle
 }
 
 function getMaxZoomForArea(areaKm2: number): number {
+  if (areaKm2 < 100) return 11;
   if (areaKm2 < 1_000) return 9;
   if (areaKm2 < 10_000) return 8;
   if (areaKm2 < 100_000) return 7;
@@ -93,6 +98,7 @@ function getMaxZoomForArea(areaKm2: number): number {
 }
 
 function getFallbackZoomForArea(areaKm2: number): number {
+  if (areaKm2 < 100) return 11;
   if (areaKm2 < 1_000) return 9;
   if (areaKm2 < 10_000) return 8;
   if (areaKm2 < 100_000) return 7;
@@ -100,36 +106,73 @@ function getFallbackZoomForArea(areaKm2: number): number {
   return 4;
 }
 
-function CapitalMapViewport({ countryCode }: { countryCode: string }) {
+function frameCountryOnMap(
+  map: L.Map,
+  countryCode: string,
+  animate: boolean
+): void {
+  const country = findCountry(countryCode);
+  const feature = getCountryFeature(countryCode);
+
+  if (feature) {
+    const layer = L.geoJSON(feature);
+    const bounds = layer.getBounds();
+    if (bounds.isValid()) {
+      const maxZoom = country ? getMaxZoomForArea(country.areaKm2) : 6;
+      if (animate) {
+        map.flyToBounds(bounds, { padding: [48, 48], maxZoom, duration: 0.8 });
+      } else {
+        map.fitBounds(bounds, { padding: [60, 60], maxZoom });
+      }
+      return;
+    }
+  }
+
+  if (country) {
+    const center: [number, number] = [country.coordinates.lat, country.coordinates.lng];
+    const radiusM = fallbackRadiusKm(country.areaKm2) * 1000;
+    const circle = L.circle(center, { radius: radiusM });
+    const circleBounds = circle.getBounds();
+    if (circleBounds.isValid()) {
+      const maxZoom = getMaxZoomForArea(country.areaKm2);
+      if (animate) {
+        map.flyToBounds(circleBounds, { padding: [48, 48], maxZoom, duration: 0.8 });
+      } else {
+        map.fitBounds(circleBounds, { padding: [60, 60], maxZoom });
+      }
+      return;
+    }
+
+    const zoom = getFallbackZoomForArea(country.areaKm2);
+    if (animate) {
+      map.flyTo(center, zoom, { duration: 0.8 });
+    } else {
+      map.setView(center, zoom);
+    }
+  }
+}
+
+function CountryBoundsViewport({
+  countryCode,
+  animate = false,
+}: {
+  countryCode: string;
+  animate?: boolean;
+}) {
   const map = useMap();
 
   useEffect(() => {
     let cancelled = false;
 
-    loadCountryBoundaries().then(() => {
+    void loadCountryBoundaries().then(() => {
       if (cancelled) return;
-      const feature = getCountryFeature(countryCode);
-      if (feature) {
-        const layer = L.geoJSON(feature);
-        const bounds = layer.getBounds();
-        if (bounds.isValid()) {
-          const country = findCountry(countryCode);
-          const maxZoom = country ? getMaxZoomForArea(country.areaKm2) : 6;
-          map.fitBounds(bounds, { padding: [60, 60], maxZoom });
-          return;
-        }
-      }
-      const country = findCountry(countryCode);
-      if (country) {
-        const zoom = getFallbackZoomForArea(country.areaKm2);
-        map.setView([country.coordinates.lat, country.coordinates.lng], zoom);
-      }
+      frameCountryOnMap(map, countryCode, animate);
     });
 
     return () => {
       cancelled = true;
     };
-  }, [map, countryCode]);
+  }, [map, countryCode, animate]);
 
   return null;
 }
@@ -209,6 +252,14 @@ export function MapQuiz({
   const countryFeature =
     countryFeatureReady && countryCode ? getCountryFeature(countryCode) : undefined;
 
+  const usesDistanceScoring = isCapitalMode || isLandmarkMode;
+  const showCountryMapReveal = showResult && !usesDistanceScoring && Boolean(countryCode);
+  const country = countryCode ? findCountry(countryCode) : undefined;
+  const fallbackCircleRadiusM =
+    showCountryMapReveal && !countryFeature && country
+      ? fallbackRadiusKm(country.areaKm2) * 1000
+      : null;
+
   const canSubmit =
     Boolean(guess && targetPos) &&
     (isCapitalMode || isLandmarkMode || Boolean(countryCode));
@@ -253,7 +304,6 @@ export function MapQuiz({
   };
 
   const earnedPoints = points ?? 0;
-  const usesDistanceScoring = isCapitalMode || isLandmarkMode;
   const isSuccess = usesDistanceScoring ? earnedPoints > 0 : earnedPoints === 100;
 
   const resultMessage = (() => {
@@ -273,6 +323,8 @@ export function MapQuiz({
     return `That's outside ${task.correctAnswer}.`;
   })();
 
+  const resultOutlineColor = isSuccess ? COUNTRY_OUTLINE_GREEN : COUNTRY_OUTLINE_RED;
+
   return (
     <div className={cn('flex flex-col gap-4 h-full w-full', className)}>
       <div
@@ -291,28 +343,62 @@ export function MapQuiz({
             url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"
           />
           <MapResizeHandler containerRef={mapContainerRef} />
-          {isCapitalMode && countryCode && <CapitalMapViewport countryCode={countryCode} />}
+          {isCapitalMode && countryCode && (
+            <CountryBoundsViewport countryCode={countryCode} />
+          )}
+          {showCountryMapReveal && countryCode && (
+            <CountryBoundsViewport countryCode={countryCode} animate />
+          )}
           <LocationMarker position={guess} setPosition={setGuess} disabled={showResult} />
           {countryFeature && (isCapitalMode || showResult) && (
             <GeoJSON
               data={countryFeature}
+              smoothFactor={0}
               style={
                 isCapitalMode
                   ? {
-                      color: '#176a21',
+                      color: COUNTRY_OUTLINE_GREEN,
                       weight: 2,
-                      fillColor: '#176a21',
+                      fillColor: COUNTRY_OUTLINE_GREEN,
                       fillOpacity: 0.12,
                     }
                   : {
-                      color: isSuccess ? '#176a21' : '#b3261e',
-                      weight: 2,
+                      color: resultOutlineColor,
+                      weight: 3,
+                      fillColor: resultOutlineColor,
                       fillOpacity: 0.15,
                     }
               }
             />
           )}
+          {fallbackCircleRadiusM && targetPos && (
+            <Circle
+              center={targetPos}
+              radius={fallbackCircleRadiusM}
+              pathOptions={{
+                color: resultOutlineColor,
+                weight: 3,
+                fillColor: resultOutlineColor,
+                fillOpacity: 0.12,
+                dashArray: '6, 8',
+              }}
+            />
+          )}
           {showResult && usesDistanceScoring && targetPos && (
+            <>
+              <Marker position={targetPos} icon={targetIcon}>
+                <Popup>{task.correctAnswer}</Popup>
+              </Marker>
+              {guess && (
+                <Polyline
+                  positions={[guess, targetPos]}
+                  color={isSuccess ? 'green' : 'red'}
+                  dashArray="5, 10"
+                />
+              )}
+            </>
+          )}
+          {showCountryMapReveal && targetPos && (
             <>
               <Marker position={targetPos} icon={targetIcon}>
                 <Popup>{task.correctAnswer}</Popup>

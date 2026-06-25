@@ -69,6 +69,8 @@ function fallbackRadiusKm(areaKm2: number): number {
   return Math.max(40, Math.min(250, equivalentRadius * 0.65));
 }
 
+export { fallbackRadiusKm };
+
 export async function loadCountryBoundaries(): Promise<FeatureCollection> {
   if (!boundariesPromise) {
     boundariesPromise = fetch(`${import.meta.env.BASE_URL}data/country-boundaries.geojson`)
