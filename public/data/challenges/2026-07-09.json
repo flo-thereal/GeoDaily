@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-09-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "imageUrl": "DE",
+    "options": [
+      "France",
+      "Belgium",
+      "Austria",
+      "Germany"
+    ],
+    "countryCode": "DE"
+  },
+  {
+    "id": "2026-07-09-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "South Korea",
+      "China",
+      "Japan",
+      "North Korea"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "2026-07-09-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Sweden",
+      "Norway",
+      "Finland",
+      "Denmark"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "2026-07-09-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of China?",
+    "correctAnswer": "Beijing",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 39.92,
+      "lng": 116.38
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-09-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-09-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 52.25,
+      "lng": 21
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-09-map-1",
+    "type": "map",
+    "question": "Which iconic natural landmark is located at these coordinates?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.1
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-09-map-2",
+    "type": "map",
+    "question": "This famous peak on the border of Switzerland and Italy is known as...?",
+    "correctAnswer": "Matterhorn",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6585
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-09-map-3",
+    "type": "map",
+    "question": "This location is famous for the Great Migration of wildlife. Where is it?",
+    "correctAnswer": "Maasai Mara National Reserve",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "mapCoordinates": {
+      "lat": -1.5,
+      "lng": 35.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-09-map-4",
+    "type": "map",
+    "question": "This vast salt flat, the world's largest, is a major tourist attraction. What is its name?",
+    "correctAnswer": "Salar de Uyuni",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.2796,
+      "lng": -67.6253
+    },
+    "options": []
+  }
+]
