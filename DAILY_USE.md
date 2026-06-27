@@ -8,7 +8,7 @@ Visit your GitHub Pages URL (e.g. `https://flo-thereal.github.io/GeoDaily/`).
 
 Optional: **Add to Home Screen** for quick access (PWA manifest included).
 
-## Daily ritual (~5 minutes)
+## Daily ritual (~10 minutes)
 
 1. Open GeoDaily.
 2. Complete **Today's Challenge** on the Dashboard.

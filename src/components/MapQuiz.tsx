@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, useMemo, type RefObject } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback, type RefObject } from 'react';
+import { motion } from 'motion/react';
 import {
   MapContainer,
   TileLayer,
@@ -11,12 +12,14 @@ import {
   Circle,
 } from 'react-leaflet';
 import L from 'leaflet';
+import { Loader2 } from 'lucide-react';
 import { DailyTask, type MapGuess } from '../store/useStore';
 import { getDistanceFromLatLonInKm, cn } from '../lib/utils';
-import { getCountryFeature, loadCountryBoundaries, fallbackRadiusKm } from '../lib/countryBoundaries';
+import { getCountryFeature, loadCountryBoundary, fallbackRadiusKm } from '../lib/countryBoundaries';
 import { scoreCapitalMapGuess, scoreCountryMapGuess, isLandmarkMapTask, scoreLandmarkMapGuess } from '../lib/mapScoring';
 import { taskCountryCode } from '../lib/progress';
 import { findCountry } from '../lib/countries';
+import { motionTransition, useReducedMotion } from '../lib/motion';
 
 delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: unknown })._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -47,6 +50,12 @@ const targetIcon = new L.Icon({
 
 const COUNTRY_OUTLINE_GREEN = '#176a21';
 const COUNTRY_OUTLINE_RED = '#b3261e';
+const FLY_DURATION_MS = 800;
+
+const outlineStyleBase = {
+  lineJoin: 'round' as const,
+  lineCap: 'round' as const,
+};
 
 export type MapAnswerPayload = {
   isMap: true;
@@ -109,13 +118,14 @@ function getFallbackZoomForArea(areaKm2: number): number {
 function frameCountryOnMap(
   map: L.Map,
   countryCode: string,
-  animate: boolean
+  animate: boolean,
+  feature?: ReturnType<typeof getCountryFeature>
 ): void {
   const country = findCountry(countryCode);
-  const feature = getCountryFeature(countryCode);
+  const resolvedFeature = feature ?? getCountryFeature(countryCode);
 
-  if (feature) {
-    const layer = L.geoJSON(feature);
+  if (resolvedFeature) {
+    const layer = L.geoJSON(resolvedFeature);
     const bounds = layer.getBounds();
     if (bounds.isValid()) {
       const maxZoom = country ? getMaxZoomForArea(country.areaKm2) : 6;
@@ -155,24 +165,33 @@ function frameCountryOnMap(
 function CountryBoundsViewport({
   countryCode,
   animate = false,
+  onFramed,
 }: {
   countryCode: string;
   animate?: boolean;
+  onFramed?: () => void;
 }) {
   const map = useMap();
 
   useEffect(() => {
     let cancelled = false;
 
-    void loadCountryBoundaries().then(() => {
+    void loadCountryBoundary(countryCode).then((feature) => {
       if (cancelled) return;
-      frameCountryOnMap(map, countryCode, animate);
+      frameCountryOnMap(map, countryCode, animate, feature);
+      if (animate) {
+        map.once('moveend', () => {
+          if (!cancelled) onFramed?.();
+        });
+      } else {
+        onFramed?.();
+      }
     });
 
     return () => {
       cancelled = true;
     };
-  }, [map, countryCode, animate]);
+  }, [map, countryCode, animate, onFramed]);
 
   return null;
 }
@@ -196,6 +215,9 @@ export function MapQuiz({
   const [points, setPoints] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [countryFeatureReady, setCountryFeatureReady] = useState(false);
+  const [boundaryLoading, setBoundaryLoading] = useState(false);
+  const [mapOverlaysVisible, setMapOverlaysVisible] = useState(false);
+  const reducedMotion = useReducedMotion();
 
   const isCapitalMode = task.type === 'capital';
   const isLandmarkMode = isLandmarkMapTask(task);
@@ -229,21 +251,65 @@ export function MapQuiz({
   useEffect(() => {
     if (!countryCode) {
       setCountryFeatureReady(false);
+      setBoundaryLoading(false);
       return;
     }
     if (!isCapitalMode && !showResult) {
       setCountryFeatureReady(false);
+      setBoundaryLoading(false);
       return;
     }
 
     let cancelled = false;
-    void loadCountryBoundaries().then(() => {
-      if (!cancelled) setCountryFeatureReady(true);
+    setBoundaryLoading(true);
+    void loadCountryBoundary(countryCode).then((feature) => {
+      if (!cancelled) {
+        setCountryFeatureReady(Boolean(feature));
+        setBoundaryLoading(false);
+      }
     });
     return () => {
       cancelled = true;
     };
   }, [showResult, isCapitalMode, countryCode, task.id]);
+
+  const usesDistanceScoring = isCapitalMode || isLandmarkMode;
+  const showCountryMapReveal = showResult && !usesDistanceScoring && Boolean(countryCode);
+
+  useEffect(() => {
+    if (showCountryMapReveal) {
+      setMapOverlaysVisible(false);
+      const fallback = setTimeout(
+        () => setMapOverlaysVisible(true),
+        reducedMotion ? 0 : FLY_DURATION_MS + 100
+      );
+      return () => clearTimeout(fallback);
+    }
+    if (isCapitalMode && countryFeatureReady) {
+      setMapOverlaysVisible(true);
+      return;
+    }
+    if (showResult && usesDistanceScoring) {
+      setMapOverlaysVisible(true);
+      return;
+    }
+    setMapOverlaysVisible(false);
+  }, [
+    showCountryMapReveal,
+    isCapitalMode,
+    countryFeatureReady,
+    showResult,
+    usesDistanceScoring,
+    reducedMotion,
+  ]);
+
+  const handleCountryMapFramed = useCallback(() => {
+    if (reducedMotion) {
+      setMapOverlaysVisible(true);
+      return;
+    }
+    setTimeout(() => setMapOverlaysVisible(true), 50);
+  }, [reducedMotion]);
 
   const targetPos = task.mapCoordinates
     ? new L.LatLng(task.mapCoordinates.lat, task.mapCoordinates.lng)
@@ -251,14 +317,16 @@ export function MapQuiz({
 
   const countryFeature =
     countryFeatureReady && countryCode ? getCountryFeature(countryCode) : undefined;
-
-  const usesDistanceScoring = isCapitalMode || isLandmarkMode;
-  const showCountryMapReveal = showResult && !usesDistanceScoring && Boolean(countryCode);
   const country = countryCode ? findCountry(countryCode) : undefined;
   const fallbackCircleRadiusM =
     showCountryMapReveal && !countryFeature && country
       ? fallbackRadiusKm(country.areaKm2) * 1000
       : null;
+
+  const showMapOverlays =
+    mapOverlaysVisible &&
+    (isCapitalMode || showResult) &&
+    (countryFeature || fallbackCircleRadiusM !== null || (showResult && usesDistanceScoring));
 
   const canSubmit =
     Boolean(guess && targetPos) &&
@@ -331,6 +399,11 @@ export function MapQuiz({
         ref={mapContainerRef}
         className="relative w-full h-[52vh] max-h-[560px] sm:h-[58vh] sm:max-h-[600px] rounded-2xl overflow-hidden border-2 border-outline-variant/30 z-0"
       >
+        {boundaryLoading && (
+          <div className="absolute inset-0 z-[500] flex items-center justify-center bg-surface/40 backdrop-blur-[1px]">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          </div>
+        )}
         <MapContainer
           key={task.id}
           center={initialView.center}
@@ -347,22 +420,28 @@ export function MapQuiz({
             <CountryBoundsViewport countryCode={countryCode} />
           )}
           {showCountryMapReveal && countryCode && (
-            <CountryBoundsViewport countryCode={countryCode} animate />
+            <CountryBoundsViewport
+              countryCode={countryCode}
+              animate
+              onFramed={handleCountryMapFramed}
+            />
           )}
           <LocationMarker position={guess} setPosition={setGuess} disabled={showResult} />
-          {countryFeature && (isCapitalMode || showResult) && (
+          {showMapOverlays && countryFeature && (
             <GeoJSON
               data={countryFeature}
               smoothFactor={0}
               style={
                 isCapitalMode
                   ? {
+                      ...outlineStyleBase,
                       color: COUNTRY_OUTLINE_GREEN,
                       weight: 2,
                       fillColor: COUNTRY_OUTLINE_GREEN,
                       fillOpacity: 0.12,
                     }
                   : {
+                      ...outlineStyleBase,
                       color: resultOutlineColor,
                       weight: 3,
                       fillColor: resultOutlineColor,
@@ -371,11 +450,12 @@ export function MapQuiz({
               }
             />
           )}
-          {fallbackCircleRadiusM && targetPos && (
+          {showMapOverlays && fallbackCircleRadiusM && targetPos && (
             <Circle
               center={targetPos}
               radius={fallbackCircleRadiusM}
               pathOptions={{
+                ...outlineStyleBase,
                 color: resultOutlineColor,
                 weight: 3,
                 fillColor: resultOutlineColor,
@@ -384,7 +464,7 @@ export function MapQuiz({
               }}
             />
           )}
-          {showResult && usesDistanceScoring && targetPos && (
+          {showMapOverlays && showResult && usesDistanceScoring && targetPos && (
             <>
               <Marker position={targetPos} icon={targetIcon}>
                 <Popup>{task.correctAnswer}</Popup>
@@ -392,13 +472,17 @@ export function MapQuiz({
               {guess && (
                 <Polyline
                   positions={[guess, targetPos]}
-                  color={isSuccess ? 'green' : 'red'}
-                  dashArray="5, 10"
+                  pathOptions={{
+                    color: isSuccess ? 'green' : 'red',
+                    dashArray: '5, 10',
+                    lineCap: 'round',
+                    lineJoin: 'round',
+                  }}
                 />
               )}
             </>
           )}
-          {showCountryMapReveal && targetPos && (
+          {showMapOverlays && showCountryMapReveal && targetPos && (
             <>
               <Marker position={targetPos} icon={targetIcon}>
                 <Popup>{task.correctAnswer}</Popup>
@@ -406,8 +490,12 @@ export function MapQuiz({
               {guess && (
                 <Polyline
                   positions={[guess, targetPos]}
-                  color={isSuccess ? 'green' : 'red'}
-                  dashArray="5, 10"
+                  pathOptions={{
+                    color: isSuccess ? 'green' : 'red',
+                    dashArray: '5, 10',
+                    lineCap: 'round',
+                    lineJoin: 'round',
+                  }}
                 />
               )}
             </>
@@ -420,8 +508,9 @@ export function MapQuiz({
           <button
             onClick={() => void handleSubmit()}
             disabled={!canSubmit || submitting}
-            className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
           >
+            {submitting && <Loader2 className="w-5 h-5 animate-spin" />}
             {submitting ? 'Checking...' : 'Submit Guess'}
           </button>
           {guess && !canSubmit && (
@@ -431,14 +520,17 @@ export function MapQuiz({
           )}
         </>
       ) : (
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={motionTransition(reducedMotion, 0.25)}
           className={cn(
             'p-4 rounded-2xl text-center font-bold text-lg',
             isSuccess ? 'bg-primary-container text-on-primary-container' : 'bg-red-100 text-red-900'
           )}
         >
           {resultMessage}
-        </div>
+        </motion.div>
       )}
     </div>
   );

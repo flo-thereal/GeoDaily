@@ -44,7 +44,9 @@ hosted on **GitHub Pages** — there is no server, database, or login.
 ├── scripts/generate-challenges.ts  # Gemini challenge generator (Action)
 ├── public/
 │   ├── .nojekyll
-│   └── data/challenges/         # Pre-generated daily challenge JSON
+│   └── data/
+│       ├── challenges/          # Pre-generated daily challenge JSON
+│       └── boundaries/          # Per-country 10m GeoJSON (npm run prepare:boundaries)
 ├── tests/
 │   ├── unit/                    # Vitest (Node env)
 │   └── e2e/                     # Playwright (Chromium)
@@ -132,7 +134,7 @@ JSON files may still have 5.
 | `map` | "Where is X located?" | Country name | empty | 2-letter ISO code | country centroid `{ lat, lng }` |
 
 **Scoring**: flags are binary 100/0. Country map questions award **100** if the pin
-is inside the country polygon (from `public/data/country-boundaries.geojson`), else
+is inside the country polygon (from `public/data/boundaries/{ISO}.geojson`, Natural Earth 10m), else
 **0**. Capital map questions award **0–100** from distance (`round(100 * max(0, 1 - d/500))`);
 `isCorrect` when points ≥ 50. Daily max is `tasks.length × 100` (1000 for new
 10-question days, 500 for legacy 5-question files). Perfect score requires

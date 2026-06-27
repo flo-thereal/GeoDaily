@@ -176,7 +176,7 @@ export function Profile() {
             <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Days Active</h3>
             <p className="text-4xl font-headline font-black text-on-surface">{stats.totalDaysPlayed}</p>
             <div className="mt-4 h-1 bg-surface-container-high rounded-full overflow-hidden">
-              <div className="h-full bg-primary rounded-full" style={{ width: `${Math.min(stats.totalDaysPlayed / 365 * 100, 100)}%` }}></div>
+              <div className="h-full bg-primary rounded-full transition-all duration-700 ease-out" style={{ width: `${Math.min(stats.totalDaysPlayed / 365 * 100, 100)}%` }}></div>
             </div>
           </div>
 
@@ -186,7 +186,7 @@ export function Profile() {
             <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Countries Mastered</h3>
             <p className="text-4xl font-headline font-black text-on-surface">{stats.countriesMastered}</p>
             <div className="mt-4 h-1 bg-surface-container-high rounded-full overflow-hidden">
-              <div className="h-full bg-secondary rounded-full" style={{ width: `${Math.min(stats.countriesMastered / 195 * 100, 100)}%` }}></div>
+              <div className="h-full bg-secondary rounded-full transition-all duration-700 ease-out" style={{ width: `${Math.min(stats.countriesMastered / 195 * 100, 100)}%` }}></div>
             </div>
           </div>
 
@@ -196,7 +196,7 @@ export function Profile() {
             <h3 className="text-sm font-headline font-bold text-outline uppercase tracking-wider mb-1">Avg Accuracy</h3>
             <p className="text-4xl font-headline font-black text-on-surface">{stats.accuracy}<span className="text-2xl">%</span></p>
             <div className="mt-4 h-1 bg-surface-container-high rounded-full overflow-hidden">
-              <div className="h-full bg-tertiary rounded-full" style={{ width: `${stats.accuracy}%` }}></div>
+              <div className="h-full bg-tertiary rounded-full transition-all duration-700 ease-out" style={{ width: `${stats.accuracy}%` }}></div>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ export function Profile() {
                 chartData.bars.map((bar, index) => (
                   <div
                     key={bar.date}
-                    className={`w-full ${bar.isToday ? 'bg-primary' : 'bg-primary/20'} hover:bg-primary transition-all rounded-t-lg relative group/bar`}
+                    className={`w-full ${bar.isToday ? 'bg-primary' : 'bg-primary/20'} hover:bg-primary transition-all duration-700 ease-out rounded-t-lg relative group/bar`}
                     style={{ height: `${Math.max(bar.height, 2)}%` }}
                     title={`${formatShortDate(bar.date)}: ${bar.score} points`}
                   >
@@ -276,7 +276,7 @@ export function Profile() {
                       <span className={`text-sm font-headline font-black ${colorClass}`}>{mastery}%</span>
                     </div>
                     <div className="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
-                      <div className={`h-full ${bgClass} rounded-full`} style={{ width: `${mastery}%` }}></div>
+                      <div className={`h-full ${bgClass} rounded-full transition-all duration-700 ease-out`} style={{ width: `${mastery}%` }}></div>
                     </div>
                   </div>
                 );

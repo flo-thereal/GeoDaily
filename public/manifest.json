@@ -1,7 +1,7 @@
 {
   "name": "GeoDaily",
   "short_name": "GeoDaily",
-  "description": "Daily geography challenges — flags, capitals, and maps in 5 minutes.",
+  "description": "Daily geography challenges — 10 questions on flags, capitals, and maps in about 10 minutes.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#edf8ff",

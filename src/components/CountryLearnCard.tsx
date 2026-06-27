@@ -1,8 +1,10 @@
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Building2, MapPin } from 'lucide-react';
 import type { DailyTask } from '../store/useStore';
 import { findCountry, type Country } from '../lib/countries';
 import { taskCountryCode } from '../lib/progress';
+import { fadeSlideUp, motionTransition, useReducedMotion } from '../lib/motion';
 
 interface CountryLearnCardProps {
   task: DailyTask;
@@ -15,11 +17,17 @@ export function resolveCountryForTask(task: DailyTask): Country | undefined {
 
 export function CountryLearnCard({ task }: CountryLearnCardProps) {
   const country = resolveCountryForTask(task);
+  const reduced = useReducedMotion();
 
   if (!country) return null;
 
   return (
-    <div className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-4 flex gap-4 items-start animate-in slide-in-from-bottom-2">
+    <motion.div
+      initial={fadeSlideUp.initial}
+      animate={fadeSlideUp.animate}
+      transition={motionTransition(reduced, 0.3)}
+      className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-4 flex gap-4 items-start"
+    >
       <img
         src={`https://flagcdn.com/w160/${country.code.toLowerCase()}.png`}
         alt={`Flag of ${country.name}`}
@@ -40,6 +48,6 @@ export function CountryLearnCard({ task }: CountryLearnCardProps) {
           Explore in Atlas
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -67,3 +67,28 @@ export function triggerHaptic(): void {
     navigator.vibrate(40);
   }
 }
+
+export function playWrongSound(): void {
+  if (!getGamePreferences().soundEnabled) return;
+  try {
+    const ctx = new AudioContext();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.value = 220;
+    gain.gain.value = 0.06;
+    osc.start();
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+    osc.stop(ctx.currentTime + 0.12);
+  } catch {
+    // Audio not available
+  }
+}
+
+export function triggerWrongHaptic(): void {
+  if (!getGamePreferences().hapticEnabled) return;
+  if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+    navigator.vibrate([30, 50, 30]);
+  }
+}

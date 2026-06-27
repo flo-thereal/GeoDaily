@@ -139,6 +139,20 @@ export function Settings() {
     setSettings(prev => prev ? { ...prev, [key]: value } : null);
   };
 
+  const handleInstantGamePreference = async (
+    key: 'soundEnabled' | 'hapticEnabled',
+    value: boolean
+  ) => {
+    updateSetting(key, value);
+    try {
+      await updateSettings({ [key]: value });
+      setGamePreferences({ [key]: value });
+      setOriginalSettings((prev) => (prev ? { ...prev, [key]: value } : null));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to update preference');
+    }
+  };
+
   const hasChanges = settings && originalSettings && 
     JSON.stringify(settings) !== JSON.stringify(originalSettings);
 
@@ -293,7 +307,9 @@ export function Settings() {
                   </div>
                   <Toggle
                     enabled={settings?.hapticEnabled ?? true}
-                    onToggle={() => updateSetting('hapticEnabled', !settings?.hapticEnabled)}
+                    onToggle={() =>
+                      void handleInstantGamePreference('hapticEnabled', !settings?.hapticEnabled)
+                    }
                     disabled={isSaving}
                   />
                 </div>
@@ -304,7 +320,9 @@ export function Settings() {
                   </div>
                   <Toggle
                     enabled={settings?.soundEnabled ?? true}
-                    onToggle={() => updateSetting('soundEnabled', !settings?.soundEnabled)}
+                    onToggle={() =>
+                      void handleInstantGamePreference('soundEnabled', !settings?.soundEnabled)
+                    }
                     disabled={isSaving}
                   />
                 </div>

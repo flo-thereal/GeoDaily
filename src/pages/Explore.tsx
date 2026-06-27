@@ -53,6 +53,12 @@ export function Explore() {
     fetchData();
   }, [searchParams]);
 
+  useEffect(() => {
+    const codeParam = searchParams.get('country')?.toUpperCase();
+    if (!codeParam || loading || !selectedCountry || selectedCountry.code !== codeParam) return;
+    detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [searchParams, selectedCountry, loading]);
+
   const filteredCountries = useMemo(() => {
     let result = countries;
 

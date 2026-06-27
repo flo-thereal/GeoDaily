@@ -59,7 +59,7 @@ export function Welcome() {
               Welcome to <span className="text-primary italic">GeoDaily</span>
             </h1>
             <p className="text-xl text-on-surface-variant leading-relaxed max-w-md font-body">
-              Master the world in 5 minutes a day. Learn flags, capitals, and borders through daily mini-games.
+              Master the world in about 10 minutes a day. Learn flags, capitals, and borders through daily mini-games.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export function Welcome() {
             
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center">
-                <span className="text-2xl font-bold text-primary">5</span>
+                <span className="text-2xl font-bold text-primary">10</span>
                 <span className="text-[10px] font-label uppercase text-outline">Questions / day</span>
               </div>
               <div className="bg-surface-container-low p-4 rounded-lg flex flex-col items-center justify-center text-center">

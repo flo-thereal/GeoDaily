@@ -37,7 +37,7 @@ function scheduleClientReminder(time: string): void {
     reminderTimeoutId = undefined;
     if (Notification.permission === 'granted') {
       new Notification('GeoDaily', {
-        body: 'Your daily geography challenge is ready. 5 minutes to expand your world!',
+        body: 'Your daily geography challenge is ready. 10 questions to expand your world!',
         tag: REMINDER_TAG,
         icon: `${import.meta.env.BASE_URL}icons/icon.svg`,
       });

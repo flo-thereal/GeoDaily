@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { AnimatePresence, motion } from 'motion/react';
 import { useStore, type AnswerRecord, type DailyTask, type MapGuess } from '../store/useStore';
 import { generateDailyTasks, fetchPracticeTasks } from '../services/api';
 import { Loader2, CheckCircle2, XCircle, ArrowRight, ArrowLeft } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { cn, localDateString } from '../lib/utils';
 import { MapQuiz } from '../components/MapQuiz';
 import { CountryLearnCard } from '../components/CountryLearnCard';
-import { playCorrectSound, triggerHaptic } from '../lib/preferences';
+import { celebrateAnswer } from '../lib/celebrate';
 import { storeNewAchievements, storeQuestRecap } from '../lib/questSession';
 import { taskCountryCode } from '../lib/progress';
 import { findCountryByName } from '../lib/countries';
+import { fadeSlide, motionTransition, useReducedMotion } from '../lib/motion';
 
 function isDateCompletedInStorage(date: string): boolean {
   try {
@@ -63,6 +64,8 @@ export function Quiz() {
 
   const [userAnswers, setUserAnswers] = useState<AnswerRecord[]>([]);
   const [sessionScore, setSessionScore] = useState(0);
+
+  const reducedMotion = useReducedMotion();
 
   const isDaily = type === 'daily';
   const isPractice = !isDaily;
@@ -192,17 +195,8 @@ export function Quiz() {
     const newAnswers: AnswerRecord[] = [...userAnswers, { guess: guessValue, isCorrect: correct }];
     setUserAnswers(newAnswers);
 
-    if (pointsEarned > 0) {
-      if (isDaily) setSessionScore((prev) => prev + pointsEarned);
-      playCorrectSound();
-      triggerHaptic();
-      confetti({
-        particleCount: pointsEarned >= 100 ? 100 : 60,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#176a21', '#9df197', '#ff9727'],
-      });
-    }
+    if (pointsEarned > 0 && isDaily) setSessionScore((prev) => prev + pointsEarned);
+    celebrateAnswer(pointsEarned, correct);
 
     if (isDaily && currentIndex === tasks.length - 1) {
       const finalScore = sessionScore + pointsEarned;
@@ -272,7 +266,7 @@ export function Quiz() {
     return <Navigate to={`/quiz/daily?date=${targetDate}&review=true`} replace />;
   }
 
-  if (loading) {
+  if (loading || !storeReady) {
     return (
       <div className="flex flex-col items-center justify-center h-full min-h-[60vh]">
         <Loader2 className="w-12 h-12 animate-spin text-primary mb-4" />
@@ -298,7 +292,7 @@ export function Quiz() {
     );
   }
 
-  if (tasks.length === 0) {
+  if (tasks.length === 0 && storeReady) {
     return (
       <div className="flex flex-col items-center justify-center h-full min-h-[60vh] text-center p-6">
         <p className="text-on-surface-variant font-medium mb-4">Failed to load tasks. Please try again.</p>
@@ -319,6 +313,7 @@ export function Quiz() {
   const progressPct = Math.round(
     ((showResult ? currentIndex + 1 : currentIndex) / tasks.length) * 100
   );
+  const maxScore = tasks.length * 100;
 
   return (
     <div
@@ -354,7 +349,20 @@ export function Quiz() {
           <span>
             Question {currentIndex + 1} of {tasks.length}
           </span>
-          <span>{progressPct}%</span>
+          <div className="flex items-center gap-3">
+            {isDaily && !isReview && (
+              <motion.span
+                key={sessionScore}
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={motionTransition(reducedMotion, 0.2)}
+                className="text-primary tabular-nums"
+              >
+                {sessionScore} / {maxScore}
+              </motion.span>
+            )}
+            <span>{progressPct}%</span>
+          </div>
         </div>
         <div className="h-3 bg-surface-container-highest rounded-full overflow-hidden">
           <div
@@ -370,109 +378,155 @@ export function Quiz() {
           isMapTask ? 'flex-1 min-h-0 mb-4' : 'mb-8'
         )}
       >
-        <h2
-          className={cn(
-            'text-2xl font-headline font-bold text-center',
-            isMapTask ? 'mb-4' : 'mb-6'
-          )}
-        >
-          {currentTask.question}
-        </h2>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentTask.id}
+            initial={fadeSlide.initial}
+            animate={fadeSlide.animate}
+            exit={fadeSlide.exit}
+            transition={motionTransition(reducedMotion, 0.3)}
+            className="flex flex-col flex-1 min-h-0"
+          >
+            <h2
+              className={cn(
+                'text-2xl font-headline font-bold text-center',
+                isMapTask ? 'mb-4' : 'mb-6'
+              )}
+            >
+              {currentTask.question}
+            </h2>
 
-        {currentTask.type === 'flag' && currentTask.imageUrl && (
-          <div className="flex justify-center mb-8">
-            <img
-              src={`https://flagcdn.com/w320/${currentTask.imageUrl.toLowerCase()}.png`}
-              alt="Flag"
-              className="rounded-xl shadow-md border border-outline-variant/20 max-h-48 object-contain"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        )}
+            {currentTask.type === 'flag' && currentTask.imageUrl && (
+              <div className="flex justify-center mb-8">
+                <img
+                  src={`https://flagcdn.com/w320/${currentTask.imageUrl.toLowerCase()}.png`}
+                  alt={`Flag of ${currentTask.correctAnswer}`}
+                  className="rounded-xl shadow-md border border-outline-variant/20 max-h-48 object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            )}
 
-        {isMapTask ? (
-          <MapQuiz
-            task={currentTask}
-            onAnswer={handleAnswer}
-            showResult={showResult}
-            initialGuess={mapReviewGuess}
-            className="flex-1 min-h-0"
-          />
-        ) : (
-          <div className="grid grid-cols-1 gap-3 mt-auto">
-            {currentTask.options?.map((option, index) => {
-              let buttonClass =
-                'bg-surface-container-low border-outline-variant/30 text-on-surface hover:bg-surface-container';
+            {isMapTask ? (
+              <MapQuiz
+                task={currentTask}
+                onAnswer={handleAnswer}
+                showResult={showResult}
+                initialGuess={mapReviewGuess}
+                className="flex-1 min-h-0"
+              />
+            ) : (
+              <div className="grid grid-cols-1 gap-3 mt-auto">
+                {currentTask.options?.map((option, index) => {
+                  let buttonClass =
+                    'bg-surface-container-low border-outline-variant/30 text-on-surface hover:bg-surface-container';
 
-              if (showResult) {
-                if (option === currentTask.correctAnswer) {
-                  buttonClass = 'bg-primary-container border-primary text-on-primary-container';
-                } else if (option === selectedAnswer) {
-                  buttonClass = 'bg-red-100 border-red-500 text-red-900';
-                } else {
-                  buttonClass =
-                    'bg-surface-container-low border-outline-variant/30 text-on-surface opacity-50';
-                }
-              } else if (selectedAnswer === option) {
-                buttonClass = 'bg-secondary-container border-secondary text-on-secondary-container';
-              }
+                  if (showResult) {
+                    if (option === currentTask.correctAnswer) {
+                      buttonClass = 'bg-primary-container border-primary text-on-primary-container';
+                    } else if (option === selectedAnswer) {
+                      buttonClass = 'bg-red-100 border-red-500 text-red-900';
+                    } else {
+                      buttonClass =
+                        'bg-surface-container-low border-outline-variant/30 text-on-surface opacity-50';
+                    }
+                  } else if (selectedAnswer === option) {
+                    buttonClass = 'bg-secondary-container border-secondary text-on-secondary-container';
+                  }
 
-              const optionCode =
-                showResult && currentTask.type === 'flag'
-                  ? findCountryByName(option)?.code
-                  : undefined;
+                  const optionCode =
+                    showResult && currentTask.type === 'flag'
+                      ? findCountryByName(option)?.code
+                      : undefined;
 
-              return (
-                <button
-                  key={index}
-                  onClick={() => handleAnswer(option)}
-                  disabled={showResult || isReview}
-                  className={cn(
-                    'p-4 rounded-2xl border-2 text-left font-bold text-lg transition-all flex justify-between items-center',
-                    buttonClass,
-                    isReview && 'cursor-default'
-                  )}
-                >
-                  <span className="flex items-center gap-3 min-w-0">
-                    {optionCode && (
-                      <img
-                        src={`https://flagcdn.com/w80/${optionCode.toLowerCase()}.png`}
-                        alt=""
-                        className="w-10 h-7 object-contain rounded border border-outline-variant/20 shrink-0"
-                        referrerPolicy="no-referrer"
-                      />
-                    )}
-                    <span>{option}</span>
-                  </span>
-                  {showResult && option === currentTask.correctAnswer && (
-                    <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                  )}
-                  {showResult && option === selectedAnswer && option !== currentTask.correctAnswer && (
-                    <XCircle className="w-6 h-6 text-red-500 shrink-0" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        )}
+                  return (
+                    <motion.button
+                      key={index}
+                      initial={false}
+                      animate={
+                        showResult && (option === currentTask.correctAnswer || option === selectedAnswer)
+                          ? { scale: 1 }
+                          : undefined
+                      }
+                      transition={
+                        showResult
+                          ? { ...motionTransition(reducedMotion, 0.2), delay: index * 0.05 }
+                          : undefined
+                      }
+                      onClick={() => handleAnswer(option)}
+                      disabled={showResult || isReview}
+                      className={cn(
+                        'p-4 rounded-2xl border-2 text-left font-bold text-lg transition-all flex justify-between items-center',
+                        buttonClass,
+                        isReview && 'cursor-default'
+                      )}
+                    >
+                      <span className="flex items-center gap-3 min-w-0">
+                        {optionCode && (
+                          <img
+                            src={`https://flagcdn.com/w80/${optionCode.toLowerCase()}.png`}
+                            alt=""
+                            className="w-10 h-7 object-contain rounded border border-outline-variant/20 shrink-0"
+                            referrerPolicy="no-referrer"
+                          />
+                        )}
+                        <span>{option}</span>
+                      </span>
+                      {showResult && option === currentTask.correctAnswer && (
+                        <motion.span
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={motionTransition(reducedMotion, 0.2)}
+                        >
+                          <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
+                        </motion.span>
+                      )}
+                      {showResult && option === selectedAnswer && option !== currentTask.correctAnswer && (
+                        <motion.span
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={motionTransition(reducedMotion, 0.2)}
+                        >
+                          <XCircle className="w-6 h-6 text-red-500 shrink-0" />
+                        </motion.span>
+                      )}
+                    </motion.button>
+                  );
+                })}
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {showResult && (
-        <div className="space-y-3">
-          <CountryLearnCard task={currentTask} />
-          <button
-            onClick={handleNext}
-            className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors shadow-md animate-in slide-in-from-bottom-4"
+      <AnimatePresence>
+        {showResult && (
+          <motion.div
+            key="result-actions"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={motionTransition(reducedMotion, 0.25)}
+            className="space-y-3"
           >
-            {currentIndex < tasks.length - 1
-              ? 'Next Question'
-              : isReview
-                ? 'Back to Dashboard'
-                : 'Finish Challenge'}
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-      )}
+            <CountryLearnCard task={currentTask} />
+            <motion.button
+              initial={fadeSlide.initial}
+              animate={fadeSlide.animate}
+              transition={motionTransition(reducedMotion, 0.3)}
+              onClick={handleNext}
+              className="w-full bg-primary text-on-primary p-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary-dim transition-colors shadow-md"
+            >
+              {currentIndex < tasks.length - 1
+                ? 'Next Question'
+                : isReview
+                  ? 'Back to Dashboard'
+                  : 'Finish Challenge'}
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
