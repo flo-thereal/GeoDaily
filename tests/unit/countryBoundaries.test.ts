@@ -48,6 +48,33 @@ describe('boundary GeoJSON files', () => {
     const fr = loadBoundaryFeature('FR');
     expect(booleanPointInPolygon(point([0.5, 50.0]), fr)).toBe(false);
   });
+
+  it('Singapore has high-resolution MultiPolygon boundary', () => {
+    const sg = loadBoundaryFeature('SG');
+    expect(sg.geometry.type).toBe('MultiPolygon');
+
+    function countCoords(geometry: Polygon | MultiPolygon): number {
+      if (geometry.type === 'Polygon') {
+        return geometry.coordinates.reduce((sum, ring) => sum + ring.length, 0);
+      }
+      return geometry.coordinates.reduce(
+        (sum, polygon) => sum + polygon.reduce((ringSum, ring) => ringSum + ring.length, 0),
+        0
+      );
+    }
+
+    expect(countCoords(sg.geometry)).toBeGreaterThan(500);
+  });
+
+  it('central Singapore is inside Singapore boundary', () => {
+    const sg = loadBoundaryFeature('SG');
+    expect(booleanPointInPolygon(point([103.8198, 1.3521]), sg)).toBe(true);
+  });
+
+  it('Johor Strait point north of Singapore is outside Singapore', () => {
+    const sg = loadBoundaryFeature('SG');
+    expect(booleanPointInPolygon(point([103.75, 1.48]), sg)).toBe(false);
+  });
 });
 
 describe('isPointInCountry', () => {
