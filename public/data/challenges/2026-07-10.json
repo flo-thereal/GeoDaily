@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-10-flag-NL",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "imageUrl": "NL",
+    "options": [
+      "Netherlands",
+      "Luxembourg",
+      "Russia",
+      "Croatia"
+    ],
+    "countryCode": "NL"
+  },
+  {
+    "id": "2026-07-10-flag-IR",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iran",
+    "imageUrl": "IR",
+    "options": [
+      "Iraq",
+      "Iran",
+      "Afghanistan",
+      "Tajikistan"
+    ],
+    "countryCode": "IR"
+  },
+  {
+    "id": "2026-07-10-flag-ET",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "imageUrl": "ET",
+    "options": [
+      "Ghana",
+      "Senegal",
+      "Mali",
+      "Ethiopia"
+    ],
+    "countryCode": "ET"
+  },
+  {
+    "id": "2026-07-10-capital-HU",
+    "type": "capital",
+    "question": "Where is the capital of Hungary?",
+    "correctAnswer": "Budapest",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.5,
+      "lng": 19.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-10-capital-AT",
+    "type": "capital",
+    "question": "Where is the capital of Austria?",
+    "correctAnswer": "Vienna",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 48.2,
+      "lng": 16.37
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-10-capital-PH",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-10-map-ES-SagradaFamilia",
+    "type": "map",
+    "question": "This iconic basilica, still under construction, is located in which city?",
+    "correctAnswer": "Barcelona",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4037,
+      "lng": 2.1744
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-10-map-MX-ChichenItza",
+    "type": "map",
+    "question": "Locate the ancient Mayan city of Chichen Itza.",
+    "correctAnswer": "Chichen Itza",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 20.6843,
+      "lng": -88.5678
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-10-map-FR-EiffelTower",
+    "type": "map",
+    "question": "Which famous landmark is located at these coordinates?",
+    "correctAnswer": "Eiffel Tower",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.8584,
+      "lng": 2.2945
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-10-map-GR-Acropolis",
+    "type": "map",
+    "question": "Identify the location of the ancient Acropolis of Athens.",
+    "correctAnswer": "Acropolis of Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.9715,
+      "lng": 23.7266
+    },
+    "options": []
+  }
+]
