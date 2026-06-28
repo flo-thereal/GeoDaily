@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260711_01",
+    "type": "map",
+    "question": "Which iconic landmark, known for its distinctive shell-like roof design, is located at these coordinates?",
+    "correctAnswer": "Sydney Opera House",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -33.8568,
+      "lng": 151.2158
+    },
+    "options": []
+  },
+  {
+    "id": "20260711_02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ireland",
+    "imageUrl": "IE",
+    "options": [
+      "Ivory Coast",
+      "Ireland",
+      "Italy",
+      "Mexico"
+    ],
+    "countryCode": "IE"
+  },
+  {
+    "id": "20260711_03",
+    "type": "capital",
+    "question": "Where is the capital of Iceland?",
+    "correctAnswer": "Reykjavik",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.15,
+      "lng": -21.95
+    },
+    "options": []
+  },
+  {
+    "id": "20260711_04",
+    "type": "map",
+    "question": "This vast freshwater lake, the deepest and oldest in the world, is located at these coordinates. What is its name?",
+    "correctAnswer": "Lake Baikal",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 53.8188,
+      "lng": 108.0069
+    },
+    "options": []
+  },
+  {
+    "id": "20260711_05",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "Malaysia",
+      "United States",
+      "Liberia",
+      "Greece"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "20260711_06",
+    "type": "capital",
+    "question": "Where is the capital of Singapore?",
+    "correctAnswer": "Singapore",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.28,
+      "lng": 103.85
+    },
+    "options": []
+  },
+  {
+    "id": "20260711_07",
+    "type": "map",
+    "question": "This holy city, central to Islam, is located at these coordinates. What is its name?",
+    "correctAnswer": "Mecca",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 21.4225,
+      "lng": 39.8262
+    },
+    "options": []
+  },
+  {
+    "id": "20260711_08",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tanzania",
+    "imageUrl": "TZ",
+    "options": [
+      "Guyana",
+      "Jamaica",
+      "Tanzania",
+      "Seychelles"
+    ],
+    "countryCode": "TZ"
+  },
+  {
+    "id": "20260711_09",
+    "type": "capital",
+    "question": "Where is the capital of Dominican Republic?",
+    "correctAnswer": "Santo Domingo",
+    "countryCode": "DO",
+    "imageUrl": "DO",
+    "mapCoordinates": {
+      "lat": 18.47,
+      "lng": -69.9
+    },
+    "options": []
+  },
+  {
+    "id": "20260711_10",
+    "type": "map",
+    "question": "Located in the jungles of Southeast Asia at these coordinates, this is one of the most important archaeological sites in the world, featuring magnificent stone temples. What is this complex called?",
+    "correctAnswer": "Angkor Wat",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  }
+]
