@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-12_q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "Ireland",
+      "Niger",
+      "Nigeria",
+      "Bangladesh"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "2026-07-12_q2",
+    "type": "capital",
+    "question": "Where is the capital of Italy?",
+    "correctAnswer": "Rome",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.9,
+      "lng": 12.48
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-12_q3",
+    "type": "map",
+    "question": "This point marks the summit of the world's highest mountain. Where is it located?",
+    "correctAnswer": "Mount Everest (Nepal/China border)",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-12_q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "imageUrl": "PK",
+    "options": [
+      "Algeria",
+      "Saudi Arabia",
+      "Maldives",
+      "Pakistan"
+    ],
+    "countryCode": "PK"
+  },
+  {
+    "id": "2026-07-12_q5",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-12_q6",
+    "type": "map",
+    "question": "This ancient city, famous for its rock-cut architecture, is a UNESCO World Heritage Site. Which country is it in?",
+    "correctAnswer": "Jordan",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-12_q7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sri Lanka",
+    "imageUrl": "LK",
+    "options": [
+      "Sri Lanka",
+      "Myanmar",
+      "Maldives",
+      "India"
+    ],
+    "countryCode": "LK"
+  },
+  {
+    "id": "2026-07-12_q8",
+    "type": "capital",
+    "question": "Where is the capital of Uruguay?",
+    "correctAnswer": "Montevideo",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.85,
+      "lng": -56.17
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-12_q9",
+    "type": "map",
+    "question": "This iconic waterway connects the Atlantic and Pacific Oceans. In which country is it located?",
+    "correctAnswer": "Panama",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0706,
+      "lng": -79.7995
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-12_q10",
+    "type": "map",
+    "question": "This ancient site features numerous Nubian pyramids, a testament to a powerful kingdom. In which country can you find it?",
+    "correctAnswer": "Sudan",
+    "countryCode": "SD",
+    "imageUrl": "SD",
+    "mapCoordinates": {
+      "lat": 16.9328,
+      "lng": 33.749
+    },
+    "options": []
+  }
+]
