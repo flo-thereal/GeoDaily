@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-13-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Oman",
+    "imageUrl": "OM",
+    "options": [
+      "Oman",
+      "Qatar",
+      "Kuwait",
+      "Yemen"
+    ],
+    "countryCode": "OM"
+  },
+  {
+    "id": "2026-07-13-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "imageUrl": "GH",
+    "options": [
+      "Togo",
+      "Cameroon",
+      "Mali",
+      "Ghana"
+    ],
+    "countryCode": "GH"
+  },
+  {
+    "id": "2026-07-13-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Lithuania",
+    "imageUrl": "LT",
+    "options": [
+      "Latvia",
+      "Ukraine",
+      "Belarus",
+      "Lithuania"
+    ],
+    "countryCode": "LT"
+  },
+  {
+    "id": "2026-07-13-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Kazakhstan?",
+    "correctAnswer": "Astana",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 51.16,
+      "lng": 71.45
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-13-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Croatia?",
+    "correctAnswer": "Zagreb",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 45.8,
+      "lng": 16
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-13-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Senegal?",
+    "correctAnswer": "Dakar",
+    "countryCode": "SN",
+    "imageUrl": "SN",
+    "mapCoordinates": {
+      "lat": 14.73,
+      "lng": -17.63
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-13-map-1",
+    "type": "map",
+    "question": "This iconic waterfall is located on the Zambezi River, bordering which two countries?",
+    "correctAnswer": "Zambia and Zimbabwe",
+    "countryCode": "ZM",
+    "imageUrl": "ZM",
+    "mapCoordinates": {
+      "lat": -17.924444,
+      "lng": 25.858611
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-13-map-2",
+    "type": "map",
+    "question": "Which famous skyscraper is located at these coordinates, a symbol of modern architecture?",
+    "correctAnswer": "Burj Khalifa",
+    "countryCode": "AE",
+    "imageUrl": "AE",
+    "mapCoordinates": {
+      "lat": 25.1972,
+      "lng": 55.2743
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-13-map-3",
+    "type": "map",
+    "question": "This ancient city, famous for its thousands of temples and pagodas, is located in which country?",
+    "correctAnswer": "Myanmar",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 21.1718,
+      "lng": 94.8624
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-13-map-4",
+    "type": "map",
+    "question": "Known as one of the most spectacular roads in the world, this winding mountain pass is located in which European country?",
+    "correctAnswer": "Romania",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 45.5835,
+      "lng": 24.6657
+    },
+    "options": []
+  }
+]
