@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-14-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Palau",
+      "Laos",
+      "Japan",
+      "Maldives"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-07-14-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "Burkina Faso",
+      "Benin",
+      "Angola",
+      "Vietnam"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "2026-07-14-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "New Zealand",
+      "Fiji",
+      "Tuvalu",
+      "Samoa"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "2026-07-14-04",
+    "type": "capital",
+    "question": "Where is the capital of Bangladesh?",
+    "correctAnswer": "Dhaka",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 23.72,
+      "lng": 90.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-14-05",
+    "type": "capital",
+    "question": "Where is the capital of Ukraine?",
+    "correctAnswer": "Kyiv",
+    "countryCode": "UA",
+    "imageUrl": "UA",
+    "mapCoordinates": {
+      "lat": 50.43,
+      "lng": 30.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-14-06",
+    "type": "capital",
+    "question": "Where is the capital of Israel?",
+    "correctAnswer": "Jerusalem",
+    "countryCode": "IL",
+    "imageUrl": "IL",
+    "mapCoordinates": {
+      "lat": 31.77,
+      "lng": 35.23
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-14-07",
+    "type": "map",
+    "question": "Identify this artificial island development off the coast of Doha, Qatar.",
+    "correctAnswer": "The Pearl-Qatar",
+    "countryCode": "QA",
+    "imageUrl": "QA",
+    "mapCoordinates": {
+      "lat": 25.3789,
+      "lng": 51.5204
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-14-08",
+    "type": "map",
+    "question": "This famous pink sand beach is located on which island in The Bahamas?",
+    "correctAnswer": "Harbour Island",
+    "countryCode": "BS",
+    "imageUrl": "BS",
+    "mapCoordinates": {
+      "lat": 25.5,
+      "lng": -79
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-14-09",
+    "type": "map",
+    "question": "This vast, cold desert region, shared with China, is famously known as which desert?",
+    "correctAnswer": "Gobi Desert",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 43.1,
+      "lng": 104
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-14-10",
+    "type": "map",
+    "question": "This well-preserved medieval Old Town is the historic heart of which European capital?",
+    "correctAnswer": "Tallinn",
+    "countryCode": "EE",
+    "imageUrl": "EE",
+    "mapCoordinates": {
+      "lat": 59.437,
+      "lng": 24.7454
+    },
+    "options": []
+  }
+]
