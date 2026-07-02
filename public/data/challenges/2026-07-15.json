@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-15-q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Norway",
+      "Finland",
+      "Sweden",
+      "Denmark"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-07-15-q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Spain",
+      "Italy",
+      "Mexico",
+      "Portugal"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "2026-07-15-q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cuba",
+    "imageUrl": "CU",
+    "options": [
+      "Cuba",
+      "Chile",
+      "Puerto Rico",
+      "Philippines"
+    ],
+    "countryCode": "CU"
+  },
+  {
+    "id": "2026-07-15-q4",
+    "type": "capital",
+    "question": "Where is the capital of Finland?",
+    "correctAnswer": "Helsinki",
+    "countryCode": "FI",
+    "imageUrl": "FI",
+    "mapCoordinates": {
+      "lat": 60.17,
+      "lng": 24.93
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-15-q5",
+    "type": "capital",
+    "question": "Where is the capital of Norway?",
+    "correctAnswer": "Oslo",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 59.92,
+      "lng": 10.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-15-q6",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-15-q7",
+    "type": "map",
+    "question": "This ancient Inca citadel is a UNESCO World Heritage site. Where is it located?",
+    "correctAnswer": "Machu Picchu, Peru",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-15-q8",
+    "type": "map",
+    "question": "Once a church, then a mosque, and now a museum. In which city is this iconic structure, Hagia Sophia, located?",
+    "correctAnswer": "Istanbul, Turkey",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 41.0082,
+      "lng": 28.9784
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-15-q9",
+    "type": "map",
+    "question": "This bustling square is the heart of Marrakech's old city, famous for storytellers, snake charmers, and food stalls. In which country is it located?",
+    "correctAnswer": "Morocco",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6278,
+      "lng": -7.9892
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-15-q10",
+    "type": "map",
+    "question": "This striking avenue is lined with ancient, majestic trees unique to the region. In which island nation can you find the Avenue of the Baobabs?",
+    "correctAnswer": "Madagascar",
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -20.25,
+      "lng": 44.4167
+    },
+    "options": []
+  }
+]
