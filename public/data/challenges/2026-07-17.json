@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-17-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "imageUrl": "DE",
+    "options": [
+      "Austria",
+      "Belgium",
+      "Germany",
+      "Estonia"
+    ],
+    "countryCode": "DE"
+  },
+  {
+    "id": "2026-07-17-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "South Korea",
+      "North Korea",
+      "Japan",
+      "China"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "2026-07-17-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Kenya",
+      "Malawi",
+      "Uganda",
+      "Mozambique"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "2026-07-17-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-17-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Denmark?",
+    "correctAnswer": "Copenhagen",
+    "countryCode": "DK",
+    "imageUrl": "DK",
+    "mapCoordinates": {
+      "lat": 55.67,
+      "lng": 12.58
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-17-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Tunisia?",
+    "correctAnswer": "Tunis",
+    "countryCode": "TN",
+    "imageUrl": "TN",
+    "mapCoordinates": {
+      "lat": 36.8,
+      "lng": 10.18
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-17-map-1",
+    "type": "map",
+    "question": "Which historic concentration camp is located at these coordinates?",
+    "correctAnswer": "Auschwitz-Birkenau",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 50.0315,
+      "lng": 19.1837
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-17-map-2",
+    "type": "map",
+    "question": "At these coordinates, in which city can you find the Atomium, a famous landmark?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.8949,
+      "lng": 4.3416
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-17-map-3",
+    "type": "map",
+    "question": "These coordinates point to the Matterhorn mountain. In which country is it located?",
+    "correctAnswer": "Switzerland",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6586
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-17-map-4",
+    "type": "map",
+    "question": "These coordinates mark the location of Angel Falls, the world's highest uninterrupted waterfall. In which country is it found?",
+    "correctAnswer": "Venezuela",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9702,
+      "lng": -62.5367
+    },
+    "options": []
+  }
+]
