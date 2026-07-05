@@ -1,0 +1,135 @@
+[
+  {
+    "id": "challenge_2026-07-18_Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "Luxembourg",
+      "Austria",
+      "Netherlands",
+      "France"
+    ],
+    "countryCode": "FR"
+  },
+  {
+    "id": "challenge_2026-07-18_Q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Spain",
+    "imageUrl": "ES",
+    "options": [
+      "Spain",
+      "Portugal",
+      "Mexico",
+      "Colombia"
+    ],
+    "countryCode": "ES"
+  },
+  {
+    "id": "challenge_2026-07-18_Q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "imageUrl": "GR",
+    "options": [
+      "San Marino",
+      "Malta",
+      "Cyprus",
+      "Greece"
+    ],
+    "countryCode": "GR"
+  },
+  {
+    "id": "challenge_2026-07-18_Q4",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    },
+    "options": []
+  },
+  {
+    "id": "challenge_2026-07-18_Q5",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "challenge_2026-07-18_Q6",
+    "type": "capital",
+    "question": "Where is the capital of Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.35,
+      "lng": 4.92
+    },
+    "options": []
+  },
+  {
+    "id": "challenge_2026-07-18_Q7",
+    "type": "map",
+    "question": "This large freshwater lake, a popular holiday destination, is known as \"The Hungarian Sea\". Where is this?",
+    "correctAnswer": "Lake Balaton",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 46.85,
+      "lng": 17.85
+    },
+    "options": []
+  },
+  {
+    "id": "challenge_2026-07-18_Q8",
+    "type": "map",
+    "question": "Identify this iconic stratovolcano, a prominent feature in the northern lowlands, known for its near-perfect cone shape.",
+    "correctAnswer": "Arenal Volcano",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 10.4634,
+      "lng": -84.7032
+    },
+    "options": []
+  },
+  {
+    "id": "challenge_2026-07-18_Q9",
+    "type": "map",
+    "question": "This site is famous for its eleven monolithic rock-hewn churches carved out of a single piece of living rock. Where is this UNESCO World Heritage site?",
+    "correctAnswer": "Lalibela",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 12.0347,
+      "lng": 39.0435
+    },
+    "options": []
+  },
+  {
+    "id": "challenge_2026-07-18_Q10",
+    "type": "map",
+    "question": "This UNESCO World Heritage site is a fjord on the west coast of Greenland, famous for its rapidly moving glacier. Where is this?",
+    "correctAnswer": "Ilulissat Icefjord",
+    "countryCode": "GL",
+    "imageUrl": "GL",
+    "mapCoordinates": {
+      "lat": 69.2167,
+      "lng": -49.6667
+    },
+    "options": []
+  }
+]
