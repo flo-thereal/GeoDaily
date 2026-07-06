@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260719-Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "options": [
+      "Canada",
+      "Australia",
+      "United Kingdom",
+      "New Zealand"
+    ],
+    "countryCode": "AU"
+  },
+  {
+    "id": "20260719-Q2",
+    "type": "capital",
+    "question": "Where is the capital of Bolivia?",
+    "correctAnswer": "La Paz",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -19.02,
+      "lng": -65.26
+    },
+    "options": []
+  },
+  {
+    "id": "20260719-Q3",
+    "type": "map",
+    "question": "This natural wonder, carved by the Colorado River, is located in which country?",
+    "correctAnswer": "Grand Canyon National Park",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.11
+    },
+    "options": []
+  },
+  {
+    "id": "20260719-Q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iceland",
+    "imageUrl": "IS",
+    "options": [
+      "Norway",
+      "Iceland",
+      "Finland",
+      "Sweden"
+    ],
+    "countryCode": "IS"
+  },
+  {
+    "id": "20260719-Q5",
+    "type": "capital",
+    "question": "Where is the capital of Malaysia?",
+    "correctAnswer": "Kuala Lumpur",
+    "countryCode": "MY",
+    "imageUrl": "MY",
+    "mapCoordinates": {
+      "lat": 3.17,
+      "lng": 101.7
+    },
+    "options": []
+  },
+  {
+    "id": "20260719-Q6",
+    "type": "map",
+    "question": "This vast expanse of sand dunes and rocky plateaus is part of the world's largest hot desert. In which country is this specific spot located?",
+    "correctAnswer": "Algeria",
+    "countryCode": "DZ",
+    "imageUrl": "DZ",
+    "mapCoordinates": {
+      "lat": 25,
+      "lng": 5
+    },
+    "options": []
+  },
+  {
+    "id": "20260719-Q7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Austria",
+    "imageUrl": "AT",
+    "options": [
+      "Latvia",
+      "Lebanon",
+      "Austria",
+      "Peru"
+    ],
+    "countryCode": "AT"
+  },
+  {
+    "id": "20260719-Q8",
+    "type": "capital",
+    "question": "Where is the capital of Ireland?",
+    "correctAnswer": "Dublin",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 53.32,
+      "lng": -6.23
+    },
+    "options": []
+  },
+  {
+    "id": "20260719-Q9",
+    "type": "map",
+    "question": "This is Africa's highest peak, a dormant volcano. In which country is it located?",
+    "correctAnswer": "Mount Kilimanjaro",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "20260719-Q10",
+    "type": "map",
+    "question": "This iconic temple complex, a UNESCO World Heritage site, is a symbol of which country?",
+    "correctAnswer": "Angkor Wat",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  }
+]
