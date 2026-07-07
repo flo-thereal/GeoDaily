@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260720-Q1",
+    "type": "map",
+    "question": "Pinpoint the location of the capital city, Andorra la Vella, in this mountainous microstate.",
+    "correctAnswer": "Andorra la Vella",
+    "countryCode": "AD",
+    "imageUrl": "AD",
+    "mapCoordinates": {
+      "lat": 42.5063,
+      "lng": 1.5218
+    },
+    "options": []
+  },
+  {
+    "id": "20260720-Q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Luxembourg",
+    "imageUrl": "LU",
+    "options": [
+      "Luxembourg",
+      "Austria",
+      "Belgium",
+      "Netherlands"
+    ],
+    "countryCode": "LU"
+  },
+  {
+    "id": "20260720-Q3",
+    "type": "capital",
+    "question": "Where is the capital of Slovakia?",
+    "correctAnswer": "Bratislava",
+    "countryCode": "SK",
+    "imageUrl": "SK",
+    "mapCoordinates": {
+      "lat": 48.15,
+      "lng": 17.12
+    },
+    "options": []
+  },
+  {
+    "id": "20260720-Q4",
+    "type": "map",
+    "question": "Which European capital city, located at the confluence of the Sava and Danube rivers, is marked on the map?",
+    "correctAnswer": "Belgrade, Serbia",
+    "countryCode": "RS",
+    "imageUrl": "RS",
+    "mapCoordinates": {
+      "lat": 44.7872,
+      "lng": 20.4573
+    },
+    "options": []
+  },
+  {
+    "id": "20260720-Q5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cyprus",
+    "imageUrl": "CY",
+    "options": [
+      "Malta",
+      "Greece",
+      "Lebanon",
+      "Cyprus"
+    ],
+    "countryCode": "CY"
+  },
+  {
+    "id": "20260720-Q6",
+    "type": "capital",
+    "question": "Where is the capital of Bulgaria?",
+    "correctAnswer": "Sofia",
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "mapCoordinates": {
+      "lat": 42.68,
+      "lng": 23.32
+    },
+    "options": []
+  },
+  {
+    "id": "20260720-Q7",
+    "type": "map",
+    "question": "This ancient Phoenician port city, known as one of the oldest continuously inhabited places on Earth, is marked on the map in which country?",
+    "correctAnswer": "Byblos, Lebanon",
+    "countryCode": "LB",
+    "imageUrl": "LB",
+    "mapCoordinates": {
+      "lat": 34.1228,
+      "lng": 35.6514
+    },
+    "options": []
+  },
+  {
+    "id": "20260720-Q8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iraq",
+    "imageUrl": "IQ",
+    "options": [
+      "Yemen",
+      "Syria",
+      "Iraq",
+      "Egypt"
+    ],
+    "countryCode": "IQ"
+  },
+  {
+    "id": "20260720-Q9",
+    "type": "capital",
+    "question": "Where is the capital of Iran?",
+    "correctAnswer": "Tehran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 35.7,
+      "lng": 51.42
+    },
+    "options": []
+  },
+  {
+    "id": "20260720-Q10",
+    "type": "map",
+    "question": "This vast inland delta, a UNESCO World Heritage Site famous for its seasonal flooding and wildlife, is located in which African country?",
+    "correctAnswer": "Okavango Delta, Botswana",
+    "countryCode": "BW",
+    "imageUrl": "BW",
+    "mapCoordinates": {
+      "lat": -19.5,
+      "lng": 22.8
+    },
+    "options": []
+  }
+]
