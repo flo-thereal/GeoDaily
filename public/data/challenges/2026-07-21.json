@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260721-map-01",
+    "type": "map",
+    "question": "Which famous desert, known for its shifting sands and ancient silk road routes, is depicted at these coordinates in China?",
+    "correctAnswer": "Taklamakan Desert",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 38.9,
+      "lng": 82.5
+    },
+    "options": []
+  },
+  {
+    "id": "20260721-capital-01",
+    "type": "capital",
+    "question": "Where is the capital of Russia?",
+    "correctAnswer": "Moscow",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 55.75,
+      "lng": 37.6
+    },
+    "options": []
+  },
+  {
+    "id": "20260721-flag-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Italy",
+    "imageUrl": "IT",
+    "options": [
+      "Mexico",
+      "Hungary",
+      "Ireland",
+      "Italy"
+    ],
+    "countryCode": "IT"
+  },
+  {
+    "id": "20260721-map-02",
+    "type": "map",
+    "question": "This desert region, covering much of the Arabian Peninsula, is known as what?",
+    "correctAnswer": "Rub' al Khali",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 20,
+      "lng": 50
+    },
+    "options": []
+  },
+  {
+    "id": "20260721-capital-02",
+    "type": "capital",
+    "question": "Where is the capital of Nigeria?",
+    "correctAnswer": "Abuja",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 9.08,
+      "lng": 7.53
+    },
+    "options": []
+  },
+  {
+    "id": "20260721-flag-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uruguay",
+    "imageUrl": "UY",
+    "options": [
+      "Argentina",
+      "Panama",
+      "Uruguay",
+      "Paraguay"
+    ],
+    "countryCode": "UY"
+  },
+  {
+    "id": "20260721-map-03",
+    "type": "map",
+    "question": "This vast steppe region, prominent in Central Asia, is a major feature of which country, located at these coordinates?",
+    "correctAnswer": "Kazakh Steppe",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 48,
+      "lng": 68
+    },
+    "options": []
+  },
+  {
+    "id": "20260721-flag-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Croatia",
+    "imageUrl": "HR",
+    "options": [
+      "Slovakia",
+      "Slovenia",
+      "Croatia",
+      "Hungary"
+    ],
+    "countryCode": "HR"
+  },
+  {
+    "id": "20260721-capital-03",
+    "type": "capital",
+    "question": "Where is the capital of Dominican Republic?",
+    "correctAnswer": "Santo Domingo",
+    "countryCode": "DO",
+    "imageUrl": "DO",
+    "mapCoordinates": {
+      "lat": 18.47,
+      "lng": -69.9
+    },
+    "options": []
+  },
+  {
+    "id": "20260721-map-04",
+    "type": "map",
+    "question": "This ancient city, often referred to as the 'Pearl of the Desert' and a UNESCO World Heritage site, is located here.",
+    "correctAnswer": "Palmyra",
+    "countryCode": "SY",
+    "imageUrl": "SY",
+    "mapCoordinates": {
+      "lat": 34.562,
+      "lng": 38.272
+    },
+    "options": []
+  }
+]
