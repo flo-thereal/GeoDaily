@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260722_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Bangladesh",
+      "Japan",
+      "Peru",
+      "Palau"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "20260722_2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "New Zealand",
+      "Fiji",
+      "Australia",
+      "United Kingdom"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "20260722_3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "Vietnam",
+      "Turkey",
+      "Cuba",
+      "China"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "20260722_4",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "20260722_5",
+    "type": "capital",
+    "question": "Where is the capital of United Arab Emirates?",
+    "correctAnswer": "Abu Dhabi",
+    "countryCode": "AE",
+    "imageUrl": "AE",
+    "mapCoordinates": {
+      "lat": 24.47,
+      "lng": 54.37
+    },
+    "options": []
+  },
+  {
+    "id": "20260722_6",
+    "type": "capital",
+    "question": "Where is the capital of Ghana?",
+    "correctAnswer": "Accra",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 5.55,
+      "lng": -0.22
+    },
+    "options": []
+  },
+  {
+    "id": "20260722_7",
+    "type": "map",
+    "question": "This point marks the summit of the world's highest mountain. What is it called?",
+    "correctAnswer": "Mount Everest",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "20260722_8",
+    "type": "map",
+    "question": "The ancient city of Petra, famous for its rock-cut architecture, is found at this location. Which historical site is this?",
+    "correctAnswer": "Petra",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3222,
+      "lng": 35.4556
+    },
+    "options": []
+  },
+  {
+    "id": "20260722_9",
+    "type": "map",
+    "question": "This crucial artificial waterway connects the Atlantic and Pacific oceans. What is it known as?",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0792,
+      "lng": -79.7431
+    },
+    "options": []
+  },
+  {
+    "id": "20260722_10",
+    "type": "map",
+    "question": "This hypersaline lake is Earth's lowest elevation on land. What is its name?",
+    "correctAnswer": "Dead Sea",
+    "countryCode": "IL",
+    "imageUrl": "IL",
+    "mapCoordinates": {
+      "lat": 31.5,
+      "lng": 35.5
+    },
+    "options": []
+  }
+]
