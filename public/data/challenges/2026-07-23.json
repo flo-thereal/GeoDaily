@@ -1,0 +1,135 @@
+[
+  {
+    "id": "Q1",
+    "type": "map",
+    "question": "This ancient Inca citadel is a UNESCO World Heritage site and one of the New Seven Wonders of the World. Where is it located?",
+    "correctAnswer": "Machu Picchu, Peru",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "Q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Finland",
+      "Denmark",
+      "Sweden",
+      "Norway"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "Q3",
+    "type": "capital",
+    "question": "Where is the capital of Cuba?",
+    "correctAnswer": "Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.12,
+      "lng": -82.35
+    },
+    "options": []
+  },
+  {
+    "id": "Q4",
+    "type": "map",
+    "question": "Once a church, then a mosque, now a museum (and sometimes a mosque again), this architectural marvel is a symbol of Istanbul. What is this iconic building?",
+    "correctAnswer": "Hagia Sophia, Turkey",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 41.0086,
+      "lng": 28.9799
+    },
+    "options": []
+  },
+  {
+    "id": "Q5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Finland",
+      "Ukraine",
+      "Iceland",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "Q6",
+    "type": "capital",
+    "question": "Where is the capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.72,
+      "lng": -9.13
+    },
+    "options": []
+  },
+  {
+    "id": "Q7",
+    "type": "map",
+    "question": "This bustling square in Marrakech is famous for its storytellers, snake charmers, and street performers. What is the name of this vibrant heart of the city?",
+    "correctAnswer": "Djemaa el-Fna, Morocco",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6277,
+      "lng": -7.9897
+    },
+    "options": []
+  },
+  {
+    "id": "Q8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "imageUrl": "BD",
+    "options": [
+      "Pakistan",
+      "Bangladesh",
+      "Japan",
+      "Palau"
+    ],
+    "countryCode": "BD"
+  },
+  {
+    "id": "Q9",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "Q10",
+    "type": "map",
+    "question": "This is the second-highest mountain in the world, part of the Karakoram mountain range. What is its name?",
+    "correctAnswer": "K2, Pakistan",
+    "countryCode": "PK",
+    "imageUrl": "PK",
+    "mapCoordinates": {
+      "lat": 35.8817,
+      "lng": 76.513
+    },
+    "options": []
+  }
+]
