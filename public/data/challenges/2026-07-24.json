@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-24-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Argentina",
+    "imageUrl": "AR",
+    "options": [
+      "Nicaragua",
+      "Honduras",
+      "Uruguay",
+      "Argentina"
+    ],
+    "countryCode": "AR"
+  },
+  {
+    "id": "2026-07-24-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Egypt",
+    "imageUrl": "EG",
+    "options": [
+      "Yemen",
+      "Libya",
+      "Sudan",
+      "Egypt"
+    ],
+    "countryCode": "EG"
+  },
+  {
+    "id": "2026-07-24-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Indonesia",
+    "imageUrl": "ID",
+    "options": [
+      "Monaco",
+      "Singapore",
+      "Indonesia",
+      "Malta"
+    ],
+    "countryCode": "ID"
+  },
+  {
+    "id": "2026-07-24-04",
+    "type": "capital",
+    "question": "Where is the capital of Brazil?",
+    "correctAnswer": "Brasília",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -15.79,
+      "lng": -47.88
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-24-05",
+    "type": "capital",
+    "question": "Where is the capital of South Africa?",
+    "correctAnswer": "Pretoria",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -25.7,
+      "lng": 28.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-24-06",
+    "type": "capital",
+    "question": "Where is the capital of Thailand?",
+    "correctAnswer": "Bangkok",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 13.75,
+      "lng": 100.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-24-07",
+    "type": "map",
+    "question": "This map shows one of the world's most famous waterfalls. What is it called?",
+    "correctAnswer": "Niagara Falls",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 43.0799,
+      "lng": -79.0747
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-24-08",
+    "type": "map",
+    "question": "This architectural marvel, a UNESCO World Heritage site, is located in Agra. What is its name?",
+    "correctAnswer": "Taj Mahal",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 27.1751,
+      "lng": 78.0421
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-24-09",
+    "type": "map",
+    "question": "This map highlights one of the driest places on Earth, known for its unique landscapes and astronomical observatories. Which desert is it?",
+    "correctAnswer": "Atacama Desert",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -24.5,
+      "lng": -69.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-24-10",
+    "type": "map",
+    "question": "This ancient prehistoric monument is a UNESCO World Heritage site in Wiltshire. What is its name?",
+    "correctAnswer": "Stonehenge",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  }
+]
