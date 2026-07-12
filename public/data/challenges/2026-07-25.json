@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-GE-0",
+    "type": "map",
+    "question": "Where is Georgia located?",
+    "correctAnswer": "Georgia",
+    "options": [],
+    "countryCode": "GE",
+    "imageUrl": "GE",
+    "mapCoordinates": {
+      "lat": 42.3154,
+      "lng": 43.3569
+    }
+  },
+  {
+    "id": "flag-AL-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Albania",
+    "options": [
+      "Dominica",
+      "Ireland",
+      "Micronesia",
+      "Albania"
+    ],
+    "countryCode": "AL",
+    "imageUrl": "AL"
+  },
+  {
+    "id": "capital-TD-2",
+    "type": "capital",
+    "question": "Where is the capital of Chad?",
+    "correctAnswer": "N'Djamena",
+    "options": [],
+    "countryCode": "TD",
+    "mapCoordinates": {
+      "lat": 12.1,
+      "lng": 15.03
+    }
+  },
+  {
+    "id": "map-BE-3",
+    "type": "map",
+    "question": "Where is Belgium located?",
+    "correctAnswer": "Belgium",
+    "options": [],
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.5039,
+      "lng": 4.4699
+    }
+  },
+  {
+    "id": "flag-SR-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Suriname",
+    "options": [
+      "Suriname",
+      "Laos",
+      "Hungary",
+      "Mauritania"
+    ],
+    "countryCode": "SR",
+    "imageUrl": "SR"
+  },
+  {
+    "id": "map-NE-5",
+    "type": "map",
+    "question": "Where is Niger located?",
+    "correctAnswer": "Niger",
+    "options": [],
+    "countryCode": "NE",
+    "imageUrl": "NE",
+    "mapCoordinates": {
+      "lat": 17.6078,
+      "lng": 8.6753
+    }
+  },
+  {
+    "id": "capital-LT-6",
+    "type": "capital",
+    "question": "Where is the capital of Lithuania?",
+    "correctAnswer": "Vilnius",
+    "options": [],
+    "countryCode": "LT",
+    "mapCoordinates": {
+      "lat": 54.68,
+      "lng": 25.32
+    }
+  },
+  {
+    "id": "map-TG-7",
+    "type": "map",
+    "question": "Where is Togo located?",
+    "correctAnswer": "Togo",
+    "options": [],
+    "countryCode": "TG",
+    "imageUrl": "TG",
+    "mapCoordinates": {
+      "lat": 6.1256,
+      "lng": 1.2317
+    }
+  },
+  {
+    "id": "flag-LV-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Latvia",
+    "options": [
+      "Niger",
+      "Latvia",
+      "Saint Kitts and Nevis",
+      "Spain"
+    ],
+    "countryCode": "LV",
+    "imageUrl": "LV"
+  },
+  {
+    "id": "capital-CO-9",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "options": [],
+    "countryCode": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    }
+  }
+]
