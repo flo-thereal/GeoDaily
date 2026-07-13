@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260726-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Kenya",
+      "Uganda",
+      "Tanzania",
+      "Ethiopia"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "20260726-2",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.87,
+      "lng": 2.33
+    },
+    "options": []
+  },
+  {
+    "id": "20260726-3",
+    "type": "map",
+    "question": "Identify the iconic Sagrada Familia on the map.",
+    "correctAnswer": "Sagrada Familia",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4036,
+      "lng": 2.1744
+    },
+    "options": []
+  },
+  {
+    "id": "20260726-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "imageUrl": "GR",
+    "options": [
+      "Greece",
+      "Finland",
+      "Cyprus",
+      "Iceland"
+    ],
+    "countryCode": "GR"
+  },
+  {
+    "id": "20260726-5",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "20260726-6",
+    "type": "map",
+    "question": "This map point indicates the Matterhorn mountain. In which country is it located?",
+    "correctAnswer": "Switzerland",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6587
+    },
+    "options": []
+  },
+  {
+    "id": "20260726-7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Denmark",
+      "Norway",
+      "Switzerland",
+      "Sweden"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "20260726-8",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    },
+    "options": []
+  },
+  {
+    "id": "20260726-9",
+    "type": "map",
+    "question": "Identify this bustling city marked on the map, the capital of South Korea.",
+    "correctAnswer": "Seoul",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 37.5665,
+      "lng": 126.978
+    },
+    "options": []
+  },
+  {
+    "id": "20260726-10",
+    "type": "map",
+    "question": "This map shows the location of Geirangerfjord, a UNESCO World Heritage site. In which country can you find it?",
+    "correctAnswer": "Norway",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 62.1,
+      "lng": 7.2
+    },
+    "options": []
+  }
+]
