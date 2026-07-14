@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260727-Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "imageUrl": "NL",
+    "options": [
+      "Belgium",
+      "Netherlands",
+      "Luxembourg",
+      "Russia"
+    ],
+    "countryCode": "NL"
+  },
+  {
+    "id": "20260727-Q2",
+    "type": "capital",
+    "question": "Where is the capital of Austria?",
+    "correctAnswer": "Vienna",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 48.2,
+      "lng": 16.37
+    },
+    "options": []
+  },
+  {
+    "id": "20260727-Q3",
+    "type": "map",
+    "question": "This is a famous scenic river bend north of Budapest. What is it called?",
+    "correctAnswer": "Danube Bend",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.7811,
+      "lng": 19.0689
+    },
+    "options": []
+  },
+  {
+    "id": "20260727-Q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "imageUrl": "PL",
+    "options": [
+      "Poland",
+      "Indonesia",
+      "Monaco",
+      "Singapore"
+    ],
+    "countryCode": "PL"
+  },
+  {
+    "id": "20260727-Q5",
+    "type": "capital",
+    "question": "Where is the capital of Ireland?",
+    "correctAnswer": "Dublin",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 53.32,
+      "lng": -6.23
+    },
+    "options": []
+  },
+  {
+    "id": "20260727-Q6",
+    "type": "map",
+    "question": "This geothermal spa is one of Iceland's most famous attractions. What is its name?",
+    "correctAnswer": "Blue Lagoon",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 63.8812,
+      "lng": -22.4527
+    },
+    "options": []
+  },
+  {
+    "id": "20260727-Q7",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "20260727-Q8",
+    "type": "map",
+    "question": "These iconic twin skyscrapers are a landmark of Kuala Lumpur. What are they called?",
+    "correctAnswer": "Petronas Towers",
+    "countryCode": "MY",
+    "imageUrl": "MY",
+    "mapCoordinates": {
+      "lat": 3.1578,
+      "lng": 101.7119
+    },
+    "options": []
+  },
+  {
+    "id": "20260727-Q9",
+    "type": "map",
+    "question": "This large sandstone monolith is sacred to Indigenous Australians and located in the Northern Territory. What is its name?",
+    "correctAnswer": "Uluru",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.3444,
+      "lng": 131.0369
+    },
+    "options": []
+  },
+  {
+    "id": "20260727-Q10",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Venezuela",
+    "imageUrl": "VE",
+    "options": [
+      "Colombia",
+      "Ecuador",
+      "Venezuela",
+      "Bolivia"
+    ],
+    "countryCode": "VE"
+  }
+]
