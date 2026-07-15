@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-28-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Botswana",
+    "imageUrl": "BW",
+    "options": [
+      "Botswana",
+      "Namibia",
+      "Lesotho",
+      "Zambia"
+    ],
+    "countryCode": "BW"
+  },
+  {
+    "id": "2026-07-28-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Estonia",
+    "imageUrl": "EE",
+    "options": [
+      "Latvia",
+      "Lithuania",
+      "Finland",
+      "Estonia"
+    ],
+    "countryCode": "EE"
+  },
+  {
+    "id": "2026-07-28-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Slovakia",
+    "imageUrl": "SK",
+    "options": [
+      "Slovenia",
+      "Czech Republic",
+      "Russia",
+      "Slovakia"
+    ],
+    "countryCode": "SK"
+  },
+  {
+    "id": "2026-07-28-4",
+    "type": "capital",
+    "question": "Where is the capital of Mongolia?",
+    "correctAnswer": "Ulaanbaatar",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 47.92,
+      "lng": 106.91
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-28-5",
+    "type": "capital",
+    "question": "Where is the capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.03,
+      "lng": 38.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-28-6",
+    "type": "capital",
+    "question": "Where is the capital of Paraguay?",
+    "correctAnswer": "Asunción",
+    "countryCode": "PY",
+    "imageUrl": "PY",
+    "mapCoordinates": {
+      "lat": -25.28,
+      "lng": -57.57
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-28-7",
+    "type": "map",
+    "question": "This peak is Africa's highest mountain. Where is it located?",
+    "correctAnswer": "Mount Kilimanjaro",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-28-8",
+    "type": "map",
+    "question": "This natural wonder, one of the largest waterfalls in the world, forms the border between Zambia and Zimbabwe. What is its name?",
+    "correctAnswer": "Victoria Falls",
+    "countryCode": "ZM",
+    "imageUrl": "ZM",
+    "mapCoordinates": {
+      "lat": -17.9244,
+      "lng": 25.8581
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-28-9",
+    "type": "map",
+    "question": "This vast stone temple complex in Southeast Asia is a UNESCO World Heritage site and a symbol of Cambodia. What is this famous archaeological site called?",
+    "correctAnswer": "Angkor Wat",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-28-10",
+    "type": "map",
+    "question": "This is the world's largest salt flat, known for its stunning reflective surface after rain. In which country is it located?",
+    "correctAnswer": "Bolivia",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.2443,
+      "lng": -67.6253
+    },
+    "options": []
+  }
+]
