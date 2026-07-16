@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-29-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "Ghana",
+      "Niger",
+      "Nigeria",
+      "Ireland"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "2026-07-29-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ukraine",
+    "imageUrl": "UA",
+    "options": [
+      "Argentina",
+      "Ukraine",
+      "Sweden",
+      "Finland"
+    ],
+    "countryCode": "UA"
+  },
+  {
+    "id": "2026-07-29-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iran",
+    "imageUrl": "IR",
+    "options": [
+      "Iran",
+      "Afghanistan",
+      "Iraq",
+      "Oman"
+    ],
+    "countryCode": "IR"
+  },
+  {
+    "id": "2026-07-29-4",
+    "type": "capital",
+    "question": "Where is the capital of Iraq?",
+    "correctAnswer": "Baghdad",
+    "countryCode": "IQ",
+    "imageUrl": "IQ",
+    "mapCoordinates": {
+      "lat": 33.33,
+      "lng": 44.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-29-5",
+    "type": "capital",
+    "question": "Where is the capital of Kazakhstan?",
+    "correctAnswer": "Astana",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 51.16,
+      "lng": 71.45
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-29-6",
+    "type": "capital",
+    "question": "Where is the capital of Angola?",
+    "correctAnswer": "Luanda",
+    "countryCode": "AO",
+    "imageUrl": "AO",
+    "mapCoordinates": {
+      "lat": -8.83,
+      "lng": 13.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-29-7",
+    "type": "map",
+    "question": "This map shows a major river in Central Africa, the second-longest river in Africa. What is its name?",
+    "correctAnswer": "Congo River",
+    "countryCode": "CD",
+    "imageUrl": "CD",
+    "mapCoordinates": {
+      "lat": -0.5,
+      "lng": 20
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-29-8",
+    "type": "map",
+    "question": "This ancient rock fortress, a UNESCO World Heritage Site, is a prominent landmark in Sri Lanka. What is its name?",
+    "correctAnswer": "Sigiriya",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 7.9571,
+      "lng": 80.7628
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-29-9",
+    "type": "map",
+    "question": "This map points to one of the Seven Wonders of the World, a massive defensive structure in China. What is this landmark called?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-29-10",
+    "type": "map",
+    "question": "This map shows an archaeological site featuring pyramids of the ancient Kushite kingdom, located in Sudan. What is this site known as?",
+    "correctAnswer": "Pyramids of Meroe",
+    "countryCode": "SD",
+    "imageUrl": "SD",
+    "mapCoordinates": {
+      "lat": 16.9298,
+      "lng": 33.7161
+    },
+    "options": []
+  }
+]
