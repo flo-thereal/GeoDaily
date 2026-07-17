@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-07-30-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Japan",
+      "Singapore",
+      "Laos",
+      "Myanmar"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-07-30-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "Myanmar",
+      "Vietnam",
+      "Senegal",
+      "Laos"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "2026-07-30-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "New Zealand",
+      "Fiji",
+      "Tuvalu",
+      "Samoa"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "2026-07-30-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Romania?",
+    "correctAnswer": "Bucharest",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 44.43,
+      "lng": 26.1
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-30-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-30-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-30-map-1",
+    "type": "map",
+    "question": "This iconic natural wonder, known for its immense scale and colorful geological formations, is located at these coordinates. What is it?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.11
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-30-map-2",
+    "type": "map",
+    "question": "Which major African lake, the largest by area in Africa and the largest tropical lake in the world, is located near these coordinates?",
+    "correctAnswer": "Lake Victoria",
+    "countryCode": "UG",
+    "imageUrl": "UG",
+    "mapCoordinates": {
+      "lat": 0.6033,
+      "lng": 33.0483
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-30-map-3",
+    "type": "map",
+    "question": "This UNESCO World Heritage site in the Sahara desert is famous for its prehistoric rock art and unique geological formations. What is it?",
+    "correctAnswer": "Tassili n'Ajjer",
+    "countryCode": "DZ",
+    "imageUrl": "DZ",
+    "mapCoordinates": {
+      "lat": 25.1,
+      "lng": 8
+    },
+    "options": []
+  },
+  {
+    "id": "2026-07-30-map-4",
+    "type": "map",
+    "question": "Located on a Mediterranean island, this megalithic temple complex is among the most ancient religious sites on Earth. What is it?",
+    "correctAnswer": "Hagar Qim",
+    "countryCode": "MT",
+    "imageUrl": "MT",
+    "mapCoordinates": {
+      "lat": 35.8262,
+      "lng": 14.4429
+    },
+    "options": []
+  }
+]
