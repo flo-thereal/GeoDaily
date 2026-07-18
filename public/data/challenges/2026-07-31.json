@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260731_01",
+    "type": "map",
+    "question": "What ancient Incan citadel is located at these coordinates?",
+    "correctAnswer": "Machu Picchu",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "20260731_02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Sweden",
+      "Denmark",
+      "Finland",
+      "Norway"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20260731_03",
+    "type": "capital",
+    "question": "Where is the capital of Cuba?",
+    "correctAnswer": "Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.12,
+      "lng": -82.35
+    },
+    "options": []
+  },
+  {
+    "id": "20260731_04",
+    "type": "map",
+    "question": "This ancient amphitheatre, famous for gladiatorial contests, is located at these coordinates. What is it called?",
+    "correctAnswer": "Colosseum",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  },
+  {
+    "id": "20260731_05",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Sweden",
+      "Finland",
+      "Iceland",
+      "Norway"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "20260731_06",
+    "type": "capital",
+    "question": "Where is the capital of Ghana?",
+    "correctAnswer": "Accra",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 5.55,
+      "lng": -0.22
+    },
+    "options": []
+  },
+  {
+    "id": "20260731_07",
+    "type": "map",
+    "question": "These coordinates point to an ancient city carved into sandstone cliffs, a UNESCO World Heritage site. What is it called?",
+    "correctAnswer": "Petra",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "options": []
+  },
+  {
+    "id": "20260731_08",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Spain",
+      "Brazil",
+      "Angola",
+      "Portugal"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "20260731_09",
+    "type": "capital",
+    "question": "Where is the capital of Uruguay?",
+    "correctAnswer": "Montevideo",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.85,
+      "lng": -56.17
+    },
+    "options": []
+  },
+  {
+    "id": "20260731_10",
+    "type": "map",
+    "question": "This historic building, a former church, mosque, and now museum, is located at these coordinates in Istanbul. What is it called?",
+    "correctAnswer": "Hagia Sophia",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 41.0086,
+      "lng": 28.9801
+    },
+    "options": []
+  }
+]
