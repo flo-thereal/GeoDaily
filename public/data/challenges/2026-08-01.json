@@ -1,0 +1,135 @@
+[
+  {
+    "id": "q1",
+    "type": "map",
+    "question": "Which famous mountain range stretches across western North America, including parts of Canada?",
+    "correctAnswer": "Rocky Mountains",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 51.1784,
+      "lng": -115.5708
+    },
+    "options": []
+  },
+  {
+    "id": "q2",
+    "type": "map",
+    "question": "This is the approximate location of the world's largest rainforest. What is its name?",
+    "correctAnswer": "Amazon Rainforest",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -3.4653,
+      "lng": -62.2159
+    },
+    "options": []
+  },
+  {
+    "id": "q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "options": [
+      "Pakistan",
+      "India",
+      "Bangladesh",
+      "Sri Lanka"
+    ]
+  },
+  {
+    "id": "q4",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "q5",
+    "type": "map",
+    "question": "This point indicates the location of a renowned 9th-century Mahayana Buddhist temple in Central Java. What is its name?",
+    "correctAnswer": "Borobudur Temple",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -7.6074,
+      "lng": 110.2039
+    },
+    "options": []
+  },
+  {
+    "id": "q6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "options": [
+      "Kenya",
+      "Nigeria",
+      "Ghana",
+      "South Africa"
+    ]
+  },
+  {
+    "id": "q7",
+    "type": "capital",
+    "question": "Where is the capital of Morocco?",
+    "correctAnswer": "Rabat",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 34.02,
+      "lng": -6.82
+    },
+    "options": []
+  },
+  {
+    "id": "q8",
+    "type": "map",
+    "question": "This deep freshwater lake, located in Siberia, is the world's largest by volume. What is its name?",
+    "correctAnswer": "Lake Baikal",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 53.6402,
+      "lng": 108.8155
+    },
+    "options": []
+  },
+  {
+    "id": "q9",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Argentina",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "options": [
+      "Chile",
+      "Uruguay",
+      "Argentina",
+      "Brazil"
+    ]
+  },
+  {
+    "id": "q10",
+    "type": "capital",
+    "question": "Where is the capital of Thailand?",
+    "correctAnswer": "Bangkok",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 13.75,
+      "lng": 100.52
+    },
+    "options": []
+  }
+]
