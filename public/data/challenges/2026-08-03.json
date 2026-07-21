@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-03-quiz-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "imageUrl": "CH",
+    "options": [
+      "Austria",
+      "Poland",
+      "Malta",
+      "Switzerland"
+    ],
+    "countryCode": "CH"
+  },
+  {
+    "id": "2026-08-03-quiz-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Norway",
+      "Iceland",
+      "Sweden",
+      "Denmark"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "2026-08-03-quiz-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Sweden",
+      "Iceland",
+      "Norway",
+      "Finland"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "2026-08-03-quiz-04",
+    "type": "capital",
+    "question": "Where is the capital of Greece?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.98,
+      "lng": 23.73
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-03-quiz-05",
+    "type": "capital",
+    "question": "Where is the capital of South Korea?",
+    "correctAnswer": "Seoul",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 37.55,
+      "lng": 126.98
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-03-quiz-06",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-03-quiz-07",
+    "type": "map",
+    "question": "This tidal island commune and its abbey are a UNESCO World Heritage site. What is this famous landmark?",
+    "correctAnswer": "Mont Saint-Michel",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.636,
+      "lng": -1.5115
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-03-quiz-08",
+    "type": "map",
+    "question": "Perched on a rugged hill in Bavaria, this 19th-century Romanesque Revival palace is one of Germany's most famous landmarks. What is it?",
+    "correctAnswer": "Neuschwanstein Castle",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 47.5576,
+      "lng": 10.7494
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-03-quiz-09",
+    "type": "map",
+    "question": "Designed by Antoni Gaudí, this vibrant park in Barcelona is known for its unique architectural elements and panoramic views. What is its name?",
+    "correctAnswer": "Park Güell",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4145,
+      "lng": 2.1527
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-03-quiz-10",
+    "type": "map",
+    "question": "As the second-highest mountain in Africa, its rugged, glaciated peaks are a prominent feature of this East African country. What is this mountain?",
+    "correctAnswer": "Mount Kenya",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "mapCoordinates": {
+      "lat": -0.1667,
+      "lng": 37.3
+    },
+    "options": []
+  }
+]
