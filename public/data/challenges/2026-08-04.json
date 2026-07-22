@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-04-1",
+    "type": "map",
+    "question": "Which iconic landmark of Australia is located near these coordinates?",
+    "correctAnswer": "Sydney Opera House",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -33.8568,
+      "lng": 151.2153
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-04-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "imageUrl": "PH",
+    "options": [
+      "Indonesia",
+      "Vietnam",
+      "Philippines",
+      "Laos"
+    ],
+    "countryCode": "PH"
+  },
+  {
+    "id": "2026-08-04-3",
+    "type": "capital",
+    "question": "Where is the capital of Iceland?",
+    "correctAnswer": "Reykjavik",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.15,
+      "lng": -21.95
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-04-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Jamaica",
+    "imageUrl": "JM",
+    "options": [
+      "Grenada",
+      "Barbados",
+      "Jamaica",
+      "Saint Vincent and the Grenadines"
+    ],
+    "countryCode": "JM"
+  },
+  {
+    "id": "2026-08-04-5",
+    "type": "capital",
+    "question": "Where is the capital of Malaysia?",
+    "correctAnswer": "Kuala Lumpur",
+    "countryCode": "MY",
+    "imageUrl": "MY",
+    "mapCoordinates": {
+      "lat": 3.17,
+      "lng": 101.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-04-6",
+    "type": "map",
+    "question": "Which famous active volcano in Costa Rica is located near these coordinates?",
+    "correctAnswer": "Arenal Volcano",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 10.4632,
+      "lng": -84.7034
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-04-7",
+    "type": "map",
+    "question": "These coordinates point to the dramatic Cliffs of Moher. In which country would you find them?",
+    "correctAnswer": "Ireland",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 52.9715,
+      "lng": -9.43
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-04-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "imageUrl": "PK",
+    "options": [
+      "Afghanistan",
+      "Iran",
+      "Pakistan",
+      "India"
+    ],
+    "countryCode": "PK"
+  },
+  {
+    "id": "2026-08-04-9",
+    "type": "capital",
+    "question": "Where is the capital of Hungary?",
+    "correctAnswer": "Budapest",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.5,
+      "lng": 19.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-04-10",
+    "type": "map",
+    "question": "These coordinates indicate the location of Angel Falls, the world's highest uninterrupted waterfall. In which country is it located?",
+    "correctAnswer": "Venezuela",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9733,
+      "lng": -62.5367
+    },
+    "options": []
+  }
+]
