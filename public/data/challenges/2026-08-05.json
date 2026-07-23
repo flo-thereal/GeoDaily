@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-05-q1",
+    "type": "capital",
+    "question": "Where is the capital of Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.35,
+      "lng": 4.92
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-05-q2",
+    "type": "map",
+    "question": "This iconic Baroque palace, a UNESCO World Heritage site, is located in the capital of which country?",
+    "correctAnswer": "Austria",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 48.1852,
+      "lng": 16.3119
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-05-q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "imageUrl": "PL",
+    "options": [
+      "Monaco",
+      "Poland",
+      "Malta",
+      "Indonesia"
+    ],
+    "countryCode": "PL"
+  },
+  {
+    "id": "2026-08-05-q4",
+    "type": "capital",
+    "question": "Where is the capital of Slovakia?",
+    "correctAnswer": "Bratislava",
+    "countryCode": "SK",
+    "imageUrl": "SK",
+    "mapCoordinates": {
+      "lat": 48.15,
+      "lng": 17.12
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-05-q5",
+    "type": "map",
+    "question": "Identify the country where Mount Kilimanjaro, Africa's highest peak, is located.",
+    "correctAnswer": "Tanzania",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-05-q6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "imageUrl": "ET",
+    "options": [
+      "Ethiopia",
+      "Ghana",
+      "Senegal",
+      "Colombia"
+    ],
+    "countryCode": "ET"
+  },
+  {
+    "id": "2026-08-05-q7",
+    "type": "capital",
+    "question": "Where is the capital of Bolivia?",
+    "correctAnswer": "La Paz",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -19.02,
+      "lng": -65.26
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-05-q8",
+    "type": "map",
+    "question": "This ancient city, once a formidable rival to Rome, is located in which North African country?",
+    "correctAnswer": "Tunisia",
+    "countryCode": "TN",
+    "imageUrl": "TN",
+    "mapCoordinates": {
+      "lat": 36.8529,
+      "lng": 10.3346
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-05-q9",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "imageUrl": "BD",
+    "options": [
+      "Japan",
+      "Palau",
+      "Bangladesh",
+      "Brazil"
+    ],
+    "countryCode": "BD"
+  },
+  {
+    "id": "2026-08-05-q10",
+    "type": "map",
+    "question": "In which country would you find the Burj Khalifa, the world's tallest building?",
+    "correctAnswer": "United Arab Emirates",
+    "countryCode": "AE",
+    "imageUrl": "AE",
+    "mapCoordinates": {
+      "lat": 25.1972,
+      "lng": 55.2744
+    },
+    "options": []
+  }
+]
