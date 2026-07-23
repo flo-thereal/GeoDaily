@@ -69,7 +69,6 @@ describe('useStore', () => {
     expect(state.dailyTasks).toEqual([]);
     expect(state.currentTaskIndex).toBe(0);
     expect(state.history).toEqual({});
-    expect(state.progress.stats.totalPoints).toBe(0);
     expect(state.progress.stats.currentStreak).toBe(0);
   });
 
@@ -183,7 +182,7 @@ describe('useStore', () => {
 
     const state = useStore.getState();
     expect(state.history).toEqual({});
-    expect(state.progress.stats.totalPoints).toBe(0);
+    expect(state.progress.stats.currentStreak).toBe(0);
     expect(state.settings.theme).toBe('dark');
   });
 });

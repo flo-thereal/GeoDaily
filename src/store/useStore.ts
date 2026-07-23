@@ -2,10 +2,8 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import {
   applyDailyResult,
-  applyPracticeResult,
   initialProgress,
   type DailyResult,
-  type PracticeResult,
   type ProgressState,
 } from '../lib/progress';
 
@@ -45,20 +43,10 @@ export interface DailyHistory {
 }
 
 export interface Settings {
-  language: string;
-  dailyReminderEnabled: boolean;
-  dailyReminderTime: string;
-  soundEnabled: boolean;
-  hapticEnabled: boolean;
   theme: string;
 }
 
 export const defaultSettings: Settings = {
-  language: 'en',
-  dailyReminderEnabled: true,
-  dailyReminderTime: '09:00',
-  soundEnabled: true,
-  hapticEnabled: true,
   theme: 'system',
 };
 
@@ -74,8 +62,7 @@ interface GameState {
   nextTask: () => void;
   resetDaily: () => void;
   saveHistory: (date: string, history: DailyHistory) => void;
-  submitDailyResult: (result: DailyResult) => string[];
-  submitPracticeResult: (result: PracticeResult) => void;
+  submitDailyResult: (result: DailyResult) => void;
   updateSettings: (updates: Partial<Settings>) => void;
   resetAllProgress: () => void;
 }
@@ -106,16 +93,7 @@ export const useStore = create<GameState>()(
         })),
 
       submitDailyResult: (result) => {
-        const { state: nextProgress, newAchievements } = applyDailyResult(
-          useStore.getState().progress,
-          result
-        );
-        set({ progress: nextProgress });
-        return newAchievements;
-      },
-
-      submitPracticeResult: (result) => {
-        const nextProgress = applyPracticeResult(useStore.getState().progress, result);
+        const nextProgress = applyDailyResult(useStore.getState().progress, result);
         set({ progress: nextProgress });
       },
 

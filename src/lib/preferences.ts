@@ -4,8 +4,6 @@ import { defaultSettings } from '../store/useStore';
 const STORAGE_KEY = 'geodaily-storage';
 
 export interface GamePreferences {
-  soundEnabled: boolean;
-  hapticEnabled: boolean;
   theme: 'light' | 'dark' | 'system';
 }
 
@@ -24,11 +22,7 @@ export function getGamePreferences(): GamePreferences {
   const settings = readPersistedSettings();
   const theme =
     settings.theme === 'dark' || settings.theme === 'light' ? settings.theme : 'system';
-  return {
-    soundEnabled: settings.soundEnabled,
-    hapticEnabled: settings.hapticEnabled,
-    theme,
-  };
+  return { theme };
 }
 
 export function setGamePreferences(prefs: Partial<GamePreferences>): GamePreferences {
@@ -44,7 +38,6 @@ export function applyTheme(theme: GamePreferences['theme']): void {
 }
 
 export function playCorrectSound(): void {
-  if (!getGamePreferences().soundEnabled) return;
   try {
     const ctx = new AudioContext();
     const osc = ctx.createOscillator();
@@ -61,15 +54,7 @@ export function playCorrectSound(): void {
   }
 }
 
-export function triggerHaptic(): void {
-  if (!getGamePreferences().hapticEnabled) return;
-  if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
-    navigator.vibrate(40);
-  }
-}
-
 export function playWrongSound(): void {
-  if (!getGamePreferences().soundEnabled) return;
   try {
     const ctx = new AudioContext();
     const osc = ctx.createOscillator();
@@ -83,12 +68,5 @@ export function playWrongSound(): void {
     osc.stop(ctx.currentTime + 0.12);
   } catch {
     // Audio not available
-  }
-}
-
-export function triggerWrongHaptic(): void {
-  if (!getGamePreferences().hapticEnabled) return;
-  if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
-    navigator.vibrate([30, 50, 30]);
   }
 }

@@ -1,7 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { localDateString, localYesterdayString } from '../../src/lib/utils';
 import { applyDailyResult, initialProgress } from '../../src/lib/progress';
-import type { DailyTask } from '../../src/store/useStore';
 
 describe('localDateString', () => {
   it('formats using local calendar date', () => {
@@ -24,15 +23,6 @@ describe('applyDailyResult streak rules', () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-06-04T12:00:00'));
 
-    const task: DailyTask = {
-      id: 'flag-FR-0',
-      type: 'flag',
-      question: 'q',
-      correctAnswer: 'France',
-      countryCode: 'FR',
-      imageUrl: 'FR',
-    };
-
     const prev = {
       ...initialProgress(),
       stats: {
@@ -40,20 +30,13 @@ describe('applyDailyResult streak rules', () => {
         currentStreak: 1,
         longestStreak: 1,
         lastPlayedDate: '2026-06-03',
-        totalPoints: 100,
         daysPlayed: 1,
       },
     };
 
-    const day2 = applyDailyResult(prev, {
-      date: localDateString(),
-      tasks: [task],
-      answers: [{ guess: 'France', isCorrect: true }],
-      score: 100,
-      maxScore: 100,
-    });
+    const day2 = applyDailyResult(prev, { date: localDateString() });
 
-    expect(day2.state.stats.currentStreak).toBe(2);
+    expect(day2.stats.currentStreak).toBe(2);
 
     vi.useRealTimers();
   });

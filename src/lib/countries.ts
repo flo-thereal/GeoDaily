@@ -30,15 +30,6 @@ export interface Country {
 
 export const COUNTRIES = countriesData as Country[];
 
-// Profile/continent-mastery groups the two American regions under "Americas",
-// matching the canonical continents used across the UI.
-export type Continent = 'Europe' | 'Asia' | 'Africa' | 'Americas' | 'Oceania';
-
-export function regionToContinent(region: string): Continent {
-  if (region === 'North America' || region === 'South America') return 'Americas';
-  return region as Continent;
-}
-
 const byCode = new Map(COUNTRIES.map((c) => [c.code.toUpperCase(), c]));
 const byName = new Map(COUNTRIES.map((c) => [c.name, c]));
 

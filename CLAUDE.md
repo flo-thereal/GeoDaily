@@ -11,9 +11,11 @@ hosted on **GitHub Pages** — there is no server, database, or login.
   `public/data/challenges/<YYYY-MM-DD>.json`. If a day's file is missing, the app
   generates that day's challenge deterministically in the browser from the
   bundled country data, so it always works.
-- **All user progress** (streak, points, history, stats, continent mastery,
-  achievements, settings) is stored in the browser's `localStorage`. It is
-  single-device and requires no account.
+- **All user progress** (streak, challenge history, theme setting) is stored in
+  the browser's `localStorage`. It is single-device and requires no account.
+  The app is intentionally minimal: no profile/identity, no points, levels, or
+  achievements — the daily challenge, practice modes, and the Atlas are the
+  product.
 - **Country reference data** (`src/data/countries.json`, ~195 entries) is bundled
   into the client and queried in memory.
 
@@ -32,14 +34,13 @@ hosted on **GitHub Pages** — there is no server, database, or login.
 │   ├── components/
 │   │   ├── Layout.tsx           # Shell with sidebar + bottom nav
 │   │   └── MapQuiz.tsx          # Leaflet map component for map questions
-│   ├── pages/                   # Dashboard, Quiz, QuestCompleted, Explore,
-│   │                            #   Profile, Settings, Welcome
+│   ├── pages/                   # Dashboard, Quiz, QuestCompleted, Explore, Settings
 │   ├── services/api.ts          # Local data layer (bundled JSON + store)
 │   ├── store/useStore.ts        # Zustand store, persisted to localStorage
 │   └── lib/
-│       ├── countries.ts         # Typed country data + region→continent
+│       ├── countries.ts         # Typed country data
 │       ├── generateQuiz.ts      # Deterministic/random quiz generation
-│       ├── progress.ts          # Stats + achievement logic, applyDailyResult()
+│       ├── progress.ts          # Streak logic, applyDailyResult()
 │       └── utils.ts             # cn(), getDistanceFromLatLonInKm()
 ├── scripts/generate-challenges.ts  # Gemini challenge generator (Action)
 ├── public/
@@ -105,8 +106,7 @@ The deployed client needs **no secrets**.
 
 - **Zustand** (`src/store/useStore.ts`) is the single client store, persisted to
   `localStorage` under `geodaily-storage`. It holds the quiz session state plus a
-  `progress` slice (stats, country progress, continent mastery, achievements) and
-  a `settings` slice.
+  `progress` slice (streak stats only) and a `settings` slice (`{ theme }`).
 - The store's `persist` middleware reads `localStorage` at import time — in unit
   tests use `vi.resetModules()` + dynamic `import()` per test (see existing tests).
 - **All data access goes through `src/services/api.ts`.** Its functions keep an
@@ -137,8 +137,9 @@ JSON files may still have 5.
 is inside the country polygon (from `public/data/boundaries/{ISO}.geojson`, Natural Earth 10m), else
 **0**. Capital map questions award **0–100** from distance (`round(100 * max(0, 1 - d/500))`);
 `isCorrect` when points ≥ 50. Daily max is `tasks.length × 100` (1000 for new
-10-question days, 500 for legacy 5-question files). Perfect score requires
-`score === maxScore && maxScore >= 500`.
+10-question days, 500 for legacy 5-question files). The score is shown on the
+Quest Completed recap but isn't accumulated into any running total — only the
+streak persists across days.
 
 After each answer, `CountryLearnCard` shows the country's flag, name, and capital.
 
@@ -149,10 +150,11 @@ After each answer, `CountryLearnCard` shows the country's flag, name, and capita
 calling Gemini; the deterministic fallback in `src/lib/generateQuiz.ts` applies the
 same window when a day's file is missing.
 
-**Progress / achievements**: `src/lib/progress.ts#applyDailyResult` updates streak,
-points, days played, per-country mastery (`timesCorrect >= 3 ⇒ mastered`),
-continent mastery %, and unlocks achievements. The store action `submitDailyResult`
-wraps it; `Quiz.tsx` calls it when a daily challenge finishes.
+**Progress**: `src/lib/progress.ts#applyDailyResult` updates `currentStreak`,
+`longestStreak`, and `daysPlayed` for the local calendar day only (replays of a
+past day's challenge don't affect it). The store action `submitDailyResult` wraps
+it; `Quiz.tsx` calls it when today's daily challenge finishes. Practice sessions
+(flags/capitals/map from Quick Practice) don't write any progress.
 
 ---
 
@@ -175,7 +177,8 @@ wraps it; `Quiz.tsx` calls it when a daily challenge finishes.
 - **Base path matters**: assets are served from `/geodaily/`. Use
   `import.meta.env.BASE_URL` for runtime asset URLs (see `fetchDailyTasks`).
 - **HashRouter**: e2e/manual navigation uses `/#/...` paths.
-- **Region vs continent**: `countries.json` uses `North America`/`South America`;
-  the UI groups them as `Americas` via `regionToContinent` in `src/lib/countries.ts`.
+- **Sound is always on**; there's no user toggle and no haptics. `src/lib/celebrate.ts`
+  fires `playCorrectSound`/`playWrongSound` from `src/lib/preferences.ts` on every
+  quiz answer. Settings only exposes **theme** and export/reset of local data.
 - **Leaflet icon fix in `MapQuiz.tsx`** is a required Vite workaround — keep it.
 - **Only automated gate besides tests is `npm run lint`** (no ESLint/Prettier).

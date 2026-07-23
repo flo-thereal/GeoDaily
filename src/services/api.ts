@@ -1,8 +1,6 @@
-import { DailyTask, DailyHistory, useStore, type AnswerRecord } from '../store/useStore';
-import { localDateString } from '../lib/utils';
+import { DailyTask, DailyHistory, useStore } from '../store/useStore';
 import { COUNTRIES, type Country } from '../lib/countries';
-import { generateDailyTasks as genDaily, generatePracticeTasks, DAILY_PATTERN } from '../lib/generateQuiz';
-import { ACHIEVEMENTS } from '../lib/progress';
+import { generateDailyTasks as genDaily, generatePracticeTasks } from '../lib/generateQuiz';
 import { normalizeChallengeTask } from '../lib/taskNormalization';
 
 // ============================================================================
@@ -15,207 +13,19 @@ import { normalizeChallengeTask } from '../lib/taskNormalization';
 export type { Country };
 
 // ============================================================================
-// Types
+// Settings
 // ============================================================================
-
-export interface User {
-  id: string;
-  email: string;
-  displayName: string;
-  avatarUrl?: string;
-  level: number;
-  title?: string;
-  createdAt: string;
-}
-
-export interface UserStats {
-  totalPoints: number;
-  currentStreak: number;
-  longestStreak: number;
-  totalDaysPlayed: number;
-  totalQuestionsAnswered: number;
-  totalCorrectAnswers: number;
-  countriesMastered: number;
-  accuracy: number;
-}
-
-export interface Achievement {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  category: string;
-  earnedAt: string;
-}
-
-export interface UserProfile extends User {
-  stats: UserStats;
-  continentMastery: Record<string, number>;
-  achievements: Achievement[];
-}
 
 export interface UserSettings {
-  language: string;
-  daily_reminder_enabled: boolean;
-  daily_reminder_time: string;
-  sound_enabled: boolean;
-  haptic_enabled: boolean;
   theme: string;
-}
-
-export interface SubmitChallengeResult {
-  success: boolean;
-  stats: {
-    totalPoints: number;
-    currentStreak: number;
-    longestStreak: number;
-  };
-  newAchievements?: string[];
-}
-
-// ============================================================================
-// Derived profile helpers
-// ============================================================================
-
-function levelForPoints(points: number): number {
-  return Math.floor(points / 1000) + 1;
-}
-
-function titleForLevel(level: number): string {
-  if (level >= 20) return 'Master Cartographer';
-  if (level >= 10) return 'Globe Master';
-  if (level >= 5) return 'Seasoned Explorer';
-  if (level >= 2) return 'Explorer';
-  return 'Novice Explorer';
-}
-
-function computeStats(): UserStats {
-  const { stats } = useStore.getState().progress;
-  const accuracy = stats.totalQuestionsAnswered > 0
-    ? Math.round((stats.correctAnswers / stats.totalQuestionsAnswered) * 100)
-    : 0;
-  return {
-    totalPoints: stats.totalPoints,
-    currentStreak: stats.currentStreak,
-    longestStreak: stats.longestStreak,
-    totalDaysPlayed: stats.daysPlayed,
-    totalQuestionsAnswered: stats.totalQuestionsAnswered,
-    totalCorrectAnswers: stats.correctAnswers,
-    countriesMastered: stats.countriesMastered,
-    accuracy,
-  };
-}
-
-// ============================================================================
-// "Auth" — single local explorer, no accounts
-// ============================================================================
-
-// Kept so existing callers don't break; there are no real accounts anymore.
-export function isAuthenticated(): boolean {
-  return true;
-}
-
-export function logout(): void {
-  /* no-op: nothing to sign out of */
-}
-
-// ============================================================================
-// User Profile (computed from local progress)
-// ============================================================================
-
-export async function getCurrentUser(): Promise<UserProfile> {
-  const { progress } = useStore.getState();
-  const stats = computeStats();
-  const level = levelForPoints(stats.totalPoints);
-
-  const continentMastery: Record<string, number> = {};
-  for (const [continent, entry] of Object.entries(progress.continentMastery)) {
-    continentMastery[continent] = entry.percentage;
-  }
-
-  const achievements: Achievement[] = ACHIEVEMENTS
-    .filter((a) => progress.unlockedAchievements[a.id])
-    .map((a) => ({
-      id: a.id,
-      name: a.name,
-      description: a.description,
-      icon: a.icon,
-      category: a.category,
-      earnedAt: progress.unlockedAchievements[a.id],
-    }))
-    .sort((a, b) => b.earnedAt.localeCompare(a.earnedAt));
-
-  return {
-    id: 'local-explorer',
-    email: '',
-    displayName: 'Explorer',
-    level,
-    title: titleForLevel(level),
-    createdAt: new Date().toISOString(),
-    stats,
-    continentMastery,
-    achievements,
-    avatarUrl: undefined,
-  };
-}
-
-export async function updateProfile(_updates: {
-  displayName?: string;
-  avatarUrl?: string;
-  title?: string;
-}): Promise<{ success: boolean }> {
-  return { success: true };
-}
-
-export async function getUserStats(): Promise<UserStats> {
-  return computeStats();
-}
-
-export interface LearningHistoryEntry {
-  date: string;
-  score: number;
-  maxScore: number;
-}
-
-export async function getLearningHistory(days: number = 30): Promise<LearningHistoryEntry[]> {
-  const { history } = useStore.getState();
-  const entries: LearningHistoryEntry[] = [];
-  const today = new Date();
-  for (let i = days - 1; i >= 0; i--) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    const date = localDateString(d);
-    entries.push({
-      date,
-      score: history[date]?.score ?? 0,
-      maxScore: history[date]?.tasks?.length
-        ? history[date].tasks.length * 100
-        : DAILY_PATTERN.length * 100,
-    });
-  }
-  return entries;
 }
 
 export async function getUserSettings(): Promise<UserSettings> {
   const { settings } = useStore.getState();
-  return {
-    language: settings.language,
-    daily_reminder_enabled: settings.dailyReminderEnabled,
-    daily_reminder_time: settings.dailyReminderTime,
-    sound_enabled: settings.soundEnabled,
-    haptic_enabled: settings.hapticEnabled,
-    theme: settings.theme,
-  };
+  return { theme: settings.theme };
 }
 
-export async function updateSettings(updates: {
-  language?: string;
-  dailyReminderEnabled?: boolean;
-  dailyReminderTime?: string;
-  soundEnabled?: boolean;
-  hapticEnabled?: boolean;
-  theme?: string;
-}): Promise<{ success: boolean }> {
+export async function updateSettings(updates: { theme?: string }): Promise<{ success: boolean }> {
   useStore.getState().updateSettings(updates);
   return { success: true };
 }
@@ -301,44 +111,6 @@ export async function fetchPracticeTasks(
   type: 'flags' | 'capitals' | 'map'
 ): Promise<DailyTask[]> {
   return generatePracticeTasks(type);
-}
-
-export interface SubmitChallengeParams {
-  date: string;
-  tasks: DailyTask[];
-  answers: AnswerRecord[];
-  score: number;
-  maxScore: number;
-  timeTaken?: number;
-}
-
-export async function submitChallenge(
-  params: SubmitChallengeParams
-): Promise<SubmitChallengeResult> {
-  const newAchievements = useStore.getState().submitDailyResult({
-    date: params.date,
-    tasks: params.tasks,
-    answers: params.answers,
-    score: params.score,
-    maxScore: params.maxScore,
-  });
-  const stats = computeStats();
-  return {
-    success: true,
-    stats: {
-      totalPoints: stats.totalPoints,
-      currentStreak: stats.currentStreak,
-      longestStreak: stats.longestStreak,
-    },
-    newAchievements: newAchievements.length > 0 ? newAchievements : undefined,
-  };
-}
-
-export async function completeChallenge(
-  _date: string,
-  _score: number
-): Promise<{ success: boolean }> {
-  return { success: true };
 }
 
 // ============================================================================

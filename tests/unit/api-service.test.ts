@@ -1,5 +1,4 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { localDateString } from '../../src/lib/utils';
 import type { DailyTask } from '../../src/store/useStore';
 
 class MemoryStorage implements Storage {
@@ -20,18 +19,6 @@ function setupLocalStorage() {
   });
 }
 
-function flagTask(code: string, name: string): DailyTask {
-  return {
-    id: `flag-${code}-0`,
-    type: 'flag',
-    question: 'flag?',
-    correctAnswer: name,
-    options: [name],
-    countryCode: code,
-    imageUrl: code,
-  };
-}
-
 describe('static api service', () => {
   let api: typeof import('../../src/services/api');
 
@@ -39,10 +26,6 @@ describe('static api service', () => {
     setupLocalStorage();
     vi.resetModules();
     api = await import('../../src/services/api');
-  });
-
-  it('reports as always authenticated (no accounts)', () => {
-    expect(api.isAuthenticated()).toBe(true);
   });
 
   it('filters and sorts bundled countries', async () => {
@@ -64,51 +47,6 @@ describe('static api service', () => {
     const regions = await api.getRegions();
     const total = regions.reduce((sum, r) => sum + r.count, 0);
     expect(total).toBe((await api.getCountries()).length);
-  });
-
-  it('records a daily result into local progress', async () => {
-    vi.useFakeTimers();
-    vi.setSystemTime(new Date('2026-06-03T12:00:00'));
-
-    const tasks = [
-      flagTask('FR', 'France'),
-      flagTask('DE', 'Germany'),
-      flagTask('JP', 'Japan'),
-      flagTask('BR', 'Brazil'),
-      flagTask('US', 'United States'),
-    ];
-    const result = await api.submitChallenge({
-      date: '2026-06-03',
-      tasks,
-      answers: tasks.map((t) => ({ guess: t.correctAnswer, isCorrect: true })),
-      score: 500,
-      maxScore: 500,
-    });
-
-    expect(result.success).toBe(true);
-    expect(result.stats.totalPoints).toBe(500);
-    expect(result.stats.currentStreak).toBe(1);
-    expect(result.newAchievements).toContain('first_quest');
-    expect(result.newAchievements).toContain('perfect_score');
-
-    const stats = await api.getUserStats();
-    expect(stats.totalPoints).toBe(500);
-    expect(stats.accuracy).toBe(100);
-    expect(stats.totalDaysPlayed).toBe(1);
-
-    const profile = await api.getCurrentUser();
-    expect(profile.displayName).toBe('Explorer');
-    expect(profile.achievements.some((a) => a.id === 'perfect_score')).toBe(true);
-
-    vi.useRealTimers();
-  });
-
-  it('builds learning history spanning the requested days, ending today', async () => {
-    const history = await api.getLearningHistory(7);
-    expect(history).toHaveLength(7);
-    const today = localDateString();
-    expect(history[history.length - 1].date).toBe(today);
-    expect(history.every((h) => h.maxScore === 1000)).toBe(true);
   });
 
   it('normalizes legacy capital MCQ tasks into map tasks when fetching daily challenges', async () => {
@@ -166,9 +104,8 @@ describe('static api service', () => {
   });
 
   it('round-trips settings through the local store', async () => {
-    await api.updateSettings({ language: 'fr', soundEnabled: false });
+    await api.updateSettings({ theme: 'dark' });
     const settings = await api.getUserSettings();
-    expect(settings.language).toBe('fr');
-    expect(settings.sound_enabled).toBe(false);
+    expect(settings.theme).toBe('dark');
   });
 });

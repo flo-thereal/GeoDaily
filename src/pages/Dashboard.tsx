@@ -12,7 +12,6 @@ export function Dashboard() {
 
   // All progress is local now — stats are always available.
   const streak = stats.currentStreak;
-  const points = stats.totalPoints;
 
   // Generate past days based on visibleDays
   const today = new Date();
@@ -43,10 +42,6 @@ export function Dashboard() {
           <div className="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full font-bold shadow-sm">
             <Flame className="w-5 h-5 text-tertiary-container" />
             <span className="text-lg">{streak}</span>
-          </div>
-          <div className="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full font-bold shadow-sm">
-            <Star className="w-5 h-5 text-yellow-500" />
-            <span className="text-lg">{points}</span>
           </div>
         </div>
       </header>
@@ -102,7 +97,7 @@ export function Dashboard() {
           </div>
           <h3 className="text-2xl font-headline font-bold text-on-surface">Quick Practice</h3>
         </div>
-        <p className="text-on-surface-variant mb-4">Sharpen your skills — practice counts toward skill achievements, not streaks or daily points.</p>
+        <p className="text-on-surface-variant mb-4">Sharpen your skills anytime — practice doesn't affect your streak.</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <button
             onClick={() => navigate('/quiz/flags')}

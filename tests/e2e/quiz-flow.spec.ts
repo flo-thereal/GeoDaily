@@ -2,7 +2,6 @@ import { expect, test } from '@playwright/test';
 import { localDateString } from '../../src/lib/utils';
 
 const STORAGE_KEY = 'geodaily-storage';
-const VISITED_KEY = 'geodaily_has_visited';
 
 function buildStoragePayload(historyDate: string) {
   return {
@@ -33,24 +32,11 @@ function buildStoragePayload(historyDate: string) {
         stats: {
           currentStreak: 1,
           longestStreak: 1,
-          totalPoints: 100,
           daysPlayed: 1,
-          countriesMastered: 0,
-          totalQuestionsAnswered: 1,
-          correctAnswers: 1,
           lastPlayedDate: historyDate,
         },
-        countryProgress: {},
-        continentMastery: {},
-        skillCorrect: { flag: 1, capital: 0, map: 0 },
-        unlockedAchievements: {},
       },
       settings: {
-        language: 'en',
-        dailyReminderEnabled: false,
-        dailyReminderTime: '09:00',
-        soundEnabled: false,
-        hapticEnabled: false,
         theme: 'system',
       },
     },
@@ -59,13 +45,6 @@ function buildStoragePayload(historyDate: string) {
 }
 
 test.describe('Daily quiz flow', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.addInitScript(
-      ({ visitedKey }) => localStorage.setItem(visitedKey, '1'),
-      { visitedKey: VISITED_KEY }
-    );
-  });
-
   test('redirects completed today challenge to review mode', async ({ page }) => {
     const today = localDateString();
 
@@ -96,7 +75,6 @@ test.describe('Daily quiz flow', () => {
                 ...buildStoragePayload(today).state.progress.stats,
                 currentStreak: 3,
                 longestStreak: 5,
-                totalPoints: 900,
               },
             },
           },
@@ -107,6 +85,6 @@ test.describe('Daily quiz flow', () => {
     await page.goto('/#/quest-completed');
     await expect(page.getByText('Quest Completed!')).toBeVisible();
     await expect(page.getByText('3', { exact: true })).toBeVisible();
-    await expect(page.getByText('900', { exact: true })).toBeVisible();
+    await expect(page.getByText('Day Streak')).toBeVisible();
   });
 });

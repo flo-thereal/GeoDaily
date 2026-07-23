@@ -1,5 +1,5 @@
 import confetti from 'canvas-confetti';
-import { playCorrectSound, playWrongSound, triggerHaptic, triggerWrongHaptic } from './preferences';
+import { playCorrectSound, playWrongSound } from './preferences';
 
 function prefersReducedMotion(): boolean {
   if (typeof window === 'undefined') return false;
@@ -9,7 +9,6 @@ function prefersReducedMotion(): boolean {
 export function celebrateAnswer(pointsEarned: number, isCorrect: boolean): void {
   if (isCorrect && pointsEarned > 0) {
     playCorrectSound();
-    triggerHaptic();
     if (!prefersReducedMotion()) {
       confetti({
         particleCount: pointsEarned >= 100 ? 100 : 30,
@@ -20,6 +19,5 @@ export function celebrateAnswer(pointsEarned: number, isCorrect: boolean): void 
     }
   } else if (!isCorrect) {
     playWrongSound();
-    triggerWrongHaptic();
   }
 }

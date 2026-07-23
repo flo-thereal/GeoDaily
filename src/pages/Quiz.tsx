@@ -8,7 +8,7 @@ import { cn, localDateString } from '../lib/utils';
 import { MapQuiz } from '../components/MapQuiz';
 import { CountryLearnCard } from '../components/CountryLearnCard';
 import { celebrateAnswer } from '../lib/celebrate';
-import { storeNewAchievements, storeQuestRecap } from '../lib/questSession';
+import { storeQuestRecap } from '../lib/questSession';
 import { taskCountryCode } from '../lib/progress';
 import { findCountryByName } from '../lib/countries';
 import { fadeSlide, motionTransition, useReducedMotion } from '../lib/motion';
@@ -41,7 +41,6 @@ export function Quiz() {
     history,
     saveHistory,
     submitDailyResult,
-    submitPracticeResult,
   } = useStore();
 
   const searchParams = new URLSearchParams(location.search);
@@ -226,16 +225,7 @@ export function Quiz() {
           maxScore: tasks.length * 100,
         });
 
-        const newAchievements = submitDailyResult({
-          date: targetDate,
-          tasks,
-          answers: newAnswers,
-          score: finalScore,
-          maxScore: tasks.length * 100,
-        });
-        if (newAchievements.length > 0) {
-          storeNewAchievements(newAchievements);
-        }
+        submitDailyResult({ date: targetDate });
       }
     }
   };
@@ -257,7 +247,6 @@ export function Quiz() {
     } else if (isDaily) {
       navigate(isReview ? '/' : isToday ? '/quest-completed' : '/');
     } else {
-      submitPracticeResult({ tasks, answers: userAnswers });
       navigate('/');
     }
   };

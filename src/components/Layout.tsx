@@ -11,7 +11,6 @@ export function Layout() {
   const navItems = [
     { icon: 'home', label: 'Home', path: '/' },
     { icon: 'map', label: 'Atlas', path: '/atlas' },
-    { icon: 'person', label: 'Profile', path: '/profile' },
     { icon: 'settings', label: 'Settings', path: '/settings' },
   ];
 
