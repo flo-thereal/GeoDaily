@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260806_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "Malawi",
+      "Sierra Leone",
+      "Zambia",
+      "Nigeria"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "20260806_2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iran",
+    "imageUrl": "IR",
+    "options": [
+      "Iraq",
+      "Iran",
+      "Syria",
+      "Afghanistan"
+    ],
+    "countryCode": "IR"
+  },
+  {
+    "id": "20260806_3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Paraguay",
+    "imageUrl": "PY",
+    "options": [
+      "El Salvador",
+      "Panama",
+      "Paraguay",
+      "Honduras"
+    ],
+    "countryCode": "PY"
+  },
+  {
+    "id": "20260806_4",
+    "type": "capital",
+    "question": "Where is the capital of Sudan?",
+    "correctAnswer": "Khartoum",
+    "countryCode": "SD",
+    "imageUrl": "SD",
+    "mapCoordinates": {
+      "lat": 15.6,
+      "lng": 32.53
+    },
+    "options": []
+  },
+  {
+    "id": "20260806_5",
+    "type": "capital",
+    "question": "Where is the capital of Angola?",
+    "correctAnswer": "Luanda",
+    "countryCode": "AO",
+    "imageUrl": "AO",
+    "mapCoordinates": {
+      "lat": -8.83,
+      "lng": 13.22
+    },
+    "options": []
+  },
+  {
+    "id": "20260806_6",
+    "type": "capital",
+    "question": "Where is the capital of Kazakhstan?",
+    "correctAnswer": "Astana",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 51.16,
+      "lng": 71.45
+    },
+    "options": []
+  },
+  {
+    "id": "20260806_7",
+    "type": "map",
+    "question": "Which major desert covers a significant portion of the country shown on the map?",
+    "correctAnswer": "Sahara Desert",
+    "countryCode": "ML",
+    "imageUrl": "ML",
+    "mapCoordinates": {
+      "lat": 18.905,
+      "lng": -3.327
+    },
+    "options": []
+  },
+  {
+    "id": "20260806_8",
+    "type": "map",
+    "question": "This famous temple complex, known for its intricate stone carvings, is located in which country?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.8669
+    },
+    "options": []
+  },
+  {
+    "id": "20260806_9",
+    "type": "map",
+    "question": "Which large, landlocked country in East Asia is home to the Gobi Desert and nomadic culture, as indicated on the map?",
+    "correctAnswer": "Mongolia",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 43.5,
+      "lng": 100
+    },
+    "options": []
+  },
+  {
+    "id": "20260806_10",
+    "type": "map",
+    "question": "This spectacular waterfall, known as Mosi-oa-Tunya, borders Zambia and which other country, indicated by the map pointer?",
+    "correctAnswer": "Zimbabwe",
+    "countryCode": "ZM",
+    "imageUrl": "ZM",
+    "mapCoordinates": {
+      "lat": -17.9243,
+      "lng": 25.8582
+    },
+    "options": []
+  }
+]
