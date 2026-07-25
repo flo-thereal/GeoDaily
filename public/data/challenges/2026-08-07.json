@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260807_01",
+    "type": "map",
+    "question": "This iconic stratovolcano is Japan's highest peak. Where is it located?",
+    "correctAnswer": "Mount Fuji",
+    "countryCode": "JP",
+    "imageUrl": "JP",
+    "mapCoordinates": {
+      "lat": 35.3606,
+      "lng": 138.7292
+    },
+    "options": []
+  },
+  {
+    "id": "20260807_02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "Australia",
+      "Fiji",
+      "New Zealand",
+      "Cook Islands"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "20260807_03",
+    "type": "capital",
+    "question": "Where is the capital of United States?",
+    "correctAnswer": "Washington, D.C.",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 38.89,
+      "lng": -77.05
+    },
+    "options": []
+  },
+  {
+    "id": "20260807_04",
+    "type": "map",
+    "question": "This world-famous ancient defensive structure stretches thousands of kilometers across China. Where is this section located?",
+    "correctAnswer": "Great Wall of China (Badaling)",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.3686,
+      "lng": 115.9934
+    },
+    "options": []
+  },
+  {
+    "id": "20260807_05",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "Myanmar",
+      "Laos",
+      "China",
+      "Vietnam"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "20260807_06",
+    "type": "capital",
+    "question": "Where is the capital of Singapore?",
+    "correctAnswer": "Singapore",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.28,
+      "lng": 103.85
+    },
+    "options": []
+  },
+  {
+    "id": "20260807_07",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sri Lanka",
+    "imageUrl": "LK",
+    "options": [
+      "India",
+      "Bangladesh",
+      "Sri Lanka",
+      "Myanmar"
+    ],
+    "countryCode": "LK"
+  },
+  {
+    "id": "20260807_08",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "20260807_09",
+    "type": "map",
+    "question": "This unique hypersaline lake is the lowest point on Earth's surface. Where is it located?",
+    "correctAnswer": "Dead Sea",
+    "countryCode": "IL",
+    "imageUrl": "IL",
+    "mapCoordinates": {
+      "lat": 31.5458,
+      "lng": 35.4952
+    },
+    "options": []
+  },
+  {
+    "id": "20260807_10",
+    "type": "map",
+    "question": "This site is known for a devastating nuclear disaster in 1986. Where is the Chernobyl Exclusion Zone?",
+    "correctAnswer": "Chernobyl Exclusion Zone",
+    "countryCode": "UA",
+    "imageUrl": "UA",
+    "mapCoordinates": {
+      "lat": 51.3895,
+      "lng": 30.0991
+    },
+    "options": []
+  }
+]
