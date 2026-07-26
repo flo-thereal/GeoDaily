@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoDaily — A little geography, every day</title>
+    <meta
+      name="description"
+      content="Ten questions on flags, capitals, and maps. A short daily geography habit, with no account required."
+    />
+    <link rel="canonical" href="https://flo-thereal.github.io/GeoDaily/about/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GeoDaily — A little geography, every day" />
+    <meta
+      property="og:description"
+      content="Ten questions on flags, capitals, and maps. A short daily geography habit."
+    />
+    <meta property="og:url" content="https://flo-thereal.github.io/GeoDaily/about/" />
+    <meta
+      property="og:image"
+      content="https://flo-thereal.github.io/GeoDaily/about/assets/geodaily-map.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f8f2" />
+    <link rel="icon" href="../icons/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f7f8f2;
+        --paper-deep: #edf2e8;
+        --surface: #ffffff;
+        --ink: #173027;
+        --ink-soft: #52655d;
+        --line: #d9e3d9;
+        --green: #176a21;
+        --green-dark: #0c5317;
+        --green-pale: #d8f3d5;
+        --sky: #dff4ff;
+        --blue: #005ab2;
+        --orange: #ff9727;
+        --radius: 24px;
+        --shadow: 0 24px 70px rgba(35, 62, 46, 0.11);
+        --ease: 180ms ease;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          radial-gradient(circle at 86% 12%, rgba(187, 210, 255, 0.45), transparent 28rem),
+          var(--paper);
+        color: var(--ink);
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .shell {
+        width: min(1080px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+        border-bottom: 1px solid rgba(23, 48, 39, 0.12);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        color: var(--ink);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        box-shadow: 0 5px 14px rgba(23, 106, 33, 0.2);
+      }
+
+      .nav-link {
+        color: var(--green-dark);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .nav-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 650px;
+        padding: 92px 0 76px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .orbit {
+        position: absolute;
+        width: min(610px, 82vw);
+        aspect-ratio: 1;
+        border: 1px solid rgba(23, 106, 33, 0.12);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .orbit::before,
+      .orbit::after {
+        content: "";
+        position: absolute;
+        inset: 10%;
+        border: 1px solid rgba(0, 90, 178, 0.11);
+        border-radius: 50%;
+      }
+
+      .orbit::after {
+        inset: 22% -8%;
+        border-color: rgba(255, 151, 39, 0.14);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 22px;
+        color: var(--green);
+        font: 700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 780px;
+        margin-bottom: 24px;
+        font-size: clamp(48px, 8vw, 86px);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+      }
+
+      .hero-sub {
+        max-width: 590px;
+        margin-bottom: 36px;
+        color: var(--ink-soft);
+        font-size: clamp(17px, 2vw, 20px);
+        line-height: 1.65;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0 21px;
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          transform var(--ease),
+          background var(--ease),
+          border-color var(--ease);
+      }
+
+      .button-primary {
+        border-color: var(--green);
+        background: var(--green);
+        color: #f3ffef;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        border-color: var(--green);
+      }
+
+      .button-primary:hover {
+        background: var(--green-dark);
+      }
+
+      .button:focus-visible,
+      .nav-link:focus-visible,
+      .brand:focus-visible,
+      .footer a:focus-visible {
+        outline: 3px solid rgba(0, 90, 178, 0.4);
+        outline-offset: 4px;
+      }
+
+      main section {
+        padding: 82px 0;
+      }
+
+      .showcase {
+        padding-top: 16px;
+      }
+
+      .frame {
+        position: relative;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        padding: clamp(10px, 2vw, 20px);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .frame::before {
+        content: "52.0° N  ·  10.0° E";
+        position: absolute;
+        top: -34px;
+        right: 4px;
+        color: var(--ink-soft);
+        font: 600 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: 0.12em;
+      }
+
+      .frame img {
+        width: 100%;
+        border: 1px solid rgba(23, 48, 39, 0.1);
+        border-radius: 17px;
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 24px;
+        align-items: start;
+        margin-bottom: 38px;
+      }
+
+      .section-label {
+        padding-top: 8px;
+        color: var(--green);
+        font: 700 10px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        max-width: 650px;
+        margin-bottom: 0;
+        font-size: clamp(34px, 5vw, 54px);
+        line-height: 1.05;
+        letter-spacing: -0.045em;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .card {
+        min-height: 210px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+        background: rgba(255, 255, 255, 0.76);
+      }
+
+      .card-symbol {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        margin-bottom: 42px;
+        border-radius: 13px;
+        background: var(--green-pale);
+        color: var(--green-dark);
+        font: 800 18px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+
+      .card:nth-child(2) .card-symbol {
+        background: var(--sky);
+        color: var(--blue);
+      }
+
+      .card:nth-child(3) .card-symbol {
+        background: #fff0d9;
+        color: #945000;
+      }
+
+      .card h3 {
+        margin-bottom: 9px;
+        font-size: 19px;
+        letter-spacing: -0.025em;
+      }
+
+      .card p,
+      .step p {
+        margin-bottom: 0;
+        color: var(--ink-soft);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .guide {
+        border-block: 1px solid var(--line);
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.62);
+        overflow: hidden;
+      }
+
+      .step {
+        min-height: 190px;
+        padding: 27px;
+      }
+
+      .step + .step {
+        border-left: 1px solid var(--line);
+      }
+
+      .step-number {
+        display: block;
+        margin-bottom: 42px;
+        color: var(--orange);
+        font: 700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: 0.12em;
+      }
+
+      .step h3 {
+        margin-bottom: 9px;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .privacy-note {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        border-radius: var(--radius);
+        padding: 30px;
+        background: var(--ink);
+        color: #edf8ef;
+      }
+
+      .privacy-note strong {
+        font-size: clamp(22px, 3vw, 30px);
+        letter-spacing: -0.035em;
+      }
+
+      .privacy-note span {
+        max-width: 450px;
+        color: #bfd0c6;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 104px;
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer a {
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: var(--green-dark);
+      }
+
+      @media (max-width: 720px) {
+        .shell {
+          width: min(100% - 28px, 1080px);
+        }
+
+        .hero {
+          min-height: 590px;
+          padding-block: 76px 62px;
+        }
+
+        .orbit {
+          width: 118vw;
+        }
+
+        main section {
+          padding: 64px 0;
+        }
+
+        .section-heading {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .cards,
+        .steps {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          min-height: auto;
+        }
+
+        .card-symbol,
+        .step-number {
+          margin-bottom: 25px;
+        }
+
+        .step {
+          min-height: auto;
+        }
+
+        .step + .step {
+          border-top: 1px solid var(--line);
+          border-left: 0;
+        }
+
+        .privacy-note,
+        .footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .footer {
+          justify-content: center;
+          padding: 28px 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="./" aria-label="GeoDaily project page">
+          <img src="../icons/icon.svg" alt="" />
+          <span>GeoDaily</span>
+        </a>
+        <a
+          class="nav-link"
+          href="https://flo-thereal.github.io/GeoDaily/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Play today ↗</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero shell">
+        <div class="orbit" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Daily geography · 10 questions</p>
+          <h1>A little geography, every day.</h1>
+          <p class="hero-sub">
+            Flags, capitals, and maps in one short daily challenge. No account, no feed—just a
+            useful ten minutes.
+          </p>
+          <div class="actions">
+            <a
+              class="button button-primary"
+              href="https://flo-thereal.github.io/GeoDaily/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Play today <span aria-hidden="true">→</span></a
+            >
+            <a
+              class="button"
+              href="https://github.com/flo-thereal/GeoDaily"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View source <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase shell" aria-label="GeoDaily map practice">
+        <div class="frame">
+          <img
+            src="assets/geodaily-map.png"
+            alt="GeoDaily map practice asking the player to locate Sweden on a world map"
+            width="1440"
+            height="900"
+          />
+        </div>
+      </section>
+
+      <section class="shell" id="inside">
+        <div class="section-heading">
+          <span class="section-label">Inside GeoDaily</span>
+          <h2>Learn one small thing. Keep it moving.</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-symbol" aria-hidden="true">10</span>
+            <h3>Daily challenge</h3>
+            <p>Ten questions mixing flags, capitals, and map locations.</p>
+          </article>
+          <article class="card">
+            <span class="card-symbol" aria-hidden="true">↻</span>
+            <h3>Quick practice</h3>
+            <p>Choose one topic and practise without affecting your streak.</p>
+          </article>
+          <article class="card">
+            <span class="card-symbol" aria-hidden="true">◎</span>
+            <h3>Country atlas</h3>
+            <p>Browse countries, capitals, regions, neighbours, and useful facts.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="guide">
+        <div class="shell">
+          <div class="section-heading">
+            <span class="section-label">How it works</span>
+            <h2>Open it. Answer. Come back tomorrow.</h2>
+          </div>
+          <div class="steps">
+            <article class="step">
+              <span class="step-number">01</span>
+              <h3>Start today’s challenge</h3>
+              <p>There is one fresh set waiting each day.</p>
+            </article>
+            <article class="step">
+              <span class="step-number">02</span>
+              <h3>Answer ten questions</h3>
+              <p>Work through flags, capitals, and map locations.</p>
+            </article>
+            <article class="step">
+              <span class="step-number">03</span>
+              <h3>Return tomorrow</h3>
+              <p>Review your result and keep a simple daily streak.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell">
+        <div class="privacy-note">
+          <strong>Your progress stays here.</strong>
+          <span>
+            GeoDaily stores streaks, history, and settings in this browser. There is no account to
+            create.
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell footer">
+      <span>GeoDaily · Built by Florentin Erge</span>
+      <div class="footer-links">
+        <a href="https://github.com/flo-thereal/GeoDaily">GitHub</a>
+        <a href="https://florentinerge.de">Portfolio</a>
+      </div>
+    </footer>
+  </body>
+</html>
