@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260808_01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Greece",
+      "Italy",
+      "Portugal",
+      "Spain"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "20260808_02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Finland",
+      "Iceland",
+      "Poland",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20260808_03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cuba",
+    "imageUrl": "CU",
+    "options": [
+      "Honduras",
+      "Puerto Rico",
+      "Cuba",
+      "Dominican Republic"
+    ],
+    "countryCode": "CU"
+  },
+  {
+    "id": "20260808_04",
+    "type": "capital",
+    "question": "Where is the capital of Finland?",
+    "correctAnswer": "Helsinki",
+    "countryCode": "FI",
+    "imageUrl": "FI",
+    "mapCoordinates": {
+      "lat": 60.17,
+      "lng": 24.93
+    },
+    "options": []
+  },
+  {
+    "id": "20260808_05",
+    "type": "capital",
+    "question": "Where is the capital of Peru?",
+    "correctAnswer": "Lima",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -12.05,
+      "lng": -77.05
+    },
+    "options": []
+  },
+  {
+    "id": "20260808_06",
+    "type": "capital",
+    "question": "Where is the capital of Rwanda?",
+    "correctAnswer": "Kigali",
+    "countryCode": "RW",
+    "imageUrl": "RW",
+    "mapCoordinates": {
+      "lat": -1.95,
+      "lng": 30.05
+    },
+    "options": []
+  },
+  {
+    "id": "20260808_07",
+    "type": "map",
+    "question": "Which famous ancient city is located at these coordinates?",
+    "correctAnswer": "Petra",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "options": []
+  },
+  {
+    "id": "20260808_08",
+    "type": "map",
+    "question": "This pinpoint marks a crucial waterway connecting the Atlantic and Pacific oceans. What is it?",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0734,
+      "lng": -79.7946
+    },
+    "options": []
+  },
+  {
+    "id": "20260808_09",
+    "type": "map",
+    "question": "This ancient amphitheater is a symbol of Rome. What is it called?",
+    "correctAnswer": "Colosseum",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  },
+  {
+    "id": "20260808_10",
+    "type": "map",
+    "question": "Identify the country highlighted at these coordinates, known for its mountainous terrain and nomadic traditions.",
+    "correctAnswer": "Kyrgyzstan",
+    "countryCode": "KG",
+    "imageUrl": "KG",
+    "mapCoordinates": {
+      "lat": 41.2044,
+      "lng": 74.7661
+    },
+    "options": []
+  }
+]
