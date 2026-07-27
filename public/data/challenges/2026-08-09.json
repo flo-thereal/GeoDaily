@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260809-map-01",
+    "type": "map",
+    "question": "This vast region, primarily in Brazil, is home to the world's largest rainforest. What is it known as?",
+    "correctAnswer": "Amazon Rainforest",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -3.4653,
+      "lng": -62.2159
+    },
+    "options": []
+  },
+  {
+    "id": "20260809-map-02",
+    "type": "map",
+    "question": "This iconic flat-topped mountain overlooks the city of Cape Town. What is its name?",
+    "correctAnswer": "Table Mountain",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -33.9575,
+      "lng": 18.4023
+    },
+    "options": []
+  },
+  {
+    "id": "20260809-map-03",
+    "type": "map",
+    "question": "This stunning ivory-white marble mausoleum is a UNESCO World Heritage site and a famous symbol of India. What is this monument?",
+    "correctAnswer": "Taj Mahal",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 27.1751,
+      "lng": 78.0421
+    },
+    "options": []
+  },
+  {
+    "id": "20260809-map-04",
+    "type": "map",
+    "question": "This archipelago, famous for its unique wildlife and role in Darwin's theory of evolution, belongs to which South American country?",
+    "correctAnswer": "Ecuador (Galapagos Islands)",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.92,
+      "lng": -90.96
+    },
+    "options": []
+  },
+  {
+    "id": "20260809-flag-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Morocco",
+    "imageUrl": "MA",
+    "options": [
+      "Morocco",
+      "Egypt",
+      "Senegal",
+      "Ghana"
+    ],
+    "countryCode": "MA"
+  },
+  {
+    "id": "20260809-flag-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Thailand",
+      "Bhutan",
+      "Myanmar",
+      "Laos"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "20260809-flag-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Argentina",
+    "imageUrl": "AR",
+    "options": [
+      "Argentina",
+      "El Salvador",
+      "Honduras",
+      "Uruguay"
+    ],
+    "countryCode": "AR"
+  },
+  {
+    "id": "20260809-capital-01",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "20260809-capital-02",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "20260809-capital-03",
+    "type": "capital",
+    "question": "Where is the capital of Indonesia?",
+    "correctAnswer": "Jakarta",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -6.17,
+      "lng": 106.82
+    },
+    "options": []
+  }
+]
