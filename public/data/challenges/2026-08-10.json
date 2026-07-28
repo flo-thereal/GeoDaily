@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-10-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Fiji",
+    "imageUrl": "FJ",
+    "options": [
+      "Fiji",
+      "Vanuatu",
+      "Tuvalu",
+      "Samoa"
+    ],
+    "countryCode": "FJ"
+  },
+  {
+    "id": "2026-08-10-2",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-10-3",
+    "type": "map",
+    "question": "This vibrant coastal national park, famous for its beaches and biodiversity, is located in which South American country?",
+    "correctAnswer": "Colombia",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 11.3333,
+      "lng": -73.9167
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-10-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "imageUrl": "GH",
+    "options": [
+      "Ghana",
+      "Burkina Faso",
+      "Togo",
+      "Senegal"
+    ],
+    "countryCode": "GH"
+  },
+  {
+    "id": "2026-08-10-5",
+    "type": "capital",
+    "question": "Where is the capital of Romania?",
+    "correctAnswer": "Bucharest",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 44.43,
+      "lng": 26.1
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-10-6",
+    "type": "map",
+    "question": "This iconic medieval bridge, adorned with statues of saints, crosses the Vltava River in the capital city of which Central European country?",
+    "correctAnswer": "Czechia",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.0866,
+      "lng": 14.4116
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-10-7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Chile",
+    "imageUrl": "CL",
+    "options": [
+      "Liberia",
+      "Dominican Republic",
+      "Uganda",
+      "Chile"
+    ],
+    "countryCode": "CL"
+  },
+  {
+    "id": "2026-08-10-8",
+    "type": "capital",
+    "question": "Where is the capital of Guatemala?",
+    "correctAnswer": "Guatemala City",
+    "countryCode": "GT",
+    "imageUrl": "GT",
+    "mapCoordinates": {
+      "lat": 14.62,
+      "lng": -90.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-10-9",
+    "type": "map",
+    "question": "Recognized as a UNESCO World Heritage site, this ancient city, once home to the Hanging Gardens, is located in which country?",
+    "correctAnswer": "Iraq",
+    "countryCode": "IQ",
+    "imageUrl": "IQ",
+    "mapCoordinates": {
+      "lat": 32.5356,
+      "lng": 44.4208
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-10-10",
+    "type": "map",
+    "question": "This breathtaking public square, surrounded by three magnificent madrasahs, is the heart of the ancient city of Samarkand in which Central Asian nation?",
+    "correctAnswer": "Uzbekistan",
+    "countryCode": "UZ",
+    "imageUrl": "UZ",
+    "mapCoordinates": {
+      "lat": 39.6543,
+      "lng": 66.9744
+    },
+    "options": []
+  }
+]
