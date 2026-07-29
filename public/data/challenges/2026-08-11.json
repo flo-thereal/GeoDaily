@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260811-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Sweden",
+      "Denmark",
+      "Iceland",
+      "Norway"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "20260811-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "Vietnam",
+      "China",
+      "South Korea",
+      "Japan"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "20260811-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "imageUrl": "GR",
+    "options": [
+      "Cyprus",
+      "Greece",
+      "Finland",
+      "Argentina"
+    ],
+    "countryCode": "GR"
+  },
+  {
+    "id": "20260811-04",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "20260811-05",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    },
+    "options": []
+  },
+  {
+    "id": "20260811-06",
+    "type": "capital",
+    "question": "Where is the capital of Kenya?",
+    "correctAnswer": "Nairobi",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "mapCoordinates": {
+      "lat": -1.28,
+      "lng": 36.82
+    },
+    "options": []
+  },
+  {
+    "id": "20260811-07",
+    "type": "map",
+    "question": "Which famous landmark is located at these coordinates in London?",
+    "correctAnswer": "The London Eye",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.5033,
+      "lng": -0.1196
+    },
+    "options": []
+  },
+  {
+    "id": "20260811-08",
+    "type": "map",
+    "question": "This vast freshwater lake, the deepest in the world, is found in which country?",
+    "correctAnswer": "Lake Baikal (Russia)",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 53.8687,
+      "lng": 108.0001
+    },
+    "options": []
+  },
+  {
+    "id": "20260811-09",
+    "type": "map",
+    "question": "This iconic statue, 'The Little Mermaid', is a major tourist attraction in which city?",
+    "correctAnswer": "Copenhagen, Denmark",
+    "countryCode": "DK",
+    "imageUrl": "DK",
+    "mapCoordinates": {
+      "lat": 55.6872,
+      "lng": 12.5992
+    },
+    "options": []
+  },
+  {
+    "id": "20260811-10",
+    "type": "map",
+    "question": "This distinctive pyramid-shaped mountain is a symbol of the Alps. In which country is it primarily located?",
+    "correctAnswer": "Switzerland (Matterhorn)",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6586
+    },
+    "options": []
+  }
+]
