@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260812-Q01",
+    "type": "map",
+    "question": "This iconic tower is a symbol of which European capital city?",
+    "correctAnswer": "Eiffel Tower, France",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.8584,
+      "lng": 2.2945
+    },
+    "options": []
+  },
+  {
+    "id": "20260812-Q02",
+    "type": "map",
+    "question": "This architectural marvel is a landmark in which major Australian city?",
+    "correctAnswer": "Sydney Opera House, Australia",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -33.8568,
+      "lng": 151.2153
+    },
+    "options": []
+  },
+  {
+    "id": "20260812-Q03",
+    "type": "map",
+    "question": "Once a church, then a mosque, now a museum/mosque, this historical site is found in which transcontinental city?",
+    "correctAnswer": "Hagia Sophia, Turkey",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 41.0086,
+      "lng": 28.9801
+    },
+    "options": []
+  },
+  {
+    "id": "20260812-Q04",
+    "type": "map",
+    "question": "This popular Caribbean resort destination, known for its beaches and clear waters, is located in which country?",
+    "correctAnswer": "Dominican Republic",
+    "countryCode": "DO",
+    "imageUrl": "DO",
+    "mapCoordinates": {
+      "lat": 18.5724,
+      "lng": -68.3976
+    },
+    "options": []
+  },
+  {
+    "id": "20260812-Q05",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Spain",
+    "imageUrl": "ES",
+    "options": [
+      "Italy",
+      "Spain",
+      "Portugal",
+      "Colombia"
+    ],
+    "countryCode": "ES"
+  },
+  {
+    "id": "20260812-Q06",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "Malaysia",
+      "Philippines",
+      "Singapore",
+      "Indonesia"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "20260812-Q07",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uganda",
+    "imageUrl": "UG",
+    "options": [
+      "Kenya",
+      "Rwanda",
+      "Tanzania",
+      "Uganda"
+    ],
+    "countryCode": "UG"
+  },
+  {
+    "id": "20260812-Q08",
+    "type": "capital",
+    "question": "Where is the capital of Iceland?",
+    "correctAnswer": "Reykjavik",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.15,
+      "lng": -21.95
+    },
+    "options": []
+  },
+  {
+    "id": "20260812-Q09",
+    "type": "capital",
+    "question": "Where is the capital of Uruguay?",
+    "correctAnswer": "Montevideo",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.85,
+      "lng": -56.17
+    },
+    "options": []
+  },
+  {
+    "id": "20260812-Q10",
+    "type": "capital",
+    "question": "Where is the capital of Nepal?",
+    "correctAnswer": "Kathmandu",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.72,
+      "lng": 85.32
+    },
+    "options": []
+  }
+]
