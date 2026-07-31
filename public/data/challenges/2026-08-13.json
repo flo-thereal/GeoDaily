@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-13-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ireland",
+    "imageUrl": "IE",
+    "options": [
+      "Malta",
+      "Niger",
+      "Ivory Coast",
+      "Ireland"
+    ],
+    "countryCode": "IE"
+  },
+  {
+    "id": "2026-08-13-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-13-map-1",
+    "type": "map",
+    "question": "This point marks the approximate location of which famous bridge over the Danube River in Budapest?",
+    "correctAnswer": "Széchenyi Chain Bridge",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.4988,
+      "lng": 19.0438
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-13-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "imageUrl": "ET",
+    "options": [
+      "Senegal",
+      "Cameroon",
+      "Ethiopia",
+      "Guinea"
+    ],
+    "countryCode": "ET"
+  },
+  {
+    "id": "2026-08-13-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.35,
+      "lng": 4.92
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-13-map-2",
+    "type": "map",
+    "question": "This location in the Democratic Republic of Congo is part of which active stratovolcano, known for its lava lake?",
+    "correctAnswer": "Mount Nyiragongo",
+    "countryCode": "CD",
+    "imageUrl": "CD",
+    "mapCoordinates": {
+      "lat": -1.5204,
+      "lng": 29.252
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-13-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Myanmar",
+    "imageUrl": "MM",
+    "options": [
+      "Myanmar",
+      "Laos",
+      "Bangladesh",
+      "Bhutan"
+    ],
+    "countryCode": "MM"
+  },
+  {
+    "id": "2026-08-13-map-3",
+    "type": "map",
+    "question": "This point is near the summit of Africa's highest mountain. What is its name?",
+    "correctAnswer": "Mount Kilimanjaro",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-13-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Costa Rica?",
+    "correctAnswer": "San José",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 9.93,
+      "lng": -84.09
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-13-map-4",
+    "type": "map",
+    "question": "This location in Poland is known for its historic Old Town and Wawel Castle. Which city is it?",
+    "correctAnswer": "Kraków",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 50.0647,
+      "lng": 19.945
+    },
+    "options": []
+  }
+]
