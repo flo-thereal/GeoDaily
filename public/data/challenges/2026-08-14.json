@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260814-Q1",
+    "type": "map",
+    "question": "This point marks one of the world's largest hydroelectric power plants, shared by Paraguay and Brazil. What is its name?",
+    "correctAnswer": "Itaipu Dam",
+    "countryCode": "PY",
+    "imageUrl": "PY",
+    "mapCoordinates": {
+      "lat": -25.4211,
+      "lng": -54.5888
+    },
+    "options": []
+  },
+  {
+    "id": "20260814-Q2",
+    "type": "map",
+    "question": "This map pinpoints a vast inland delta, famous for its seasonal flooding and rich wildlife. Which unique natural wonder is it?",
+    "correctAnswer": "Okavango Delta",
+    "countryCode": "BW",
+    "imageUrl": "BW",
+    "mapCoordinates": {
+      "lat": -19,
+      "lng": 22.5
+    },
+    "options": []
+  },
+  {
+    "id": "20260814-Q3",
+    "type": "map",
+    "question": "The pin marks a large cold desert and semi-desert region in Asia, known for its extreme temperatures and dinosaur fossils. Which desert is this?",
+    "correctAnswer": "Gobi Desert",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 42.95,
+      "lng": 103.4333
+    },
+    "options": []
+  },
+  {
+    "id": "20260814-Q4",
+    "type": "map",
+    "question": "This location in Angola is home to one of Africa's largest waterfalls by volume, an impressive natural landmark. What are these falls called?",
+    "correctAnswer": "Kalandula Falls",
+    "countryCode": "AO",
+    "imageUrl": "AO",
+    "mapCoordinates": {
+      "lat": -10.925,
+      "lng": 15.7
+    },
+    "options": []
+  },
+  {
+    "id": "20260814-Q5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Lithuania",
+    "imageUrl": "LT",
+    "options": [
+      "Latvia",
+      "Lithuania",
+      "Estonia",
+      "Belarus"
+    ],
+    "countryCode": "LT"
+  },
+  {
+    "id": "20260814-Q6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Papua New Guinea",
+    "imageUrl": "PG",
+    "options": [
+      "Solomon Islands",
+      "Vanuatu",
+      "Samoa",
+      "Papua New Guinea"
+    ],
+    "countryCode": "PG"
+  },
+  {
+    "id": "20260814-Q7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Slovakia",
+    "imageUrl": "SK",
+    "options": [
+      "Serbia",
+      "Croatia",
+      "Slovakia",
+      "Slovenia"
+    ],
+    "countryCode": "SK"
+  },
+  {
+    "id": "20260814-Q8",
+    "type": "capital",
+    "question": "Where is the capital of Bolivia?",
+    "correctAnswer": "La Paz",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -19.02,
+      "lng": -65.26
+    },
+    "options": []
+  },
+  {
+    "id": "20260814-Q9",
+    "type": "capital",
+    "question": "Where is the capital of Bangladesh?",
+    "correctAnswer": "Dhaka",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 23.72,
+      "lng": 90.4
+    },
+    "options": []
+  },
+  {
+    "id": "20260814-Q10",
+    "type": "capital",
+    "question": "Where is the capital of Malawi?",
+    "correctAnswer": "Lilongwe",
+    "countryCode": "MW",
+    "imageUrl": "MW",
+    "mapCoordinates": {
+      "lat": -13.97,
+      "lng": 33.78
+    },
+    "options": []
+  }
+]
