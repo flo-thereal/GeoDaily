@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-15-map-1",
+    "type": "map",
+    "question": "This iconic stratovolcano, a sacred site and popular tourist destination, is located near Tokyo. What is its name?",
+    "correctAnswer": "Mount Fuji",
+    "countryCode": "JP",
+    "imageUrl": "JP",
+    "mapCoordinates": {
+      "lat": 35.3606,
+      "lng": 138.7292
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-15-map-2",
+    "type": "map",
+    "question": "This UNESCO World Heritage site, famous for its limestone karsts and islets, is a popular tourist destination in northern Vietnam. What is its name?",
+    "correctAnswer": "Ha Long Bay",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 20.9167,
+      "lng": 107.0333
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-15-map-3",
+    "type": "map",
+    "question": "This breathtaking fiord in the southwest of New Zealand's South Island is renowned for its towering cliffs and waterfalls. What is its name?",
+    "correctAnswer": "Milford Sound",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -44.6461,
+      "lng": 167.8969
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-15-map-4",
+    "type": "map",
+    "question": "Located in Canaima National Park, this is the world's highest uninterrupted waterfall. What is its name?",
+    "correctAnswer": "Angel Falls",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9716,
+      "lng": -62.5367
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-15-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Austria",
+    "imageUrl": "AT",
+    "options": [
+      "Latvia",
+      "Lebanon",
+      "Peru",
+      "Austria"
+    ],
+    "countryCode": "AT"
+  },
+  {
+    "id": "2026-08-15-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cyprus",
+    "imageUrl": "CY",
+    "options": [
+      "Nauru",
+      "Cyprus",
+      "Kosovo",
+      "Mauritius"
+    ],
+    "countryCode": "CY"
+  },
+  {
+    "id": "2026-08-15-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Senegal",
+    "imageUrl": "SN",
+    "options": [
+      "Cameroon",
+      "Senegal",
+      "Mali",
+      "Guinea"
+    ],
+    "countryCode": "SN"
+  },
+  {
+    "id": "2026-08-15-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Georgia?",
+    "correctAnswer": "Tbilisi",
+    "countryCode": "GE",
+    "imageUrl": "GE",
+    "mapCoordinates": {
+      "lat": 41.68,
+      "lng": 44.83
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-15-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Ukraine?",
+    "correctAnswer": "Kyiv",
+    "countryCode": "UA",
+    "imageUrl": "UA",
+    "mapCoordinates": {
+      "lat": 50.43,
+      "lng": 30.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-15-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Sri Lanka?",
+    "correctAnswer": "Colombo",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 6.89,
+      "lng": 79.9
+    },
+    "options": []
+  }
+]
