@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-16-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Denmark",
+      "Finland",
+      "Sweden",
+      "Norway"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-08-16-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Peru",
+    "imageUrl": "PE",
+    "options": [
+      "Canada",
+      "Colombia",
+      "Indonesia",
+      "Peru"
+    ],
+    "countryCode": "PE"
+  },
+  {
+    "id": "2026-08-16-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "India",
+      "Ireland",
+      "Ivory Coast",
+      "Nigeria"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "2026-08-16-04",
+    "type": "capital",
+    "question": "Where is the capital of Italy?",
+    "correctAnswer": "Rome",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.9,
+      "lng": 12.48
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-16-05",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-16-06",
+    "type": "capital",
+    "question": "Where is the capital of Finland?",
+    "correctAnswer": "Helsinki",
+    "countryCode": "FI",
+    "imageUrl": "FI",
+    "mapCoordinates": {
+      "lat": 60.17,
+      "lng": 24.93
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-16-07",
+    "type": "map",
+    "question": "This location marks a famous ancient defensive structure. What is its name?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-16-08",
+    "type": "map",
+    "question": "This area is known for its well-preserved colonial architecture and vibrant culture. Which historic city district is this?",
+    "correctAnswer": "Old Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.1345,
+      "lng": -82.3587
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-16-09",
+    "type": "map",
+    "question": "This crucial waterway connects two major oceans. What is it called?",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0706,
+      "lng": -79.7423
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-16-10",
+    "type": "map",
+    "question": "This iconic temple complex is a UNESCO World Heritage site and a symbol of its country. What is this famous landmark?",
+    "correctAnswer": "Angkor Wat",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  }
+]
