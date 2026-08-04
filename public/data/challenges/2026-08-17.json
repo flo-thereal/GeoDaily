@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-17-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Thailand",
+      "Philippines",
+      "Laos",
+      "Indonesia"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "2026-08-17-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Morocco",
+    "imageUrl": "MA",
+    "options": [
+      "Morocco",
+      "Turkey",
+      "Tunisia",
+      "Algeria"
+    ],
+    "countryCode": "MA"
+  },
+  {
+    "id": "2026-08-17-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Angola",
+      "Brazil",
+      "Spain",
+      "Portugal"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "2026-08-17-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-17-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-17-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of South Africa?",
+    "correctAnswer": "Pretoria",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -25.7,
+      "lng": 28.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-17-map-1",
+    "type": "map",
+    "question": "This river, marked by the coordinates, is the largest in the world by discharge volume. What is its name?",
+    "correctAnswer": "Amazon River",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -3.4653,
+      "lng": -58.749
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-17-map-2",
+    "type": "map",
+    "question": "Known as 'The End of the World', this city is the southernmost city in the world. Which city is it?",
+    "correctAnswer": "Ushuaia",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -54.8019,
+      "lng": -68.3044
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-17-map-3",
+    "type": "map",
+    "question": "This artificial sea-level waterway connects the Mediterranean Sea to the Red Sea. What is its name?",
+    "correctAnswer": "Suez Canal",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.5604,
+      "lng": 32.5599
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-17-map-4",
+    "type": "map",
+    "question": "Once the world's fourth-largest lake, this body of water has largely shrunk due to river diversion. What is its name?",
+    "correctAnswer": "Aral Sea",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 46.1017,
+      "lng": 60.7712
+    },
+    "options": []
+  }
+]
