@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260818-flag-co",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Colombia",
+    "imageUrl": "CO",
+    "options": [
+      "Ecuador",
+      "Andorra",
+      "Colombia",
+      "Moldova"
+    ],
+    "countryCode": "CO"
+  },
+  {
+    "id": "20260818-flag-la",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Laos",
+    "imageUrl": "LA",
+    "options": [
+      "Laos",
+      "Luxembourg",
+      "Nicaragua",
+      "El Salvador"
+    ],
+    "countryCode": "LA"
+  },
+  {
+    "id": "20260818-flag-gh",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "imageUrl": "GH",
+    "options": [
+      "Mali",
+      "Ghana",
+      "Benin",
+      "Algeria"
+    ],
+    "countryCode": "GH"
+  },
+  {
+    "id": "20260818-capital-be",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "20260818-capital-jo",
+    "type": "capital",
+    "question": "Where is the capital of Jordan?",
+    "correctAnswer": "Amman",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 31.95,
+      "lng": 35.93
+    },
+    "options": []
+  },
+  {
+    "id": "20260818-capital-rs",
+    "type": "capital",
+    "question": "Where is the capital of Serbia?",
+    "correctAnswer": "Belgrade",
+    "countryCode": "RS",
+    "imageUrl": "RS",
+    "mapCoordinates": {
+      "lat": 44.83,
+      "lng": 20.5
+    },
+    "options": []
+  },
+  {
+    "id": "20260818-map-cl-atacama",
+    "type": "map",
+    "question": "This arid plateau, known as the driest non-polar desert in the world, is located in which South American country?",
+    "correctAnswer": "Chile",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -24.5,
+      "lng": -69.25
+    },
+    "options": []
+  },
+  {
+    "id": "20260818-map-bg-rila",
+    "type": "map",
+    "question": "Pictured here is the Rila Monastery, a UNESCO World Heritage site and the largest and most famous Eastern Orthodox monastery in which Balkan country?",
+    "correctAnswer": "Bulgaria",
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "mapCoordinates": {
+      "lat": 42.1226,
+      "lng": 23.3409
+    },
+    "options": []
+  },
+  {
+    "id": "20260818-map-hr-plitvice",
+    "type": "map",
+    "question": "This stunning national park, famous for its cascading lakes and waterfalls, is a major tourist attraction in which Adriatic nation?",
+    "correctAnswer": "Croatia",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 44.8654,
+      "lng": 15.6186
+    },
+    "options": []
+  },
+  {
+    "id": "20260818-map-id-borobudur",
+    "type": "map",
+    "question": "This vast 9th-century Mahayana Buddhist temple, adorned with over 500 Buddha statues, is found on the island of Java in which Southeast Asian country?",
+    "correctAnswer": "Indonesia",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -7.6078,
+      "lng": 110.2038
+    },
+    "options": []
+  }
+]
