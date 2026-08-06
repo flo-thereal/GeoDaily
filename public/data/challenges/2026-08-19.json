@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-19-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United Kingdom",
+    "imageUrl": "GB",
+    "options": [
+      "Norway",
+      "Belarus",
+      "United Kingdom",
+      "Singapore"
+    ],
+    "countryCode": "GB"
+  },
+  {
+    "id": "2026-08-19-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "Bhutan",
+      "North Korea",
+      "Pakistan",
+      "South Korea"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "2026-08-19-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Kenya",
+      "Zambia",
+      "Zimbabwe",
+      "Mozambique"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "2026-08-19-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-19-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Russia?",
+    "correctAnswer": "Moscow",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 55.75,
+      "lng": 37.6
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-19-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-19-map-1",
+    "type": "map",
+    "question": "This ancient citadel overlooks Athens. What is its name?",
+    "correctAnswer": "Acropolis of Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.9715,
+      "lng": 23.7257
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-19-map-2",
+    "type": "map",
+    "question": "Which iconic mountain peak, bordering Switzerland and Italy, is depicted here?",
+    "correctAnswer": "Matterhorn",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6585
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-19-map-3",
+    "type": "map",
+    "question": "This immense canyon carved by the Colorado River is a natural wonder. What is it called?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.0997,
+      "lng": -112.1129
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-19-map-4",
+    "type": "map",
+    "question": "Which famous archipelago, known for its unique wildlife, is located in the Pacific Ocean and is a part of Ecuador?",
+    "correctAnswer": "Galápagos Islands",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.6277,
+      "lng": -90.6601
+    },
+    "options": []
+  }
+]
