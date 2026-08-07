@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-20-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Finland",
+      "Denmark",
+      "Norway",
+      "Sweden"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "2026-08-20-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Romania",
+    "imageUrl": "RO",
+    "options": [
+      "Romania",
+      "Andorra",
+      "Moldova",
+      "Chad"
+    ],
+    "countryCode": "RO"
+  },
+  {
+    "id": "2026-08-20-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nepal",
+    "imageUrl": "NP",
+    "options": [
+      "Bhutan",
+      "India",
+      "Nepal",
+      "Bangladesh"
+    ],
+    "countryCode": "NP"
+  },
+  {
+    "id": "2026-08-20-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.87,
+      "lng": 2.33
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-20-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -35.27,
+      "lng": 149.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-20-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Iceland?",
+    "correctAnswer": "Reykjavik",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.15,
+      "lng": -21.95
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-20-map-1",
+    "type": "map",
+    "question": "This iconic basilica is located in which European city?",
+    "correctAnswer": "Barcelona",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4037,
+      "lng": 2.174
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-20-map-2",
+    "type": "map",
+    "question": "This historic landmark, once a church, then a mosque, now a mosque again, is in which city?",
+    "correctAnswer": "Istanbul",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 41.0086,
+      "lng": 28.9834
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-20-map-3",
+    "type": "map",
+    "question": "Identify the city famous for this medieval bridge spanning the Vltava river.",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.0864,
+      "lng": 14.4115
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-20-map-4",
+    "type": "map",
+    "question": "These twin skyscrapers were once the tallest buildings in the world. Which city are they in?",
+    "correctAnswer": "Kuala Lumpur",
+    "countryCode": "MY",
+    "imageUrl": "MY",
+    "mapCoordinates": {
+      "lat": 3.1578,
+      "lng": 101.7119
+    },
+    "options": []
+  }
+]
