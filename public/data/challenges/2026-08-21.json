@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-21-flag-IE",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ireland",
+    "imageUrl": "IE",
+    "options": [
+      "India",
+      "Ivory Coast",
+      "Italy",
+      "Ireland"
+    ],
+    "countryCode": "IE"
+  },
+  {
+    "id": "2026-08-21-flag-PH",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "imageUrl": "PH",
+    "options": [
+      "Philippines",
+      "Cuba",
+      "Vietnam",
+      "Puerto Rico"
+    ],
+    "countryCode": "PH"
+  },
+  {
+    "id": "2026-08-21-flag-UY",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uruguay",
+    "imageUrl": "UY",
+    "options": [
+      "Uruguay",
+      "Greece",
+      "Argentina",
+      "Brazil"
+    ],
+    "countryCode": "UY"
+  },
+  {
+    "id": "2026-08-21-capital-NL",
+    "type": "capital",
+    "question": "Where is the capital of Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.35,
+      "lng": 4.92
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-21-capital-PK",
+    "type": "capital",
+    "question": "Where is the capital of Pakistan?",
+    "correctAnswer": "Islamabad",
+    "countryCode": "PK",
+    "imageUrl": "PK",
+    "mapCoordinates": {
+      "lat": 33.68,
+      "lng": 73.05
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-21-capital-TZ",
+    "type": "capital",
+    "question": "Where is the capital of Tanzania?",
+    "correctAnswer": "Dar es Salaam",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -6.16,
+      "lng": 35.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-21-map-MM-Bagan",
+    "type": "map",
+    "question": "This cluster of ancient temples and pagodas is a major archaeological zone. In which country would you find Bagan?",
+    "correctAnswer": "Myanmar",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 21.1717,
+      "lng": 94.8617
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-21-map-IR-Persepolis",
+    "type": "map",
+    "question": "Known as the ceremonial capital of the Achaemenid Empire, where are the ruins of Persepolis located?",
+    "correctAnswer": "Iran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 29.9348,
+      "lng": 52.8914
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-21-map-IQ-Babylon",
+    "type": "map",
+    "question": "This ancient city, famous for its Hanging Gardens (one of the Seven Wonders of the Ancient World), is located in which modern-day country?",
+    "correctAnswer": "Iraq",
+    "countryCode": "IQ",
+    "imageUrl": "IQ",
+    "mapCoordinates": {
+      "lat": 32.5358,
+      "lng": 44.4208
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-21-map-IL-Masada",
+    "type": "map",
+    "question": "This ancient fortification, perched on an isolated rock plateau, is a UNESCO World Heritage site known for its historical significance and views of the Dead Sea. In which country is Masada located?",
+    "correctAnswer": "Israel",
+    "countryCode": "IL",
+    "imageUrl": "IL",
+    "mapCoordinates": {
+      "lat": 31.3101,
+      "lng": 35.3533
+    },
+    "options": []
+  }
+]
