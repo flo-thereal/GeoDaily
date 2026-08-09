@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-22-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Norway",
+      "Iceland",
+      "Denmark",
+      "Sweden"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "2026-08-22-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "imageUrl": "PL",
+    "options": [
+      "Monaco",
+      "Indonesia",
+      "Poland",
+      "Austria"
+    ],
+    "countryCode": "PL"
+  },
+  {
+    "id": "2026-08-22-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zimbabwe",
+    "imageUrl": "ZW",
+    "options": [
+      "Kenya",
+      "Ghana",
+      "Zimbabwe",
+      "South Africa"
+    ],
+    "countryCode": "ZW"
+  },
+  {
+    "id": "2026-08-22-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Hungary?",
+    "correctAnswer": "Budapest",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.5,
+      "lng": 19.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-22-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Lithuania?",
+    "correctAnswer": "Vilnius",
+    "countryCode": "LT",
+    "imageUrl": "LT",
+    "mapCoordinates": {
+      "lat": 54.68,
+      "lng": 25.32
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-22-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.03,
+      "lng": 38.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-22-map-1",
+    "type": "map",
+    "question": "Which Central European country's capital city, Bratislava, is located on the Danube River?",
+    "correctAnswer": "Slovakia",
+    "countryCode": "SK",
+    "imageUrl": "SK",
+    "mapCoordinates": {
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-22-map-2",
+    "type": "map",
+    "question": "The Burj Khalifa, the world's tallest building, is located in which country?",
+    "correctAnswer": "United Arab Emirates",
+    "countryCode": "AE",
+    "imageUrl": "AE",
+    "mapCoordinates": {
+      "lat": 25.1972,
+      "lng": 55.2743
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-22-map-3",
+    "type": "map",
+    "question": "Taipei 101, once the world's tallest building, stands in the capital of which island nation?",
+    "correctAnswer": "Taiwan",
+    "countryCode": "TW",
+    "imageUrl": "TW",
+    "mapCoordinates": {
+      "lat": 25.0339,
+      "lng": 121.5654
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-22-map-4",
+    "type": "map",
+    "question": "Which Middle Eastern country's capital city, Kuwait City, is home to these iconic 'Kuwait Towers'?",
+    "correctAnswer": "Kuwait",
+    "countryCode": "KW",
+    "imageUrl": "KW",
+    "mapCoordinates": {
+      "lat": 29.3759,
+      "lng": 47.9782
+    },
+    "options": []
+  }
+]
