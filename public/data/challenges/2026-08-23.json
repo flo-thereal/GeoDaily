@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-23-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "countryCode": "JP",
+    "imageUrl": "JP",
+    "options": [
+      "Japan",
+      "Laos",
+      "Bangladesh",
+      "Palau"
+    ]
+  },
+  {
+    "id": "2026-08-23-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "options": [
+      "Fiji",
+      "Australia",
+      "New Zealand",
+      "Tuvalu"
+    ]
+  },
+  {
+    "id": "2026-08-23-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sri Lanka",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "options": [
+      "India",
+      "Bhutan",
+      "Sri Lanka",
+      "Myanmar"
+    ]
+  },
+  {
+    "id": "2026-08-23-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Dominican Republic?",
+    "correctAnswer": "Santo Domingo",
+    "countryCode": "DO",
+    "imageUrl": "DO",
+    "mapCoordinates": {
+      "lat": 18.47,
+      "lng": -69.9
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-23-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Austria?",
+    "correctAnswer": "Vienna",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 48.2,
+      "lng": 16.37
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-23-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Estonia?",
+    "correctAnswer": "Tallinn",
+    "countryCode": "EE",
+    "imageUrl": "EE",
+    "mapCoordinates": {
+      "lat": 59.43,
+      "lng": 24.72
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-23-map-1",
+    "type": "map",
+    "question": "This iconic bay, famous for its limestone karsts and islets, is located in which country?",
+    "correctAnswer": "Vietnam (Ha Long Bay)",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 20.91,
+      "lng": 107.15
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-23-map-2",
+    "type": "map",
+    "question": "This is the world's largest salt flat. In which South American country would you find it?",
+    "correctAnswer": "Bolivia (Salar de Uyuni)",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.2,
+      "lng": -67.4833
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-23-map-3",
+    "type": "map",
+    "question": "This vast cold desert and steppe region covers parts of two countries, but predominantly which one at these coordinates?",
+    "correctAnswer": "Mongolia (Gobi Desert)",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 43.5,
+      "lng": 103.4333
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-23-map-4",
+    "type": "map",
+    "question": "At these coordinates, you'd find the world's highest uninterrupted waterfall. Which country is home to this natural wonder?",
+    "correctAnswer": "Venezuela (Angel Falls)",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9717,
+      "lng": -62.5367
+    },
+    "options": []
+  }
+]
