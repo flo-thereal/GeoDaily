@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260824_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Sweden",
+      "Finland",
+      "Ukraine",
+      "Latvia"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20260824_2",
+    "type": "capital",
+    "question": "Where is the capital of Peru?",
+    "correctAnswer": "Lima",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -12.05,
+      "lng": -77.05
+    },
+    "options": []
+  },
+  {
+    "id": "20260824_3",
+    "type": "map",
+    "question": "This ancient temple complex is Angkor Wat. In which country is it located?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.8661
+    },
+    "options": []
+  },
+  {
+    "id": "20260824_4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Latvia",
+      "Sweden",
+      "Finland",
+      "Ukraine"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "20260824_5",
+    "type": "capital",
+    "question": "Where is the capital of Cuba?",
+    "correctAnswer": "Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.12,
+      "lng": -82.35
+    },
+    "options": []
+  },
+  {
+    "id": "20260824_6",
+    "type": "map",
+    "question": "This arid region marks the beginning of the vast Sahara Desert. In which country is this location?",
+    "correctAnswer": "Algeria",
+    "countryCode": "DZ",
+    "imageUrl": "DZ",
+    "mapCoordinates": {
+      "lat": 28.0339,
+      "lng": 1.6596
+    },
+    "options": []
+  },
+  {
+    "id": "20260824_7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ukraine",
+    "imageUrl": "UA",
+    "options": [
+      "Latvia",
+      "Finland",
+      "Sweden",
+      "Ukraine"
+    ],
+    "countryCode": "UA"
+  },
+  {
+    "id": "20260824_8",
+    "type": "capital",
+    "question": "Where is the capital of Panama?",
+    "correctAnswer": "Panama City",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 8.97,
+      "lng": -79.53
+    },
+    "options": []
+  },
+  {
+    "id": "20260824_9",
+    "type": "map",
+    "question": "This iconic structure is Marina Bay Sands. In which city-state is it located?",
+    "correctAnswer": "Singapore",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.283333,
+      "lng": 103.86
+    },
+    "options": []
+  },
+  {
+    "id": "20260824_10",
+    "type": "map",
+    "question": "This is Kaieteur Falls, one of the world's most powerful waterfalls. In which South American country can it be found?",
+    "correctAnswer": "Guyana",
+    "countryCode": "GY",
+    "imageUrl": "GY",
+    "mapCoordinates": {
+      "lat": 5.185278,
+      "lng": -59.489722
+    },
+    "options": []
+  }
+]
