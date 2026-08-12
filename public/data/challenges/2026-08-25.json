@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-25-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Portugal",
+      "Angola",
+      "Cape Verde",
+      "Brazil"
+    ],
+    "countryCode": "BR"
+  },
+  {
+    "id": "2026-08-25-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "Canada",
+      "Japan",
+      "Monaco",
+      "Lebanon"
+    ],
+    "countryCode": "CA"
+  },
+  {
+    "id": "2026-08-25-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "Niger",
+      "Italy",
+      "Afghanistan",
+      "India"
+    ],
+    "countryCode": "IN"
+  },
+  {
+    "id": "2026-08-25-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of South Africa?",
+    "correctAnswer": "Pretoria",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -25.7,
+      "lng": 28.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-25-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-25-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-25-map-1",
+    "type": "map",
+    "question": "This location marks a section of the famous Great Wall. In which country is it primarily located?",
+    "correctAnswer": "China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-25-map-2",
+    "type": "map",
+    "question": "This historic tower, a UNESCO World Heritage site, is a prominent landmark near Lisbon. Which country is it in?",
+    "correctAnswer": "Portugal",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.6916,
+      "lng": -9.216
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-25-map-3",
+    "type": "map",
+    "question": "This point is near Zuma Rock, a massive natural monolith located close to the capital city. Which country is this?",
+    "correctAnswer": "Nigeria",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 9.0664,
+      "lng": 7.1802
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-25-map-4",
+    "type": "map",
+    "question": "This location points to Jemaa el-Fnaa, a famous vibrant square. In which country would you find it?",
+    "correctAnswer": "Morocco",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6278,
+      "lng": -7.9892
+    },
+    "options": []
+  }
+]
