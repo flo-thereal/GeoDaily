@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-26-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Italy",
+    "imageUrl": "IT",
+    "options": [
+      "Italy",
+      "Mexico",
+      "Hungary",
+      "Ireland"
+    ],
+    "countryCode": "IT"
+  },
+  {
+    "id": "2026-08-26-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Jordan?",
+    "correctAnswer": "Amman",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 31.95,
+      "lng": 35.93
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-26-map-1",
+    "type": "map",
+    "question": "What large artificial lake is indicated by these coordinates in Ghana?",
+    "correctAnswer": "Lake Volta",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 7.37,
+      "lng": 0.3
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-26-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Indonesia",
+    "imageUrl": "ID",
+    "options": [
+      "Poland",
+      "Monaco",
+      "Singapore",
+      "Indonesia"
+    ],
+    "countryCode": "ID"
+  },
+  {
+    "id": "2026-08-26-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Democratic Republic of the Congo?",
+    "correctAnswer": "Kinshasa",
+    "countryCode": "CD",
+    "imageUrl": "CD",
+    "mapCoordinates": {
+      "lat": -4.32,
+      "lng": 15.3
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-26-map-2",
+    "type": "map",
+    "question": "This desert, one of the driest places on Earth, is located at these coordinates in which South American country?",
+    "correctAnswer": "Atacama Desert (Chile)",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -24.5,
+      "lng": -69.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-26-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Croatia",
+    "imageUrl": "HR",
+    "options": [
+      "Croatia",
+      "Serbia",
+      "Slovakia",
+      "Paraguay"
+    ],
+    "countryCode": "HR"
+  },
+  {
+    "id": "2026-08-26-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Uzbekistan?",
+    "correctAnswer": "Tashkent",
+    "countryCode": "UZ",
+    "imageUrl": "UZ",
+    "mapCoordinates": {
+      "lat": 41.32,
+      "lng": 69.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-26-map-3",
+    "type": "map",
+    "question": "This active stratovolcano is a prominent landmark indicated by these coordinates in which Central American country?",
+    "correctAnswer": "Arenal Volcano (Costa Rica)",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 10.4633,
+      "lng": -84.7031
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-26-map-4",
+    "type": "map",
+    "question": "These coordinates point to a vast mangrove forest, home to Bengal tigers, primarily located in which South Asian country?",
+    "correctAnswer": "Sundarbans (Bangladesh)",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 21.9482,
+      "lng": 89.1837
+    },
+    "options": []
+  }
+]
