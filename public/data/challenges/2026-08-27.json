@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-27-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mexico",
+    "imageUrl": "MX",
+    "options": [
+      "El Salvador",
+      "Honduras",
+      "Mexico",
+      "Nicaragua"
+    ],
+    "countryCode": "MX"
+  },
+  {
+    "id": "2026-08-27-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "imageUrl": "CH",
+    "options": [
+      "Switzerland",
+      "Vatican City",
+      "Malta",
+      "Tonga"
+    ],
+    "countryCode": "CH"
+  },
+  {
+    "id": "2026-08-27-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "South Sudan",
+      "Kenya",
+      "Somalia",
+      "Uganda"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "2026-08-27-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-27-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of South Korea?",
+    "correctAnswer": "Seoul",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 37.55,
+      "lng": 126.98
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-27-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-27-map-1",
+    "type": "map",
+    "question": "Which famous archipelago, known for its unique wildlife and instrumental role in Darwin's theory of evolution, is located at these coordinates?",
+    "correctAnswer": "Galapagos Islands",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.92,
+      "lng": -90.96
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-27-map-2",
+    "type": "map",
+    "question": "This famous waterfall, one of the Seven Natural Wonders of the World, is located on the Zambezi River. What is its name?",
+    "correctAnswer": "Victoria Falls",
+    "countryCode": "ZM",
+    "imageUrl": "ZM",
+    "mapCoordinates": {
+      "lat": -17.9243,
+      "lng": 25.858
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-27-map-3",
+    "type": "map",
+    "question": "This iconic ancient citadel overlooking Athens is a symbol of classical civilization. What is this historical site?",
+    "correctAnswer": "Acropolis of Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.9715,
+      "lng": 23.7257
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-27-map-4",
+    "type": "map",
+    "question": "This island nation in Melanesia, known for its pristine beaches and coral reefs, is located at these coordinates. Which country is this?",
+    "correctAnswer": "Fiji",
+    "countryCode": "FJ",
+    "imageUrl": "FJ",
+    "mapCoordinates": {
+      "lat": -18.125,
+      "lng": 178.435
+    },
+    "options": []
+  }
+]
