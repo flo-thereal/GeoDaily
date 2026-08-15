@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-28-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "Belgium",
+      "Netherlands",
+      "France",
+      "Italy"
+    ],
+    "countryCode": "FR"
+  },
+  {
+    "id": "2026-08-28-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "options": [
+      "New Zealand",
+      "Fiji",
+      "Tuvalu",
+      "Australia"
+    ],
+    "countryCode": "AU"
+  },
+  {
+    "id": "2026-08-28-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "imageUrl": "TR",
+    "options": [
+      "Pakistan",
+      "Azerbaijan",
+      "Tunisia",
+      "Turkey"
+    ],
+    "countryCode": "TR"
+  },
+  {
+    "id": "2026-08-28-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-28-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of United Kingdom?",
+    "correctAnswer": "London",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.5,
+      "lng": -0.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-28-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-28-map-1",
+    "type": "map",
+    "question": "This landmark is a world-famous unfinished basilica in Barcelona. What is its name?",
+    "correctAnswer": "Sagrada Familia",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4037,
+      "lng": 2.1744
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-28-map-2",
+    "type": "map",
+    "question": "This iconic statue of a fairy tale character is a major tourist attraction in Copenhagen. What is her name?",
+    "correctAnswer": "The Little Mermaid",
+    "countryCode": "DK",
+    "imageUrl": "DK",
+    "mapCoordinates": {
+      "lat": 55.6925,
+      "lng": 12.5992
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-28-map-3",
+    "type": "map",
+    "question": "This geothermal spa is one of Iceland's most famous attractions, known for its milky-blue waters. What is it called?",
+    "correctAnswer": "Blue Lagoon",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 63.8814,
+      "lng": -22.4527
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-28-map-4",
+    "type": "map",
+    "question": "This ancient site, believed to be the birthplace of Aphrodite, is located on the coast of Cyprus. What is its name?",
+    "correctAnswer": "Petra tou Romiou (Aphrodite's Rock)",
+    "countryCode": "CY",
+    "imageUrl": "CY",
+    "mapCoordinates": {
+      "lat": 34.6644,
+      "lng": 32.5937
+    },
+    "options": []
+  }
+]
