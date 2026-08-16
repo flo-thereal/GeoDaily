@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-29-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Paraguay",
+    "imageUrl": "PY",
+    "options": [
+      "Paraguay",
+      "Colombia",
+      "Bolivia",
+      "Uruguay"
+    ],
+    "countryCode": "PY"
+  },
+  {
+    "id": "2026-08-29-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nepal",
+    "imageUrl": "NP",
+    "options": [
+      "Bangladesh",
+      "Nepal",
+      "Bhutan",
+      "India"
+    ],
+    "countryCode": "NP"
+  },
+  {
+    "id": "2026-08-29-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iraq",
+    "imageUrl": "IQ",
+    "options": [
+      "Syria",
+      "Iraq",
+      "Yemen",
+      "Jordan"
+    ],
+    "countryCode": "IQ"
+  },
+  {
+    "id": "2026-08-29-4",
+    "type": "capital",
+    "question": "Where is the capital of Ireland?",
+    "correctAnswer": "Dublin",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 53.32,
+      "lng": -6.23
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-29-5",
+    "type": "capital",
+    "question": "Where is the capital of Uruguay?",
+    "correctAnswer": "Montevideo",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.85,
+      "lng": -56.17
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-29-6",
+    "type": "capital",
+    "question": "Where is the capital of Pakistan?",
+    "correctAnswer": "Islamabad",
+    "countryCode": "PK",
+    "imageUrl": "PK",
+    "mapCoordinates": {
+      "lat": 33.68,
+      "lng": 73.05
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-29-7",
+    "type": "map",
+    "question": "This iconic landmark, a symbol of freedom, is located at these coordinates. What is it called?",
+    "correctAnswer": "Statue of Liberty",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 40.6892,
+      "lng": -74.0445
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-29-8",
+    "type": "map",
+    "question": "At these coordinates in Myanmar, you'll find thousands of ancient temples and pagodas. What is this historical site known as?",
+    "correctAnswer": "Bagan",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 21.1667,
+      "lng": 94.8667
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-29-9",
+    "type": "map",
+    "question": "What is the name of the highest mountain in Africa, located in Tanzania at these coordinates?",
+    "correctAnswer": "Mount Kilimanjaro",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-29-10",
+    "type": "map",
+    "question": "Perched high in the Caucasus Mountains of Georgia, this famous church stands at these coordinates. What is its name?",
+    "correctAnswer": "Gergeti Trinity Church",
+    "countryCode": "GE",
+    "imageUrl": "GE",
+    "mapCoordinates": {
+      "lat": 42.5935,
+      "lng": 44.6198
+    },
+    "options": []
+  }
+]
