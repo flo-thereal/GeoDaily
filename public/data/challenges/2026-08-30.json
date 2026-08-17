@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-30-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "imageUrl": "NL",
+    "options": [
+      "Russia",
+      "Luxembourg",
+      "France",
+      "Netherlands"
+    ],
+    "countryCode": "NL"
+  },
+  {
+    "id": "2026-08-30-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "imageUrl": "PH",
+    "options": [
+      "Vietnam",
+      "Myanmar",
+      "Philippines",
+      "Cuba"
+    ],
+    "countryCode": "PH"
+  },
+  {
+    "id": "2026-08-30-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Hungary",
+    "imageUrl": "HU",
+    "options": [
+      "Italy",
+      "Bulgaria",
+      "Iran",
+      "Hungary"
+    ],
+    "countryCode": "HU"
+  },
+  {
+    "id": "2026-08-30-4",
+    "type": "capital",
+    "question": "Where is the capital of Senegal?",
+    "correctAnswer": "Dakar",
+    "countryCode": "SN",
+    "imageUrl": "SN",
+    "mapCoordinates": {
+      "lat": 14.73,
+      "lng": -17.63
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-30-5",
+    "type": "capital",
+    "question": "Where is the capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.03,
+      "lng": 38.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-30-6",
+    "type": "capital",
+    "question": "Where is the capital of Iran?",
+    "correctAnswer": "Tehran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 35.7,
+      "lng": 51.42
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-30-7",
+    "type": "map",
+    "question": "This map pin points to the historic city of Ayutthaya. Which country is it in?",
+    "correctAnswer": "Thailand",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 14.3517,
+      "lng": 100.5684
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-30-8",
+    "type": "map",
+    "question": "Which famous fjord is located at these coordinates in Norway?",
+    "correctAnswer": "Geirangerfjord",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 62.1167,
+      "lng": 7.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-30-9",
+    "type": "map",
+    "question": "This map pin highlights the Old Town of Riga, a UNESCO World Heritage site. In which Baltic country is it located?",
+    "correctAnswer": "Latvia",
+    "countryCode": "LV",
+    "imageUrl": "LV",
+    "mapCoordinates": {
+      "lat": 56.9496,
+      "lng": 24.1052
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-30-10",
+    "type": "map",
+    "question": "This pin is on the island of Borneo, home to diverse wildlife and rainforests. Which country owns the northern part of this island?",
+    "correctAnswer": "Malaysia",
+    "countryCode": "MY",
+    "imageUrl": "MY",
+    "mapCoordinates": {
+      "lat": 1.5532,
+      "lng": 110.3582
+    },
+    "options": []
+  }
+]
