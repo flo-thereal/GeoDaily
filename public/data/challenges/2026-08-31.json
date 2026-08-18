@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-08-31-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "New Zealand",
+      "Samoa",
+      "Tuvalu",
+      "Australia"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "2026-08-31-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "imageUrl": "PL",
+    "options": [
+      "Monaco",
+      "Indonesia",
+      "Poland",
+      "Austria"
+    ],
+    "countryCode": "PL"
+  },
+  {
+    "id": "2026-08-31-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Lithuania",
+    "imageUrl": "LT",
+    "options": [
+      "Lithuania",
+      "Guinea",
+      "Senegal",
+      "Mali"
+    ],
+    "countryCode": "LT"
+  },
+  {
+    "id": "2026-08-31-04",
+    "type": "capital",
+    "question": "Where is the capital of Angola?",
+    "correctAnswer": "Luanda",
+    "countryCode": "AO",
+    "imageUrl": "AO",
+    "mapCoordinates": {
+      "lat": -8.83,
+      "lng": 13.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-31-05",
+    "type": "capital",
+    "question": "Where is the capital of Vietnam?",
+    "correctAnswer": "Hanoi",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 21.03,
+      "lng": 105.85
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-31-06",
+    "type": "capital",
+    "question": "Where is the capital of Kazakhstan?",
+    "correctAnswer": "Astana",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 51.16,
+      "lng": 71.45
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-31-07",
+    "type": "map",
+    "question": "This iconic stratovolcano is located on Honshu Island. What is its name?",
+    "correctAnswer": "Mount Fuji",
+    "countryCode": "JP",
+    "imageUrl": "JP",
+    "mapCoordinates": {
+      "lat": 35.3606,
+      "lng": 138.7278
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-31-08",
+    "type": "map",
+    "question": "The world's largest salt flat, famous for its mirror effect, is found here. What is it called?",
+    "correctAnswer": "Salar de Uyuni",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.2454,
+      "lng": -67.625
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-31-09",
+    "type": "map",
+    "question": "This striking dirt road in western Madagascar is lined with ancient, towering trees. What is this famous landmark called?",
+    "correctAnswer": "Avenue of the Baobabs",
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -20.252,
+      "lng": 44.418
+    },
+    "options": []
+  },
+  {
+    "id": "2026-08-31-10",
+    "type": "map",
+    "question": "These three flame-shaped skyscrapers dominate the skyline of Baku. What are they called?",
+    "correctAnswer": "Flame Towers",
+    "countryCode": "AZ",
+    "imageUrl": "AZ",
+    "mapCoordinates": {
+      "lat": 40.3676,
+      "lng": 49.8368
+    },
+    "options": []
+  }
+]
