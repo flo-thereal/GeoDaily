@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-01-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Norway",
+      "Finland",
+      "Iceland",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-09-01-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Singapore",
+    "imageUrl": "SG",
+    "options": [
+      "Indonesia",
+      "Malaysia",
+      "Brunei",
+      "Singapore"
+    ],
+    "countryCode": "SG"
+  },
+  {
+    "id": "2026-09-01-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Panama",
+    "imageUrl": "PA",
+    "options": [
+      "Cuba",
+      "Dominican Republic",
+      "Puerto Rico",
+      "Panama"
+    ],
+    "countryCode": "PA"
+  },
+  {
+    "id": "2026-09-01-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Finland?",
+    "correctAnswer": "Helsinki",
+    "countryCode": "FI",
+    "imageUrl": "FI",
+    "mapCoordinates": {
+      "lat": 60.17,
+      "lng": 24.93
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-01-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of United Arab Emirates?",
+    "correctAnswer": "Abu Dhabi",
+    "countryCode": "AE",
+    "imageUrl": "AE",
+    "mapCoordinates": {
+      "lat": 24.47,
+      "lng": 54.37
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-01-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Romania?",
+    "correctAnswer": "Bucharest",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 44.43,
+      "lng": 26.1
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-01-map-1",
+    "type": "map",
+    "question": "This ancient Inca citadel, a UNESCO World Heritage site, is located in which South American country?",
+    "correctAnswer": "Machu Picchu, Peru",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-01-map-2",
+    "type": "map",
+    "question": "This prominent Eastern Orthodox monastery, a UNESCO World Heritage site, is nestled in the Rila Mountains of which European country?",
+    "correctAnswer": "Rila Monastery, Bulgaria",
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "mapCoordinates": {
+      "lat": 42.1225,
+      "lng": 23.34
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-01-map-3",
+    "type": "map",
+    "question": "These unique pyramids, remnants of the ancient Meroitic Kingdom, can be found along the Nile River in which African nation?",
+    "correctAnswer": "Pyramids of Meroë, Sudan",
+    "countryCode": "SD",
+    "imageUrl": "SD",
+    "mapCoordinates": {
+      "lat": 16.9318,
+      "lng": 33.7259
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-01-map-4",
+    "type": "map",
+    "question": "This vast desert region, known for its distinctive reddish-orange sand dunes, is a prominent geographical feature of which Middle Eastern country?",
+    "correctAnswer": "Wahiba Sands, Oman",
+    "countryCode": "OM",
+    "imageUrl": "OM",
+    "mapCoordinates": {
+      "lat": 20.3,
+      "lng": 58.7
+    },
+    "options": []
+  }
+]
