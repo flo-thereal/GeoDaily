@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-02-1",
+    "type": "map",
+    "question": "What iconic statue overlooks Rio de Janeiro, Brazil?",
+    "correctAnswer": "Christ the Redeemer",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-02-2",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-02-3",
+    "type": "map",
+    "question": "This massive defensive structure stretches across northern China. What is it?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-02-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Egypt",
+    "imageUrl": "EG",
+    "options": [
+      "Syria",
+      "Yemen",
+      "Iraq",
+      "Egypt"
+    ],
+    "countryCode": "EG"
+  },
+  {
+    "id": "2026-09-02-5",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-02-6",
+    "type": "map",
+    "question": "This famous square, Djemaa el-Fna, is a bustling heart of culture and entertainment in which Moroccan city?",
+    "correctAnswer": "Marrakech",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6277,
+      "lng": -7.9892
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-02-7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Brazil",
+      "Angola",
+      "Cape Verde",
+      "Portugal"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "2026-09-02-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Russia",
+    "imageUrl": "RU",
+    "options": [
+      "Russia",
+      "Slovenia",
+      "Serbia",
+      "Netherlands"
+    ],
+    "countryCode": "RU"
+  },
+  {
+    "id": "2026-09-02-9",
+    "type": "map",
+    "question": "Identify the holy city for Muslims, located in Saudi Arabia, towards which they face during daily prayers.",
+    "correctAnswer": "Mecca",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 21.4225,
+      "lng": 39.8262
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-02-10",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  }
+]
