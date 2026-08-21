@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-03-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Italy",
+    "imageUrl": "IT",
+    "options": [
+      "Hungary",
+      "Italy",
+      "Ireland",
+      "Mexico"
+    ],
+    "countryCode": "IT"
+  },
+  {
+    "id": "2026-09-03-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "Sudan",
+      "Ethiopia",
+      "South Africa",
+      "Kenya"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "2026-09-03-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "Pakistan",
+      "Nigeria",
+      "Saudi Arabia",
+      "Ireland"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "2026-09-03-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Israel?",
+    "correctAnswer": "Jerusalem",
+    "countryCode": "IL",
+    "imageUrl": "IL",
+    "mapCoordinates": {
+      "lat": 31.77,
+      "lng": 35.23
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-03-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Kuwait?",
+    "correctAnswer": "Kuwait City",
+    "countryCode": "KW",
+    "imageUrl": "KW",
+    "mapCoordinates": {
+      "lat": 29.37,
+      "lng": 47.97
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-03-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Sri Lanka?",
+    "correctAnswer": "Colombo",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 6.89,
+      "lng": 79.9
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-03-map-1",
+    "type": "map",
+    "question": "This map shows the approximate location of which historical disaster site in Ukraine?",
+    "correctAnswer": "Chernobyl Exclusion Zone",
+    "countryCode": "UA",
+    "imageUrl": "UA",
+    "mapCoordinates": {
+      "lat": 51.2783,
+      "lng": 30.2217
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-03-map-2",
+    "type": "map",
+    "question": "What famous remote island, known for its Moai statues, is located at these coordinates?",
+    "correctAnswer": "Easter Island",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -27.1167,
+      "lng": -109.3667
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-03-map-3",
+    "type": "map",
+    "question": "This location in Cuba is historically known for what failed invasion attempt in 1961?",
+    "correctAnswer": "Bay of Pigs (Playa Girón)",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 22.2131,
+      "lng": -81.1897
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-03-map-4",
+    "type": "map",
+    "question": "This picturesque village, famous for its lakeside setting and salt mine, is located in Austria. What is its name?",
+    "correctAnswer": "Hallstatt",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 47.5622,
+      "lng": 13.6496
+    },
+    "options": []
+  }
+]
