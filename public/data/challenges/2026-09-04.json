@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-04-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "options": [
+      "Denmark",
+      "Germany",
+      "Austria",
+      "Switzerland"
+    ]
+  },
+  {
+    "id": "2026-09-04-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "options": [
+      "North Korea",
+      "Mongolia",
+      "Taiwan",
+      "South Korea"
+    ]
+  },
+  {
+    "id": "2026-09-04-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "options": [
+      "Rwanda",
+      "Somalia",
+      "Kenya",
+      "Uganda"
+    ]
+  },
+  {
+    "id": "2026-09-04-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-04-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Greece?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.98,
+      "lng": 23.73
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-04-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Indonesia?",
+    "correctAnswer": "Jakarta",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -6.17,
+      "lng": 106.82
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-04-map-1",
+    "type": "map",
+    "question": "What famous ancient Mayan city is located at these coordinates?",
+    "correctAnswer": "Chichen Itza",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 20.6843,
+      "lng": -88.5678
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-04-map-2",
+    "type": "map",
+    "question": "This natural wonder, famous for its cascading lakes and waterfalls, is located at these coordinates. What is its name?",
+    "correctAnswer": "Plitvice Lakes National Park",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 44.8655,
+      "lng": 15.6159
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-04-map-3",
+    "type": "map",
+    "question": "This large body of water, one of the world's largest artificial lakes by surface area, is located at these coordinates. What is its name?",
+    "correctAnswer": "Lake Volta",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 7.25,
+      "lng": 0
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-04-map-4",
+    "type": "map",
+    "question": "This iconic structure, built for the 1958 Brussels World's Fair, is found at these coordinates. What is its name?",
+    "correctAnswer": "Atomium",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.8949,
+      "lng": 4.3416
+    },
+    "options": []
+  }
+]
