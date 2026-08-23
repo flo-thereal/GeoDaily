@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-05-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "Germany",
+      "Italy",
+      "Belgium",
+      "France"
+    ],
+    "countryCode": "FR"
+  },
+  {
+    "id": "2026-09-05-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Norway",
+      "Denmark",
+      "Sweden",
+      "Finland"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "2026-09-05-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "imageUrl": "TR",
+    "options": [
+      "Cyprus",
+      "Algeria",
+      "Tunisia",
+      "Turkey"
+    ],
+    "countryCode": "TR"
+  },
+  {
+    "id": "2026-09-05-04",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-05-05",
+    "type": "capital",
+    "question": "Where is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -35.27,
+      "lng": 149.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-05-06",
+    "type": "capital",
+    "question": "Where is the capital of Jordan?",
+    "correctAnswer": "Amman",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 31.95,
+      "lng": 35.93
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-05-07",
+    "type": "map",
+    "question": "This historic palace and fortress complex is a UNESCO World Heritage site in Granada, Spain. What is it called?",
+    "correctAnswer": "Alhambra",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 37.1761,
+      "lng": -3.5888
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-05-08",
+    "type": "map",
+    "question": "This famous peak is the highest mountain in Wales, part of the Snowdonia National Park. What is its name?",
+    "correctAnswer": "Snowdon (Yr Wyddfa)",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 53.0685,
+      "lng": -4.0763
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-05-09",
+    "type": "map",
+    "question": "Identify the Central European city located at these coordinates, famous for its Charles Bridge and Old Town Square.",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.0755,
+      "lng": 14.4378
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-05-10",
+    "type": "map",
+    "question": "This equatorial volcano, part of the Andes mountain range, is one of the highest active volcanoes in the world, located in Ecuador. What is it called?",
+    "correctAnswer": "Cotopaxi",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.6775,
+      "lng": -78.4375
+    },
+    "options": []
+  }
+]
