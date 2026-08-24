@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-06-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ireland",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "options": [
+      "Italy",
+      "Ireland",
+      "Ivory Coast",
+      "Nigeria"
+    ]
+  },
+  {
+    "id": "2026-09-06-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Fiji",
+    "countryCode": "FJ",
+    "imageUrl": "FJ",
+    "options": [
+      "Fiji",
+      "New Zealand",
+      "Tuvalu",
+      "Australia"
+    ]
+  },
+  {
+    "id": "2026-09-06-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Laos",
+    "countryCode": "LA",
+    "imageUrl": "LA",
+    "options": [
+      "Laos",
+      "Cambodia",
+      "North Korea",
+      "Myanmar"
+    ]
+  },
+  {
+    "id": "2026-09-06-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Iceland?",
+    "correctAnswer": "Reykjavik",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.15,
+      "lng": -21.95
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-06-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Armenia?",
+    "correctAnswer": "Yerevan",
+    "countryCode": "AM",
+    "imageUrl": "AM",
+    "mapCoordinates": {
+      "lat": 40.17,
+      "lng": 44.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-06-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Bangladesh?",
+    "correctAnswer": "Dhaka",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 23.72,
+      "lng": 90.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-06-map-1",
+    "type": "map",
+    "question": "This golden stupa is a prominent landmark in which city?",
+    "correctAnswer": "Yangon, Myanmar",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 16.7972,
+      "lng": 96.1495
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-06-map-2",
+    "type": "map",
+    "question": "This peak is the highest in the world. In which country is it predominantly located?",
+    "correctAnswer": "Nepal",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-06-map-3",
+    "type": "map",
+    "question": "The ruins of the ancient city of Babylon are found in which modern-day country?",
+    "correctAnswer": "Iraq",
+    "countryCode": "IQ",
+    "imageUrl": "IQ",
+    "mapCoordinates": {
+      "lat": 32.5358,
+      "lng": 44.4208
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-06-map-4",
+    "type": "map",
+    "question": "This massive stone temple complex is a famous archaeological site in which country?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  }
+]
