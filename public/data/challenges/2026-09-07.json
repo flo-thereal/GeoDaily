@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-07-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United States",
+    "imageUrl": "US",
+    "options": [
+      "Canada",
+      "Australia",
+      "United Kingdom",
+      "United States"
+    ],
+    "countryCode": "US"
+  },
+  {
+    "id": "2026-09-07-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Myanmar",
+      "Thailand",
+      "Laos",
+      "Cambodia"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "2026-09-07-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "Singapore",
+      "Indonesia",
+      "Malaysia",
+      "Brunei"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "2026-09-07-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-07-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Norway?",
+    "correctAnswer": "Oslo",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 59.92,
+      "lng": 10.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-07-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.35,
+      "lng": 4.92
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-07-map-1",
+    "type": "map",
+    "question": "Which country is highlighted on the map?",
+    "correctAnswer": "Hungary",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.1625,
+      "lng": 19.5033
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-07-map-2",
+    "type": "map",
+    "question": "Identify the highest peak in Africa, Mount Kilimanjaro, located in this country.",
+    "correctAnswer": "Tanzania",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-07-map-3",
+    "type": "map",
+    "question": "This small South American country is known for its extensive coastline and the origin of the tango dance. Which country is it?",
+    "correctAnswer": "Uruguay",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -32.5228,
+      "lng": -55.7658
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-07-map-4",
+    "type": "map",
+    "question": "This Central American country is famous for its rainforests, volcanoes, and biodiversity, with protected areas comprising a quarter of its land. Identify the country.",
+    "correctAnswer": "Costa Rica",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 9.7489,
+      "lng": -83.7534
+    },
+    "options": []
+  }
+]
