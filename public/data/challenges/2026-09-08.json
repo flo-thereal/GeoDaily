@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-08-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Malta",
+      "Japan",
+      "Palau",
+      "Tuvalu"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-09-08-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "Burkina Faso",
+      "Suriname",
+      "Angola",
+      "Vietnam"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "2026-09-08-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Senegal",
+    "imageUrl": "SN",
+    "options": [
+      "Senegal",
+      "Mali",
+      "Guinea",
+      "Bolivia"
+    ],
+    "countryCode": "SN"
+  },
+  {
+    "id": "2026-09-08-4",
+    "type": "capital",
+    "question": "Where is the capital of New Zealand?",
+    "correctAnswer": "Wellington",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -41.3,
+      "lng": 174.78
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-08-5",
+    "type": "capital",
+    "question": "Where is the capital of Madagascar?",
+    "correctAnswer": "Antananarivo",
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -18.92,
+      "lng": 47.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-08-6",
+    "type": "capital",
+    "question": "Where is the capital of Nicaragua?",
+    "correctAnswer": "Managua",
+    "countryCode": "NI",
+    "imageUrl": "NI",
+    "mapCoordinates": {
+      "lat": 12.13,
+      "lng": -86.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-08-7",
+    "type": "map",
+    "question": "This map shows the historic Old Town Market Square, a UNESCO World Heritage site. Which city is it in?",
+    "correctAnswer": "Kraków",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 50.0617,
+      "lng": 19.9378
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-08-8",
+    "type": "map",
+    "question": "The largest salt flat in the world is shown here. What is its name?",
+    "correctAnswer": "Salar de Uyuni",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.2111,
+      "lng": -67.4911
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-08-9",
+    "type": "map",
+    "question": "Vast and rugged, this is a large desert and semi-desert region in Asia. Which desert is it?",
+    "correctAnswer": "Gobi Desert",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 42.95,
+      "lng": 103.43
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-08-10",
+    "type": "map",
+    "question": "This vast lake, once the world's fourth largest, is now significantly smaller due to water diversion. Which lake is it?",
+    "correctAnswer": "Aral Sea",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 45,
+      "lng": 60
+    },
+    "options": []
+  }
+]
