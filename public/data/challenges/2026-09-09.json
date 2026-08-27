@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260909_Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Finland",
+      "Norway",
+      "Denmark",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20260909_Q2",
+    "type": "capital",
+    "question": "Where is the capital of Peru?",
+    "correctAnswer": "Lima",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -12.05,
+      "lng": -77.05
+    },
+    "options": []
+  },
+  {
+    "id": "20260909_Q3",
+    "type": "map",
+    "question": "Which country is highlighted on the map?",
+    "correctAnswer": "Paraguay",
+    "countryCode": "PY",
+    "imageUrl": "PY",
+    "mapCoordinates": {
+      "lat": -23.4425,
+      "lng": -58.4438
+    },
+    "options": []
+  },
+  {
+    "id": "20260909_Q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Estonia",
+      "Sweden",
+      "Norway",
+      "Finland"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "20260909_Q5",
+    "type": "capital",
+    "question": "Where is the capital of United Arab Emirates?",
+    "correctAnswer": "Abu Dhabi",
+    "countryCode": "AE",
+    "imageUrl": "AE",
+    "mapCoordinates": {
+      "lat": 24.47,
+      "lng": 54.37
+    },
+    "options": []
+  },
+  {
+    "id": "20260909_Q6",
+    "type": "map",
+    "question": "Which country is highlighted on the map?",
+    "correctAnswer": "Papua New Guinea",
+    "countryCode": "PG",
+    "imageUrl": "PG",
+    "mapCoordinates": {
+      "lat": -6.315,
+      "lng": 143.9555
+    },
+    "options": []
+  },
+  {
+    "id": "20260909_Q7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "imageUrl": "PK",
+    "options": [
+      "Pakistan",
+      "Bangladesh",
+      "India",
+      "Iran"
+    ],
+    "countryCode": "PK"
+  },
+  {
+    "id": "20260909_Q8",
+    "type": "capital",
+    "question": "Where is the capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.03,
+      "lng": 38.7
+    },
+    "options": []
+  },
+  {
+    "id": "20260909_Q9",
+    "type": "map",
+    "question": "Where are the Victoria Falls located?",
+    "correctAnswer": "Zambia",
+    "countryCode": "ZM",
+    "imageUrl": "ZM",
+    "mapCoordinates": {
+      "lat": -17.9243,
+      "lng": 25.8582
+    },
+    "options": []
+  },
+  {
+    "id": "20260909_Q10",
+    "type": "map",
+    "question": "Where is the Panama Canal located?",
+    "correctAnswer": "Panama",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0732,
+      "lng": -79.7959
+    },
+    "options": []
+  }
+]
