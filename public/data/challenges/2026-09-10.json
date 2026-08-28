@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-10-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Argentina",
+    "imageUrl": "AR",
+    "options": [
+      "Chile",
+      "Uruguay",
+      "Honduras",
+      "Argentina"
+    ],
+    "countryCode": "AR"
+  },
+  {
+    "id": "2026-09-10-02",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-10-03",
+    "type": "map",
+    "question": "This iconic statue overlooks Rio de Janeiro. What is its name?",
+    "correctAnswer": "Christ the Redeemer",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-10-04",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "Niger",
+      "Ireland",
+      "Italy",
+      "India"
+    ],
+    "countryCode": "IN"
+  },
+  {
+    "id": "2026-09-10-05",
+    "type": "map",
+    "question": "These ancient structures are located near Cairo. What are they?",
+    "correctAnswer": "Pyramids of Giza",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 29.9792,
+      "lng": 31.1342
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-10-06",
+    "type": "capital",
+    "question": "Where is the capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.72,
+      "lng": -9.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-10-07",
+    "type": "map",
+    "question": "This massive defensive structure stretches across northern China. What is it called?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-10-08",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Morocco",
+    "imageUrl": "MA",
+    "options": [
+      "Tunisia",
+      "Morocco",
+      "Algeria",
+      "Libya"
+    ],
+    "countryCode": "MA"
+  },
+  {
+    "id": "2026-09-10-09",
+    "type": "capital",
+    "question": "Where is the capital of Russia?",
+    "correctAnswer": "Moscow",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 55.75,
+      "lng": 37.6
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-10-10",
+    "type": "map",
+    "question": "This sacred site, containing the Kaaba, is a pilgrimage destination in Saudi Arabia. What city is it in?",
+    "correctAnswer": "Mecca",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 21.4225,
+      "lng": 39.8262
+    },
+    "options": []
+  }
+]
