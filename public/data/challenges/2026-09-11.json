@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-CY-0",
+    "type": "map",
+    "question": "Where is Cyprus located?",
+    "correctAnswer": "Cyprus",
+    "options": [],
+    "countryCode": "CY",
+    "imageUrl": "CY",
+    "mapCoordinates": {
+      "lat": 34.9249,
+      "lng": 33.4299
+    }
+  },
+  {
+    "id": "flag-TM-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkmenistan",
+    "options": [
+      "South Korea",
+      "Turkmenistan",
+      "Cuba",
+      "Portugal"
+    ],
+    "countryCode": "TM",
+    "imageUrl": "TM"
+  },
+  {
+    "id": "capital-IL-2",
+    "type": "capital",
+    "question": "Where is the capital of Israel?",
+    "correctAnswer": "Jerusalem",
+    "options": [],
+    "countryCode": "IL",
+    "mapCoordinates": {
+      "lat": 31.77,
+      "lng": 35.23
+    }
+  },
+  {
+    "id": "map-CU-3",
+    "type": "map",
+    "question": "Where is Cuba located?",
+    "correctAnswer": "Cuba",
+    "options": [],
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 21.5218,
+      "lng": -77.7812
+    }
+  },
+  {
+    "id": "flag-SO-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Somalia",
+    "options": [
+      "Senegal",
+      "Bhutan",
+      "Ivory Coast",
+      "Somalia"
+    ],
+    "countryCode": "SO",
+    "imageUrl": "SO"
+  },
+  {
+    "id": "map-SI-5",
+    "type": "map",
+    "question": "Where is Slovenia located?",
+    "correctAnswer": "Slovenia",
+    "options": [],
+    "countryCode": "SI",
+    "imageUrl": "SI",
+    "mapCoordinates": {
+      "lat": 46.1512,
+      "lng": 14.9955
+    }
+  },
+  {
+    "id": "capital-SD-6",
+    "type": "capital",
+    "question": "Where is the capital of Sudan?",
+    "correctAnswer": "Khartoum",
+    "options": [],
+    "countryCode": "SD",
+    "mapCoordinates": {
+      "lat": 15.6,
+      "lng": 32.53
+    }
+  },
+  {
+    "id": "map-LK-7",
+    "type": "map",
+    "question": "Where is Sri Lanka located?",
+    "correctAnswer": "Sri Lanka",
+    "options": [],
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 7.8731,
+      "lng": 80.7718
+    }
+  },
+  {
+    "id": "flag-GQ-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Equatorial Guinea",
+    "options": [
+      "Equatorial Guinea",
+      "Syria",
+      "Panama",
+      "India"
+    ],
+    "countryCode": "GQ",
+    "imageUrl": "GQ"
+  },
+  {
+    "id": "capital-AF-9",
+    "type": "capital",
+    "question": "Where is the capital of Afghanistan?",
+    "correctAnswer": "Kabul",
+    "options": [],
+    "countryCode": "AF",
+    "mapCoordinates": {
+      "lat": 34.52,
+      "lng": 69.18
+    }
+  }
+]
