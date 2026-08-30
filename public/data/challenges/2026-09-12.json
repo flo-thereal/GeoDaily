@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-12-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "China",
+      "South Korea",
+      "Vietnam",
+      "Japan"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "2026-09-12-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "imageUrl": "GR",
+    "options": [
+      "Finland",
+      "Greece",
+      "Cyprus",
+      "Sweden"
+    ],
+    "countryCode": "GR"
+  },
+  {
+    "id": "2026-09-12-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Chile",
+    "imageUrl": "CL",
+    "options": [
+      "Chile",
+      "Argentina",
+      "Texas (USA)",
+      "Peru"
+    ],
+    "countryCode": "CL"
+  },
+  {
+    "id": "2026-09-12-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-12-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Kenya?",
+    "correctAnswer": "Nairobi",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "mapCoordinates": {
+      "lat": -1.28,
+      "lng": 36.82
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-12-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Switzerland?",
+    "correctAnswer": "Bern",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 46.92,
+      "lng": 7.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-12-map-1",
+    "type": "map",
+    "question": "This UNESCO World Heritage site is an outlet glacier in the Arctic. Which autonomous territory is it in?",
+    "correctAnswer": "Greenland",
+    "countryCode": "GL",
+    "imageUrl": "GL",
+    "mapCoordinates": {
+      "lat": 69.2167,
+      "lng": -49.95
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-12-map-2",
+    "type": "map",
+    "question": "Which iconic flat-topped mountain overlooking Cape Town is shown here?",
+    "correctAnswer": "Table Mountain",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -33.9583,
+      "lng": 18.4069
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-12-map-3",
+    "type": "map",
+    "question": "This ancient amphitheater is a symbol of Rome's imperial history. Which famous landmark is it?",
+    "correctAnswer": "Colosseum",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-12-map-4",
+    "type": "map",
+    "question": "This ancient Maya city, home to the El Castillo pyramid, is located in which country?",
+    "correctAnswer": "Mexico",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 20.6843,
+      "lng": -88.5678
+    },
+    "options": []
+  }
+]
