@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260913_flag_01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "Belgium",
+      "France",
+      "Italy",
+      "Netherlands"
+    ],
+    "countryCode": "FR"
+  },
+  {
+    "id": "20260913_flag_02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "options": [
+      "Fiji",
+      "Australia",
+      "New Zealand",
+      "United Kingdom"
+    ],
+    "countryCode": "AU"
+  },
+  {
+    "id": "20260913_flag_03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "imageUrl": "TR",
+    "options": [
+      "Tunisia",
+      "Azerbaijan",
+      "Lebanon",
+      "Turkey"
+    ],
+    "countryCode": "TR"
+  },
+  {
+    "id": "20260913_capital_01",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "20260913_capital_02",
+    "type": "capital",
+    "question": "Where is the capital of Spain?",
+    "correctAnswer": "Madrid",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 40.4,
+      "lng": -3.68
+    },
+    "options": []
+  },
+  {
+    "id": "20260913_capital_03",
+    "type": "capital",
+    "question": "Where is the capital of Austria?",
+    "correctAnswer": "Vienna",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 48.2,
+      "lng": 16.37
+    },
+    "options": []
+  },
+  {
+    "id": "20260913_map_01",
+    "type": "map",
+    "question": "Where are these ancient stones located?",
+    "correctAnswer": "Stonehenge, United Kingdom",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  },
+  {
+    "id": "20260913_map_02",
+    "type": "map",
+    "question": "This iconic structure is located in which city?",
+    "correctAnswer": "Brussels, Belgium",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.8949,
+      "lng": 4.3415
+    },
+    "options": []
+  },
+  {
+    "id": "20260913_map_03",
+    "type": "map",
+    "question": "This famous statue can be found in which capital city?",
+    "correctAnswer": "Copenhagen, Denmark",
+    "countryCode": "DK",
+    "imageUrl": "DK",
+    "mapCoordinates": {
+      "lat": 55.6925,
+      "lng": 12.5992
+    },
+    "options": []
+  },
+  {
+    "id": "20260913_map_04",
+    "type": "map",
+    "question": "Which historic European bridge is this?",
+    "correctAnswer": "Charles Bridge, Czech Republic",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.0865,
+      "lng": 14.4116
+    },
+    "options": []
+  }
+]
