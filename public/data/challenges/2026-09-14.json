@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-14-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ireland",
+    "imageUrl": "IE",
+    "options": [
+      "Italy",
+      "Ivory Coast",
+      "Nigeria",
+      "Ireland"
+    ],
+    "countryCode": "IE"
+  },
+  {
+    "id": "2026-09-14-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "imageUrl": "GH",
+    "options": [
+      "Ghana",
+      "Cameroon",
+      "Bolivia",
+      "Senegal"
+    ],
+    "countryCode": "GH"
+  },
+  {
+    "id": "2026-09-14-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uganda",
+    "imageUrl": "UG",
+    "options": [
+      "Rwanda",
+      "Uganda",
+      "Kenya",
+      "Zambia"
+    ],
+    "countryCode": "UG"
+  },
+  {
+    "id": "2026-09-14-04",
+    "type": "capital",
+    "question": "Where is the capital of Indonesia?",
+    "correctAnswer": "Jakarta",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -6.17,
+      "lng": 106.82
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-14-05",
+    "type": "capital",
+    "question": "Where is the capital of Iceland?",
+    "correctAnswer": "Reykjavik",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.15,
+      "lng": -21.95
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-14-06",
+    "type": "capital",
+    "question": "Where is the capital of Nepal?",
+    "correctAnswer": "Kathmandu",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.72,
+      "lng": 85.32
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-14-07",
+    "type": "map",
+    "question": "This iconic hotel with a rooftop infinity pool is located in which city-state?",
+    "correctAnswer": "Singapore",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.2833,
+      "lng": 103.8603
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-14-08",
+    "type": "map",
+    "question": "These ancient temple ruins, a UNESCO World Heritage site, are known as Angkor Wat. In which country can you find them?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-14-09",
+    "type": "map",
+    "question": "The ancient city of Petra, famous for its rock-cut architecture, is located in which Middle Eastern country?",
+    "correctAnswer": "Jordan",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-14-10",
+    "type": "map",
+    "question": "Often associated with the legend of Dracula, Bran Castle is a popular landmark in which European country?",
+    "correctAnswer": "Romania",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 45.5147,
+      "lng": 25.367
+    },
+    "options": []
+  }
+]
