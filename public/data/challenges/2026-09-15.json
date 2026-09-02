@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-15-Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Hungary",
+    "imageUrl": "HU",
+    "options": [
+      "Bulgaria",
+      "Luxembourg",
+      "Iran",
+      "Hungary"
+    ],
+    "countryCode": "HU"
+  },
+  {
+    "id": "2026-09-15-Q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "United States",
+      "Liberia",
+      "Togo",
+      "Malaysia"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "2026-09-15-Q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Norway",
+      "Iceland",
+      "Denmark",
+      "Sweden"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "2026-09-15-Q4",
+    "type": "capital",
+    "question": "Where is the capital of Thailand?",
+    "correctAnswer": "Bangkok",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 13.75,
+      "lng": 100.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-15-Q5",
+    "type": "capital",
+    "question": "Where is the capital of Venezuela?",
+    "correctAnswer": "Caracas",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 10.48,
+      "lng": -66.87
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-15-Q6",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-15-Q7",
+    "type": "map",
+    "question": "This windmill complex is a UNESCO World Heritage site located in which country?",
+    "correctAnswer": "Kinderdijk, Netherlands",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 51.884,
+      "lng": 4.632
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-15-Q8",
+    "type": "map",
+    "question": "Which major African river flows through this region of Nigeria?",
+    "correctAnswer": "Niger River",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 5.18,
+      "lng": 6.42
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-15-Q9",
+    "type": "map",
+    "question": "This famous canyon, carved by the Colorado River, is a prominent natural feature. What is its name?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.11
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-15-Q10",
+    "type": "map",
+    "question": "This vast rainforest region, crucial for global biodiversity, is primarily located within which country in Central Africa?",
+    "correctAnswer": "Democratic Republic of the Congo",
+    "countryCode": "CD",
+    "imageUrl": "CD",
+    "mapCoordinates": {
+      "lat": -2.8,
+      "lng": 23.6
+    },
+    "options": []
+  }
+]
