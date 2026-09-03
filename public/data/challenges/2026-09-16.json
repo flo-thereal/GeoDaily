@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260916-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "South Korea",
+      "Japan",
+      "Bangladesh",
+      "Palau"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "20260916-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "Australia",
+      "Fiji",
+      "New Zealand",
+      "Tuvalu"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "20260916-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "imageUrl": "PL",
+    "options": [
+      "Poland",
+      "Monaco",
+      "Indonesia",
+      "Malta"
+    ],
+    "countryCode": "PL"
+  },
+  {
+    "id": "20260916-04",
+    "type": "capital",
+    "question": "Where is the capital of Bolivia?",
+    "correctAnswer": "La Paz",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -19.02,
+      "lng": -65.26
+    },
+    "options": []
+  },
+  {
+    "id": "20260916-05",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "20260916-06",
+    "type": "capital",
+    "question": "Where is the capital of Oman?",
+    "correctAnswer": "Muscat",
+    "countryCode": "OM",
+    "imageUrl": "OM",
+    "mapCoordinates": {
+      "lat": 23.62,
+      "lng": 58.58
+    },
+    "options": []
+  },
+  {
+    "id": "20260916-07",
+    "type": "map",
+    "question": "This map highlights the ancient city of Luang Prabang. In which country is it located?",
+    "correctAnswer": "Laos",
+    "countryCode": "LA",
+    "imageUrl": "LA",
+    "mapCoordinates": {
+      "lat": 19.8906,
+      "lng": 102.1388
+    },
+    "options": []
+  },
+  {
+    "id": "20260916-08",
+    "type": "map",
+    "question": "This map points to the Curonian Spit, a UNESCO World Heritage site known for its unique dunes. Which country shares this spit with Russia?",
+    "correctAnswer": "Lithuania",
+    "countryCode": "LT",
+    "imageUrl": "LT",
+    "mapCoordinates": {
+      "lat": 55.4285,
+      "lng": 21.0877
+    },
+    "options": []
+  },
+  {
+    "id": "20260916-09",
+    "type": "map",
+    "question": "This map highlights the iconic Avenue of the Baobabs, a striking group of grand Adansonia grandidieri trees. In which island nation is this natural landmark located?",
+    "correctAnswer": "Madagascar",
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -20.252,
+      "lng": 44.418
+    },
+    "options": []
+  },
+  {
+    "id": "20260916-10",
+    "type": "map",
+    "question": "This map points to the vast Gobi Desert, known for its significant dinosaur fossil sites and diverse landscapes. Which landlocked country is home to a large portion of this desert?",
+    "correctAnswer": "Mongolia",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 43.1979,
+      "lng": 103.4194
+    },
+    "options": []
+  }
+]
