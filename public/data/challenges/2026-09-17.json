@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260917-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Denmark",
+      "Norway",
+      "Finland",
+      "Sweden"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "20260917-02",
+    "type": "capital",
+    "question": "Where is the capital of Croatia?",
+    "correctAnswer": "Zagreb",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 45.8,
+      "lng": 16
+    },
+    "options": []
+  },
+  {
+    "id": "20260917-03",
+    "type": "map",
+    "question": "This iconic Inca citadel is a UNESCO World Heritage site. In which country is it located?",
+    "correctAnswer": "Machu Picchu, Peru",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.163,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "20260917-04",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "China",
+      "Vietnam",
+      "Laos",
+      "Cambodia"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "20260917-05",
+    "type": "map",
+    "question": "This is Africa's highest peak. Where would you find Mount Kilimanjaro?",
+    "correctAnswer": "Tanzania",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.067,
+      "lng": 37.355
+    },
+    "options": []
+  },
+  {
+    "id": "20260917-06",
+    "type": "capital",
+    "question": "Where is the capital of Estonia?",
+    "correctAnswer": "Tallinn",
+    "countryCode": "EE",
+    "imageUrl": "EE",
+    "mapCoordinates": {
+      "lat": 59.43,
+      "lng": 24.72
+    },
+    "options": []
+  },
+  {
+    "id": "20260917-07",
+    "type": "map",
+    "question": "Connecting the Atlantic and Pacific oceans, this engineering marvel is a vital shipping route. Which country hosts it?",
+    "correctAnswer": "Panama Canal, Panama",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.07,
+      "lng": -79.79
+    },
+    "options": []
+  },
+  {
+    "id": "20260917-08",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bulgaria",
+    "imageUrl": "BG",
+    "options": [
+      "Serbia",
+      "Romania",
+      "Hungary",
+      "Bulgaria"
+    ],
+    "countryCode": "BG"
+  },
+  {
+    "id": "20260917-09",
+    "type": "capital",
+    "question": "Where is the capital of Maldives?",
+    "correctAnswer": "Malé",
+    "countryCode": "MV",
+    "imageUrl": "MV",
+    "mapCoordinates": {
+      "lat": 4.17,
+      "lng": 73.51
+    },
+    "options": []
+  },
+  {
+    "id": "20260917-10",
+    "type": "map",
+    "question": "This is the world's first and largest operational space launch facility. In which Central Asian country is it primarily located?",
+    "correctAnswer": "Baikonur Cosmodrome, Kazakhstan",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 45.965,
+      "lng": 63.305
+    },
+    "options": []
+  }
+]
