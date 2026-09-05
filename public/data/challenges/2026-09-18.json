@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-18-q1",
+    "type": "map",
+    "question": "Which famous landmark is located at these coordinates?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.432,
+      "lng": 116.5652
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-18-q2",
+    "type": "map",
+    "question": "This incredible glacier, a major tourist attraction, is located in which region?",
+    "correctAnswer": "Patagonia",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -50.4686,
+      "lng": -73.0487
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-18-q3",
+    "type": "map",
+    "question": "Identify the location of these ancient wonders.",
+    "correctAnswer": "Giza Necropolis",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 29.9792,
+      "lng": 31.1342
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-18-q4",
+    "type": "map",
+    "question": "This vast estuary marks the mouth of which immense river?",
+    "correctAnswer": "Amazon River",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": 0.2828,
+      "lng": -49.309
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-18-q5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Russia",
+    "imageUrl": "RU",
+    "options": [
+      "Slovakia",
+      "Slovenia",
+      "Serbia",
+      "Russia"
+    ],
+    "countryCode": "RU"
+  },
+  {
+    "id": "2026-09-18-q6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Denmark",
+      "Norway",
+      "Finland",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-09-18-q7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Morocco",
+    "imageUrl": "MA",
+    "options": [
+      "Algeria",
+      "Tunisia",
+      "Libya",
+      "Morocco"
+    ],
+    "countryCode": "MA"
+  },
+  {
+    "id": "2026-09-18-q8",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-18-q9",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-18-q10",
+    "type": "capital",
+    "question": "Where is the capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.72,
+      "lng": -9.13
+    },
+    "options": []
+  }
+]
