@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20260919-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Syria",
+    "imageUrl": "SY",
+    "options": [
+      "Syria",
+      "Egypt",
+      "Yemen",
+      "Iraq"
+    ],
+    "countryCode": "SY"
+  },
+  {
+    "id": "20260919-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "imageUrl": "BD",
+    "options": [
+      "Pakistan",
+      "India",
+      "Myanmar",
+      "Bangladesh"
+    ],
+    "countryCode": "BD"
+  },
+  {
+    "id": "20260919-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ukraine",
+    "imageUrl": "UA",
+    "options": [
+      "Sweden",
+      "Austria",
+      "Poland",
+      "Ukraine"
+    ],
+    "countryCode": "UA"
+  },
+  {
+    "id": "20260919-04",
+    "type": "capital",
+    "question": "Where is the capital of Azerbaijan?",
+    "correctAnswer": "Baku",
+    "countryCode": "AZ",
+    "imageUrl": "AZ",
+    "mapCoordinates": {
+      "lat": 40.38,
+      "lng": 49.87
+    },
+    "options": []
+  },
+  {
+    "id": "20260919-05",
+    "type": "capital",
+    "question": "Where is the capital of Cuba?",
+    "correctAnswer": "Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.12,
+      "lng": -82.35
+    },
+    "options": []
+  },
+  {
+    "id": "20260919-06",
+    "type": "capital",
+    "question": "Where is the capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.03,
+      "lng": 38.7
+    },
+    "options": []
+  },
+  {
+    "id": "20260919-07",
+    "type": "map",
+    "question": "This ancient city, once the ceremonial capital of the Achaemenid Empire, is located at these coordinates. What is its name?",
+    "correctAnswer": "Persepolis",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 29.9344,
+      "lng": 52.891
+    },
+    "options": []
+  },
+  {
+    "id": "20260919-08",
+    "type": "map",
+    "question": "This wild and beautiful peninsula, known for its rugged terrain and clear waters, is located on which Mediterranean island nation?",
+    "correctAnswer": "Cyprus",
+    "countryCode": "CY",
+    "imageUrl": "CY",
+    "mapCoordinates": {
+      "lat": 35.05,
+      "lng": 32.32
+    },
+    "options": []
+  },
+  {
+    "id": "20260919-09",
+    "type": "map",
+    "question": "This vast inland delta in northern Botswana is a unique wetland ecosystem, famous for its wildlife. What is it called?",
+    "correctAnswer": "Okavango Delta",
+    "countryCode": "BW",
+    "imageUrl": "BW",
+    "mapCoordinates": {
+      "lat": -19,
+      "lng": 23
+    },
+    "options": []
+  },
+  {
+    "id": "20260919-10",
+    "type": "map",
+    "question": "This historic city in Uruguay, a UNESCO World Heritage site known for its well-preserved colonial architecture, is located at these coordinates. What is its name?",
+    "correctAnswer": "Colonia del Sacramento",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.4608,
+      "lng": -57.8398
+    },
+    "options": []
+  }
+]
