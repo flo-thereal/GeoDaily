@@ -1,0 +1,135 @@
+[
+  {
+    "id": "quiz-2026-09-20-01",
+    "type": "capital",
+    "question": "Where is the capital of Switzerland?",
+    "correctAnswer": "Bern",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 46.92,
+      "lng": 7.47
+    },
+    "options": []
+  },
+  {
+    "id": "quiz-2026-09-20-02",
+    "type": "map",
+    "question": "What ancient city, famous for its massive pyramids of the Sun and Moon, is marked here?",
+    "correctAnswer": "Teotihuacan",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.6925,
+      "lng": -98.8436
+    },
+    "options": []
+  },
+  {
+    "id": "quiz-2026-09-20-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Kenya",
+      "Ethiopia",
+      "South Sudan",
+      "Tanzania"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "quiz-2026-09-20-04",
+    "type": "map",
+    "question": "This desert, famous for being one of the driest places on Earth, is located in which country?",
+    "correctAnswer": "Chile",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -24.5,
+      "lng": -69.25
+    },
+    "options": []
+  },
+  {
+    "id": "quiz-2026-09-20-05",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Papua New Guinea",
+    "imageUrl": "PG",
+    "options": [
+      "Papua New Guinea",
+      "Vanuatu",
+      "Solomon Islands",
+      "Fiji"
+    ],
+    "countryCode": "PG"
+  },
+  {
+    "id": "quiz-2026-09-20-06",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "quiz-2026-09-20-07",
+    "type": "map",
+    "question": "This ancient temple, dedicated to the goddess Athena, is located in which famous city?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.9715,
+      "lng": 23.7266
+    },
+    "options": []
+  },
+  {
+    "id": "quiz-2026-09-20-08",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "quiz-2026-09-20-09",
+    "type": "map",
+    "question": "This capital city is notable as the confluence point of the White Nile and Blue Nile. What city is it?",
+    "correctAnswer": "Khartoum",
+    "countryCode": "SD",
+    "imageUrl": "SD",
+    "mapCoordinates": {
+      "lat": 15.6032,
+      "lng": 32.5265
+    },
+    "options": []
+  },
+  {
+    "id": "quiz-2026-09-20-10",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Slovakia",
+    "imageUrl": "SK",
+    "options": [
+      "Czech Republic",
+      "Slovenia",
+      "Slovakia",
+      "Russia"
+    ],
+    "countryCode": "SK"
+  }
+]
