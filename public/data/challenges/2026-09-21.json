@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-BS-0",
+    "type": "map",
+    "question": "Where is Bahamas located?",
+    "correctAnswer": "Bahamas",
+    "options": [],
+    "countryCode": "BS",
+    "imageUrl": "BS",
+    "mapCoordinates": {
+      "lat": 24.2155,
+      "lng": -76.0789
+    }
+  },
+  {
+    "id": "flag-ZW-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Zimbabwe",
+    "options": [
+      "Zimbabwe",
+      "Sweden",
+      "Somalia",
+      "Belgium"
+    ],
+    "countryCode": "ZW",
+    "imageUrl": "ZW"
+  },
+  {
+    "id": "capital-SI-2",
+    "type": "capital",
+    "question": "Where is the capital of Slovenia?",
+    "correctAnswer": "Ljubljana",
+    "options": [],
+    "countryCode": "SI",
+    "mapCoordinates": {
+      "lat": 46.05,
+      "lng": 14.52
+    }
+  },
+  {
+    "id": "map-AF-3",
+    "type": "map",
+    "question": "Where is Afghanistan located?",
+    "correctAnswer": "Afghanistan",
+    "options": [],
+    "countryCode": "AF",
+    "imageUrl": "AF",
+    "mapCoordinates": {
+      "lat": 33.9391,
+      "lng": 67.2994
+    }
+  },
+  {
+    "id": "flag-CM-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cameroon",
+    "options": [
+      "Gabon",
+      "Iraq",
+      "Cameroon",
+      "Dominican Republic"
+    ],
+    "countryCode": "CM",
+    "imageUrl": "CM"
+  },
+  {
+    "id": "map-KI-5",
+    "type": "map",
+    "question": "Where is Kiribati located?",
+    "correctAnswer": "Kiribati",
+    "options": [],
+    "countryCode": "KI",
+    "imageUrl": "KI",
+    "mapCoordinates": {
+      "lat": -3.3704,
+      "lng": -168.734
+    }
+  },
+  {
+    "id": "capital-GQ-6",
+    "type": "capital",
+    "question": "Where is the capital of Equatorial Guinea?",
+    "correctAnswer": "Malabo",
+    "options": [],
+    "countryCode": "GQ",
+    "mapCoordinates": {
+      "lat": 1.35,
+      "lng": 10.49
+    }
+  },
+  {
+    "id": "map-TL-7",
+    "type": "map",
+    "question": "Where is Timor-Leste located?",
+    "correctAnswer": "Timor-Leste",
+    "options": [],
+    "countryCode": "TL",
+    "imageUrl": "TL",
+    "mapCoordinates": {
+      "lat": -8.8383,
+      "lng": 125.8272
+    }
+  },
+  {
+    "id": "flag-CR-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Costa Rica",
+    "options": [
+      "Luxembourg",
+      "United States",
+      "Costa Rica",
+      "United Kingdom"
+    ],
+    "countryCode": "CR",
+    "imageUrl": "CR"
+  },
+  {
+    "id": "capital-AU-9",
+    "type": "capital",
+    "question": "Where is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "options": [],
+    "countryCode": "AU",
+    "mapCoordinates": {
+      "lat": -35.27,
+      "lng": 149.13
+    }
+  }
+]
