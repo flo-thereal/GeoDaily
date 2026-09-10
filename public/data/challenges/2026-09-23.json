@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-23-Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Sweden",
+      "Norway",
+      "Finland",
+      "Denmark"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "2026-09-23-Q2",
+    "type": "capital",
+    "question": "Where is the capital of Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.35,
+      "lng": 4.92
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-23-Q3",
+    "type": "map",
+    "question": "This iconic waterfall is located on the border between the USA and Canada. What is its name?",
+    "correctAnswer": "Niagara Falls",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 43.0799,
+      "lng": -79.0747
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-23-Q4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Hungary",
+    "imageUrl": "HU",
+    "options": [
+      "Bulgaria",
+      "Italy",
+      "Hungary",
+      "Lithuania"
+    ],
+    "countryCode": "HU"
+  },
+  {
+    "id": "2026-09-23-Q5",
+    "type": "capital",
+    "question": "Where is the capital of Nigeria?",
+    "correctAnswer": "Abuja",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 9.08,
+      "lng": 7.53
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-23-Q6",
+    "type": "map",
+    "question": "This ancient city, famous for its rock-cut architecture, is a UNESCO World Heritage Site. What is its name?",
+    "correctAnswer": "Petra",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-23-Q7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Cambodia",
+      "Laos",
+      "Thailand",
+      "Myanmar"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "2026-09-23-Q8",
+    "type": "capital",
+    "question": "Where is the capital of South Africa?",
+    "correctAnswer": "Pretoria",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -25.7,
+      "lng": 28.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-23-Q9",
+    "type": "map",
+    "question": "Identify the highest mountain in the world, located in the Himalayas.",
+    "correctAnswer": "Mount Everest",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-23-Q10",
+    "type": "map",
+    "question": "This famous unfinished basilica, designed by Antoni Gaudí, is a symbol of Barcelona. What is its name?",
+    "correctAnswer": "Sagrada Familia",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4036,
+      "lng": 2.1744
+    },
+    "options": []
+  }
+]
