@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-24-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "imageUrl": "DE",
+    "options": [
+      "Germany",
+      "Poland",
+      "Austria",
+      "Belgium"
+    ],
+    "countryCode": "DE"
+  },
+  {
+    "id": "2026-09-24-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "Australia",
+      "Fiji",
+      "United Kingdom",
+      "New Zealand"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "2026-09-24-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Bangladesh",
+      "Palau",
+      "China",
+      "Japan"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-09-24-4",
+    "type": "capital",
+    "question": "Where is the capital of Iceland?",
+    "correctAnswer": "Reykjavik",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.15,
+      "lng": -21.95
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-24-5",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-24-6",
+    "type": "capital",
+    "question": "Where is the capital of Bolivia?",
+    "correctAnswer": "La Paz",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -19.02,
+      "lng": -65.26
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-24-7",
+    "type": "map",
+    "question": "This iconic ancient amphitheater is located in which European capital city?",
+    "correctAnswer": "Rome",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-24-8",
+    "type": "map",
+    "question": "This prehistoric monument, known for its ring of standing stones, is found in which country?",
+    "correctAnswer": "United Kingdom",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-24-9",
+    "type": "map",
+    "question": "This vast temple complex, originally a Hindu temple dedicated to the god Vishnu, is the largest religious monument in the world. In which country is it located?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-24-10",
+    "type": "map",
+    "question": "This 9th-century Mahayana Buddhist temple in Central Java is a UNESCO World Heritage site and a significant pilgrimage location. Which country is it in?",
+    "correctAnswer": "Indonesia",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -7.6074,
+      "lng": 110.2038
+    },
+    "options": []
+  }
+]
