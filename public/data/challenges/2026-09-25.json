@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-25-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "imageUrl": "PH",
+    "options": [
+      "Laos",
+      "Philippines",
+      "Vietnam",
+      "Indonesia"
+    ],
+    "countryCode": "PH"
+  },
+  {
+    "id": "2026-09-25-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "United States",
+      "Liberia",
+      "Malaysia",
+      "Thailand"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "2026-09-25-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Fiji",
+    "imageUrl": "FJ",
+    "options": [
+      "Fiji",
+      "New Zealand",
+      "Australia",
+      "Tuvalu"
+    ],
+    "countryCode": "FJ"
+  },
+  {
+    "id": "2026-09-25-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Finland?",
+    "correctAnswer": "Helsinki",
+    "countryCode": "FI",
+    "imageUrl": "FI",
+    "mapCoordinates": {
+      "lat": 60.17,
+      "lng": 24.93
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-25-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Guatemala?",
+    "correctAnswer": "Guatemala City",
+    "countryCode": "GT",
+    "imageUrl": "GT",
+    "mapCoordinates": {
+      "lat": 14.62,
+      "lng": -90.52
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-25-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Uzbekistan?",
+    "correctAnswer": "Tashkent",
+    "countryCode": "UZ",
+    "imageUrl": "UZ",
+    "mapCoordinates": {
+      "lat": 41.32,
+      "lng": 69.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-25-map-1",
+    "type": "map",
+    "question": "Identify this famous ancient Incan citadel, located in Peru.",
+    "correctAnswer": "Machu Picchu",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-25-map-2",
+    "type": "map",
+    "question": "This iconic limestone karst landscape is a UNESCO World Heritage site. Where is it?",
+    "correctAnswer": "Ha Long Bay",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 20.9167,
+      "lng": 107.1667
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-25-map-3",
+    "type": "map",
+    "question": "Identify this dormant volcano, the highest mountain in Africa.",
+    "correctAnswer": "Mount Kilimanjaro",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.0674,
+      "lng": 37.3556
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-25-map-4",
+    "type": "map",
+    "question": "This vast cold desert and grassland region spans across parts of Northern China and Southern Mongolia. What is it?",
+    "correctAnswer": "Gobi Desert",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 42.9167,
+      "lng": 103.4333
+    },
+    "options": []
+  }
+]
