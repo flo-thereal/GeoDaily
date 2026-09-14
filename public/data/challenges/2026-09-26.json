@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-26-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Egypt",
+    "imageUrl": "EG",
+    "options": [
+      "Egypt",
+      "Iraq",
+      "Syria",
+      "Turkey"
+    ],
+    "countryCode": "EG"
+  },
+  {
+    "id": "2026-09-26-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "India",
+      "Ivory Coast",
+      "Ireland",
+      "Niger"
+    ],
+    "countryCode": "IN"
+  },
+  {
+    "id": "2026-09-26-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Sweden",
+      "Denmark",
+      "Norway",
+      "Finland"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-09-26-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-26-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Morocco?",
+    "correctAnswer": "Rabat",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 34.02,
+      "lng": -6.82
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-26-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.72,
+      "lng": -9.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-26-map-1",
+    "type": "map",
+    "question": "This iconic defensive structure, stretching thousands of miles, is located in which country?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-26-map-2",
+    "type": "map",
+    "question": "Located atop Corcovado Mountain, this famous statue overlooks which vibrant city?",
+    "correctAnswer": "Rio de Janeiro",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-26-map-3",
+    "type": "map",
+    "question": "Straddling the border of Argentina and Brazil, which majestic waterfall system is this?",
+    "correctAnswer": "Iguazu Falls",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -25.6953,
+      "lng": -54.4366
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-26-map-4",
+    "type": "map",
+    "question": "As the world's highest uninterrupted waterfall, this natural wonder is found in which South American country?",
+    "correctAnswer": "Angel Falls",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9717,
+      "lng": -62.5358
+    },
+    "options": []
+  }
+]

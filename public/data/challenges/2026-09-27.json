@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-27-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Russia",
+    "imageUrl": "RU",
+    "options": [
+      "Russia",
+      "Poland",
+      "Serbia",
+      "Slovenia"
+    ],
+    "countryCode": "RU"
+  },
+  {
+    "id": "2026-09-27-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 52.25,
+      "lng": 21
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-27-map-1",
+    "type": "map",
+    "question": "Which major European river is identified by the red marker?",
+    "correctAnswer": "Dnieper River",
+    "countryCode": "UA",
+    "imageUrl": "UA",
+    "mapCoordinates": {
+      "lat": 48.465,
+      "lng": 35.04
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-27-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "imageUrl": "ET",
+    "options": [
+      "Senegal",
+      "Mali",
+      "Ghana",
+      "Ethiopia"
+    ],
+    "countryCode": "ET"
+  },
+  {
+    "id": "2026-09-27-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Singapore?",
+    "correctAnswer": "Singapore",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.28,
+      "lng": 103.85
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-27-map-2",
+    "type": "map",
+    "question": "Which island nation in the Indian Ocean is highlighted?",
+    "correctAnswer": "Sri Lanka",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 7.8731,
+      "lng": 80.7718
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-27-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "imageUrl": "PK",
+    "options": [
+      "Bangladesh",
+      "India",
+      "Pakistan",
+      "Iran"
+    ],
+    "countryCode": "PK"
+  },
+  {
+    "id": "2026-09-27-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Bangladesh?",
+    "correctAnswer": "Dhaka",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 23.72,
+      "lng": 90.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-27-map-3",
+    "type": "map",
+    "question": "Which Caribbean island, famous for its vintage cars and vibrant culture, is shown?",
+    "correctAnswer": "Cuba",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 21.5218,
+      "lng": -77.7812
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-27-map-4",
+    "type": "map",
+    "question": "The famous canal connecting the Atlantic and Pacific Oceans passes through which country?",
+    "correctAnswer": "Panama",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0722,
+      "lng": -79.5199
+    },
+    "options": []
+  }
+]
