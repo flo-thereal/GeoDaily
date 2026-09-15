@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-28-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Uganda",
+      "Tanzania",
+      "Ethiopia",
+      "Kenya"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "2026-09-28-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "imageUrl": "GR",
+    "options": [
+      "Finland",
+      "Sweden",
+      "Denmark",
+      "Greece"
+    ],
+    "countryCode": "GR"
+  },
+  {
+    "id": "2026-09-28-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "imageUrl": "CH",
+    "options": [
+      "Austria",
+      "Poland",
+      "Switzerland",
+      "Denmark"
+    ],
+    "countryCode": "CH"
+  },
+  {
+    "id": "2026-09-28-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-28-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Iran?",
+    "correctAnswer": "Tehran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 35.7,
+      "lng": 51.42
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-28-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-28-map-1",
+    "type": "map",
+    "question": "Identify the highest peak of the Cook Islands shown on the map.",
+    "correctAnswer": "Mount Te Manga",
+    "countryCode": "CK",
+    "imageUrl": "CK",
+    "mapCoordinates": {
+      "lat": -21.283,
+      "lng": -159.767
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-28-map-2",
+    "type": "map",
+    "question": "This map shows the location of a famous Mayan archaeological site. What is its name?",
+    "correctAnswer": "Chichen Itza",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 20.683,
+      "lng": -88.5683
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-28-map-3",
+    "type": "map",
+    "question": "This great lake forms part of Rwanda's western border. What is its name?",
+    "correctAnswer": "Lake Kivu",
+    "countryCode": "RW",
+    "imageUrl": "RW",
+    "mapCoordinates": {
+      "lat": -2,
+      "lng": 29.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-28-map-4",
+    "type": "map",
+    "question": "This historic castle in Romania is often associated with the legend of Dracula. What is it called?",
+    "correctAnswer": "Bran Castle",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 45.5148,
+      "lng": 25.3673
+    },
+    "options": []
+  }
+]
