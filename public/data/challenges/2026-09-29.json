@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-29-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "options": [
+      "New Zealand",
+      "United Kingdom",
+      "Tuvalu",
+      "Australia"
+    ],
+    "countryCode": "AU"
+  },
+  {
+    "id": "2026-09-29-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bulgaria",
+    "imageUrl": "BG",
+    "options": [
+      "Bulgaria",
+      "Iran",
+      "Italy",
+      "Hungary"
+    ],
+    "countryCode": "BG"
+  },
+  {
+    "id": "2026-09-29-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Croatia",
+    "imageUrl": "HR",
+    "options": [
+      "Croatia",
+      "Slovakia",
+      "Slovenia",
+      "Serbia"
+    ],
+    "countryCode": "HR"
+  },
+  {
+    "id": "2026-09-29-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Costa Rica?",
+    "correctAnswer": "San José",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 9.93,
+      "lng": -84.09
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-29-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Dominican Republic?",
+    "correctAnswer": "Santo Domingo",
+    "countryCode": "DO",
+    "imageUrl": "DO",
+    "mapCoordinates": {
+      "lat": 18.47,
+      "lng": -69.9
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-29-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Iraq?",
+    "correctAnswer": "Baghdad",
+    "countryCode": "IQ",
+    "imageUrl": "IQ",
+    "mapCoordinates": {
+      "lat": 33.33,
+      "lng": 44.4
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-29-map-1",
+    "type": "map",
+    "question": "This map points to the source of the White Nile in Lake Victoria. Which country is this?",
+    "correctAnswer": "Uganda",
+    "countryCode": "UG",
+    "imageUrl": "UG",
+    "mapCoordinates": {
+      "lat": -0.2167,
+      "lng": 33.1833
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-29-map-2",
+    "type": "map",
+    "question": "Identify the country home to the iconic 'Avenue of the Baobabs'.",
+    "correctAnswer": "Madagascar",
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -20.25,
+      "lng": 44.4167
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-29-map-3",
+    "type": "map",
+    "question": "This location is the holy city of Mecca. Which country is it in?",
+    "correctAnswer": "Saudi Arabia",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 21.4225,
+      "lng": 39.8262
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-29-map-4",
+    "type": "map",
+    "question": "This location is near the Itaipu Dam, one of the world's largest hydroelectric power plants. Which South American country is this?",
+    "correctAnswer": "Paraguay",
+    "countryCode": "PY",
+    "imageUrl": "PY",
+    "mapCoordinates": {
+      "lat": -25.4053,
+      "lng": -54.6067
+    },
+    "options": []
+  }
+]
