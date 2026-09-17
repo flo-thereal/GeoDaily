@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-09-30-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "France",
+      "Italy",
+      "Luxembourg",
+      "Netherlands"
+    ],
+    "countryCode": "FR"
+  },
+  {
+    "id": "2026-09-30-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Sweden",
+      "Norway",
+      "Denmark",
+      "Finland"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "2026-09-30-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uruguay",
+    "imageUrl": "UY",
+    "options": [
+      "Uruguay",
+      "Argentina",
+      "Greece",
+      "United States"
+    ],
+    "countryCode": "UY"
+  },
+  {
+    "id": "2026-09-30-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of South Korea?",
+    "correctAnswer": "Seoul",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 37.55,
+      "lng": 126.98
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-30-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-30-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-30-map-1",
+    "type": "map",
+    "question": "Where is the Hagia Sophia located?",
+    "correctAnswer": "Istanbul, Turkey",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 41.0086,
+      "lng": 28.9798
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-30-map-2",
+    "type": "map",
+    "question": "Which famous landmark is located at these coordinates?",
+    "correctAnswer": "Burj Khalifa, UAE",
+    "countryCode": "AE",
+    "imageUrl": "AE",
+    "mapCoordinates": {
+      "lat": 25.1972,
+      "lng": 55.2744
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-30-map-3",
+    "type": "map",
+    "question": "These coordinates point to a famous natural landmark. Which one?",
+    "correctAnswer": "Cliffs of Moher, Ireland",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 52.9713,
+      "lng": -9.4277
+    },
+    "options": []
+  },
+  {
+    "id": "2026-09-30-map-4",
+    "type": "map",
+    "question": "Where would you find the magnificent Shwedagon Pagoda?",
+    "correctAnswer": "Yangon, Myanmar",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 16.7981,
+      "lng": 96.1499
+    },
+    "options": []
+  }
+]
