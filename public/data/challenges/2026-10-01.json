@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-LS-0",
+    "type": "map",
+    "question": "Where is Lesotho located?",
+    "correctAnswer": "Lesotho",
+    "options": [],
+    "countryCode": "LS",
+    "imageUrl": "LS",
+    "mapCoordinates": {
+      "lat": -29.6099,
+      "lng": 28.2336
+    }
+  },
+  {
+    "id": "flag-ML-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mali",
+    "options": [
+      "El Salvador",
+      "United States",
+      "Malta",
+      "Mali"
+    ],
+    "countryCode": "ML",
+    "imageUrl": "ML"
+  },
+  {
+    "id": "capital-DM-2",
+    "type": "capital",
+    "question": "Where is the capital of Dominica?",
+    "correctAnswer": "Roseau",
+    "options": [],
+    "countryCode": "DM",
+    "mapCoordinates": {
+      "lat": 15.3,
+      "lng": -61.4
+    }
+  },
+  {
+    "id": "map-PW-3",
+    "type": "map",
+    "question": "Where is Palau located?",
+    "correctAnswer": "Palau",
+    "options": [],
+    "countryCode": "PW",
+    "imageUrl": "PW",
+    "mapCoordinates": {
+      "lat": 7.315,
+      "lng": 134.4816
+    }
+  },
+  {
+    "id": "flag-KM-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Comoros",
+    "options": [
+      "Luxembourg",
+      "Finland",
+      "Lithuania",
+      "Comoros"
+    ],
+    "countryCode": "KM",
+    "imageUrl": "KM"
+  },
+  {
+    "id": "map-LY-5",
+    "type": "map",
+    "question": "Where is Libya located?",
+    "correctAnswer": "Libya",
+    "options": [],
+    "countryCode": "LY",
+    "imageUrl": "LY",
+    "mapCoordinates": {
+      "lat": 26.3351,
+      "lng": 17.2283
+    }
+  },
+  {
+    "id": "capital-TW-6",
+    "type": "capital",
+    "question": "Where is the capital of Taiwan?",
+    "correctAnswer": "Taipei",
+    "options": [],
+    "countryCode": "TW",
+    "mapCoordinates": {
+      "lat": 25.03,
+      "lng": 121.52
+    }
+  },
+  {
+    "id": "map-ST-7",
+    "type": "map",
+    "question": "Where is São Tomé and Príncipe located?",
+    "correctAnswer": "São Tomé and Príncipe",
+    "options": [],
+    "countryCode": "ST",
+    "imageUrl": "ST",
+    "mapCoordinates": {
+      "lat": 0.3163,
+      "lng": 6.7297
+    }
+  },
+  {
+    "id": "flag-BT-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bhutan",
+    "options": [
+      "Denmark",
+      "Bhutan",
+      "El Salvador",
+      "Equatorial Guinea"
+    ],
+    "countryCode": "BT",
+    "imageUrl": "BT"
+  },
+  {
+    "id": "capital-GW-9",
+    "type": "capital",
+    "question": "Where is the capital of Guinea-Bissau?",
+    "correctAnswer": "Bissau",
+    "options": [],
+    "countryCode": "GW",
+    "mapCoordinates": {
+      "lat": 11.85,
+      "lng": -15.58
+    }
+  }
+]
