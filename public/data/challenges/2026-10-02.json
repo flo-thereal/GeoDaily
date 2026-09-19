@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-02-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "South Korea",
+      "China",
+      "Bangladesh",
+      "Japan"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-10-02-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Italy?",
+    "correctAnswer": "Rome",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.9,
+      "lng": 12.48
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-02-map-1",
+    "type": "map",
+    "question": "Identify this famous fairy-tale castle in Bavaria, Germany.",
+    "correctAnswer": "Neuschwanstein Castle",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 47.5576,
+      "lng": 10.7494
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-02-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "imageUrl": "NL",
+    "options": [
+      "Luxembourg",
+      "France",
+      "Croatia",
+      "Netherlands"
+    ],
+    "countryCode": "NL"
+  },
+  {
+    "id": "2026-10-02-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of New Zealand?",
+    "correctAnswer": "Wellington",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -41.3,
+      "lng": 174.78
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-02-map-2",
+    "type": "map",
+    "question": "This is one of the world's largest artificial lakes by surface area. In which country is it located?",
+    "correctAnswer": "Ghana",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 7.3752,
+      "lng": 0.1654
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-02-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bolivia",
+    "imageUrl": "BO",
+    "options": [
+      "Lithuania",
+      "Ethiopia",
+      "Colombia",
+      "Bolivia"
+    ],
+    "countryCode": "BO"
+  },
+  {
+    "id": "2026-10-02-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-02-map-3",
+    "type": "map",
+    "question": "This iconic fjord, a UNESCO World Heritage site, is a popular tourist destination. Which country is it in?",
+    "correctAnswer": "Norway",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 62.1,
+      "lng": 7.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-02-map-4",
+    "type": "map",
+    "question": "This famous bridge spans the Danube River in a European capital city. Name the country where it is located.",
+    "correctAnswer": "Hungary",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.4988,
+      "lng": 19.0436
+    },
+    "options": []
+  }
+]
