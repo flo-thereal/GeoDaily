@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-03-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Iceland",
+      "Finland",
+      "Norway",
+      "Sweden"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "2026-10-03-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Slovakia?",
+    "correctAnswer": "Bratislava",
+    "countryCode": "SK",
+    "imageUrl": "SK",
+    "mapCoordinates": {
+      "lat": 48.15,
+      "lng": 17.12
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-03-map-1",
+    "type": "map",
+    "question": "This iconic ancient Inca citadel is a UNESCO World Heritage site. Where is it located?",
+    "correctAnswer": "Machu Picchu (Peru)",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-03-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "imageUrl": "PH",
+    "options": [
+      "Malaysia",
+      "Vietnam",
+      "Philippines",
+      "Indonesia"
+    ],
+    "countryCode": "PH"
+  },
+  {
+    "id": "2026-10-03-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Serbia?",
+    "correctAnswer": "Belgrade",
+    "countryCode": "RS",
+    "imageUrl": "RS",
+    "mapCoordinates": {
+      "lat": 44.83,
+      "lng": 20.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-03-map-2",
+    "type": "map",
+    "question": "Famous for its emerald waters and thousands of towering limestone islands, where would you find this natural wonder?",
+    "correctAnswer": "Ha Long Bay (Vietnam)",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 20.9023,
+      "lng": 107.0326
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-03-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iceland",
+    "imageUrl": "IS",
+    "options": [
+      "Faroe Islands",
+      "Norway",
+      "Greenland",
+      "Iceland"
+    ],
+    "countryCode": "IS"
+  },
+  {
+    "id": "2026-10-03-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Tanzania?",
+    "correctAnswer": "Dar es Salaam",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -6.16,
+      "lng": 35.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-03-map-3",
+    "type": "map",
+    "question": "A popular resort destination known for its pristine beaches and luxury hotels, which island nation is home to Denarau Island?",
+    "correctAnswer": "Fiji",
+    "countryCode": "FJ",
+    "imageUrl": "FJ",
+    "mapCoordinates": {
+      "lat": -17.7719,
+      "lng": 177.382
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-03-map-4",
+    "type": "map",
+    "question": "Dominating the skyline of Cape Town, this flat-topped mountain is a famous landmark. In which country is it located?",
+    "correctAnswer": "Table Mountain (South Africa)",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -33.9577,
+      "lng": 18.4014
+    },
+    "options": []
+  }
+]
