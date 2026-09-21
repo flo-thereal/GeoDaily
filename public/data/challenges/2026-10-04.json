@@ -1,0 +1,134 @@
+[
+  {
+    "id": "2026-10-04-1",
+    "type": "map",
+    "question": "This stunning 9th-century Mahayana Buddhist temple is located on the island of Java. Which country is it in?",
+    "correctAnswer": "Indonesia",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -7.6074,
+      "lng": 110.2039
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-04-2",
+    "type": "map",
+    "question": "These ancient wonders are located near Cairo and are among the most iconic structures in the world. Which country are they found in?",
+    "correctAnswer": "Egypt",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 29.9792,
+      "lng": 31.1342
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-04-3",
+    "type": "map",
+    "question": "This iconic Art Deco statue of Jesus Christ overlooks the city of Rio de Janeiro. Which country is it located in?",
+    "correctAnswer": "Brazil",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-04-4",
+    "type": "map",
+    "question": "This ancient series of fortifications stretches thousands of kilometers across historical northern borders. Which country is its primary host?",
+    "correctAnswer": "China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.3582,
+      "lng": 116.002
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-04-5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "Niger",
+      "Cote d'Ivoire",
+      "Guinea",
+      "India"
+    ],
+    "countryCode": "IN"
+  },
+  {
+    "id": "2026-10-04-6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United Kingdom",
+    "imageUrl": "UK",
+    "options": [
+      "Tuvalu",
+      "United Kingdom",
+      "Niue",
+      "Saint Vincent and the Grenadines"
+    ]
+  },
+  {
+    "id": "2026-10-04-7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Barbados",
+      "Estonia",
+      "Bahamas",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-10-04-8",
+    "type": "capital",
+    "question": "Where is the capital of Spain?",
+    "correctAnswer": "Madrid",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 40.4,
+      "lng": -3.68
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-04-9",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-04-10",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  }
+]
