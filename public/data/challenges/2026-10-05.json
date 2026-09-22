@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-05-q1",
+    "type": "map",
+    "question": "This immense natural wonder, sculpted by the Colorado River, is located in which country?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.11
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-05-q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "imageUrl": "PL",
+    "options": [
+      "Indonesia",
+      "Monaco",
+      "Poland",
+      "Austria"
+    ],
+    "countryCode": "PL"
+  },
+  {
+    "id": "2026-10-05-q3",
+    "type": "capital",
+    "question": "Where is the capital of Nigeria?",
+    "correctAnswer": "Abuja",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 9.08,
+      "lng": 7.53
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-05-q4",
+    "type": "map",
+    "question": "This historic tower, a UNESCO World Heritage site, stands at the mouth of the Tagus River in which European country?",
+    "correctAnswer": "Belém Tower",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.6916,
+      "lng": -9.2159
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-05-q5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Thailand",
+      "Netherlands",
+      "Costa Rica",
+      "North Korea"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "2026-10-05-q6",
+    "type": "capital",
+    "question": "Where is the capital of Cambodia?",
+    "correctAnswer": "Phnom Penh",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 11.55,
+      "lng": 104.92
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-05-q7",
+    "type": "map",
+    "question": "This picturesque lakeside village, famous for its salt mines and stunning alpine scenery, is located in which European country?",
+    "correctAnswer": "Hallstatt",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 47.5622,
+      "lng": 13.6483
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-05-q8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cuba",
+    "imageUrl": "CU",
+    "options": [
+      "Philippines",
+      "Cuba",
+      "Puerto Rico",
+      "Chile"
+    ],
+    "countryCode": "CU"
+  },
+  {
+    "id": "2026-10-05-q9",
+    "type": "capital",
+    "question": "Where is the capital of Pakistan?",
+    "correctAnswer": "Islamabad",
+    "countryCode": "PK",
+    "imageUrl": "PK",
+    "mapCoordinates": {
+      "lat": 33.68,
+      "lng": 73.05
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-05-q10",
+    "type": "map",
+    "question": "This bustling main square, known for its storytellers, snake charmers, and food stalls, is the heart of which Moroccan city?",
+    "correctAnswer": "Djemaa el-Fna",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6277,
+      "lng": -7.9892
+    },
+    "options": []
+  }
+]
