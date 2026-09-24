@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-DJ-0",
+    "type": "map",
+    "question": "Where is Djibouti located?",
+    "correctAnswer": "Djibouti",
+    "options": [],
+    "countryCode": "DJ",
+    "imageUrl": "DJ",
+    "mapCoordinates": {
+      "lat": 11.8254,
+      "lng": 42.5905
+    }
+  },
+  {
+    "id": "flag-PS-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Palestine",
+    "options": [
+      "Brazil",
+      "Tunisia",
+      "Palestine",
+      "Japan"
+    ],
+    "countryCode": "PS",
+    "imageUrl": "PS"
+  },
+  {
+    "id": "capital-CV-2",
+    "type": "capital",
+    "question": "Where is the capital of Cape Verde?",
+    "correctAnswer": "Praia",
+    "options": [],
+    "countryCode": "CV",
+    "mapCoordinates": {
+      "lat": 14.92,
+      "lng": -23.52
+    }
+  },
+  {
+    "id": "map-MR-3",
+    "type": "map",
+    "question": "Where is Mauritania located?",
+    "correctAnswer": "Mauritania",
+    "options": [],
+    "countryCode": "MR",
+    "imageUrl": "MR",
+    "mapCoordinates": {
+      "lat": 21.0079,
+      "lng": -10.9408
+    }
+  },
+  {
+    "id": "flag-IQ-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iraq",
+    "options": [
+      "Taiwan",
+      "Iraq",
+      "Singapore",
+      "Guinea"
+    ],
+    "countryCode": "IQ",
+    "imageUrl": "IQ"
+  },
+  {
+    "id": "map-BJ-5",
+    "type": "map",
+    "question": "Where is Benin located?",
+    "correctAnswer": "Benin",
+    "options": [],
+    "countryCode": "BJ",
+    "imageUrl": "BJ",
+    "mapCoordinates": {
+      "lat": 9.3077,
+      "lng": 2.3158
+    }
+  },
+  {
+    "id": "capital-PG-6",
+    "type": "capital",
+    "question": "Where is the capital of Papua New Guinea?",
+    "correctAnswer": "Port Moresby",
+    "options": [],
+    "countryCode": "PG",
+    "mapCoordinates": {
+      "lat": -9.45,
+      "lng": 147.18
+    }
+  },
+  {
+    "id": "map-HR-7",
+    "type": "map",
+    "question": "Where is Croatia located?",
+    "correctAnswer": "Croatia",
+    "options": [],
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 45.1,
+      "lng": 15.2
+    }
+  },
+  {
+    "id": "flag-AZ-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Azerbaijan",
+    "options": [
+      "Senegal",
+      "Netherlands",
+      "Azerbaijan",
+      "Brunei"
+    ],
+    "countryCode": "AZ",
+    "imageUrl": "AZ"
+  },
+  {
+    "id": "capital-TL-9",
+    "type": "capital",
+    "question": "Where is the capital of Timor-Leste?",
+    "correctAnswer": "Dili",
+    "options": [],
+    "countryCode": "TL",
+    "mapCoordinates": {
+      "lat": -8.58,
+      "lng": 125.6
+    }
+  }
+]
