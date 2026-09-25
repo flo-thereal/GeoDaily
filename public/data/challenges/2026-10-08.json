@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-08-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ukraine",
+    "imageUrl": "UA",
+    "options": [
+      "Barbados",
+      "Argentina",
+      "Sweden",
+      "Ukraine"
+    ],
+    "countryCode": "UA"
+  },
+  {
+    "id": "2026-10-08-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "Japan",
+      "China",
+      "Vietnam",
+      "South Korea"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "2026-10-08-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Norway",
+      "Denmark",
+      "Switzerland",
+      "Finland"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "2026-10-08-4",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-08-5",
+    "type": "capital",
+    "question": "Where is the capital of Ireland?",
+    "correctAnswer": "Dublin",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 53.32,
+      "lng": -6.23
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-08-6",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-08-7",
+    "type": "map",
+    "question": "This iconic performing arts venue is located in which city?",
+    "correctAnswer": "Sydney",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -33.8568,
+      "lng": 151.2153
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-08-8",
+    "type": "map",
+    "question": "This ancient city, famous for its rock-cut architecture, is located in which country?",
+    "correctAnswer": "Jordan",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3286,
+      "lng": 35.4419
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-08-9",
+    "type": "map",
+    "question": "This unique inland delta, known for its rich wildlife, is a UNESCO World Heritage site in which African country?",
+    "correctAnswer": "Botswana",
+    "countryCode": "BW",
+    "imageUrl": "BW",
+    "mapCoordinates": {
+      "lat": -19.5,
+      "lng": 23.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-08-10",
+    "type": "map",
+    "question": "This city, famous for its Buddhist temples and French colonial architecture, is located at the confluence of the Mekong and Nam Khan rivers. Which country is it in?",
+    "correctAnswer": "Laos",
+    "countryCode": "LA",
+    "imageUrl": "LA",
+    "mapCoordinates": {
+      "lat": 19.8906,
+      "lng": 102.1395
+    },
+    "options": []
+  }
+]
