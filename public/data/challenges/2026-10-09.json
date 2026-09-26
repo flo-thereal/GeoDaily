@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-09-map-1",
+    "type": "map",
+    "question": "This man-made waterway connects the Atlantic and Pacific Oceans. Where is it located?",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.07,
+      "lng": -79.76
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-09-map-2",
+    "type": "map",
+    "question": "This massive waterfall, one of the Seven Natural Wonders of the World, is found on the Zambezi River. Where is it located?",
+    "correctAnswer": "Victoria Falls",
+    "countryCode": "ZW",
+    "imageUrl": "ZW",
+    "mapCoordinates": {
+      "lat": -17.92,
+      "lng": 25.85
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-09-map-3",
+    "type": "map",
+    "question": "Home to the Bengal tiger and the world's largest mangrove forest, where is this UNESCO World Heritage site located?",
+    "correctAnswer": "Sundarbans National Park",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 21.95,
+      "lng": 89.26
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-09-map-4",
+    "type": "map",
+    "question": "These ancient Mayan ruins, famous for their intricate stelae and altars, are located in which country?",
+    "correctAnswer": "Copán Ruins",
+    "countryCode": "HN",
+    "imageUrl": "HN",
+    "mapCoordinates": {
+      "lat": 14.83,
+      "lng": -89.15
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-09-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Senegal",
+    "imageUrl": "SN",
+    "options": [
+      "Cameroon",
+      "Guinea",
+      "Mali",
+      "Senegal"
+    ],
+    "countryCode": "SN"
+  },
+  {
+    "id": "2026-10-09-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Namibia",
+    "imageUrl": "NA",
+    "options": [
+      "Angola",
+      "Lesotho",
+      "Zambia",
+      "Namibia"
+    ],
+    "countryCode": "NA"
+  },
+  {
+    "id": "2026-10-09-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Madagascar",
+    "imageUrl": "MG",
+    "options": [
+      "Comoros",
+      "Maldives",
+      "Mauritius",
+      "Madagascar"
+    ],
+    "countryCode": "MG"
+  },
+  {
+    "id": "2026-10-09-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Uganda?",
+    "correctAnswer": "Kampala",
+    "countryCode": "UG",
+    "imageUrl": "UG",
+    "mapCoordinates": {
+      "lat": 0.32,
+      "lng": 32.55
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-09-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Sri Lanka?",
+    "correctAnswer": "Colombo",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 6.89,
+      "lng": 79.9
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-09-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Mongolia?",
+    "correctAnswer": "Ulaanbaatar",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 47.92,
+      "lng": 106.91
+    },
+    "options": []
+  }
+]
