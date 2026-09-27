@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-10-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Belgium",
+    "imageUrl": "BE",
+    "options": [
+      "Belgium",
+      "Germany",
+      "Netherlands",
+      "Luxembourg"
+    ],
+    "countryCode": "BE"
+  },
+  {
+    "id": "2026-10-10-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Palau",
+      "Singapore",
+      "Japan",
+      "Marshall Islands"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-10-10-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "Cook Islands",
+      "New Zealand",
+      "Vanuatu",
+      "Tuvalu"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "2026-10-10-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Hungary?",
+    "correctAnswer": "Budapest",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.5,
+      "lng": 19.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-10-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Netherlands?",
+    "correctAnswer": "Amsterdam",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.35,
+      "lng": 4.92
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-10-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Norway?",
+    "correctAnswer": "Oslo",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 59.92,
+      "lng": 10.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-10-map-1",
+    "type": "map",
+    "question": "Which iconic peak, the world's highest, is marked on the map?",
+    "correctAnswer": "Mount Everest",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-10-map-2",
+    "type": "map",
+    "question": "This famous landmark is a symbol of which European capital city?",
+    "correctAnswer": "Eiffel Tower",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.8584,
+      "lng": 2.2945
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-10-map-3",
+    "type": "map",
+    "question": "Which historical German landmark is indicated on the map?",
+    "correctAnswer": "Brandenburg Gate",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.5163,
+      "lng": 13.3777
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-10-map-4",
+    "type": "map",
+    "question": "Which unique 'floating city' known for its canals is pinpointed here?",
+    "correctAnswer": "Venice",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 45.4408,
+      "lng": 12.3155
+    },
+    "options": []
+  }
+]
