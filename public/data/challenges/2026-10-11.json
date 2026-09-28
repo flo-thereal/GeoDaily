@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-11-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Norway",
+      "Sweden",
+      "Iceland",
+      "Finland"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "2026-10-11-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "China",
+      "Laos",
+      "Vietnam",
+      "Myanmar"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "2026-10-11-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Slovakia",
+    "imageUrl": "SK",
+    "options": [
+      "Serbia",
+      "Slovenia",
+      "Slovakia",
+      "Russia"
+    ],
+    "countryCode": "SK"
+  },
+  {
+    "id": "2026-10-11-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Romania?",
+    "correctAnswer": "Bucharest",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 44.43,
+      "lng": 26.1
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-11-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-11-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Estonia?",
+    "correctAnswer": "Tallinn",
+    "countryCode": "EE",
+    "imageUrl": "EE",
+    "mapCoordinates": {
+      "lat": 59.43,
+      "lng": 24.72
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-11-map-1",
+    "type": "map",
+    "question": "Identify this iconic ancient city, a UNESCO World Heritage site located in the Andes Mountains.",
+    "correctAnswer": "Machu Picchu",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-11-map-2",
+    "type": "map",
+    "question": "This famous geothermal spa is one of Iceland's most popular attractions. Where is it located?",
+    "correctAnswer": "Blue Lagoon",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 63.881,
+      "lng": -22.4495
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-11-map-3",
+    "type": "map",
+    "question": "This historic castle, housing a shipwreck museum, is a prominent landmark on the northern coast of Cyprus. What is its name?",
+    "correctAnswer": "Kyrenia Castle",
+    "countryCode": "CY",
+    "imageUrl": "CY",
+    "mapCoordinates": {
+      "lat": 35.3421,
+      "lng": 33.3217
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-11-map-4",
+    "type": "map",
+    "question": "This large public square in Accra, featuring the Black Star Gate, commemorates Ghana's independence. What is this landmark called?",
+    "correctAnswer": "Independence Square",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 5.5469,
+      "lng": -0.2014
+    },
+    "options": []
+  }
+]
