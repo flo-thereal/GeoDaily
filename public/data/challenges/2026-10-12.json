@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261012-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "China",
+    "imageUrl": "CN",
+    "options": [
+      "Myanmar",
+      "Tajikistan",
+      "Turkey",
+      "China"
+    ],
+    "countryCode": "CN"
+  },
+  {
+    "id": "20261012-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Argentina",
+      "Uruguay",
+      "Guatemala",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20261012-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United Kingdom",
+    "imageUrl": "GB",
+    "options": [
+      "Cook Islands",
+      "Tuvalu",
+      "Canada",
+      "United Kingdom"
+    ],
+    "countryCode": "GB"
+  },
+  {
+    "id": "20261012-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261012-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "20261012-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "20261012-map-1",
+    "type": "map",
+    "question": "This natural wonder straddles the border between which two countries, and is visible from this point?",
+    "correctAnswer": "Canada and United States",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 43.0898,
+      "lng": -79.0727
+    },
+    "options": []
+  },
+  {
+    "id": "20261012-map-2",
+    "type": "map",
+    "question": "This ancient Buddhist temple complex, a UNESCO World Heritage site, is located in which country?",
+    "correctAnswer": "Indonesia",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -7.6075,
+      "lng": 110.2038
+    },
+    "options": []
+  },
+  {
+    "id": "20261012-map-3",
+    "type": "map",
+    "question": "This iconic flat-topped mountain overlooks a major city in which African country?",
+    "correctAnswer": "South Africa",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -33.9583,
+      "lng": 18.4068
+    },
+    "options": []
+  },
+  {
+    "id": "20261012-map-4",
+    "type": "map",
+    "question": "In which country would you find this famous statue overlooking Rio de Janeiro?",
+    "correctAnswer": "Brazil",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  }
+]
