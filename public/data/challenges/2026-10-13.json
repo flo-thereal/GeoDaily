@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261013-map-1",
+    "type": "map",
+    "question": "This map marker points to a famous architectural masterpiece by Antoni Gaudí in Barcelona. What is its name?",
+    "correctAnswer": "Sagrada Familia",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4036,
+      "lng": 2.1744
+    },
+    "options": []
+  },
+  {
+    "id": "20261013-map-2",
+    "type": "map",
+    "question": "This location is home to the stunning Phi Phi Islands, famous for their limestone cliffs and clear waters. Which region of Thailand is this?",
+    "correctAnswer": "Krabi Province",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 8.0864,
+      "lng": 98.9063
+    },
+    "options": []
+  },
+  {
+    "id": "20261013-map-3",
+    "type": "map",
+    "question": "This map marker indicates the location of a natural wonder known for its immense canyon carved by the Colorado River. What is it?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1026,
+      "lng": -112.1129
+    },
+    "options": []
+  },
+  {
+    "id": "20261013-map-4",
+    "type": "map",
+    "question": "This city in Morocco is famous for its vibrant souks, Jemaa el-Fna square, and stunning gardens. Which city is it?",
+    "correctAnswer": "Marrakech",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6295,
+      "lng": -7.9811
+    },
+    "options": []
+  },
+  {
+    "id": "20261013-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Poland",
+    "imageUrl": "PL",
+    "options": [
+      "Singapore",
+      "Poland",
+      "Monaco",
+      "Indonesia"
+    ],
+    "countryCode": "PL"
+  },
+  {
+    "id": "20261013-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Spain",
+      "Brazil",
+      "Angola",
+      "Portugal"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "20261013-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "imageUrl": "TR",
+    "options": [
+      "Tunisia",
+      "Pakistan",
+      "Algeria",
+      "Turkey"
+    ],
+    "countryCode": "TR"
+  },
+  {
+    "id": "20261013-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Lithuania?",
+    "correctAnswer": "Vilnius",
+    "countryCode": "LT",
+    "imageUrl": "LT",
+    "mapCoordinates": {
+      "lat": 54.68,
+      "lng": 25.32
+    },
+    "options": []
+  },
+  {
+    "id": "20261013-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Latvia?",
+    "correctAnswer": "Riga",
+    "countryCode": "LV",
+    "imageUrl": "LV",
+    "mapCoordinates": {
+      "lat": 56.95,
+      "lng": 24.1
+    },
+    "options": []
+  },
+  {
+    "id": "20261013-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  }
+]
