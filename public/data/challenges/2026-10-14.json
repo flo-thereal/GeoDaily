@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-14-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cuba",
+    "imageUrl": "CU",
+    "options": [
+      "Jamaica",
+      "Dominican Republic",
+      "Cuba",
+      "Puerto Rico"
+    ],
+    "countryCode": "CU"
+  },
+  {
+    "id": "2026-10-14-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Tanzania",
+      "Malawi",
+      "Kenya",
+      "Uganda"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "2026-10-14-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "imageUrl": "PK",
+    "options": [
+      "Algeria",
+      "Pakistan",
+      "Saudi Arabia",
+      "Oman"
+    ],
+    "countryCode": "PK"
+  },
+  {
+    "id": "2026-10-14-4",
+    "type": "capital",
+    "question": "Where is the capital of Switzerland?",
+    "correctAnswer": "Bern",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 46.92,
+      "lng": 7.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-14-5",
+    "type": "capital",
+    "question": "Where is the capital of Iran?",
+    "correctAnswer": "Tehran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 35.7,
+      "lng": 51.42
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-14-6",
+    "type": "capital",
+    "question": "Where is the capital of Afghanistan?",
+    "correctAnswer": "Kabul",
+    "countryCode": "AF",
+    "imageUrl": "AF",
+    "mapCoordinates": {
+      "lat": 34.52,
+      "lng": 69.18
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-14-7",
+    "type": "map",
+    "question": "Which South American country is home to the ancient Lost City of Teyuna (Ciudad Perdida) in the Sierra Nevada de Santa Marta mountains?",
+    "correctAnswer": "Colombia",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 10.9829,
+      "lng": -73.9268
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-14-8",
+    "type": "map",
+    "question": "Which European capital city is home to the Acropolis, a citadel on a rocky outcrop above the city?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.9715,
+      "lng": 23.7257
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-14-9",
+    "type": "map",
+    "question": "Which country is home to the ancient Mayan ruins of Chichen Itza, featuring the El Castillo pyramid?",
+    "correctAnswer": "Mexico",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 20.6843,
+      "lng": -88.5678
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-14-10",
+    "type": "map",
+    "question": "This iconic square, located in the heart of Moscow, Russia, is famous for St. Basil's Cathedral and the Kremlin. What is its name?",
+    "correctAnswer": "Red Square",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 55.7539,
+      "lng": 37.6208
+    },
+    "options": []
+  }
+]
