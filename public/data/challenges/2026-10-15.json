@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261015-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "Liberia",
+      "Chad",
+      "Mauritius",
+      "Malaysia"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "20261015-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "imageUrl": "ET",
+    "options": [
+      "Togo",
+      "Rwanda",
+      "Ethiopia",
+      "Benin"
+    ],
+    "countryCode": "ET"
+  },
+  {
+    "id": "20261015-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uruguay",
+    "imageUrl": "UY",
+    "options": [
+      "Finland",
+      "Nicaragua",
+      "Greece",
+      "Uruguay"
+    ],
+    "countryCode": "UY"
+  },
+  {
+    "id": "20261015-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Bolivia?",
+    "correctAnswer": "La Paz",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -19.02,
+      "lng": -65.26
+    },
+    "options": []
+  },
+  {
+    "id": "20261015-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Iraq?",
+    "correctAnswer": "Baghdad",
+    "countryCode": "IQ",
+    "imageUrl": "IQ",
+    "mapCoordinates": {
+      "lat": 33.33,
+      "lng": 44.4
+    },
+    "options": []
+  },
+  {
+    "id": "20261015-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Tanzania?",
+    "correctAnswer": "Dar es Salaam",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -6.16,
+      "lng": 35.75
+    },
+    "options": []
+  },
+  {
+    "id": "20261015-map-1",
+    "type": "map",
+    "question": "This distinctive modern landmark, the Flame Towers, is located in the capital city of which country?",
+    "correctAnswer": "Azerbaijan",
+    "countryCode": "AZ",
+    "imageUrl": "AZ",
+    "mapCoordinates": {
+      "lat": 40.3686,
+      "lng": 49.8358
+    },
+    "options": []
+  },
+  {
+    "id": "20261015-map-2",
+    "type": "map",
+    "question": "This ancient monastery, partially carved out of a mountain, is a UNESCO World Heritage site in which country?",
+    "correctAnswer": "Armenia",
+    "countryCode": "AM",
+    "imageUrl": "AM",
+    "mapCoordinates": {
+      "lat": 40.1408,
+      "lng": 44.8291
+    },
+    "options": []
+  },
+  {
+    "id": "20261015-map-3",
+    "type": "map",
+    "question": "Home to the famous Blue Mountain coffee, these majestic peaks are found on which Caribbean island nation?",
+    "correctAnswer": "Jamaica",
+    "countryCode": "JM",
+    "imageUrl": "JM",
+    "mapCoordinates": {
+      "lat": 18.0686,
+      "lng": -76.6346
+    },
+    "options": []
+  },
+  {
+    "id": "20261015-map-4",
+    "type": "map",
+    "question": "This iconic hotel and resort complex, featuring a unique 'SkyPark', dominates the skyline of which island city-state?",
+    "correctAnswer": "Singapore",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.2833,
+      "lng": 103.8603
+    },
+    "options": []
+  }
+]
