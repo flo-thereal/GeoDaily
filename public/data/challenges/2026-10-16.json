@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261016-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "options": [
+      "New Zealand",
+      "United Kingdom",
+      "Canada",
+      "Australia"
+    ],
+    "countryCode": "AU"
+  },
+  {
+    "id": "20261016-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "North Korea",
+      "South Korea",
+      "Japan",
+      "China"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "20261016-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Norway",
+      "Sweden",
+      "Denmark",
+      "Finland"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "20261016-4",
+    "type": "capital",
+    "question": "Where is the capital of Austria?",
+    "correctAnswer": "Vienna",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 48.2,
+      "lng": 16.37
+    },
+    "options": []
+  },
+  {
+    "id": "20261016-5",
+    "type": "capital",
+    "question": "Where is the capital of Ireland?",
+    "correctAnswer": "Dublin",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 53.32,
+      "lng": -6.23
+    },
+    "options": []
+  },
+  {
+    "id": "20261016-6",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261016-7",
+    "type": "map",
+    "question": "This map shows the location of the ancient city of Petra. In which modern country is it located?",
+    "correctAnswer": "Jordan",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "options": []
+  },
+  {
+    "id": "20261016-8",
+    "type": "map",
+    "question": "This map points to the Angkor Wat temple complex. In which country would you find it?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  },
+  {
+    "id": "20261016-9",
+    "type": "map",
+    "question": "This location marks St. Peter's Basilica. Which sovereign state is it part of?",
+    "correctAnswer": "Vatican City",
+    "countryCode": "VA",
+    "imageUrl": "VA",
+    "mapCoordinates": {
+      "lat": 41.9022,
+      "lng": 12.4533
+    },
+    "options": []
+  },
+  {
+    "id": "20261016-10",
+    "type": "map",
+    "question": "This location indicates the beautiful Plitvice Lakes National Park. In which country is it situated?",
+    "correctAnswer": "Croatia",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 44.8659,
+      "lng": 15.6174
+    },
+    "options": []
+  }
+]
