@@ -1,0 +1,135 @@
+[
+  {
+    "id": "quiz_20261017_01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Israel",
+    "imageUrl": "IL",
+    "options": [
+      "Uruguay",
+      "Somalia",
+      "Israel",
+      "Greece"
+    ],
+    "countryCode": "IL"
+  },
+  {
+    "id": "quiz_20261017_02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "imageUrl": "BD",
+    "options": [
+      "Bangladesh",
+      "Maldives",
+      "Rwanda",
+      "Djibouti"
+    ],
+    "countryCode": "BD"
+  },
+  {
+    "id": "quiz_20261017_03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bulgaria",
+    "imageUrl": "BG",
+    "options": [
+      "Uzbekistan",
+      "Tajikistan",
+      "Mali",
+      "Bulgaria"
+    ],
+    "countryCode": "BG"
+  },
+  {
+    "id": "quiz_20261017_04",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "quiz_20261017_05",
+    "type": "capital",
+    "question": "Where is the capital of Ukraine?",
+    "correctAnswer": "Kyiv",
+    "countryCode": "UA",
+    "imageUrl": "UA",
+    "mapCoordinates": {
+      "lat": 50.43,
+      "lng": 30.52
+    },
+    "options": []
+  },
+  {
+    "id": "quiz_20261017_06",
+    "type": "capital",
+    "question": "Where is the capital of Madagascar?",
+    "correctAnswer": "Antananarivo",
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -18.92,
+      "lng": 47.52
+    },
+    "options": []
+  },
+  {
+    "id": "quiz_20261017_07",
+    "type": "map",
+    "question": "This vast, cold desert covers much of southern Mongolia. What is it called?",
+    "correctAnswer": "Gobi Desert",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 42.95,
+      "lng": 103.43
+    },
+    "options": []
+  },
+  {
+    "id": "quiz_20261017_08",
+    "type": "map",
+    "question": "This prominent rock formation, a sacred site and ancient natural fortress, is located in Abeokuta, Nigeria. What is it known as?",
+    "correctAnswer": "Olumo Rock",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 7.1524,
+      "lng": 3.3592
+    },
+    "options": []
+  },
+  {
+    "id": "quiz_20261017_09",
+    "type": "map",
+    "question": "This crucial artificial waterway connects the Atlantic and Pacific Oceans, significantly reducing sea travel time. What is it?",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0768,
+      "lng": -79.7214
+    },
+    "options": []
+  },
+  {
+    "id": "quiz_20261017_10",
+    "type": "map",
+    "question": "What is the world's highest uninterrupted waterfall, located in Canaima National Park, Venezuela?",
+    "correctAnswer": "Angel Falls",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9717,
+      "lng": -62.5348
+    },
+    "options": []
+  }
+]
