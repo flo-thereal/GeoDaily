@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-18-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Japan",
+      "Tunisia",
+      "Eritrea",
+      "Palau"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-10-18-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Botswana",
+    "imageUrl": "BW",
+    "options": [
+      "Namibia",
+      "Botswana",
+      "Lesotho",
+      "Eswatini"
+    ],
+    "countryCode": "BW"
+  },
+  {
+    "id": "2026-10-18-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "France",
+      "Norway",
+      "Luxembourg",
+      "Netherlands"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "2026-10-18-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.87,
+      "lng": 2.33
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-18-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-18-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Sri Lanka?",
+    "correctAnswer": "Colombo",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 6.89,
+      "lng": 79.9
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-18-map-1",
+    "type": "map",
+    "question": "This point marks the location of Milford Sound. In which country is it located?",
+    "correctAnswer": "New Zealand",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -44.6711,
+      "lng": 167.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-18-map-2",
+    "type": "map",
+    "question": "This location marks the capital city of Kazakhstan. Which city is it?",
+    "correctAnswer": "Astana",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 51.1694,
+      "lng": 71.4491
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-18-map-3",
+    "type": "map",
+    "question": "This location indicates the ancient Mayan city of Tikal. In which country is it located?",
+    "correctAnswer": "Guatemala",
+    "countryCode": "GT",
+    "imageUrl": "GT",
+    "mapCoordinates": {
+      "lat": 17.2217,
+      "lng": -89.6231
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-18-map-4",
+    "type": "map",
+    "question": "This point is located in the Ardennes forest region. In which country is it primarily found?",
+    "correctAnswer": "Belgium",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.15,
+      "lng": 5.75
+    },
+    "options": []
+  }
+]
