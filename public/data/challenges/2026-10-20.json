@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-20-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "United States",
+      "Canada",
+      "Australia",
+      "Denmark"
+    ],
+    "countryCode": "CA"
+  },
+  {
+    "id": "2026-10-20-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "India",
+      "Pakistan",
+      "Ireland",
+      "Niger"
+    ],
+    "countryCode": "IN"
+  },
+  {
+    "id": "2026-10-20-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "South Africa",
+      "Brazil",
+      "Kenya",
+      "Nigeria"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "2026-10-20-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Sweden?",
+    "correctAnswer": "Stockholm",
+    "countryCode": "SE",
+    "imageUrl": "SE",
+    "mapCoordinates": {
+      "lat": 59.33,
+      "lng": 18.05
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-20-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Hungary?",
+    "correctAnswer": "Budapest",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.5,
+      "lng": 19.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-20-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Indonesia?",
+    "correctAnswer": "Jakarta",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -6.17,
+      "lng": 106.82
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-20-map-1",
+    "type": "map",
+    "question": "This iconic statue overlooks Rio de Janeiro. Which landmark is it?",
+    "correctAnswer": "Christ the Redeemer",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-20-map-2",
+    "type": "map",
+    "question": "You are standing near the Great Pyramid of Giza. In which country are you?",
+    "correctAnswer": "Egypt",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 29.9792,
+      "lng": 31.1342
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-20-map-3",
+    "type": "map",
+    "question": "This ancient prehistoric monument is a UNESCO World Heritage site. What is its name?",
+    "correctAnswer": "Stonehenge",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-20-map-4",
+    "type": "map",
+    "question": "Which massive defensive structure, part of which is visible here, snakes across this country?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.432,
+      "lng": 116.5704
+    },
+    "options": []
+  }
+]
