@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261021-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Portugal",
+      "Spain",
+      "Italy",
+      "Brazil"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "20261021-2",
+    "type": "capital",
+    "question": "Where is the capital of Morocco?",
+    "correctAnswer": "Rabat",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 34.02,
+      "lng": -6.82
+    },
+    "options": []
+  },
+  {
+    "id": "20261021-3",
+    "type": "map",
+    "question": "This historic square, Rynek Główny, is located in which Polish city?",
+    "correctAnswer": "Kraków",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 50.0617,
+      "lng": 19.9377
+    },
+    "options": []
+  },
+  {
+    "id": "20261021-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Czech Republic",
+    "imageUrl": "CZ",
+    "options": [
+      "Czech Republic",
+      "Slovenia",
+      "Croatia",
+      "Slovakia"
+    ],
+    "countryCode": "CZ"
+  },
+  {
+    "id": "20261021-5",
+    "type": "capital",
+    "question": "Where is the capital of Laos?",
+    "correctAnswer": "Vientiane",
+    "countryCode": "LA",
+    "imageUrl": "LA",
+    "mapCoordinates": {
+      "lat": 17.97,
+      "lng": 102.6
+    },
+    "options": []
+  },
+  {
+    "id": "20261021-6",
+    "type": "map",
+    "question": "This vast freshwater lake, shared by Malawi, Mozambique, and Tanzania, is known by what name?",
+    "correctAnswer": "Lake Malawi",
+    "countryCode": "MW",
+    "imageUrl": "MW",
+    "mapCoordinates": {
+      "lat": -12.2,
+      "lng": 34.4
+    },
+    "options": []
+  },
+  {
+    "id": "20261021-7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nepal",
+    "imageUrl": "NP",
+    "options": [
+      "Bangladesh",
+      "Bhutan",
+      "India",
+      "Nepal"
+    ],
+    "countryCode": "NP"
+  },
+  {
+    "id": "20261021-8",
+    "type": "capital",
+    "question": "Where is the capital of Turkey?",
+    "correctAnswer": "Ankara",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 39.93,
+      "lng": 32.87
+    },
+    "options": []
+  },
+  {
+    "id": "20261021-9",
+    "type": "map",
+    "question": "This iconic pink lake, Lac Rose, known for its high salt content, is located near the capital of which West African nation?",
+    "correctAnswer": "Senegal",
+    "countryCode": "SN",
+    "imageUrl": "SN",
+    "mapCoordinates": {
+      "lat": 14.8317,
+      "lng": -17.2281
+    },
+    "options": []
+  },
+  {
+    "id": "20261021-10",
+    "type": "map",
+    "question": "The Kwame Nkrumah Mausoleum, a tribute to Ghana's first president, is located in which city?",
+    "correctAnswer": "Accra",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 5.5492,
+      "lng": -0.2014
+    },
+    "options": []
+  }
+]
