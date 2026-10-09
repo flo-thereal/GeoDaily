@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-KN-0",
+    "type": "map",
+    "question": "Where is Saint Kitts and Nevis located?",
+    "correctAnswer": "Saint Kitts and Nevis",
+    "options": [],
+    "countryCode": "KN",
+    "imageUrl": "KN",
+    "mapCoordinates": {
+      "lat": 17.2978,
+      "lng": -62.6304
+    }
+  },
+  {
+    "id": "flag-SY-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Syria",
+    "options": [
+      "Lithuania",
+      "Guinea",
+      "Turkmenistan",
+      "Syria"
+    ],
+    "countryCode": "SY",
+    "imageUrl": "SY"
+  },
+  {
+    "id": "capital-TO-2",
+    "type": "capital",
+    "question": "Where is the capital of Tonga?",
+    "correctAnswer": "Nuku'alofa",
+    "options": [],
+    "countryCode": "TO",
+    "mapCoordinates": {
+      "lat": -21.13,
+      "lng": -175.2
+    }
+  },
+  {
+    "id": "map-DJ-3",
+    "type": "map",
+    "question": "Where is Djibouti located?",
+    "correctAnswer": "Djibouti",
+    "options": [],
+    "countryCode": "DJ",
+    "imageUrl": "DJ",
+    "mapCoordinates": {
+      "lat": 11.8254,
+      "lng": 42.5905
+    }
+  },
+  {
+    "id": "flag-HT-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Haiti",
+    "options": [
+      "Bahamas",
+      "Somalia",
+      "Haiti",
+      "Grenada"
+    ],
+    "countryCode": "HT",
+    "imageUrl": "HT"
+  },
+  {
+    "id": "map-CI-5",
+    "type": "map",
+    "question": "Where is Ivory Coast located?",
+    "correctAnswer": "Ivory Coast",
+    "options": [],
+    "countryCode": "CI",
+    "imageUrl": "CI",
+    "mapCoordinates": {
+      "lat": 7.54,
+      "lng": -5.5471
+    }
+  },
+  {
+    "id": "capital-PW-6",
+    "type": "capital",
+    "question": "Where is the capital of Palau?",
+    "correctAnswer": "Ngerulmud",
+    "options": [],
+    "countryCode": "PW",
+    "mapCoordinates": {
+      "lat": 7.5,
+      "lng": 134.62
+    }
+  },
+  {
+    "id": "map-MU-7",
+    "type": "map",
+    "question": "Where is Mauritius located?",
+    "correctAnswer": "Mauritius",
+    "options": [],
+    "countryCode": "MU",
+    "imageUrl": "MU",
+    "mapCoordinates": {
+      "lat": -20.3484,
+      "lng": 57.5522
+    }
+  },
+  {
+    "id": "flag-BF-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Burkina Faso",
+    "options": [
+      "Burkina Faso",
+      "Iran",
+      "Cambodia",
+      "Cameroon"
+    ],
+    "countryCode": "BF",
+    "imageUrl": "BF"
+  },
+  {
+    "id": "capital-CR-9",
+    "type": "capital",
+    "question": "Where is the capital of Costa Rica?",
+    "correctAnswer": "San José",
+    "options": [],
+    "countryCode": "CR",
+    "mapCoordinates": {
+      "lat": 9.93,
+      "lng": -84.09
+    }
+  }
+]
