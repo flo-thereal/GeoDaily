@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-23-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Argentina",
+    "imageUrl": "AR",
+    "options": [
+      "Argentina",
+      "Nicaragua",
+      "Honduras",
+      "Uruguay"
+    ],
+    "countryCode": "AR"
+  },
+  {
+    "id": "2026-10-23-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Greece",
+    "imageUrl": "GR",
+    "options": [
+      "Finland",
+      "Sweden",
+      "Greece",
+      "Iceland"
+    ],
+    "countryCode": "GR"
+  },
+  {
+    "id": "2026-10-23-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Cambodia",
+      "Thailand",
+      "Myanmar",
+      "Laos"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "2026-10-23-4",
+    "type": "capital",
+    "question": "Where is the capital of Colombia?",
+    "correctAnswer": "Bogotá",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 4.71,
+      "lng": -74.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-23-5",
+    "type": "capital",
+    "question": "Where is the capital of Iran?",
+    "correctAnswer": "Tehran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 35.7,
+      "lng": 51.42
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-23-6",
+    "type": "capital",
+    "question": "Where is the capital of Kenya?",
+    "correctAnswer": "Nairobi",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "mapCoordinates": {
+      "lat": -1.28,
+      "lng": 36.82
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-23-7",
+    "type": "map",
+    "question": "This iconic peak, the Matterhorn, is located on the border of Switzerland and Italy. In which country is its most famous face (Zermatt side) found?",
+    "correctAnswer": "Switzerland",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6587
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-23-8",
+    "type": "map",
+    "question": "Which famous natural wonder, carved by the Colorado River, is located in Arizona, USA?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.11
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-23-9",
+    "type": "map",
+    "question": "This vast salt flat, one of the largest in the world, is a major tourist attraction in Bolivia. What is its name?",
+    "correctAnswer": "Salar de Uyuni",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.249,
+      "lng": -67.494
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-23-10",
+    "type": "map",
+    "question": "This vibrant Caribbean capital city is known for its historic Old Havana and classic cars. Which city is it?",
+    "correctAnswer": "Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.133,
+      "lng": -82.383
+    },
+    "options": []
+  }
+]
