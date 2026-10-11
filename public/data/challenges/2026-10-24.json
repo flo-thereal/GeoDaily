@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261024-Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Australia",
+    "imageUrl": "AU",
+    "options": [
+      "United Kingdom",
+      "Canada",
+      "New Zealand",
+      "Australia"
+    ],
+    "countryCode": "AU"
+  },
+  {
+    "id": "20261024-Q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Denmark",
+      "Finland",
+      "Norway",
+      "Sweden"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "20261024-Q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "United States",
+      "Malaysia",
+      "Singapore",
+      "Indonesia"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "20261024-Q4",
+    "type": "capital",
+    "question": "Where is the capital of Mexico?",
+    "correctAnswer": "Mexico City",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 19.43,
+      "lng": -99.13
+    },
+    "options": []
+  },
+  {
+    "id": "20261024-Q5",
+    "type": "capital",
+    "question": "Where is the capital of Ireland?",
+    "correctAnswer": "Dublin",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 53.32,
+      "lng": -6.23
+    },
+    "options": []
+  },
+  {
+    "id": "20261024-Q6",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261024-Q7",
+    "type": "map",
+    "question": "This iconic tower, known for its observation deck, stands in which Asian city?",
+    "correctAnswer": "Seoul",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 37.5512,
+      "lng": 126.988
+    },
+    "options": []
+  },
+  {
+    "id": "20261024-Q8",
+    "type": "map",
+    "question": "Which famous Spanish region, known for its flamenco music and Moorish architecture, does this point to?",
+    "correctAnswer": "Andalusia",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 37.3828,
+      "lng": -5.9732
+    },
+    "options": []
+  },
+  {
+    "id": "20261024-Q9",
+    "type": "map",
+    "question": "This location marks the highest point in the Austrian Alps. What is the name of this mountain?",
+    "correctAnswer": "Grossglockner",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 47.0731,
+      "lng": 12.6841
+    },
+    "options": []
+  },
+  {
+    "id": "20261024-Q10",
+    "type": "map",
+    "question": "Located in East Africa, this vast volcanic caldera is home to an incredible array of wildlife. Which natural wonder is this?",
+    "correctAnswer": "Ngorongoro Crater",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -3.1833,
+      "lng": 35.5833
+    },
+    "options": []
+  }
+]
