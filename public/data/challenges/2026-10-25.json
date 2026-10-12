@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-25-01",
+    "type": "map",
+    "question": "Which small European country, nestled in the Pyrenees mountains between France and Spain, is marked on the map?",
+    "correctAnswer": "Andorra",
+    "countryCode": "AD",
+    "imageUrl": "AD",
+    "mapCoordinates": {
+      "lat": 42.5063,
+      "lng": 1.5218
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-25-02",
+    "type": "capital",
+    "question": "Where is the capital of Angola?",
+    "correctAnswer": "Luanda",
+    "countryCode": "AO",
+    "imageUrl": "AO",
+    "mapCoordinates": {
+      "lat": -8.83,
+      "lng": 13.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-25-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Azerbaijan",
+    "imageUrl": "AZ",
+    "options": [
+      "Azerbaijan",
+      "Hungary",
+      "Tajikistan",
+      "Iran"
+    ],
+    "countryCode": "AZ"
+  },
+  {
+    "id": "2026-10-25-04",
+    "type": "capital",
+    "question": "Where is the capital of Bulgaria?",
+    "correctAnswer": "Sofia",
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "mapCoordinates": {
+      "lat": 42.68,
+      "lng": 23.32
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-25-05",
+    "type": "map",
+    "question": "This iconic reconstructed Ottoman bridge, Stari Most, is a symbol of which European country?",
+    "correctAnswer": "Bosnia and Herzegovina",
+    "countryCode": "BA",
+    "imageUrl": "BA",
+    "mapCoordinates": {
+      "lat": 43.3377,
+      "lng": 17.8155
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-25-06",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Democratic Republic of Congo",
+    "imageUrl": "CD",
+    "options": [
+      "Angola",
+      "Democratic Republic of Congo",
+      "Zambia",
+      "Tanzania"
+    ],
+    "countryCode": "CD"
+  },
+  {
+    "id": "2026-10-25-07",
+    "type": "capital",
+    "question": "Where is the capital of Cyprus?",
+    "correctAnswer": "Nicosia",
+    "countryCode": "CY",
+    "imageUrl": "CY",
+    "mapCoordinates": {
+      "lat": 35.17,
+      "lng": 33.37
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-25-08",
+    "type": "map",
+    "question": "The historic Old Town, with its distinctive architecture and Narikala Fortress, is located in the capital city of which country?",
+    "correctAnswer": "Georgia",
+    "countryCode": "GE",
+    "imageUrl": "GE",
+    "mapCoordinates": {
+      "lat": 41.6938,
+      "lng": 44.8015
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-25-09",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Fiji",
+    "imageUrl": "FJ",
+    "options": [
+      "New Zealand",
+      "Australia",
+      "Tuvalu",
+      "Fiji"
+    ],
+    "countryCode": "FJ"
+  },
+  {
+    "id": "2026-10-25-10",
+    "type": "map",
+    "question": "This stunning temple complex, Angkor Wat, a UNESCO World Heritage site, is a national symbol of which Southeast Asian country?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.8661
+    },
+    "options": []
+  }
+]
