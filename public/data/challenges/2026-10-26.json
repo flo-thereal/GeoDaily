@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-26-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "China",
+      "South Korea",
+      "Japan",
+      "Peru"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-10-26-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "Australia",
+      "United Kingdom",
+      "Fiji",
+      "New Zealand"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "2026-10-26-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Romania",
+    "imageUrl": "RO",
+    "options": [
+      "Hungary",
+      "Belgium",
+      "Romania",
+      "Moldova"
+    ],
+    "countryCode": "RO"
+  },
+  {
+    "id": "2026-10-26-04",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.87,
+      "lng": 2.33
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-26-05",
+    "type": "capital",
+    "question": "Where is the capital of Slovakia?",
+    "correctAnswer": "Bratislava",
+    "countryCode": "SK",
+    "imageUrl": "SK",
+    "mapCoordinates": {
+      "lat": 48.15,
+      "lng": 17.12
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-26-06",
+    "type": "capital",
+    "question": "Where is the capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.03,
+      "lng": 38.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-26-07",
+    "type": "map",
+    "question": "This location is famous for a vital shipping route connecting the Atlantic and Pacific oceans. What is it?",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0706,
+      "lng": -79.7909
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-26-08",
+    "type": "map",
+    "question": "This location in Canaima National Park is home to the world's highest uninterrupted waterfall. What is it?",
+    "correctAnswer": "Angel Falls",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9717,
+      "lng": -62.5367
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-26-09",
+    "type": "map",
+    "question": "This ancient city in Southeast Asia is known for its thousands of temples and pagodas. Where is this historical site?",
+    "correctAnswer": "Bagan",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 21.1718,
+      "lng": 94.8569
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-26-10",
+    "type": "map",
+    "question": "This vast mangrove forest, shared with India, is a UNESCO World Heritage site and home to the Royal Bengal tiger. Where is this unique ecosystem?",
+    "correctAnswer": "Sundarbans (Bangladesh part)",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 21.9497,
+      "lng": 89.1834
+    },
+    "options": []
+  }
+]
