@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261027_01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Estonia",
+    "imageUrl": "EE",
+    "options": [
+      "Lithuania",
+      "Estonia",
+      "Finland",
+      "Latvia"
+    ],
+    "countryCode": "EE"
+  },
+  {
+    "id": "20261027_02",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "20261027_03",
+    "type": "map",
+    "question": "Which ancient city carved into rock is located at these coordinates?",
+    "correctAnswer": "Petra",
+    "countryCode": "JO",
+    "imageUrl": "JO",
+    "mapCoordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "options": []
+  },
+  {
+    "id": "20261027_04",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "imageUrl": "NL",
+    "options": [
+      "Netherlands",
+      "France",
+      "Belgium",
+      "Luxembourg"
+    ],
+    "countryCode": "NL"
+  },
+  {
+    "id": "20261027_05",
+    "type": "capital",
+    "question": "Where is the capital of Uruguay?",
+    "correctAnswer": "Montevideo",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.85,
+      "lng": -56.17
+    },
+    "options": []
+  },
+  {
+    "id": "20261027_06",
+    "type": "map",
+    "question": "Which iconic ancient amphitheater is located at these coordinates?",
+    "correctAnswer": "Colosseum",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  },
+  {
+    "id": "20261027_07",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Iceland",
+      "Norway",
+      "Finland",
+      "Sweden"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "20261027_08",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "20261027_09",
+    "type": "map",
+    "question": "This point is in the vast desert of which North African country?",
+    "correctAnswer": "Algeria",
+    "countryCode": "DZ",
+    "imageUrl": "DZ",
+    "mapCoordinates": {
+      "lat": 27,
+      "lng": 5
+    },
+    "options": []
+  },
+  {
+    "id": "20261027_10",
+    "type": "map",
+    "question": "Which famous Incan citadel is located at these coordinates?",
+    "correctAnswer": "Machu Picchu",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  }
+]
