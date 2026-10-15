@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-28-1",
+    "type": "map",
+    "question": "This map point marks a major port city on Canada's west coast, known for its natural beauty and urban lifestyle. Which city is it?",
+    "correctAnswer": "Vancouver",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 49.2827,
+      "lng": -123.1207
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-28-2",
+    "type": "map",
+    "question": "This map point indicates the location of the famous Terracotta Army. In which historic Chinese city can this archaeological wonder be found?",
+    "correctAnswer": "Xi'an",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 34.3853,
+      "lng": 109.2717
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-28-3",
+    "type": "map",
+    "question": "This map point marks the location of the iconic prehistoric monument, Stonehenge. In which country is it situated?",
+    "correctAnswer": "United Kingdom",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-28-4",
+    "type": "map",
+    "question": "This map point indicates the approximate location of the Blue Lagoon, a famous geothermal spa. In which country is it found?",
+    "correctAnswer": "Iceland",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 63.8812,
+      "lng": -22.4495
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-28-5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "India",
+    "imageUrl": "IN",
+    "options": [
+      "India",
+      "Pakistan",
+      "Sri Lanka",
+      "Bangladesh"
+    ],
+    "countryCode": "IN"
+  },
+  {
+    "id": "2026-10-28-6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Egypt",
+    "imageUrl": "EG",
+    "options": [
+      "Yemen",
+      "Iraq",
+      "Syria",
+      "Egypt"
+    ],
+    "countryCode": "EG"
+  },
+  {
+    "id": "2026-10-28-7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "Ireland",
+      "Ghana",
+      "Niger",
+      "Nigeria"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "2026-10-28-8",
+    "type": "capital",
+    "question": "Where is the capital of Brazil?",
+    "correctAnswer": "Brasília",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -15.79,
+      "lng": -47.88
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-28-9",
+    "type": "capital",
+    "question": "Where is the capital of South Africa?",
+    "correctAnswer": "Pretoria",
+    "countryCode": "ZA",
+    "imageUrl": "ZA",
+    "mapCoordinates": {
+      "lat": -25.7,
+      "lng": 28.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-28-10",
+    "type": "capital",
+    "question": "Where is the capital of Sweden?",
+    "correctAnswer": "Stockholm",
+    "countryCode": "SE",
+    "imageUrl": "SE",
+    "mapCoordinates": {
+      "lat": 59.33,
+      "lng": 18.05
+    },
+    "options": []
+  }
+]
