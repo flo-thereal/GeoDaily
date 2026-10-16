@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261029_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Morocco",
+    "imageUrl": "MA",
+    "options": [
+      "Morocco",
+      "Algeria",
+      "Tunisia",
+      "Libya"
+    ],
+    "countryCode": "MA"
+  },
+  {
+    "id": "20261029_2",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "20261029_3",
+    "type": "map",
+    "question": "This map shows the location of the deepest lake in the world, holding about 20% of the world's fresh water. What is its name?",
+    "correctAnswer": "Lake Baikal",
+    "countryCode": "RU",
+    "imageUrl": "RU",
+    "mapCoordinates": {
+      "lat": 53.8644,
+      "lng": 108.3845
+    },
+    "options": []
+  },
+  {
+    "id": "20261029_4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Indonesia",
+    "imageUrl": "ID",
+    "options": [
+      "Monaco",
+      "Poland",
+      "Singapore",
+      "Indonesia"
+    ],
+    "countryCode": "ID"
+  },
+  {
+    "id": "20261029_5",
+    "type": "capital",
+    "question": "Where is the capital of Vietnam?",
+    "correctAnswer": "Hanoi",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 21.03,
+      "lng": 105.85
+    },
+    "options": []
+  },
+  {
+    "id": "20261029_6",
+    "type": "map",
+    "question": "This iconic structure, located in Istanbul, has served as a cathedral, mosque, and museum. What is its name?",
+    "correctAnswer": "Hagia Sophia",
+    "countryCode": "TR",
+    "imageUrl": "TR",
+    "mapCoordinates": {
+      "lat": 41.0086,
+      "lng": 28.9801
+    },
+    "options": []
+  },
+  {
+    "id": "20261029_7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Saudi Arabia",
+    "imageUrl": "SA",
+    "options": [
+      "Iraq",
+      "Iran",
+      "Saudi Arabia",
+      "Pakistan"
+    ],
+    "countryCode": "SA"
+  },
+  {
+    "id": "20261029_8",
+    "type": "capital",
+    "question": "Where is the capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 52.25,
+      "lng": 21
+    },
+    "options": []
+  },
+  {
+    "id": "20261029_9",
+    "type": "map",
+    "question": "This stunning UNESCO World Heritage Site is a majestic fjord known for its steep cliffs and numerous waterfalls. Where is it located?",
+    "correctAnswer": "Geirangerfjord",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 62.1154,
+      "lng": 7.1066
+    },
+    "options": []
+  },
+  {
+    "id": "20261029_10",
+    "type": "map",
+    "question": "This archipelago, famous for its unique wildlife and Charles Darwin's studies, is located off the coast of South America. What is its name?",
+    "correctAnswer": "Galapagos Islands",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.6275,
+      "lng": -90.354
+    },
+    "options": []
+  }
+]
