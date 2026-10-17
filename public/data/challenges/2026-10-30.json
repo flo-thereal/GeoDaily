@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-10-30-01",
+    "type": "map",
+    "question": "This iconic tower stands at the mouth of the Tagus River in which European capital city?",
+    "correctAnswer": "Belém Tower (Lisbon)",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.6916,
+      "lng": -9.2159
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-30-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Paraguay",
+    "imageUrl": "PY",
+    "options": [
+      "Hungary",
+      "Tajikistan",
+      "Slovenia",
+      "Paraguay"
+    ],
+    "countryCode": "PY"
+  },
+  {
+    "id": "2026-10-30-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "imageUrl": "GH",
+    "options": [
+      "Guinea",
+      "Ghana",
+      "Senegal",
+      "Cameroon"
+    ],
+    "countryCode": "GH"
+  },
+  {
+    "id": "2026-10-30-04",
+    "type": "capital",
+    "question": "Where is the capital of Kazakhstan?",
+    "correctAnswer": "Astana",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 51.16,
+      "lng": 71.45
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-30-05",
+    "type": "capital",
+    "question": "Where is the capital of Sri Lanka?",
+    "correctAnswer": "Colombo",
+    "countryCode": "LK",
+    "imageUrl": "LK",
+    "mapCoordinates": {
+      "lat": 6.89,
+      "lng": 79.9
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-30-06",
+    "type": "map",
+    "question": "The world's highest peak, Mount Everest, is located in which mountain range, forming part of the border between Nepal and China?",
+    "correctAnswer": "Himalayas (Mount Everest)",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-30-07",
+    "type": "map",
+    "question": "This vast desert region covers parts of northern China and southern Mongolia. What is its name?",
+    "correctAnswer": "Gobi Desert",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 42.9567,
+      "lng": 103.4394
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-30-08",
+    "type": "map",
+    "question": "This active stratovolcano is one of Costa Rica's most prominent landmarks. What is its name?",
+    "correctAnswer": "Arenal Volcano",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 10.4632,
+      "lng": -84.7039
+    },
+    "options": []
+  },
+  {
+    "id": "2026-10-30-09",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Côte d'Ivoire",
+    "imageUrl": "CI",
+    "options": [
+      "Niger",
+      "Guinea",
+      "Côte d'Ivoire",
+      "Mali"
+    ],
+    "countryCode": "CI"
+  },
+  {
+    "id": "2026-10-30-10",
+    "type": "capital",
+    "question": "Where is the capital of Uzbekistan?",
+    "correctAnswer": "Tashkent",
+    "countryCode": "UZ",
+    "imageUrl": "UZ",
+    "mapCoordinates": {
+      "lat": 41.32,
+      "lng": 69.25
+    },
+    "options": []
+  }
+]
