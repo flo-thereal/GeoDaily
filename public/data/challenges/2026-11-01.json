@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-OM-0",
+    "type": "map",
+    "question": "Where is Oman located?",
+    "correctAnswer": "Oman",
+    "options": [],
+    "countryCode": "OM",
+    "imageUrl": "OM",
+    "mapCoordinates": {
+      "lat": 21.4735,
+      "lng": 55.9754
+    }
+  },
+  {
+    "id": "flag-MX-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mexico",
+    "options": [
+      "United Kingdom",
+      "Dominica",
+      "Ecuador",
+      "Mexico"
+    ],
+    "countryCode": "MX",
+    "imageUrl": "MX"
+  },
+  {
+    "id": "capital-SI-2",
+    "type": "capital",
+    "question": "Where is the capital of Slovenia?",
+    "correctAnswer": "Ljubljana",
+    "options": [],
+    "countryCode": "SI",
+    "mapCoordinates": {
+      "lat": 46.05,
+      "lng": 14.52
+    }
+  },
+  {
+    "id": "map-MH-3",
+    "type": "map",
+    "question": "Where is Marshall Islands located?",
+    "correctAnswer": "Marshall Islands",
+    "options": [],
+    "countryCode": "MH",
+    "imageUrl": "MH",
+    "mapCoordinates": {
+      "lat": 7.1315,
+      "lng": 171.1845
+    }
+  },
+  {
+    "id": "flag-PK-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "options": [
+      "Czechia",
+      "Cameroon",
+      "Pakistan",
+      "Bhutan"
+    ],
+    "countryCode": "PK",
+    "imageUrl": "PK"
+  },
+  {
+    "id": "map-LT-5",
+    "type": "map",
+    "question": "Where is Lithuania located?",
+    "correctAnswer": "Lithuania",
+    "options": [],
+    "countryCode": "LT",
+    "imageUrl": "LT",
+    "mapCoordinates": {
+      "lat": 55.1694,
+      "lng": 23.8813
+    }
+  },
+  {
+    "id": "capital-UG-6",
+    "type": "capital",
+    "question": "Where is the capital of Uganda?",
+    "correctAnswer": "Kampala",
+    "options": [],
+    "countryCode": "UG",
+    "mapCoordinates": {
+      "lat": 0.32,
+      "lng": 32.55
+    }
+  },
+  {
+    "id": "map-GY-7",
+    "type": "map",
+    "question": "Where is Guyana located?",
+    "correctAnswer": "Guyana",
+    "options": [],
+    "countryCode": "GY",
+    "imageUrl": "GY",
+    "mapCoordinates": {
+      "lat": 4.8604,
+      "lng": -58.9302
+    }
+  },
+  {
+    "id": "flag-SG-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Singapore",
+    "options": [
+      "North Korea",
+      "Barbados",
+      "Japan",
+      "Singapore"
+    ],
+    "countryCode": "SG",
+    "imageUrl": "SG"
+  },
+  {
+    "id": "capital-GD-9",
+    "type": "capital",
+    "question": "Where is the capital of Grenada?",
+    "correctAnswer": "Saint George's",
+    "options": [],
+    "countryCode": "GD",
+    "mapCoordinates": {
+      "lat": 32.38,
+      "lng": -64.68
+    }
+  }
+]
