@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-PG-0",
+    "type": "map",
+    "question": "Where is Papua New Guinea located?",
+    "correctAnswer": "Papua New Guinea",
+    "options": [],
+    "countryCode": "PG",
+    "imageUrl": "PG",
+    "mapCoordinates": {
+      "lat": -6.315,
+      "lng": 143.9555
+    }
+  },
+  {
+    "id": "flag-LU-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Luxembourg",
+    "options": [
+      "Luxembourg",
+      "Nepal",
+      "Ghana",
+      "Peru"
+    ],
+    "countryCode": "LU",
+    "imageUrl": "LU"
+  },
+  {
+    "id": "capital-AU-2",
+    "type": "capital",
+    "question": "Where is the capital of Australia?",
+    "correctAnswer": "Canberra",
+    "options": [],
+    "countryCode": "AU",
+    "mapCoordinates": {
+      "lat": -35.27,
+      "lng": 149.13
+    }
+  },
+  {
+    "id": "map-MV-3",
+    "type": "map",
+    "question": "Where is Maldives located?",
+    "correctAnswer": "Maldives",
+    "options": [],
+    "countryCode": "MV",
+    "imageUrl": "MV",
+    "mapCoordinates": {
+      "lat": 3.8523,
+      "lng": 73.5307
+    }
+  },
+  {
+    "id": "flag-TT-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Trinidad and Tobago",
+    "options": [
+      "Trinidad and Tobago",
+      "Zambia",
+      "Eswatini",
+      "Namibia"
+    ],
+    "countryCode": "TT",
+    "imageUrl": "TT"
+  },
+  {
+    "id": "map-TV-5",
+    "type": "map",
+    "question": "Where is Tuvalu located?",
+    "correctAnswer": "Tuvalu",
+    "options": [],
+    "countryCode": "TV",
+    "imageUrl": "TV",
+    "mapCoordinates": {
+      "lat": -8.5211,
+      "lng": 179.1982
+    }
+  },
+  {
+    "id": "capital-AL-6",
+    "type": "capital",
+    "question": "Where is the capital of Albania?",
+    "correctAnswer": "Tirana",
+    "options": [],
+    "countryCode": "AL",
+    "mapCoordinates": {
+      "lat": 41.32,
+      "lng": 19.82
+    }
+  },
+  {
+    "id": "map-DK-7",
+    "type": "map",
+    "question": "Where is Denmark located?",
+    "correctAnswer": "Denmark",
+    "options": [],
+    "countryCode": "DK",
+    "imageUrl": "DK",
+    "mapCoordinates": {
+      "lat": 56.2639,
+      "lng": 9.5018
+    }
+  },
+  {
+    "id": "flag-JM-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Jamaica",
+    "options": [
+      "Jamaica",
+      "Afghanistan",
+      "Eswatini",
+      "United Kingdom"
+    ],
+    "countryCode": "JM",
+    "imageUrl": "JM"
+  },
+  {
+    "id": "capital-MC-9",
+    "type": "capital",
+    "question": "Where is the capital of Monaco?",
+    "correctAnswer": "Monaco",
+    "options": [],
+    "countryCode": "MC",
+    "mapCoordinates": {
+      "lat": 43.73,
+      "lng": 7.42
+    }
+  }
+]
