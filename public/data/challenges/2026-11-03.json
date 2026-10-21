@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-SL-0",
+    "type": "map",
+    "question": "Where is Sierra Leone located?",
+    "correctAnswer": "Sierra Leone",
+    "options": [],
+    "countryCode": "SL",
+    "imageUrl": "SL",
+    "mapCoordinates": {
+      "lat": 8.4606,
+      "lng": -11.7799
+    }
+  },
+  {
+    "id": "flag-VU-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vanuatu",
+    "options": [
+      "Vanuatu",
+      "Fiji",
+      "Singapore",
+      "Burkina Faso"
+    ],
+    "countryCode": "VU",
+    "imageUrl": "VU"
+  },
+  {
+    "id": "capital-ER-2",
+    "type": "capital",
+    "question": "Where is the capital of Eritrea?",
+    "correctAnswer": "Asmara",
+    "options": [],
+    "countryCode": "ER",
+    "mapCoordinates": {
+      "lat": 15.33,
+      "lng": 38.93
+    }
+  },
+  {
+    "id": "map-RW-3",
+    "type": "map",
+    "question": "Where is Rwanda located?",
+    "correctAnswer": "Rwanda",
+    "options": [],
+    "countryCode": "RW",
+    "imageUrl": "RW",
+    "mapCoordinates": {
+      "lat": -1.9403,
+      "lng": 29.8739
+    }
+  },
+  {
+    "id": "flag-BG-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bulgaria",
+    "options": [
+      "Bulgaria",
+      "Poland",
+      "Guinea",
+      "Haiti"
+    ],
+    "countryCode": "BG",
+    "imageUrl": "BG"
+  },
+  {
+    "id": "map-CY-5",
+    "type": "map",
+    "question": "Where is Cyprus located?",
+    "correctAnswer": "Cyprus",
+    "options": [],
+    "countryCode": "CY",
+    "imageUrl": "CY",
+    "mapCoordinates": {
+      "lat": 34.9249,
+      "lng": 33.4299
+    }
+  },
+  {
+    "id": "capital-GA-6",
+    "type": "capital",
+    "question": "Where is the capital of Gabon?",
+    "correctAnswer": "Libreville",
+    "options": [],
+    "countryCode": "GA",
+    "mapCoordinates": {
+      "lat": 0.38,
+      "lng": 9.45
+    }
+  },
+  {
+    "id": "map-BT-7",
+    "type": "map",
+    "question": "Where is Bhutan located?",
+    "correctAnswer": "Bhutan",
+    "options": [],
+    "countryCode": "BT",
+    "imageUrl": "BT",
+    "mapCoordinates": {
+      "lat": 27.5142,
+      "lng": 90.4336
+    }
+  },
+  {
+    "id": "flag-SD-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sudan",
+    "options": [
+      "Latvia",
+      "Sudan",
+      "Bangladesh",
+      "Barbados"
+    ],
+    "countryCode": "SD",
+    "imageUrl": "SD"
+  },
+  {
+    "id": "capital-IL-9",
+    "type": "capital",
+    "question": "Where is the capital of Israel?",
+    "correctAnswer": "Jerusalem",
+    "options": [],
+    "countryCode": "IL",
+    "mapCoordinates": {
+      "lat": 31.77,
+      "lng": 35.23
+    }
+  }
+]
