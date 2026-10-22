@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-KG-0",
+    "type": "map",
+    "question": "Where is Kyrgyzstan located?",
+    "correctAnswer": "Kyrgyzstan",
+    "options": [],
+    "countryCode": "KG",
+    "imageUrl": "KG",
+    "mapCoordinates": {
+      "lat": 41.5015,
+      "lng": 74.465
+    }
+  },
+  {
+    "id": "flag-NR-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nauru",
+    "options": [
+      "Djibouti",
+      "Nauru",
+      "Italy",
+      "San Marino"
+    ],
+    "countryCode": "NR",
+    "imageUrl": "NR"
+  },
+  {
+    "id": "capital-LS-2",
+    "type": "capital",
+    "question": "Where is the capital of Lesotho?",
+    "correctAnswer": "Maseru",
+    "options": [],
+    "countryCode": "LS",
+    "mapCoordinates": {
+      "lat": -29.32,
+      "lng": 27.48
+    }
+  },
+  {
+    "id": "map-LY-3",
+    "type": "map",
+    "question": "Where is Libya located?",
+    "correctAnswer": "Libya",
+    "options": [],
+    "countryCode": "LY",
+    "imageUrl": "LY",
+    "mapCoordinates": {
+      "lat": 26.3351,
+      "lng": 17.2283
+    }
+  },
+  {
+    "id": "flag-KI-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kiribati",
+    "options": [
+      "Cameroon",
+      "Burkina Faso",
+      "Belgium",
+      "Kiribati"
+    ],
+    "countryCode": "KI",
+    "imageUrl": "KI"
+  },
+  {
+    "id": "map-MZ-5",
+    "type": "map",
+    "question": "Where is Mozambique located?",
+    "correctAnswer": "Mozambique",
+    "options": [],
+    "countryCode": "MZ",
+    "imageUrl": "MZ",
+    "mapCoordinates": {
+      "lat": -18.6657,
+      "lng": 35.5296
+    }
+  },
+  {
+    "id": "capital-KM-6",
+    "type": "capital",
+    "question": "Where is the capital of Comoros?",
+    "correctAnswer": "Moroni",
+    "options": [],
+    "countryCode": "KM",
+    "mapCoordinates": {
+      "lat": -11.7,
+      "lng": 43.23
+    }
+  },
+  {
+    "id": "map-TD-7",
+    "type": "map",
+    "question": "Where is Chad located?",
+    "correctAnswer": "Chad",
+    "options": [],
+    "countryCode": "TD",
+    "imageUrl": "TD",
+    "mapCoordinates": {
+      "lat": 15.473,
+      "lng": 18.7322
+    }
+  },
+  {
+    "id": "flag-GW-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Guinea-Bissau",
+    "options": [
+      "Guinea-Bissau",
+      "Togo",
+      "Italy",
+      "Iran"
+    ],
+    "countryCode": "GW",
+    "imageUrl": "GW"
+  },
+  {
+    "id": "capital-CD-9",
+    "type": "capital",
+    "question": "Where is the capital of Democratic Republic of the Congo?",
+    "correctAnswer": "Kinshasa",
+    "options": [],
+    "countryCode": "CD",
+    "mapCoordinates": {
+      "lat": -4.32,
+      "lng": 15.3
+    }
+  }
+]
