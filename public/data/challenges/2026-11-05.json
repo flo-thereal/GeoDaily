@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261105-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "Switzerland",
+      "Peru",
+      "Lebanon",
+      "Canada"
+    ],
+    "countryCode": "CA"
+  },
+  {
+    "id": "20261105-02",
+    "type": "capital",
+    "question": "Where is the capital of United Kingdom?",
+    "correctAnswer": "London",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.5,
+      "lng": -0.08
+    },
+    "options": []
+  },
+  {
+    "id": "20261105-03",
+    "type": "map",
+    "question": "This famous statue overlooks Rio de Janeiro. What is its name?",
+    "correctAnswer": "Christ the Redeemer",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  },
+  {
+    "id": "20261105-04",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Peru",
+    "imageUrl": "PE",
+    "options": [
+      "Latvia",
+      "Peru",
+      "Canada",
+      "Austria"
+    ],
+    "countryCode": "PE"
+  },
+  {
+    "id": "20261105-05",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "20261105-06",
+    "type": "map",
+    "question": "This iconic mausoleum is located in Agra. What is it called?",
+    "correctAnswer": "Taj Mahal",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 27.1751,
+      "lng": 78.0421
+    },
+    "options": []
+  },
+  {
+    "id": "20261105-07",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "South Africa",
+      "Nigeria",
+      "Germany",
+      "Belgium"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "20261105-08",
+    "type": "capital",
+    "question": "Where is the capital of Japan?",
+    "correctAnswer": "Tokyo",
+    "countryCode": "JP",
+    "imageUrl": "JP",
+    "mapCoordinates": {
+      "lat": 35.68,
+      "lng": 139.75
+    },
+    "options": []
+  },
+  {
+    "id": "20261105-09",
+    "type": "map",
+    "question": "This ancient amphitheatre is a symbol of Rome. What is its name?",
+    "correctAnswer": "Colosseum",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  },
+  {
+    "id": "20261105-10",
+    "type": "map",
+    "question": "This vast natural formation, carved by the Colorado River, is a major tourist attraction. What is it called?",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.1167
+    },
+    "options": []
+  }
+]
