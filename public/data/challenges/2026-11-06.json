@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261106_1",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "20261106_2",
+    "type": "map",
+    "question": "Which iconic landmark, known for its ongoing construction, is located at these coordinates?",
+    "correctAnswer": "Sagrada Familia",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 41.4037,
+      "lng": 2.1744
+    },
+    "options": []
+  },
+  {
+    "id": "20261106_3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "imageUrl": "ET",
+    "options": [
+      "Ethiopia",
+      "Ghana",
+      "Kenya",
+      "Senegal"
+    ],
+    "countryCode": "ET"
+  },
+  {
+    "id": "20261106_4",
+    "type": "map",
+    "question": "This remote and rugged national park, famous for its fjords like Milford Sound, is found at these coordinates. What is its name?",
+    "correctAnswer": "Fiordland National Park",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -45.42,
+      "lng": 167.72
+    },
+    "options": []
+  },
+  {
+    "id": "20261106_5",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261106_6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Philippines",
+    "imageUrl": "PH",
+    "options": [
+      "Philippines",
+      "Vietnam",
+      "Malaysia",
+      "Indonesia"
+    ],
+    "countryCode": "PH"
+  },
+  {
+    "id": "20261106_7",
+    "type": "map",
+    "question": "This bustling square in Marrakech, famous for its storytellers, musicians, and food stalls, is located at these coordinates. What is its name?",
+    "correctAnswer": "Djemaa el-Fna",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6276,
+      "lng": -7.989
+    },
+    "options": []
+  },
+  {
+    "id": "20261106_8",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "20261106_9",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Denmark",
+      "Norway",
+      "Finland",
+      "Sweden"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20261106_10",
+    "type": "map",
+    "question": "This stunning natural wonder, famous for its thousands of limestone karsts and islets, is found at these coordinates. What is this UNESCO World Heritage site called?",
+    "correctAnswer": "Ha Long Bay",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 20.908,
+      "lng": 107.034
+    },
+    "options": []
+  }
+]
