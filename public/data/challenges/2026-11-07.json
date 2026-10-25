@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-QA-0",
+    "type": "map",
+    "question": "Where is Qatar located?",
+    "correctAnswer": "Qatar",
+    "options": [],
+    "countryCode": "QA",
+    "imageUrl": "QA",
+    "mapCoordinates": {
+      "lat": 25.3548,
+      "lng": 51.1839
+    }
+  },
+  {
+    "id": "flag-TG-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Togo",
+    "options": [
+      "El Salvador",
+      "Venezuela",
+      "Oman",
+      "Togo"
+    ],
+    "countryCode": "TG",
+    "imageUrl": "TG"
+  },
+  {
+    "id": "capital-TW-2",
+    "type": "capital",
+    "question": "Where is the capital of Taiwan?",
+    "correctAnswer": "Taipei",
+    "options": [],
+    "countryCode": "TW",
+    "mapCoordinates": {
+      "lat": 25.03,
+      "lng": 121.52
+    }
+  },
+  {
+    "id": "map-GQ-3",
+    "type": "map",
+    "question": "Where is Equatorial Guinea located?",
+    "correctAnswer": "Equatorial Guinea",
+    "options": [],
+    "countryCode": "GQ",
+    "imageUrl": "GQ",
+    "mapCoordinates": {
+      "lat": 1.6508,
+      "lng": 10.2679
+    }
+  },
+  {
+    "id": "flag-MN-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mongolia",
+    "options": [
+      "Morocco",
+      "Mongolia",
+      "Belarus",
+      "El Salvador"
+    ],
+    "countryCode": "MN",
+    "imageUrl": "MN"
+  },
+  {
+    "id": "map-KW-5",
+    "type": "map",
+    "question": "Where is Kuwait located?",
+    "correctAnswer": "Kuwait",
+    "options": [],
+    "countryCode": "KW",
+    "imageUrl": "KW",
+    "mapCoordinates": {
+      "lat": 29.3117,
+      "lng": 47.4818
+    }
+  },
+  {
+    "id": "capital-PL-6",
+    "type": "capital",
+    "question": "Where is the capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "options": [],
+    "countryCode": "PL",
+    "mapCoordinates": {
+      "lat": 52.25,
+      "lng": 21
+    }
+  },
+  {
+    "id": "map-KR-7",
+    "type": "map",
+    "question": "Where is South Korea located?",
+    "correctAnswer": "South Korea",
+    "options": [],
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 35.9078,
+      "lng": 127.7669
+    }
+  },
+  {
+    "id": "flag-YE-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Yemen",
+    "options": [
+      "Switzerland",
+      "Turkmenistan",
+      "Yemen",
+      "India"
+    ],
+    "countryCode": "YE",
+    "imageUrl": "YE"
+  },
+  {
+    "id": "capital-SO-9",
+    "type": "capital",
+    "question": "Where is the capital of Somalia?",
+    "correctAnswer": "Mogadishu",
+    "options": [],
+    "countryCode": "SO",
+    "mapCoordinates": {
+      "lat": 2.07,
+      "lng": 45.33
+    }
+  }
+]
