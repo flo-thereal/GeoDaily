@@ -1,0 +1,135 @@
+[
+  {
+    "id": "flag_20261109_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "France",
+    "imageUrl": "FR",
+    "options": [
+      "Russia",
+      "France",
+      "Luxembourg",
+      "Netherlands"
+    ],
+    "countryCode": "FR"
+  },
+  {
+    "id": "flag_20261109_2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "Mali",
+      "Ivory Coast",
+      "Ireland",
+      "Nigeria"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "flag_20261109_3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "imageUrl": "PK",
+    "options": [
+      "Algeria",
+      "Mauritania",
+      "Turkey",
+      "Pakistan"
+    ],
+    "countryCode": "PK"
+  },
+  {
+    "id": "capital_20261109_1",
+    "type": "capital",
+    "question": "Where is the capital of Iran?",
+    "correctAnswer": "Tehran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 35.7,
+      "lng": 51.42
+    },
+    "options": []
+  },
+  {
+    "id": "capital_20261109_2",
+    "type": "capital",
+    "question": "Where is the capital of Kenya?",
+    "correctAnswer": "Nairobi",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "mapCoordinates": {
+      "lat": -1.28,
+      "lng": 36.82
+    },
+    "options": []
+  },
+  {
+    "id": "capital_20261109_3",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "map_20261109_1",
+    "type": "map",
+    "question": "Which iconic mountain peak is located at these coordinates in the Pennine Alps?",
+    "correctAnswer": "Matterhorn",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6585
+    },
+    "options": []
+  },
+  {
+    "id": "map_20261109_2",
+    "type": "map",
+    "question": "This ancient temple complex, a UNESCO World Heritage site, is a symbol of which Southeast Asian country?",
+    "correctAnswer": "Angkor Wat",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  },
+  {
+    "id": "map_20261109_3",
+    "type": "map",
+    "question": "Which immense natural wonder, the world's largest salt flat, is found at these coordinates?",
+    "correctAnswer": "Salar de Uyuni",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.2483,
+      "lng": -67.4878
+    },
+    "options": []
+  },
+  {
+    "id": "map_20261109_4",
+    "type": "map",
+    "question": "Which world-renowned flower park, famous for its tulips, is located at these coordinates?",
+    "correctAnswer": "Keukenhof Gardens",
+    "countryCode": "NL",
+    "imageUrl": "NL",
+    "mapCoordinates": {
+      "lat": 52.2701,
+      "lng": 4.5469
+    },
+    "options": []
+  }
+]
