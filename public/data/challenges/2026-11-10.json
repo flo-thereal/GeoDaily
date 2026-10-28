@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261110-flag-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mexico",
+    "imageUrl": "MX",
+    "options": [
+      "Mexico",
+      "Hungary",
+      "Portugal",
+      "Italy"
+    ],
+    "countryCode": "MX"
+  },
+  {
+    "id": "20261110-capital-01",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "20261110-map-01",
+    "type": "map",
+    "question": "This iconic sandstone formation, sacred to the Anangu people, is located in which country?",
+    "correctAnswer": "Uluru",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.3444,
+      "lng": 131.0369
+    },
+    "options": []
+  },
+  {
+    "id": "20261110-flag-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Romania",
+    "imageUrl": "RO",
+    "options": [
+      "Chad",
+      "Romania",
+      "Andorra",
+      "Moldova"
+    ],
+    "countryCode": "RO"
+  },
+  {
+    "id": "20261110-capital-02",
+    "type": "capital",
+    "question": "Where is the capital of Denmark?",
+    "correctAnswer": "Copenhagen",
+    "countryCode": "DK",
+    "imageUrl": "DK",
+    "mapCoordinates": {
+      "lat": 55.67,
+      "lng": 12.58
+    },
+    "options": []
+  },
+  {
+    "id": "20261110-map-02",
+    "type": "map",
+    "question": "This extensive series of fortifications, a UNESCO World Heritage site, is located in which country?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "20261110-flag-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "Greece",
+      "Malaysia",
+      "United States",
+      "Liberia"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "20261110-capital-03",
+    "type": "capital",
+    "question": "Where is the capital of Norway?",
+    "correctAnswer": "Oslo",
+    "countryCode": "NO",
+    "imageUrl": "NO",
+    "mapCoordinates": {
+      "lat": 59.92,
+      "lng": 10.75
+    },
+    "options": []
+  },
+  {
+    "id": "20261110-map-03",
+    "type": "map",
+    "question": "This infamous site of a nuclear disaster is located in which country?",
+    "correctAnswer": "Chernobyl",
+    "countryCode": "UA",
+    "imageUrl": "UA",
+    "mapCoordinates": {
+      "lat": 51.3895,
+      "lng": 30.0988
+    },
+    "options": []
+  },
+  {
+    "id": "20261110-map-04",
+    "type": "map",
+    "question": "These stunning sea cliffs, a popular tourist attraction, are located on the western coast of which country?",
+    "correctAnswer": "Cliffs of Moher",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 52.9714,
+      "lng": -9.4309
+    },
+    "options": []
+  }
+]
