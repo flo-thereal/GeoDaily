@@ -1,0 +1,135 @@
+[
+  {
+    "id": "flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Slovakia",
+    "imageUrl": "SK",
+    "options": [
+      "Hungary",
+      "Croatia",
+      "Slovenia",
+      "Slovakia"
+    ],
+    "countryCode": "SK"
+  },
+  {
+    "id": "flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cyprus",
+    "imageUrl": "CY",
+    "options": [
+      "Malta",
+      "Turkey",
+      "Greece",
+      "Cyprus"
+    ],
+    "countryCode": "CY"
+  },
+  {
+    "id": "flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "imageUrl": "GH",
+    "options": [
+      "Cameroon",
+      "Ghana",
+      "Benin",
+      "Togo"
+    ],
+    "countryCode": "GH"
+  },
+  {
+    "id": "capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Moldova?",
+    "correctAnswer": "Chișinău",
+    "countryCode": "MD",
+    "imageUrl": "MD",
+    "mapCoordinates": {
+      "lat": 47.01,
+      "lng": 28.9
+    },
+    "options": []
+  },
+  {
+    "id": "capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Bulgaria?",
+    "correctAnswer": "Sofia",
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "mapCoordinates": {
+      "lat": 42.68,
+      "lng": 23.32
+    },
+    "options": []
+  },
+  {
+    "id": "capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Latvia?",
+    "correctAnswer": "Riga",
+    "countryCode": "LV",
+    "imageUrl": "LV",
+    "mapCoordinates": {
+      "lat": 56.95,
+      "lng": 24.1
+    },
+    "options": []
+  },
+  {
+    "id": "map-1",
+    "type": "map",
+    "question": "Which large lake, a popular tourist destination, is located in Hungary?",
+    "correctAnswer": "Lake Balaton",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 46.85,
+      "lng": 17.75
+    },
+    "options": []
+  },
+  {
+    "id": "map-2",
+    "type": "map",
+    "question": "This unique sand dune spit, a UNESCO World Heritage site shared with Russia, is a prominent geographical feature of which Baltic country?",
+    "correctAnswer": "Lithuania",
+    "countryCode": "LT",
+    "imageUrl": "LT",
+    "mapCoordinates": {
+      "lat": 55.33,
+      "lng": 21.05
+    },
+    "options": []
+  },
+  {
+    "id": "map-3",
+    "type": "map",
+    "question": "This iconic lake, featuring a picturesque island church and medieval castle, is a famous landmark in which European country?",
+    "correctAnswer": "Slovenia",
+    "countryCode": "SI",
+    "imageUrl": "SI",
+    "mapCoordinates": {
+      "lat": 46.3629,
+      "lng": 14.1042
+    },
+    "options": []
+  },
+  {
+    "id": "map-4",
+    "type": "map",
+    "question": "Known for its stunning terraced lakes and waterfalls, this national park is a UNESCO World Heritage site in which Adriatic country?",
+    "correctAnswer": "Croatia",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 44.8656,
+      "lng": 15.6027
+    },
+    "options": []
+  }
+]
