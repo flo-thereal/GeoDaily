@@ -1,0 +1,132 @@
+[
+  {
+    "id": "map-NA-0",
+    "type": "map",
+    "question": "Where is Namibia located?",
+    "correctAnswer": "Namibia",
+    "options": [],
+    "countryCode": "NA",
+    "imageUrl": "NA",
+    "mapCoordinates": {
+      "lat": -22.9375,
+      "lng": 18.7669
+    }
+  },
+  {
+    "id": "flag-XK-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kosovo",
+    "options": [
+      "Kosovo",
+      "Bulgaria",
+      "Brazil",
+      "Ireland"
+    ],
+    "countryCode": "XK",
+    "imageUrl": "XK"
+  },
+  {
+    "id": "capital-AE-2",
+    "type": "capital",
+    "question": "Where is the capital of United Arab Emirates?",
+    "correctAnswer": "Abu Dhabi",
+    "options": [],
+    "countryCode": "AE",
+    "mapCoordinates": {
+      "lat": 24.47,
+      "lng": 54.37
+    }
+  },
+  {
+    "id": "map-IL-3",
+    "type": "map",
+    "question": "Where is Israel located?",
+    "correctAnswer": "Israel",
+    "options": [],
+    "countryCode": "IL",
+    "imageUrl": "IL",
+    "mapCoordinates": {
+      "lat": 31.0461,
+      "lng": 34.8516
+    }
+  },
+  {
+    "id": "flag-TR-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "options": [
+      "Turkey",
+      "France",
+      "El Salvador",
+      "Costa Rica"
+    ],
+    "countryCode": "TR",
+    "imageUrl": "TR"
+  },
+  {
+    "id": "map-LR-5",
+    "type": "map",
+    "question": "Where is Liberia located?",
+    "correctAnswer": "Liberia",
+    "options": [],
+    "countryCode": "LR",
+    "imageUrl": "LR",
+    "mapCoordinates": {
+      "lat": 6.4281,
+      "lng": -9.4295
+    }
+  },
+  {
+    "id": "capital-MU-6",
+    "type": "capital",
+    "question": "Where is the capital of Mauritius?",
+    "correctAnswer": "Port Louis",
+    "options": [],
+    "countryCode": "MU",
+    "mapCoordinates": {
+      "lat": -20.15,
+      "lng": 57.48
+    }
+  },
+  {
+    "id": "map-TJ-7",
+    "type": "map",
+    "question": "Where is Tajikistan located?",
+    "correctAnswer": "Tajikistan",
+    "options": [],
+    "countryCode": "TJ",
+    "imageUrl": "TJ",
+    "mapCoordinates": {
+      "lat": 38.861,
+      "lng": 71.2761
+    }
+  },
+  {
+    "id": "flag-UZ-8",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Uzbekistan",
+    "options": [
+      "Seychelles",
+      "Uzbekistan",
+      "Romania",
+      "Mozambique"
+    ],
+    "countryCode": "UZ",
+    "imageUrl": "UZ"
+  },
+  {
+    "id": "capital-MG-9",
+    "type": "capital",
+    "question": "Where is the capital of Madagascar?",
+    "correctAnswer": "Antananarivo",
+    "options": [],
+    "countryCode": "MG",
+    "mapCoordinates": {
+      "lat": -18.92,
+      "lng": 47.52
+    }
+  }
+]
