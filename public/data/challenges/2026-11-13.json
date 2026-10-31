@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261113-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "South Korea",
+      "China",
+      "Bangladesh",
+      "Japan"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "20261113-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Brazil",
+    "imageUrl": "BR",
+    "options": [
+      "Mozambique",
+      "Angola",
+      "Portugal",
+      "Brazil"
+    ],
+    "countryCode": "BR"
+  },
+  {
+    "id": "20261113-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "Ethiopia",
+      "South Africa",
+      "Germany",
+      "Kenya"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "20261113-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "20261113-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Canada?",
+    "correctAnswer": "Ottawa",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 45.42,
+      "lng": -75.7
+    },
+    "options": []
+  },
+  {
+    "id": "20261113-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "20261113-map-1",
+    "type": "map",
+    "question": "This ancient Inca citadel is a UNESCO World Heritage site and a global icon of Peru. Where is it located?",
+    "correctAnswer": "Machu Picchu",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "20261113-map-2",
+    "type": "map",
+    "question": "This immense canyon carved by the Colorado River is one of the world's most impressive natural wonders. Where can you find it?",
+    "correctAnswer": "Grand Canyon National Park",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.0544,
+      "lng": -112.1401
+    },
+    "options": []
+  },
+  {
+    "id": "20261113-map-3",
+    "type": "map",
+    "question": "This prehistoric monument, a ring of standing stones, is a famous landmark in England. What is its name?",
+    "correctAnswer": "Stonehenge",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  },
+  {
+    "id": "20261113-map-4",
+    "type": "map",
+    "question": "This ancient amphitheater in Rome is an iconic symbol of Imperial Rome. What is this structure called?",
+    "correctAnswer": "Colosseum",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  }
+]
