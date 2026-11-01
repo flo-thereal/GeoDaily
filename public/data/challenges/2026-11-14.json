@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261114-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Sweden",
+      "Iceland",
+      "Norway",
+      "Finland"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20261114-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "New Zealand",
+    "imageUrl": "NZ",
+    "options": [
+      "New Zealand",
+      "United Kingdom",
+      "Fiji",
+      "Australia"
+    ],
+    "countryCode": "NZ"
+  },
+  {
+    "id": "20261114-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Tanzania",
+    "imageUrl": "TZ",
+    "options": [
+      "Kenya",
+      "Uganda",
+      "Democratic Republic of Congo",
+      "Tanzania"
+    ],
+    "countryCode": "TZ"
+  },
+  {
+    "id": "20261114-4",
+    "type": "capital",
+    "question": "Where is the capital of Germany?",
+    "correctAnswer": "Berlin",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 52.52,
+      "lng": 13.4
+    },
+    "options": []
+  },
+  {
+    "id": "20261114-5",
+    "type": "capital",
+    "question": "Where is the capital of Vietnam?",
+    "correctAnswer": "Hanoi",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 21.03,
+      "lng": 105.85
+    },
+    "options": []
+  },
+  {
+    "id": "20261114-6",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261114-7",
+    "type": "map",
+    "question": "This map highlights the location of the world's highest uninterrupted waterfall. What is it called?",
+    "correctAnswer": "Angel Falls",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9717,
+      "lng": -62.5358
+    },
+    "options": []
+  },
+  {
+    "id": "20261114-8",
+    "type": "map",
+    "question": "Which country is highlighted on the map, sharing the Iberian Peninsula with Portugal?",
+    "correctAnswer": "Spain",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 40.4168,
+      "lng": -3.7038
+    },
+    "options": []
+  },
+  {
+    "id": "20261114-9",
+    "type": "map",
+    "question": "This map shows a crucial artificial waterway connecting the Atlantic and Pacific Oceans. What is it?",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.07,
+      "lng": -79.78
+    },
+    "options": []
+  },
+  {
+    "id": "20261114-10",
+    "type": "map",
+    "question": "This remote volcanic archipelago, famous for its unique wildlife, belongs to which South American country?",
+    "correctAnswer": "Ecuador",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": 0.7,
+      "lng": -90.5
+    },
+    "options": []
+  }
+]
