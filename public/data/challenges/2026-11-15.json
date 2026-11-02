@@ -1,0 +1,135 @@
+[
+  {
+    "id": "flag-2026-11-15-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Jamaica",
+    "imageUrl": "JM",
+    "options": [
+      "Saint Lucia",
+      "Ghana",
+      "Barbados",
+      "Jamaica"
+    ],
+    "countryCode": "JM"
+  },
+  {
+    "id": "flag-2026-11-15-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iceland",
+    "imageUrl": "IS",
+    "options": [
+      "Iceland",
+      "Finland",
+      "Norway",
+      "Sweden"
+    ],
+    "countryCode": "IS"
+  },
+  {
+    "id": "flag-2026-11-15-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "Japan",
+      "China",
+      "North Korea",
+      "South Korea"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "capital-2026-11-15-1",
+    "type": "capital",
+    "question": "Where is the capital of Mongolia?",
+    "correctAnswer": "Ulaanbaatar",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 47.92,
+      "lng": 106.91
+    },
+    "options": []
+  },
+  {
+    "id": "capital-2026-11-15-2",
+    "type": "capital",
+    "question": "Where is the capital of Ethiopia?",
+    "correctAnswer": "Addis Ababa",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 9.03,
+      "lng": 38.7
+    },
+    "options": []
+  },
+  {
+    "id": "capital-2026-11-15-3",
+    "type": "capital",
+    "question": "Where is the capital of Bangladesh?",
+    "correctAnswer": "Dhaka",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "mapCoordinates": {
+      "lat": 23.72,
+      "lng": 90.4
+    },
+    "options": []
+  },
+  {
+    "id": "map-2026-11-15-1",
+    "type": "map",
+    "question": "This natural wonder, famous for its perfect cone shape, is located in which country?",
+    "correctAnswer": "Mayon Volcano",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 13.2575,
+      "lng": 123.685
+    },
+    "options": []
+  },
+  {
+    "id": "map-2026-11-15-2",
+    "type": "map",
+    "question": "This ancient city, known for its tanneries and vibrant souks, is located in which country?",
+    "correctAnswer": "Fes",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 34.0375,
+      "lng": -5
+    },
+    "options": []
+  },
+  {
+    "id": "map-2026-11-15-3",
+    "type": "map",
+    "question": "Identify this famous active volcano, a prominent natural landmark in Costa Rica.",
+    "correctAnswer": "Arenal Volcano",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 10.463,
+      "lng": -84.703
+    },
+    "options": []
+  },
+  {
+    "id": "map-2026-11-15-4",
+    "type": "map",
+    "question": "These magnificent Mayan ruins are a UNESCO World Heritage site located in which country?",
+    "correctAnswer": "Tikal",
+    "countryCode": "GT",
+    "imageUrl": "GT",
+    "mapCoordinates": {
+      "lat": 17.221,
+      "lng": -89.624
+    },
+    "options": []
+  }
+]
