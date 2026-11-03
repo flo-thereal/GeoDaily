@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261116-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Norway",
+      "Finland",
+      "Denmark",
+      "Sweden"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "20261116-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Spain",
+      "Angola",
+      "Brazil",
+      "Portugal"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "20261116-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cuba",
+    "imageUrl": "CU",
+    "options": [
+      "Puerto Rico",
+      "Philippines",
+      "Chile",
+      "Cuba"
+    ],
+    "countryCode": "CU"
+  },
+  {
+    "id": "20261116-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261116-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Greece?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.98,
+      "lng": 23.73
+    },
+    "options": []
+  },
+  {
+    "id": "20261116-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "20261116-map-1",
+    "type": "map",
+    "question": "This archeological site, often called 'The Lost City', is hidden deep in the Sierra Nevada de Santa Marta mountains. Which country is it located in?",
+    "correctAnswer": "Colombia",
+    "countryCode": "CO",
+    "imageUrl": "CO",
+    "mapCoordinates": {
+      "lat": 10.9317,
+      "lng": -73.9219
+    },
+    "options": []
+  },
+  {
+    "id": "20261116-map-2",
+    "type": "map",
+    "question": "Identify this mountainous region, part of the Carpathian arc, forming a natural border in Southern Poland.",
+    "correctAnswer": "Tatra Mountains",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 49.2014,
+      "lng": 20.0708
+    },
+    "options": []
+  },
+  {
+    "id": "20261116-map-3",
+    "type": "map",
+    "question": "This famous archipelago, known for its stunning limestone cliffs and clear waters, is a popular tourist destination. Which country are they part of?",
+    "correctAnswer": "Thailand",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 7.741,
+      "lng": 98.777
+    },
+    "options": []
+  },
+  {
+    "id": "20261116-map-4",
+    "type": "map",
+    "question": "This is the second-longest river in Africa and the world's deepest river. Which major Central African country does it primarily flow through?",
+    "correctAnswer": "Democratic Republic of Congo",
+    "countryCode": "CD",
+    "imageUrl": "CD",
+    "mapCoordinates": {
+      "lat": 0.5167,
+      "lng": 25.1997
+    },
+    "options": []
+  }
+]
