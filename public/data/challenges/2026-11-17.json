@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-11-17-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Kenya",
+      "Ethiopia",
+      "Somalia",
+      "Sudan"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "2026-11-17-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Pakistan?",
+    "correctAnswer": "Islamabad",
+    "countryCode": "PK",
+    "imageUrl": "PK",
+    "mapCoordinates": {
+      "lat": 33.68,
+      "lng": 73.05
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-17-map-1",
+    "type": "map",
+    "question": "This is the highest peak in the world. Which country's border does it straddle, primarily known for its south base camp?",
+    "correctAnswer": "Nepal",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.9881,
+      "lng": 86.925
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-17-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "imageUrl": "CH",
+    "options": [
+      "France",
+      "Austria",
+      "Belgium",
+      "Switzerland"
+    ],
+    "countryCode": "CH"
+  },
+  {
+    "id": "2026-11-17-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Myanmar?",
+    "correctAnswer": "Naypyidaw",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 19.76,
+      "lng": 96.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-17-map-2",
+    "type": "map",
+    "question": "This iconic temple complex is a UNESCO World Heritage site and a symbol of its nation. In which country is it located?",
+    "correctAnswer": "Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.867
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-17-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iraq",
+    "imageUrl": "IQ",
+    "options": [
+      "Iraq",
+      "Syria",
+      "Jordan",
+      "Yemen"
+    ],
+    "countryCode": "IQ"
+  },
+  {
+    "id": "2026-11-17-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Nigeria?",
+    "correctAnswer": "Abuja",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 9.08,
+      "lng": 7.53
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-17-map-3",
+    "type": "map",
+    "question": "Known locally as 'Mosi-oa-Tunya' ('The Smoke that Thunders'), this magnificent waterfall lies on the Zambezi River. Which country is on the northern bank?",
+    "correctAnswer": "Zambia",
+    "countryCode": "ZM",
+    "imageUrl": "ZM",
+    "mapCoordinates": {
+      "lat": -17.9243,
+      "lng": 25.8584
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-17-map-4",
+    "type": "map",
+    "question": "This is the world's largest salt flat, covering over 10,000 square kilometers, and is a major breeding ground for several species of pink flamingos. In which South American country is it located?",
+    "correctAnswer": "Bolivia",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.249,
+      "lng": -67.62
+    },
+    "options": []
+  }
+]
