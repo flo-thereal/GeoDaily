@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-11-19-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Malaysia",
+    "imageUrl": "MY",
+    "options": [
+      "Indonesia",
+      "Malaysia",
+      "Singapore",
+      "Vietnam"
+    ],
+    "countryCode": "MY"
+  },
+  {
+    "id": "2026-11-19-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Austria",
+    "imageUrl": "AT",
+    "options": [
+      "Austria",
+      "Poland",
+      "Lebanon",
+      "Latvia"
+    ],
+    "countryCode": "AT"
+  },
+  {
+    "id": "2026-11-19-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Jordan",
+    "imageUrl": "JO",
+    "options": [
+      "Palestine",
+      "Iraq",
+      "Jordan",
+      "Syria"
+    ],
+    "countryCode": "JO"
+  },
+  {
+    "id": "2026-11-19-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of China?",
+    "correctAnswer": "Beijing",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 39.92,
+      "lng": 116.38
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-19-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Saudi Arabia?",
+    "correctAnswer": "Riyadh",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.65,
+      "lng": 46.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-19-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Hungary?",
+    "correctAnswer": "Budapest",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.5,
+      "lng": 19.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-19-map-1",
+    "type": "map",
+    "question": "This colossal building is the heaviest in the world. Which city is it in?",
+    "correctAnswer": "Bucharest",
+    "countryCode": "RO",
+    "imageUrl": "RO",
+    "mapCoordinates": {
+      "lat": 44.4276,
+      "lng": 26.0877
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-19-map-2",
+    "type": "map",
+    "question": "Which Central European country is home to the stunning peaks of the High Tatras mountain range, partially located at these coordinates?",
+    "correctAnswer": "Slovakia",
+    "countryCode": "SK",
+    "imageUrl": "SK",
+    "mapCoordinates": {
+      "lat": 49.1667,
+      "lng": 20.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-19-map-3",
+    "type": "map",
+    "question": "This UNESCO World Heritage site is one of the best-preserved medieval cities in Europe. Which Baltic capital city is it?",
+    "correctAnswer": "Tallinn",
+    "countryCode": "EE",
+    "imageUrl": "EE",
+    "mapCoordinates": {
+      "lat": 59.4369,
+      "lng": 24.7535
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-19-map-4",
+    "type": "map",
+    "question": "Thousands of crosses stand on this unique pilgrimage site. In which European country would you find the Hill of Crosses?",
+    "correctAnswer": "Lithuania",
+    "countryCode": "LT",
+    "imageUrl": "LT",
+    "mapCoordinates": {
+      "lat": 56.0125,
+      "lng": 23.3986
+    },
+    "options": []
+  }
+]
