@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261120_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "imageUrl": "TR",
+    "options": [
+      "Algeria",
+      "Morocco",
+      "Tunisia",
+      "Turkey"
+    ],
+    "countryCode": "TR"
+  },
+  {
+    "id": "20261120_2",
+    "type": "capital",
+    "question": "Where is the capital of Luxembourg?",
+    "correctAnswer": "Luxembourg City",
+    "countryCode": "LU",
+    "imageUrl": "LU",
+    "mapCoordinates": {
+      "lat": 49.6,
+      "lng": 6.12
+    },
+    "options": []
+  },
+  {
+    "id": "20261120_3",
+    "type": "map",
+    "question": "This iconic architectural complex, known for its madrassas, is located in which country?",
+    "correctAnswer": "Uzbekistan",
+    "countryCode": "UZ",
+    "imageUrl": "UZ",
+    "mapCoordinates": {
+      "lat": 39.654272,
+      "lng": 66.975005
+    },
+    "options": []
+  },
+  {
+    "id": "20261120_4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Albania",
+    "imageUrl": "AL",
+    "options": [
+      "Montenegro",
+      "North Macedonia",
+      "Serbia",
+      "Albania"
+    ],
+    "countryCode": "AL"
+  },
+  {
+    "id": "20261120_5",
+    "type": "capital",
+    "question": "Where is the capital of Bosnia and Herzegovina?",
+    "correctAnswer": "Sarajevo",
+    "countryCode": "BA",
+    "imageUrl": "BA",
+    "mapCoordinates": {
+      "lat": 43.87,
+      "lng": 18.42
+    },
+    "options": []
+  },
+  {
+    "id": "20261120_6",
+    "type": "map",
+    "question": "These mysterious ancient stone jars are found in which Southeast Asian country?",
+    "correctAnswer": "Laos",
+    "countryCode": "LA",
+    "imageUrl": "LA",
+    "mapCoordinates": {
+      "lat": 19.467824,
+      "lng": 103.155708
+    },
+    "options": []
+  },
+  {
+    "id": "20261120_7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Latvia",
+    "imageUrl": "LV",
+    "options": [
+      "Lithuania",
+      "Austria",
+      "Latvia",
+      "Estonia"
+    ],
+    "countryCode": "LV"
+  },
+  {
+    "id": "20261120_8",
+    "type": "capital",
+    "question": "Where is the capital of Singapore?",
+    "correctAnswer": "Singapore",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.28,
+      "lng": 103.85
+    },
+    "options": []
+  },
+  {
+    "id": "20261120_9",
+    "type": "map",
+    "question": "This vibrant island nation, known for its pristine beaches and coral reefs, is located in Oceania. Which country is it?",
+    "correctAnswer": "Fiji",
+    "countryCode": "FJ",
+    "imageUrl": "FJ",
+    "mapCoordinates": {
+      "lat": -17.771944,
+      "lng": 177.375278
+    },
+    "options": []
+  },
+  {
+    "id": "20261120_10",
+    "type": "map",
+    "question": "Recognized as a UNESCO World Heritage site, this remote village with its unique defensive Svan towers is found in which country?",
+    "correctAnswer": "Georgia",
+    "countryCode": "GE",
+    "imageUrl": "GE",
+    "mapCoordinates": {
+      "lat": 42.923483,
+      "lng": 43.007626
+    },
+    "options": []
+  }
+]
