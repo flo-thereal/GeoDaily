@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-11-21-q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United States",
+    "imageUrl": "US",
+    "options": [
+      "Uruguay",
+      "United States",
+      "Liberia",
+      "Ghana"
+    ],
+    "countryCode": "US"
+  },
+  {
+    "id": "2026-11-21-q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "North Korea",
+      "Palau",
+      "Tunisia",
+      "Japan"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-11-21-q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "Malawi",
+      "Mozambique",
+      "Zimbabwe",
+      "South Africa"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "2026-11-21-q4",
+    "type": "capital",
+    "question": "Where is the capital of Brazil?",
+    "correctAnswer": "Brasília",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -15.79,
+      "lng": -47.88
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-21-q5",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-21-q6",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-21-q7",
+    "type": "map",
+    "question": "This ancient Inca citadel is a UNESCO World Heritage site and a new Seven Wonder of the World. Where is it located?",
+    "correctAnswer": "Machu Picchu, Peru",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-21-q8",
+    "type": "map",
+    "question": "This iconic iron lattice tower is a global cultural icon of its host country. Where is it located?",
+    "correctAnswer": "Eiffel Tower, France",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.8584,
+      "lng": 2.2945
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-21-q9",
+    "type": "map",
+    "question": "This ancient amphitheatre is the largest ever built and remains a symbol of Imperial Rome. Where is it located?",
+    "correctAnswer": "Colosseum, Italy",
+    "countryCode": "IT",
+    "imageUrl": "IT",
+    "mapCoordinates": {
+      "lat": 41.8902,
+      "lng": 12.4922
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-21-q10",
+    "type": "map",
+    "question": "These powerful waterfalls are on the border of two large North American countries. Where is the famous Horseshoe Falls located?",
+    "correctAnswer": "Niagara Falls, Canada",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 43.0896,
+      "lng": -79.0747
+    },
+    "options": []
+  }
+]
