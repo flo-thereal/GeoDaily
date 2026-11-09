@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261122_map_1",
+    "type": "map",
+    "question": "Which famous castle, known for inspiring Disney's Sleeping Beauty castle, is located at this spot?",
+    "correctAnswer": "Neuschwanstein Castle",
+    "countryCode": "DE",
+    "imageUrl": "DE",
+    "mapCoordinates": {
+      "lat": 47.5576,
+      "lng": 10.7494
+    },
+    "options": []
+  },
+  {
+    "id": "20261122_map_2",
+    "type": "map",
+    "question": "This iconic natural wonder, famous for its limestone karsts and islets, is a UNESCO World Heritage site. What is its name?",
+    "correctAnswer": "Ha Long Bay",
+    "countryCode": "VN",
+    "imageUrl": "VN",
+    "mapCoordinates": {
+      "lat": 20.908,
+      "lng": 107.0315
+    },
+    "options": []
+  },
+  {
+    "id": "20261122_map_3",
+    "type": "map",
+    "question": "This breathtaking fiord, often called the 'Eighth Wonder of the World', is a major tourist destination in New Zealand. What is it?",
+    "correctAnswer": "Milford Sound",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -44.6468,
+      "lng": 167.9257
+    },
+    "options": []
+  },
+  {
+    "id": "20261122_map_4",
+    "type": "map",
+    "question": "The first permanent European settlement in the Americas, this historic colonial zone is a UNESCO World Heritage site. Which city's historic center is this?",
+    "correctAnswer": "Santo Domingo",
+    "countryCode": "DO",
+    "imageUrl": "DO",
+    "mapCoordinates": {
+      "lat": 18.4756,
+      "lng": -69.8943
+    },
+    "options": []
+  },
+  {
+    "id": "20261122_flag_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "United Kingdom",
+    "imageUrl": "GB",
+    "options": [
+      "Australia",
+      "United Kingdom",
+      "New Zealand",
+      "Canada"
+    ],
+    "countryCode": "GB"
+  },
+  {
+    "id": "20261122_flag_2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Madagascar",
+    "imageUrl": "MG",
+    "options": [
+      "Burkina Faso",
+      "Malawi",
+      "Benin",
+      "Madagascar"
+    ],
+    "countryCode": "MG"
+  },
+  {
+    "id": "20261122_flag_3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Finland",
+      "Denmark",
+      "Sweden",
+      "Norway"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "20261122_capital_1",
+    "type": "capital",
+    "question": "Where is the capital of Spain?",
+    "correctAnswer": "Madrid",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 40.4,
+      "lng": -3.68
+    },
+    "options": []
+  },
+  {
+    "id": "20261122_capital_2",
+    "type": "capital",
+    "question": "Where is the capital of Chile?",
+    "correctAnswer": "Santiago",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -33.45,
+      "lng": -70.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261122_capital_3",
+    "type": "capital",
+    "question": "Where is the capital of Tanzania?",
+    "correctAnswer": "Dar es Salaam",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -6.16,
+      "lng": 35.75
+    },
+    "options": []
+  }
+]
