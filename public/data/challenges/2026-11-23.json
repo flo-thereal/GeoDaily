@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261123-Q1",
+    "type": "map",
+    "question": "Which geothermal spa, famous for its milky blue waters, is located at these coordinates in Iceland?",
+    "correctAnswer": "Blue Lagoon",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 63.8812,
+      "lng": -22.4527
+    },
+    "options": []
+  },
+  {
+    "id": "20261123-Q2",
+    "type": "map",
+    "question": "This landmark offers panoramic views of South Korea's capital. What is it called?",
+    "correctAnswer": "N Seoul Tower",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 37.5512,
+      "lng": 126.9882
+    },
+    "options": []
+  },
+  {
+    "id": "20261123-Q3",
+    "type": "map",
+    "question": "This famous square, a UNESCO World Heritage site, is the main square of Marrakech, Morocco. What is its name?",
+    "correctAnswer": "Djemaa el-Fna",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 31.6277,
+      "lng": -7.989
+    },
+    "options": []
+  },
+  {
+    "id": "20261123-Q4",
+    "type": "map",
+    "question": "This national park in Ghana is famous for its canopy walkway through the rainforest. What is it called?",
+    "correctAnswer": "Kakum National Park",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 5.3411,
+      "lng": -1.3789
+    },
+    "options": []
+  },
+  {
+    "id": "20261123-Q5",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Venezuela",
+    "imageUrl": "VE",
+    "options": [
+      "Somalia",
+      "Ecuador",
+      "Chad",
+      "Venezuela"
+    ],
+    "countryCode": "VE"
+  },
+  {
+    "id": "20261123-Q6",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Iran",
+    "imageUrl": "IR",
+    "options": [
+      "Iran",
+      "Oman",
+      "Afghanistan",
+      "Syria"
+    ],
+    "countryCode": "IR"
+  },
+  {
+    "id": "20261123-Q7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ethiopia",
+    "imageUrl": "ET",
+    "options": [
+      "Ethiopia",
+      "Cameroon",
+      "Senegal",
+      "Ghana"
+    ],
+    "countryCode": "ET"
+  },
+  {
+    "id": "20261123-Q8",
+    "type": "capital",
+    "question": "Where is the capital of Uruguay?",
+    "correctAnswer": "Montevideo",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.85,
+      "lng": -56.17
+    },
+    "options": []
+  },
+  {
+    "id": "20261123-Q9",
+    "type": "capital",
+    "question": "Where is the capital of Croatia?",
+    "correctAnswer": "Zagreb",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 45.8,
+      "lng": 16
+    },
+    "options": []
+  },
+  {
+    "id": "20261123-Q10",
+    "type": "capital",
+    "question": "Where is the capital of Israel?",
+    "correctAnswer": "Jerusalem",
+    "countryCode": "IL",
+    "imageUrl": "IL",
+    "mapCoordinates": {
+      "lat": 31.77,
+      "lng": 35.23
+    },
+    "options": []
+  }
+]
