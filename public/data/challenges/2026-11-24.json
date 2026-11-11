@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261124_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Colombia",
+    "imageUrl": "CO",
+    "options": [
+      "Colombia",
+      "Bolivia",
+      "Venezuela",
+      "Ecuador"
+    ],
+    "countryCode": "CO"
+  },
+  {
+    "id": "20261124_2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Sweden",
+      "Norway",
+      "Iceland",
+      "Finland"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "20261124_3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Portugal",
+    "imageUrl": "PT",
+    "options": [
+      "Angola",
+      "Spain",
+      "Brazil",
+      "Portugal"
+    ],
+    "countryCode": "PT"
+  },
+  {
+    "id": "20261124_4",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  },
+  {
+    "id": "20261124_5",
+    "type": "capital",
+    "question": "Where is the capital of Greece?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.98,
+      "lng": 23.73
+    },
+    "options": []
+  },
+  {
+    "id": "20261124_6",
+    "type": "capital",
+    "question": "Where is the capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 52.25,
+      "lng": 21
+    },
+    "options": []
+  },
+  {
+    "id": "20261124_7",
+    "type": "map",
+    "question": "This map shows the location of which major Caribbean capital city?",
+    "correctAnswer": "Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.1333,
+      "lng": -82.3833
+    },
+    "options": []
+  },
+  {
+    "id": "20261124_8",
+    "type": "map",
+    "question": "Identify the famous island in Southern Thailand highlighted on the map.",
+    "correctAnswer": "Phuket",
+    "countryCode": "TH",
+    "imageUrl": "TH",
+    "mapCoordinates": {
+      "lat": 7.9519,
+      "lng": 98.3381
+    },
+    "options": []
+  },
+  {
+    "id": "20261124_9",
+    "type": "map",
+    "question": "This unique pink lake, famous for its salt content, is located in which West African country?",
+    "correctAnswer": "Senegal",
+    "countryCode": "SN",
+    "imageUrl": "SN",
+    "mapCoordinates": {
+      "lat": 14.8464,
+      "lng": -17.2289
+    },
+    "options": []
+  },
+  {
+    "id": "20261124_10",
+    "type": "map",
+    "question": "These unusual geological formations, known as the Chocolate Hills, can be found on which island nation?",
+    "correctAnswer": "Philippines",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 9.8787,
+      "lng": 124.1843
+    },
+    "options": []
+  }
+]
