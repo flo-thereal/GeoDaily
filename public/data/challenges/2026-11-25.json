@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-11-25-01",
+    "type": "capital",
+    "question": "Where is the capital of Bolivia?",
+    "correctAnswer": "La Paz",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -19.02,
+      "lng": -65.26
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-25-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mongolia",
+    "imageUrl": "MN",
+    "options": [
+      "Bhutan",
+      "Kazakhstan",
+      "Mongolia",
+      "Kyrgyzstan"
+    ],
+    "countryCode": "MN"
+  },
+  {
+    "id": "2026-11-25-03",
+    "type": "map",
+    "question": "This iconic temple complex is located in which country?",
+    "correctAnswer": "Angkor Wat, Cambodia",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.8667
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-25-04",
+    "type": "capital",
+    "question": "Where is the capital of Kenya?",
+    "correctAnswer": "Nairobi",
+    "countryCode": "KE",
+    "imageUrl": "KE",
+    "mapCoordinates": {
+      "lat": -1.28,
+      "lng": 36.82
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-25-05",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Switzerland",
+    "imageUrl": "CH",
+    "options": [
+      "Denmark",
+      "Switzerland",
+      "Austria",
+      "Tonga"
+    ],
+    "countryCode": "CH"
+  },
+  {
+    "id": "2026-11-25-06",
+    "type": "map",
+    "question": "This is the world's second-highest mountain, K2. In which country is it primarily located?",
+    "correctAnswer": "Pakistan",
+    "countryCode": "PK",
+    "imageUrl": "PK",
+    "mapCoordinates": {
+      "lat": 35.8817,
+      "lng": 76.5147
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-25-07",
+    "type": "capital",
+    "question": "Where is the capital of Costa Rica?",
+    "correctAnswer": "San José",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 9.93,
+      "lng": -84.09
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-25-08",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nicaragua",
+    "imageUrl": "NI",
+    "options": [
+      "Argentina",
+      "Honduras",
+      "El Salvador",
+      "Nicaragua"
+    ],
+    "countryCode": "NI"
+  },
+  {
+    "id": "2026-11-25-09",
+    "type": "map",
+    "question": "These famous volcanic islands, renowned for their unique wildlife, belong to which South American country?",
+    "correctAnswer": "Galapagos Islands, Ecuador",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.6667,
+      "lng": -90.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-25-10",
+    "type": "map",
+    "question": "This historic space launch facility, Baikonur Cosmodrome, is located in which vast Central Asian country?",
+    "correctAnswer": "Baikonur Cosmodrome, Kazakhstan",
+    "countryCode": "KZ",
+    "imageUrl": "KZ",
+    "mapCoordinates": {
+      "lat": 45.6267,
+      "lng": 63.3056
+    },
+    "options": []
+  }
+]
