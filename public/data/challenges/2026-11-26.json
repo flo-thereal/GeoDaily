@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261126-map-1",
+    "type": "map",
+    "question": "This ancient Mayan pyramid, El Castillo, is located at which famous archaeological site?",
+    "correctAnswer": "Chichen Itza",
+    "countryCode": "MX",
+    "imageUrl": "MX",
+    "mapCoordinates": {
+      "lat": 20.6843,
+      "lng": -88.5678
+    },
+    "options": []
+  },
+  {
+    "id": "20261126-map-2",
+    "type": "map",
+    "question": "This massive sandstone monolith, sacred to indigenous Australians, is known as Uluru. In which country is it located?",
+    "correctAnswer": "Australia",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.3444,
+      "lng": 131.0369
+    },
+    "options": []
+  },
+  {
+    "id": "20261126-map-3",
+    "type": "map",
+    "question": "This active volcano, a popular sunrise trekking spot, is Mount Batur. On which famous island in Southeast Asia can it be found?",
+    "correctAnswer": "Bali",
+    "countryCode": "ID",
+    "imageUrl": "ID",
+    "mapCoordinates": {
+      "lat": -8.2435,
+      "lng": 115.3751
+    },
+    "options": []
+  },
+  {
+    "id": "20261126-map-4",
+    "type": "map",
+    "question": "These dramatic sea cliffs are a major tourist attraction on the west coast of which European island nation?",
+    "correctAnswer": "Cliffs of Moher",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 52.9715,
+      "lng": -9.4277
+    },
+    "options": []
+  },
+  {
+    "id": "20261126-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Norway",
+      "Finland",
+      "Denmark",
+      "Sweden"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "20261126-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "imageUrl": "NL",
+    "options": [
+      "Luxembourg",
+      "Belgium",
+      "Netherlands",
+      "France"
+    ],
+    "countryCode": "NL"
+  },
+  {
+    "id": "20261126-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Denmark",
+      "Norway",
+      "Sweden",
+      "Iceland"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "20261126-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "20261126-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "20261126-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Panama?",
+    "correctAnswer": "Panama City",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 8.97,
+      "lng": -79.53
+    },
+    "options": []
+  }
+]
