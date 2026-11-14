@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261127-flag-BD",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "imageUrl": "BD",
+    "options": [
+      "Bangladesh",
+      "Japan",
+      "India",
+      "Pakistan"
+    ],
+    "countryCode": "BD"
+  },
+  {
+    "id": "20261127-flag-HU",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Hungary",
+    "imageUrl": "HU",
+    "options": [
+      "Hungary",
+      "Iran",
+      "Bulgaria",
+      "Italy"
+    ],
+    "countryCode": "HU"
+  },
+  {
+    "id": "20261127-flag-GQ",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Equatorial Guinea",
+    "imageUrl": "GQ",
+    "options": [
+      "Equatorial Guinea",
+      "Cameroon",
+      "Senegal",
+      "Gabon"
+    ],
+    "countryCode": "GQ"
+  },
+  {
+    "id": "20261127-capital-AO",
+    "type": "capital",
+    "question": "Where is the capital of Angola?",
+    "correctAnswer": "Luanda",
+    "countryCode": "AO",
+    "imageUrl": "AO",
+    "mapCoordinates": {
+      "lat": -8.83,
+      "lng": 13.22
+    },
+    "options": []
+  },
+  {
+    "id": "20261127-capital-BY",
+    "type": "capital",
+    "question": "Where is the capital of Belarus?",
+    "correctAnswer": "Minsk",
+    "countryCode": "BY",
+    "imageUrl": "BY",
+    "mapCoordinates": {
+      "lat": 53.9,
+      "lng": 27.57
+    },
+    "options": []
+  },
+  {
+    "id": "20261127-capital-CY",
+    "type": "capital",
+    "question": "Where is the capital of Cyprus?",
+    "correctAnswer": "Nicosia",
+    "countryCode": "CY",
+    "imageUrl": "CY",
+    "mapCoordinates": {
+      "lat": 35.17,
+      "lng": 33.37
+    },
+    "options": []
+  },
+  {
+    "id": "20261127-map-NP-Everest",
+    "type": "map",
+    "question": "This point marks the summit of the world's highest peak. What is it?",
+    "correctAnswer": "Mount Everest",
+    "countryCode": "NP",
+    "imageUrl": "NP",
+    "mapCoordinates": {
+      "lat": 27.988056,
+      "lng": 86.925278
+    },
+    "options": []
+  },
+  {
+    "id": "20261127-map-MY-Petronas",
+    "type": "map",
+    "question": "Identify these twin skyscrapers, once the tallest buildings in the world, located in Kuala Lumpur.",
+    "correctAnswer": "Petronas Towers",
+    "countryCode": "MY",
+    "imageUrl": "MY",
+    "mapCoordinates": {
+      "lat": 3.1578,
+      "lng": 101.7118
+    },
+    "options": []
+  },
+  {
+    "id": "20261127-map-LT-Crosses",
+    "type": "map",
+    "question": "This unique pilgrimage site, covered with thousands of crosses, is located near Šiauliai. What is it called?",
+    "correctAnswer": "Hill of Crosses",
+    "countryCode": "LT",
+    "imageUrl": "LT",
+    "mapCoordinates": {
+      "lat": 56.0125,
+      "lng": 23.415
+    },
+    "options": []
+  },
+  {
+    "id": "20261127-map-BG-Rila",
+    "type": "map",
+    "question": "This Eastern Orthodox monastery, a UNESCO World Heritage site, is nestled in the Rila Mountains. What is its name?",
+    "correctAnswer": "Rila Monastery",
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "mapCoordinates": {
+      "lat": 42.1245,
+      "lng": 23.34
+    },
+    "options": []
+  }
+]
