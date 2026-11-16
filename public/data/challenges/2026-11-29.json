@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-11-29-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "South Africa",
+      "Namibia",
+      "Kenya",
+      "Zimbabwe"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "2026-11-29-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Bangladesh",
+      "Palau",
+      "South Korea",
+      "Japan"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "2026-11-29-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Nigeria",
+    "imageUrl": "NG",
+    "options": [
+      "Nigeria",
+      "Saudi Arabia",
+      "Ireland",
+      "India"
+    ],
+    "countryCode": "NG"
+  },
+  {
+    "id": "2026-11-29-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-29-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Peru?",
+    "correctAnswer": "Lima",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -12.05,
+      "lng": -77.05
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-29-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of United States?",
+    "correctAnswer": "Washington, D.C.",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 38.89,
+      "lng": -77.05
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-29-map-1",
+    "type": "map",
+    "question": "This iconic statue overlooks Rio de Janeiro. What is it called?",
+    "correctAnswer": "Christ the Redeemer",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -22.9519,
+      "lng": -43.2105
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-29-map-2",
+    "type": "map",
+    "question": "These ancient structures are located near Giza. What are they primarily known as?",
+    "correctAnswer": "Great Pyramids of Giza",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 29.9792,
+      "lng": 31.1342
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-29-map-3",
+    "type": "map",
+    "question": "This vast defensive structure stretches across northern China. What is its name?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.3687,
+      "lng": 116.0022
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-29-map-4",
+    "type": "map",
+    "question": "This prominent observation and telecommunications tower is located in Toronto. What is it called?",
+    "correctAnswer": "CN Tower",
+    "countryCode": "CA",
+    "imageUrl": "CA",
+    "mapCoordinates": {
+      "lat": 43.6426,
+      "lng": -79.3871
+    },
+    "options": []
+  }
+]
