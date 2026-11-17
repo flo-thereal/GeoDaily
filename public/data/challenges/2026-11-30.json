@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-11-30-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Germany",
+    "imageUrl": "DE",
+    "options": [
+      "Germany",
+      "Estonia",
+      "Austria",
+      "Belgium"
+    ],
+    "countryCode": "DE"
+  },
+  {
+    "id": "2026-11-30-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Italy",
+    "imageUrl": "IT",
+    "options": [
+      "Ireland",
+      "Italy",
+      "Hungary",
+      "Mexico"
+    ],
+    "countryCode": "IT"
+  },
+  {
+    "id": "2026-11-30-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Vietnam",
+    "imageUrl": "VN",
+    "options": [
+      "Vietnam",
+      "Morocco",
+      "China",
+      "Turkey"
+    ],
+    "countryCode": "VN"
+  },
+  {
+    "id": "2026-11-30-4",
+    "type": "capital",
+    "question": "Where is the capital of France?",
+    "correctAnswer": "Paris",
+    "countryCode": "FR",
+    "imageUrl": "FR",
+    "mapCoordinates": {
+      "lat": 48.87,
+      "lng": 2.33
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-30-5",
+    "type": "capital",
+    "question": "Where is the capital of Spain?",
+    "correctAnswer": "Madrid",
+    "countryCode": "ES",
+    "imageUrl": "ES",
+    "mapCoordinates": {
+      "lat": 40.4,
+      "lng": -3.68
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-30-6",
+    "type": "capital",
+    "question": "Where is the capital of Tanzania?",
+    "correctAnswer": "Dar es Salaam",
+    "countryCode": "TZ",
+    "imageUrl": "TZ",
+    "mapCoordinates": {
+      "lat": -6.16,
+      "lng": 35.75
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-30-7",
+    "type": "map",
+    "question": "This ancient monument is a prehistoric circle of standing stones. Where is it located?",
+    "correctAnswer": "Stonehenge, United Kingdom",
+    "countryCode": "GB",
+    "imageUrl": "GB",
+    "mapCoordinates": {
+      "lat": 51.1789,
+      "lng": -1.8262
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-30-8",
+    "type": "map",
+    "question": "This is a view of the Atacama Desert, one of the driest places on Earth. In which country is it primarily found?",
+    "correctAnswer": "Chile",
+    "countryCode": "CL",
+    "imageUrl": "CL",
+    "mapCoordinates": {
+      "lat": -24.5701,
+      "lng": -69.6053
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-30-9",
+    "type": "map",
+    "question": "This stunning fiord, known for its dramatic peaks and cascading waterfalls, is a UNESCO World Heritage site. Where is Milford Sound located?",
+    "correctAnswer": "New Zealand",
+    "countryCode": "NZ",
+    "imageUrl": "NZ",
+    "mapCoordinates": {
+      "lat": -44.6419,
+      "lng": 167.9255
+    },
+    "options": []
+  },
+  {
+    "id": "2026-11-30-10",
+    "type": "map",
+    "question": "This rapidly developing city is the capital and largest city of its country, known for its modern architecture and historical sites. Which city is this?",
+    "correctAnswer": "Riyadh, Saudi Arabia",
+    "countryCode": "SA",
+    "imageUrl": "SA",
+    "mapCoordinates": {
+      "lat": 24.7136,
+      "lng": 46.6753
+    },
+    "options": []
+  }
+]
