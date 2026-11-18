@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-12-01-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sweden",
+    "imageUrl": "SE",
+    "options": [
+      "Finland",
+      "Norway",
+      "Sweden",
+      "Denmark"
+    ],
+    "countryCode": "SE"
+  },
+  {
+    "id": "2026-12-01-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Korea",
+    "imageUrl": "KR",
+    "options": [
+      "North Korea",
+      "Japan",
+      "South Korea",
+      "China"
+    ],
+    "countryCode": "KR"
+  },
+  {
+    "id": "2026-12-01-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Morocco",
+    "imageUrl": "MA",
+    "options": [
+      "Tunisia",
+      "Algeria",
+      "Egypt",
+      "Morocco"
+    ],
+    "countryCode": "MA"
+  },
+  {
+    "id": "2026-12-01-4",
+    "type": "capital",
+    "question": "Where is the capital of Ghana?",
+    "correctAnswer": "Accra",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "mapCoordinates": {
+      "lat": 5.55,
+      "lng": -0.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-01-5",
+    "type": "capital",
+    "question": "Where is the capital of Venezuela?",
+    "correctAnswer": "Caracas",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 10.48,
+      "lng": -66.87
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-01-6",
+    "type": "capital",
+    "question": "Where is the capital of Myanmar?",
+    "correctAnswer": "Naypyidaw",
+    "countryCode": "MM",
+    "imageUrl": "MM",
+    "mapCoordinates": {
+      "lat": 19.76,
+      "lng": 96.07
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-01-7",
+    "type": "map",
+    "question": "This map marker points to a famous geothermal area with erupting hot springs. What is this natural wonder called?",
+    "correctAnswer": "Geysir",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 64.3105,
+      "lng": -20.2709
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-01-8",
+    "type": "map",
+    "question": "This iconic dirt road is lined with ancient, towering trees unique to the island. What is this famous natural landmark?",
+    "correctAnswer": "Avenue of the Baobabs",
+    "countryCode": "MG",
+    "imageUrl": "MG",
+    "mapCoordinates": {
+      "lat": -20.0157,
+      "lng": 44.4184
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-01-9",
+    "type": "map",
+    "question": "This incredibly hot and colorful region, known for its sulfur and salt formations, is one of the lowest and hottest places on Earth. Which geological wonder is this?",
+    "correctAnswer": "Danakil Depression",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 14.2415,
+      "lng": 40.2974
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-01-10",
+    "type": "map",
+    "question": "This popular resort city, known for its beaches and vibrant nightlife, is a major tourist destination in South America. What city is marked on the map?",
+    "correctAnswer": "Punta del Este",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.9609,
+      "lng": -54.9458
+    },
+    "options": []
+  }
+]
