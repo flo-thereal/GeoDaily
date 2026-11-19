@@ -1,0 +1,135 @@
+[
+  {
+    "id": "map-2026-12-02-1",
+    "type": "map",
+    "question": "Which stunning natural wonder in Argentina is known for its massive glacier system and dramatic granite peaks?",
+    "correctAnswer": "Los Glaciares National Park",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -49.95,
+      "lng": -73.05
+    },
+    "options": []
+  },
+  {
+    "id": "capital-2026-12-02-1",
+    "type": "capital",
+    "question": "Where is the capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.72,
+      "lng": -9.13
+    },
+    "options": []
+  },
+  {
+    "id": "flag-2026-12-02-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Laos",
+      "Philippines",
+      "Colombia",
+      "Thailand"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "flag-2026-12-02-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Finland",
+      "Slovenia",
+      "Croatia",
+      "Poland"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "capital-2026-12-02-2",
+    "type": "capital",
+    "question": "Where is the capital of Cuba?",
+    "correctAnswer": "Havana",
+    "countryCode": "CU",
+    "imageUrl": "CU",
+    "mapCoordinates": {
+      "lat": 23.12,
+      "lng": -82.35
+    },
+    "options": []
+  },
+  {
+    "id": "map-2026-12-02-2",
+    "type": "map",
+    "question": "This ancient ceremonial capital of the Achaemenid Empire is a UNESCO World Heritage site located in Fars Province. What is its name?",
+    "correctAnswer": "Persepolis",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 29.9344,
+      "lng": 52.8916
+    },
+    "options": []
+  },
+  {
+    "id": "capital-2026-12-02-3",
+    "type": "capital",
+    "question": "Where is the capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 52.25,
+      "lng": 21
+    },
+    "options": []
+  },
+  {
+    "id": "map-2026-12-02-3",
+    "type": "map",
+    "question": "These prominent ruins of a large pre-Columbian Maya city, located in a rainforest in northern Guatemala, are famous for their towering pyramids. What site is this?",
+    "correctAnswer": "Tikal",
+    "countryCode": "GT",
+    "imageUrl": "GT",
+    "mapCoordinates": {
+      "lat": 17.2215,
+      "lng": -89.6231
+    },
+    "options": []
+  },
+  {
+    "id": "map-2026-12-02-4",
+    "type": "map",
+    "question": "This historic city on the Adriatic Sea coast, often called the 'Pearl of the Adriatic', is famous for its distinctive Old Town, encircled by massive stone walls. What city is this?",
+    "correctAnswer": "Dubrovnik",
+    "countryCode": "HR",
+    "imageUrl": "HR",
+    "mapCoordinates": {
+      "lat": 42.6507,
+      "lng": 18.0944
+    },
+    "options": []
+  },
+  {
+    "id": "flag-2026-12-02-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Sri Lanka",
+    "imageUrl": "LK",
+    "options": [
+      "Sri Lanka",
+      "Comoros",
+      "Maldives",
+      "Bhutan"
+    ],
+    "countryCode": "LK"
+  }
+]
