@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261203_Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Colombia",
+    "imageUrl": "CO",
+    "options": [
+      "Ecuador",
+      "Venezuela",
+      "Peru",
+      "Colombia"
+    ],
+    "countryCode": "CO"
+  },
+  {
+    "id": "20261203_Q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Kenya",
+    "imageUrl": "KE",
+    "options": [
+      "Tanzania",
+      "Kenya",
+      "Uganda",
+      "South Sudan"
+    ],
+    "countryCode": "KE"
+  },
+  {
+    "id": "20261203_Q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Fiji",
+    "imageUrl": "FJ",
+    "options": [
+      "Tonga",
+      "Samoa",
+      "Tuvalu",
+      "Fiji"
+    ],
+    "countryCode": "FJ"
+  },
+  {
+    "id": "20261203_Q4",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "20261203_Q5",
+    "type": "capital",
+    "question": "Where is the capital of Greece?",
+    "correctAnswer": "Athens",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 37.98,
+      "lng": 23.73
+    },
+    "options": []
+  },
+  {
+    "id": "20261203_Q6",
+    "type": "capital",
+    "question": "Where is the capital of Senegal?",
+    "correctAnswer": "Dakar",
+    "countryCode": "SN",
+    "imageUrl": "SN",
+    "mapCoordinates": {
+      "lat": 14.73,
+      "lng": -17.63
+    },
+    "options": []
+  },
+  {
+    "id": "20261203_Q7",
+    "type": "map",
+    "question": "Identify this iconic peak on the border between Switzerland and Italy.",
+    "correctAnswer": "Matterhorn",
+    "countryCode": "CH",
+    "imageUrl": "CH",
+    "mapCoordinates": {
+      "lat": 45.9766,
+      "lng": 7.6587
+    },
+    "options": []
+  },
+  {
+    "id": "20261203_Q8",
+    "type": "map",
+    "question": "Which famous archipelago, known for its unique wildlife, is located at these coordinates?",
+    "correctAnswer": "Galápagos Islands",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.9167,
+      "lng": -90.8167
+    },
+    "options": []
+  },
+  {
+    "id": "20261203_Q9",
+    "type": "map",
+    "question": "This vast, reflective salt flat is a popular natural wonder in South America. Where is it?",
+    "correctAnswer": "Salar de Uyuni",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.249,
+      "lng": -67.625
+    },
+    "options": []
+  },
+  {
+    "id": "20261203_Q10",
+    "type": "map",
+    "question": "Identify this magnificent temple complex, a UNESCO World Heritage site.",
+    "correctAnswer": "Angkor Wat",
+    "countryCode": "KH",
+    "imageUrl": "KH",
+    "mapCoordinates": {
+      "lat": 13.4125,
+      "lng": 103.8667
+    },
+    "options": []
+  }
+]
