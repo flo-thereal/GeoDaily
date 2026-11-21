@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261204-Q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Mexico",
+    "imageUrl": "MX",
+    "options": [
+      "Mexico",
+      "Italy",
+      "Hungary",
+      "Portugal"
+    ],
+    "countryCode": "MX"
+  },
+  {
+    "id": "20261204-Q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Norway",
+    "imageUrl": "NO",
+    "options": [
+      "Iceland",
+      "Sweden",
+      "Norway",
+      "Denmark"
+    ],
+    "countryCode": "NO"
+  },
+  {
+    "id": "20261204-Q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Indonesia",
+    "imageUrl": "ID",
+    "options": [
+      "Peru",
+      "Indonesia",
+      "Poland",
+      "Monaco"
+    ],
+    "countryCode": "ID"
+  },
+  {
+    "id": "20261204-Q4",
+    "type": "capital",
+    "question": "Where is the capital of Belgium?",
+    "correctAnswer": "Brussels",
+    "countryCode": "BE",
+    "imageUrl": "BE",
+    "mapCoordinates": {
+      "lat": 50.83,
+      "lng": 4.33
+    },
+    "options": []
+  },
+  {
+    "id": "20261204-Q5",
+    "type": "capital",
+    "question": "Where is the capital of Tunisia?",
+    "correctAnswer": "Tunis",
+    "countryCode": "TN",
+    "imageUrl": "TN",
+    "mapCoordinates": {
+      "lat": 36.8,
+      "lng": 10.18
+    },
+    "options": []
+  },
+  {
+    "id": "20261204-Q6",
+    "type": "capital",
+    "question": "Where is the capital of Paraguay?",
+    "correctAnswer": "Asunción",
+    "countryCode": "PY",
+    "imageUrl": "PY",
+    "mapCoordinates": {
+      "lat": -25.28,
+      "lng": -57.57
+    },
+    "options": []
+  },
+  {
+    "id": "20261204-Q7",
+    "type": "map",
+    "question": "This iconic sandstone monolith is a sacred site to indigenous Australians. What is it called?",
+    "correctAnswer": "Uluru",
+    "countryCode": "AU",
+    "imageUrl": "AU",
+    "mapCoordinates": {
+      "lat": -25.3444,
+      "lng": 131.0369
+    },
+    "options": []
+  },
+  {
+    "id": "20261204-Q8",
+    "type": "map",
+    "question": "These dramatic sea cliffs are one of Ireland's most famous natural landmarks. What are they?",
+    "correctAnswer": "Cliffs of Moher",
+    "countryCode": "IE",
+    "imageUrl": "IE",
+    "mapCoordinates": {
+      "lat": 52.9713,
+      "lng": -9.4278
+    },
+    "options": []
+  },
+  {
+    "id": "20261204-Q9",
+    "type": "map",
+    "question": "This ancient city, once a powerful empire in Mesopotamia, is renowned for its Hanging Gardens. Which city is it?",
+    "correctAnswer": "Babylon",
+    "countryCode": "IQ",
+    "imageUrl": "IQ",
+    "mapCoordinates": {
+      "lat": 32.5356,
+      "lng": 44.4239
+    },
+    "options": []
+  },
+  {
+    "id": "20261204-Q10",
+    "type": "map",
+    "question": "This distinctive building with an infinity pool on its rooftop is a landmark in Singapore. What is it called?",
+    "correctAnswer": "Marina Bay Sands",
+    "countryCode": "SG",
+    "imageUrl": "SG",
+    "mapCoordinates": {
+      "lat": 1.2833,
+      "lng": 103.8603
+    },
+    "options": []
+  }
+]
