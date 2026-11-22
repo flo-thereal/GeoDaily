@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-12-05-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Netherlands",
+    "imageUrl": "NL",
+    "options": [
+      "Belgium",
+      "Luxembourg",
+      "France",
+      "Netherlands"
+    ],
+    "countryCode": "NL"
+  },
+  {
+    "id": "2026-12-05-2",
+    "type": "capital",
+    "question": "Where is the capital of Czechia?",
+    "correctAnswer": "Prague",
+    "countryCode": "CZ",
+    "imageUrl": "CZ",
+    "mapCoordinates": {
+      "lat": 50.08,
+      "lng": 14.47
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-05-3",
+    "type": "map",
+    "question": "This map shows the location of which famous volcano in Costa Rica, known for its near-perfect conical shape?",
+    "correctAnswer": "Arenal Volcano",
+    "countryCode": "CR",
+    "imageUrl": "CR",
+    "mapCoordinates": {
+      "lat": 10.4597,
+      "lng": -84.7032
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-05-4",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Denmark",
+    "imageUrl": "DK",
+    "options": [
+      "Sweden",
+      "Norway",
+      "Denmark",
+      "Finland"
+    ],
+    "countryCode": "DK"
+  },
+  {
+    "id": "2026-12-05-5",
+    "type": "capital",
+    "question": "Where is the capital of Hungary?",
+    "correctAnswer": "Budapest",
+    "countryCode": "HU",
+    "imageUrl": "HU",
+    "mapCoordinates": {
+      "lat": 47.5,
+      "lng": 19.08
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-05-6",
+    "type": "map",
+    "question": "This map points to a vast national park in Mozambique, renowned for its ecological restoration efforts in southern Africa. Which park is it?",
+    "correctAnswer": "Gorongosa National Park",
+    "countryCode": "MZ",
+    "imageUrl": "MZ",
+    "mapCoordinates": {
+      "lat": -18.7735,
+      "lng": 34.0041
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-05-7",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Romania",
+    "imageUrl": "RO",
+    "options": [
+      "Andorra",
+      "Moldova",
+      "Chad",
+      "Romania"
+    ],
+    "countryCode": "RO"
+  },
+  {
+    "id": "2026-12-05-8",
+    "type": "capital",
+    "question": "Where is the capital of Malaysia?",
+    "correctAnswer": "Kuala Lumpur",
+    "countryCode": "MY",
+    "imageUrl": "MY",
+    "mapCoordinates": {
+      "lat": 3.17,
+      "lng": 101.7
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-05-9",
+    "type": "map",
+    "question": "This map highlights an atoll in the Indian Ocean, forming the southernmost part of its island nation. Which atoll is it?",
+    "correctAnswer": "Addu Atoll",
+    "countryCode": "MV",
+    "imageUrl": "MV",
+    "mapCoordinates": {
+      "lat": -0.6,
+      "lng": 73.0833
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-05-10",
+    "type": "map",
+    "question": "This map indicates the location of a sacred volcanic mountain, traditionally considered the mythical birthplace of the Korean people. What is its name?",
+    "correctAnswer": "Mount Paektu",
+    "countryCode": "KP",
+    "imageUrl": "KP",
+    "mapCoordinates": {
+      "lat": 41.9906,
+      "lng": 128.0772
+    },
+    "options": []
+  }
+]
