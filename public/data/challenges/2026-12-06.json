@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-12-06-flag-01",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ukraine",
+    "imageUrl": "UA",
+    "options": [
+      "Ukraine",
+      "Estonia",
+      "Lithuania",
+      "Latvia"
+    ],
+    "countryCode": "UA"
+  },
+  {
+    "id": "2026-12-06-flag-02",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Turkey",
+    "imageUrl": "TR",
+    "options": [
+      "Azerbaijan",
+      "Lebanon",
+      "Turkey",
+      "Kyrgyzstan"
+    ],
+    "countryCode": "TR"
+  },
+  {
+    "id": "2026-12-06-flag-03",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Pakistan",
+    "imageUrl": "PK",
+    "options": [
+      "Uzbekistan",
+      "Afghanistan",
+      "Pakistan",
+      "Bangladesh"
+    ],
+    "countryCode": "PK"
+  },
+  {
+    "id": "2026-12-06-capital-01",
+    "type": "capital",
+    "question": "Where is the capital of Mongolia?",
+    "correctAnswer": "Ulaanbaatar",
+    "countryCode": "MN",
+    "imageUrl": "MN",
+    "mapCoordinates": {
+      "lat": 47.92,
+      "lng": 106.91
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-06-capital-02",
+    "type": "capital",
+    "question": "Where is the capital of Malta?",
+    "correctAnswer": "Valletta",
+    "countryCode": "MT",
+    "imageUrl": "MT",
+    "mapCoordinates": {
+      "lat": 35.88,
+      "lng": 14.5
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-06-capital-03",
+    "type": "capital",
+    "question": "Where is the capital of Angola?",
+    "correctAnswer": "Luanda",
+    "countryCode": "AO",
+    "imageUrl": "AO",
+    "mapCoordinates": {
+      "lat": -8.83,
+      "lng": 13.22
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-06-map-01",
+    "type": "map",
+    "question": "This ancient city, often called the 'Manhattan of the Desert', is known for its distinctive mud-brick skyscrapers. Where is it located?",
+    "correctAnswer": "Shibam",
+    "countryCode": "YE",
+    "imageUrl": "YE",
+    "mapCoordinates": {
+      "lat": 15.2925,
+      "lng": 46.085
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-06-map-02",
+    "type": "map",
+    "question": "Locate the famous canal that connects the Atlantic and Pacific Oceans, a crucial waterway for international maritime trade.",
+    "correctAnswer": "Panama Canal",
+    "countryCode": "PA",
+    "imageUrl": "PA",
+    "mapCoordinates": {
+      "lat": 9.0782,
+      "lng": -79.7424
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-06-map-03",
+    "type": "map",
+    "question": "This Caribbean nation shares an island with Haiti and is known for its beautiful beaches and vibrant culture. Identify the country.",
+    "correctAnswer": "Dominican Republic",
+    "countryCode": "DO",
+    "imageUrl": "DO",
+    "mapCoordinates": {
+      "lat": 18.7357,
+      "lng": -70.1627
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-06-map-04",
+    "type": "map",
+    "question": "This large island nation in Oceania is known for its immense cultural and biological diversity, rugged terrain, and active volcanoes. Where is this country located?",
+    "correctAnswer": "Papua New Guinea",
+    "countryCode": "PG",
+    "imageUrl": "PG",
+    "mapCoordinates": {
+      "lat": -6.315,
+      "lng": 143.9555
+    },
+    "options": []
+  }
+]
