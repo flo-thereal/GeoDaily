@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261207-q1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Canada",
+    "imageUrl": "CA",
+    "options": [
+      "Canada",
+      "Switzerland",
+      "Peru",
+      "Denmark"
+    ],
+    "countryCode": "CA"
+  },
+  {
+    "id": "20261207-q2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Japan",
+    "imageUrl": "JP",
+    "options": [
+      "Bangladesh",
+      "South Korea",
+      "China",
+      "Japan"
+    ],
+    "countryCode": "JP"
+  },
+  {
+    "id": "20261207-q3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "South Africa",
+    "imageUrl": "ZA",
+    "options": [
+      "Ethiopia",
+      "Ghana",
+      "South Africa",
+      "Mozambique"
+    ],
+    "countryCode": "ZA"
+  },
+  {
+    "id": "20261207-q4",
+    "type": "capital",
+    "question": "Where is the capital of India?",
+    "correctAnswer": "New Delhi",
+    "countryCode": "IN",
+    "imageUrl": "IN",
+    "mapCoordinates": {
+      "lat": 28.6,
+      "lng": 77.2
+    },
+    "options": []
+  },
+  {
+    "id": "20261207-q5",
+    "type": "capital",
+    "question": "Where is the capital of Egypt?",
+    "correctAnswer": "Cairo",
+    "countryCode": "EG",
+    "imageUrl": "EG",
+    "mapCoordinates": {
+      "lat": 30.05,
+      "lng": 31.25
+    },
+    "options": []
+  },
+  {
+    "id": "20261207-q6",
+    "type": "capital",
+    "question": "Where is the capital of Nigeria?",
+    "correctAnswer": "Abuja",
+    "countryCode": "NG",
+    "imageUrl": "NG",
+    "mapCoordinates": {
+      "lat": 9.08,
+      "lng": 7.53
+    },
+    "options": []
+  },
+  {
+    "id": "20261207-q7",
+    "type": "map",
+    "question": "Which famous landmark is depicted at these coordinates?",
+    "correctAnswer": "Great Wall of China",
+    "countryCode": "CN",
+    "imageUrl": "CN",
+    "mapCoordinates": {
+      "lat": 40.4319,
+      "lng": 116.5704
+    },
+    "options": []
+  },
+  {
+    "id": "20261207-q8",
+    "type": "map",
+    "question": "This location marks a significant point along which famous river in South America?",
+    "correctAnswer": "Amazon River",
+    "countryCode": "BR",
+    "imageUrl": "BR",
+    "mapCoordinates": {
+      "lat": -3.119,
+      "lng": -60.0217
+    },
+    "options": []
+  },
+  {
+    "id": "20261207-q9",
+    "type": "map",
+    "question": "At these coordinates, you would find the ancient Inca citadel of...?",
+    "correctAnswer": "Machu Picchu",
+    "countryCode": "PE",
+    "imageUrl": "PE",
+    "mapCoordinates": {
+      "lat": -13.1631,
+      "lng": -72.545
+    },
+    "options": []
+  },
+  {
+    "id": "20261207-q10",
+    "type": "map",
+    "question": "Identify the iconic natural wonder found at this location.",
+    "correctAnswer": "Grand Canyon",
+    "countryCode": "US",
+    "imageUrl": "US",
+    "mapCoordinates": {
+      "lat": 36.1,
+      "lng": -112.1
+    },
+    "options": []
+  }
+]
