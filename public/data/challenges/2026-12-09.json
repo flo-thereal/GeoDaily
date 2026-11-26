@@ -1,0 +1,135 @@
+[
+  {
+    "id": "flag-20261209-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Ghana",
+    "countryCode": "GH",
+    "imageUrl": "GH",
+    "options": [
+      "Ghana",
+      "Nigeria",
+      "Cameroon",
+      "Senegal"
+    ]
+  },
+  {
+    "id": "flag-20261209-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bangladesh",
+    "countryCode": "BD",
+    "imageUrl": "BD",
+    "options": [
+      "India",
+      "Japan",
+      "Pakistan",
+      "Bangladesh"
+    ]
+  },
+  {
+    "id": "flag-20261209-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Bulgaria",
+    "countryCode": "BG",
+    "imageUrl": "BG",
+    "options": [
+      "Bulgaria",
+      "Russia",
+      "Hungary",
+      "Romania"
+    ]
+  },
+  {
+    "id": "capital-20261209-1",
+    "type": "capital",
+    "question": "Where is the capital of Sweden?",
+    "correctAnswer": "Stockholm",
+    "countryCode": "SE",
+    "imageUrl": "SE",
+    "mapCoordinates": {
+      "lat": 59.33,
+      "lng": 18.05
+    },
+    "options": []
+  },
+  {
+    "id": "capital-20261209-2",
+    "type": "capital",
+    "question": "Where is the capital of Austria?",
+    "correctAnswer": "Vienna",
+    "countryCode": "AT",
+    "imageUrl": "AT",
+    "mapCoordinates": {
+      "lat": 48.2,
+      "lng": 16.37
+    },
+    "options": []
+  },
+  {
+    "id": "capital-20261209-3",
+    "type": "capital",
+    "question": "Where is the capital of Morocco?",
+    "correctAnswer": "Rabat",
+    "countryCode": "MA",
+    "imageUrl": "MA",
+    "mapCoordinates": {
+      "lat": 34.02,
+      "lng": -6.82
+    },
+    "options": []
+  },
+  {
+    "id": "map-20261209-1",
+    "type": "map",
+    "question": "This volcanic island, famous for its unique culture and natural beauty, is a popular tourist destination. Which country is it part of?",
+    "correctAnswer": "South Korea",
+    "countryCode": "KR",
+    "imageUrl": "KR",
+    "mapCoordinates": {
+      "lat": 33.3617,
+      "lng": 126.5367
+    },
+    "options": []
+  },
+  {
+    "id": "map-20261209-2",
+    "type": "map",
+    "question": "This geothermal spa is one of the most visited attractions in its country, known for its milky-blue waters. In which country would you find it?",
+    "correctAnswer": "Iceland",
+    "countryCode": "IS",
+    "imageUrl": "IS",
+    "mapCoordinates": {
+      "lat": 63.8812,
+      "lng": -22.4495
+    },
+    "options": []
+  },
+  {
+    "id": "map-20261209-3",
+    "type": "map",
+    "question": "Home to dramatic mountain scenery, unique wildlife like the Gelada baboon, and a UNESCO World Heritage site. In which country are these mountains located?",
+    "correctAnswer": "Ethiopia",
+    "countryCode": "ET",
+    "imageUrl": "ET",
+    "mapCoordinates": {
+      "lat": 13.25,
+      "lng": 38
+    },
+    "options": []
+  },
+  {
+    "id": "map-20261209-4",
+    "type": "map",
+    "question": "This historic quarter, a UNESCO World Heritage site, features well-preserved colonial buildings and cobblestone streets. In which country is it located?",
+    "correctAnswer": "Uruguay",
+    "countryCode": "UY",
+    "imageUrl": "UY",
+    "mapCoordinates": {
+      "lat": -34.4727,
+      "lng": -57.8402
+    },
+    "options": []
+  }
+]
