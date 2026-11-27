@@ -1,0 +1,135 @@
+[
+  {
+    "id": "2026-12-10-flag-1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Finland",
+    "imageUrl": "FI",
+    "options": [
+      "Norway",
+      "Sweden",
+      "Iceland",
+      "Finland"
+    ],
+    "countryCode": "FI"
+  },
+  {
+    "id": "2026-12-10-flag-2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Cuba",
+    "imageUrl": "CU",
+    "options": [
+      "Puerto Rico",
+      "Cuba",
+      "Chile",
+      "Philippines"
+    ],
+    "countryCode": "CU"
+  },
+  {
+    "id": "2026-12-10-flag-3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Myanmar",
+    "imageUrl": "MM",
+    "options": [
+      "Myanmar",
+      "Laos",
+      "Cambodia",
+      "Vietnam"
+    ],
+    "countryCode": "MM"
+  },
+  {
+    "id": "2026-12-10-capital-1",
+    "type": "capital",
+    "question": "Where is the capital of Portugal?",
+    "correctAnswer": "Lisbon",
+    "countryCode": "PT",
+    "imageUrl": "PT",
+    "mapCoordinates": {
+      "lat": 38.72,
+      "lng": -9.13
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-10-capital-2",
+    "type": "capital",
+    "question": "Where is the capital of Argentina?",
+    "correctAnswer": "Buenos Aires",
+    "countryCode": "AR",
+    "imageUrl": "AR",
+    "mapCoordinates": {
+      "lat": -34.58,
+      "lng": -58.67
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-10-capital-3",
+    "type": "capital",
+    "question": "Where is the capital of Iran?",
+    "correctAnswer": "Tehran",
+    "countryCode": "IR",
+    "imageUrl": "IR",
+    "mapCoordinates": {
+      "lat": 35.7,
+      "lng": 51.42
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-10-map-1",
+    "type": "map",
+    "question": "This mountainous region, a popular hiking destination, is part of the Carpathian Arc. Which country is it in?",
+    "correctAnswer": "Slovakia",
+    "countryCode": "SK",
+    "imageUrl": "SK",
+    "mapCoordinates": {
+      "lat": 49.1865,
+      "lng": 20.1257
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-10-map-2",
+    "type": "map",
+    "question": "Which country is home to the ancient Mayan ruins of Tikal?",
+    "correctAnswer": "Guatemala",
+    "countryCode": "GT",
+    "imageUrl": "GT",
+    "mapCoordinates": {
+      "lat": 17.2215,
+      "lng": -89.6235
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-10-map-3",
+    "type": "map",
+    "question": "This UNESCO World Heritage site, an ancient Semitic city, is known for its monumental ruins. Which country is it located in?",
+    "correctAnswer": "Syria",
+    "countryCode": "SY",
+    "imageUrl": "SY",
+    "mapCoordinates": {
+      "lat": 34.5614,
+      "lng": 38.2662
+    },
+    "options": []
+  },
+  {
+    "id": "2026-12-10-map-4",
+    "type": "map",
+    "question": "Known locally as Mosi-oa-Tunya, 'The Smoke that Thunders,' these immense waterfalls are located on the Zambezi River. In which country can they be found?",
+    "correctAnswer": "Zimbabwe",
+    "countryCode": "ZW",
+    "imageUrl": "ZW",
+    "mapCoordinates": {
+      "lat": -17.9243,
+      "lng": 25.8572
+    },
+    "options": []
+  }
+]
