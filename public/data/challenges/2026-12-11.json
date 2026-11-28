@@ -1,0 +1,135 @@
+[
+  {
+    "id": "20261211_flag_1",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Thailand",
+    "imageUrl": "TH",
+    "options": [
+      "Laos",
+      "Cambodia",
+      "Thailand",
+      "Myanmar"
+    ],
+    "countryCode": "TH"
+  },
+  {
+    "id": "20261211_flag_2",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Colombia",
+    "imageUrl": "CO",
+    "options": [
+      "Venezuela",
+      "Peru",
+      "Colombia",
+      "Ecuador"
+    ],
+    "countryCode": "CO"
+  },
+  {
+    "id": "20261211_flag_3",
+    "type": "flag",
+    "question": "Which country's flag is this?",
+    "correctAnswer": "Croatia",
+    "imageUrl": "HR",
+    "options": [
+      "Slovakia",
+      "Slovenia",
+      "Croatia",
+      "Serbia"
+    ],
+    "countryCode": "HR"
+  },
+  {
+    "id": "20261211_capital_1",
+    "type": "capital",
+    "question": "Where is the capital of Ecuador?",
+    "correctAnswer": "Quito",
+    "countryCode": "EC",
+    "imageUrl": "EC",
+    "mapCoordinates": {
+      "lat": -0.22,
+      "lng": -78.5
+    },
+    "options": []
+  },
+  {
+    "id": "20261211_capital_2",
+    "type": "capital",
+    "question": "Where is the capital of Poland?",
+    "correctAnswer": "Warsaw",
+    "countryCode": "PL",
+    "imageUrl": "PL",
+    "mapCoordinates": {
+      "lat": 52.25,
+      "lng": 21
+    },
+    "options": []
+  },
+  {
+    "id": "20261211_capital_3",
+    "type": "capital",
+    "question": "Where is the capital of Philippines?",
+    "correctAnswer": "Manila",
+    "countryCode": "PH",
+    "imageUrl": "PH",
+    "mapCoordinates": {
+      "lat": 14.6,
+      "lng": 120.97
+    },
+    "options": []
+  },
+  {
+    "id": "20261211_map_1",
+    "type": "map",
+    "question": "This vast salt flat, famous for its reflective surface, is located in which country?",
+    "correctAnswer": "Salar de Uyuni",
+    "countryCode": "BO",
+    "imageUrl": "BO",
+    "mapCoordinates": {
+      "lat": -20.25,
+      "lng": -67.5
+    },
+    "options": []
+  },
+  {
+    "id": "20261211_map_2",
+    "type": "map",
+    "question": "The world's highest uninterrupted waterfall, Angel Falls, can be found in which country?",
+    "correctAnswer": "Angel Falls",
+    "countryCode": "VE",
+    "imageUrl": "VE",
+    "mapCoordinates": {
+      "lat": 5.9715,
+      "lng": -62.5356
+    },
+    "options": []
+  },
+  {
+    "id": "20261211_map_3",
+    "type": "map",
+    "question": "This iconic volcanic island, known for its whitewashed villages and stunning sunsets, is part of which country?",
+    "correctAnswer": "Santorini",
+    "countryCode": "GR",
+    "imageUrl": "GR",
+    "mapCoordinates": {
+      "lat": 36.4,
+      "lng": 25.46
+    },
+    "options": []
+  },
+  {
+    "id": "20261211_map_4",
+    "type": "map",
+    "question": "This island nation, famous for its pristine beaches and coral reefs, is located in the Pacific Ocean. Which country is it?",
+    "correctAnswer": "Fiji",
+    "countryCode": "FJ",
+    "imageUrl": "FJ",
+    "mapCoordinates": {
+      "lat": -17.7134,
+      "lng": 178.065
+    },
+    "options": []
+  }
+]
